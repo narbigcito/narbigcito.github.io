@@ -1,378 +1,442 @@
-
 <body>
-<link href="//fonts.googleapis.com/css?family=Karla:700" rel="stylesheet" type="text/css">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-<title>Gibrán Alexis Moreno Zúñiga - Developer</title>
-<style>
-	/*! normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:hover,a:active{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}pre,code,kbd,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:75%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
-/* General, overall styling */
-body {
-	background: #F9F9F9;
-	color: #333;
-	font-size: 0.9em;
-	font-family: sans-serif;
-	margin-bottom: 100px;
-}
-em {
-	color: #999;
-}
-p {
-	line-height: 1.75em;
-	margin: 0;
-}
-a {
-	color: #e44037;
-}
-ul {
-	margin-top: 20px;
-	margin-bottom: 0;
-}
-ul li {
-	line-height: 1.75em;
-}
-blockquote {
-	margin: 0;
-	margin-bottom: 1em;
-}
-/* End general, overall styling */
-/* Header name styling */
-header {
-	max-width: 700px;
-	margin: 0 auto;
-	padding: 0 50px;
-}
-h1 {
-	font-size: 7em;
-	margin: 100px 0 40px;
-	color: #e44037;
-}
-h2 {
-	font-size: 3em;
-}
-h3 {
-	font-size: 1.5em;
-}
-h1,h2,h3 {
-	font-family: "Karla", sans-serif;
-	font-weight: 700;
-}
-/* End header name styling */
-/* Set width of main body of CV */
-.container {
-	max-width: 700px;
-	padding: 0 50px;
-	margin: 0 auto;
-}
-/* End */
-.item {
-	line-height: 1.75em;
-}
-.item strong {
-	display: inline-block;
-	min-width: 20%;
-}
-.item + .item {
-	margin-top: 20px;
-}
-section {
-	padding: 1em 0 4em;
-	border-top: 1px #E2E2E2 solid;
-}
-section:after {
-	display: block;
-	content: " ";
-	clear: both;
-}
-/* contact specifics */
-#basics .contact:after {
-	display: block;
-	content: " ";
-	clear: both;
-}
-#basics .contact .left, #basics .contact .right {
-	float: none;
-	width: 100%;
-}
-#basics .contact .right .item:first-child {
-	margin-top: 20px;
-}
-@media all and (min-width: 700px) {
-	#basics .contact .left {
-		width: 50%;
-		float: left;
-	}
-	#basics .contact .right {
-		width: 50%;
-		float: right;
-	}
-}
-/* skill specifics */
-@media all and (min-width: 700px) {
-	#skills .item {
-		width: 30%;
-		float: left;
-		margin-top: 0;
-		margin-left: 5%;
-	}
-	#skills .item:nth-of-type(3n+1) {
-		margin-left: 0;
-	}
-}
-/* languages specifics */
-#languages .item strong {
-	display: block;
-}
-@media all and (min-width: 700px) {
-	#languages .item {
-		width: 20%;
-		float: left;
-		margin-top: 0;
-		margin-left: 5%;
-	}
-	#languages .item:nth-of-type(4n+1) {
-		margin-left: 0;
-		display: block;
-		content: " ";
-		clear: both;
-	}
-}
-/* interest specifics */
-@media all and (min-width: 700px) {
-	#interests .item {
-		width: 30%;
-		float: left;
-		margin-top: 0;
-		margin-left: 5%;
-	}
-	#interests .item:nth-of-type(3n+1) {
-		margin-left: 0;
-		display: block;
-		content: " ";
-		clear: both;
-	}
-}
-	</style>
+  <link
+    href="//fonts.googleapis.com/css?family=Karla:700"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, minimal-ui"
+  />
+  <title>Gibrán Alexis Moreno Zúñiga - Developer</title>
+  <style>
+    	/*! normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:hover,a:active{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}pre,code,kbd,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:75%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+    /* General, overall styling */
+    body {
+    	background: #F9F9F9;
+    	color: #333;
+    	font-size: 0.9em;
+    	font-family: sans-serif;
+    	margin-bottom: 100px;
+    }
+    em {
+    	color: #999;
+    }
+    p {
+    	line-height: 1.75em;
+    	margin: 0;
+    }
+    a {
+    	color: #e44037;
+    }
+    ul {
+    	margin-top: 20px;
+    	margin-bottom: 0;
+    }
+    ul li {
+    	line-height: 1.75em;
+    }
+    blockquote {
+    	margin: 0;
+    	margin-bottom: 1em;
+    }
+    /* End general, overall styling */
+    /* Header name styling */
+    header {
+    	max-width: 700px;
+    	margin: 0 auto;
+    	padding: 0 50px;
+    }
+    h1 {
+    	font-size: 7em;
+    	margin: 100px 0 40px;
+    	color: #e44037;
+    }
+    h2 {
+    	font-size: 3em;
+    }
+    h3 {
+    	font-size: 1.5em;
+    }
+    h1,h2,h3 {
+    	font-family: "Karla", sans-serif;
+    	font-weight: 700;
+    }
+    /* End header name styling */
+    /* Set width of main body of CV */
+    .container {
+    	max-width: 700px;
+    	padding: 0 50px;
+    	margin: 0 auto;
+    }
+    /* End */
+    .item {
+    	line-height: 1.75em;
+    }
+    .item strong {
+    	display: inline-block;
+    	min-width: 20%;
+    }
+    .item + .item {
+    	margin-top: 20px;
+    }
+    section {
+    	padding: 1em 0 4em;
+    	border-top: 1px #E2E2E2 solid;
+    }
+    section:after {
+    	display: block;
+    	content: " ";
+    	clear: both;
+    }
+    /* contact specifics */
+    #basics .contact:after {
+    	display: block;
+    	content: " ";
+    	clear: both;
+    }
+    #basics .contact .left, #basics .contact .right {
+    	float: none;
+    	width: 100%;
+    }
+    #basics .contact .right .item:first-child {
+    	margin-top: 20px;
+    }
+    @media all and (min-width: 700px) {
+    	#basics .contact .left {
+    		width: 50%;
+    		float: left;
+    	}
+    	#basics .contact .right {
+    		width: 50%;
+    		float: right;
+    	}
+    }
+    /* skill specifics */
+    @media all and (min-width: 700px) {
+    	#skills .item {
+    		width: 30%;
+    		float: left;
+    		margin-top: 0;
+    		margin-left: 5%;
+    	}
+    	#skills .item:nth-of-type(3n+1) {
+    		margin-left: 0;
+    	}
+    }
+    /* languages specifics */
+    #languages .item strong {
+    	display: block;
+    }
+    @media all and (min-width: 700px) {
+    	#languages .item {
+    		width: 20%;
+    		float: left;
+    		margin-top: 0;
+    		margin-left: 5%;
+    	}
+    	#languages .item:nth-of-type(4n+1) {
+    		margin-left: 0;
+    		display: block;
+    		content: " ";
+    		clear: both;
+    	}
+    }
+    /* interest specifics */
+    @media all and (min-width: 700px) {
+    	#interests .item {
+    		width: 30%;
+    		float: left;
+    		margin-top: 0;
+    		margin-left: 5%;
+    	}
+    	#interests .item:nth-of-type(3n+1) {
+    		margin-left: 0;
+    		display: block;
+    		content: " ";
+    		clear: both;
+    	}
+    }
+  </style>
+
+  <header>
+    <h1>Gibrán Alexis Moreno Zúñiga</h1>
+  </header>
+  <div id="content" class="container">
+    <section id="basics">
+      <div class="summary">
+        <h3>About :</h3>
+        <p>
+          I have 8 years of experience in computing, working in many aspects
+          such as applications, websites, digital manufacturing, industrial
+          environment, consulting and video games. I love giving conferences
+          about the things that I am passionate about and I do so whenever
+          possible. My major desire is to be able to continue offering something
+          of value to society.
+        </p>
+      </div>
+      <div class="contact">
+        <h3>Contact :</h3>
+        <div class="left">
+          <div class="item email">
+            <strong>Email</strong>
+
+            <span class="__cf_email__" data-cfemail="gibranalexis002@gmail.com"
+              >gibranalexis002@gmail.com</span
+            >
+          </div>
+          <div class="item phone">
+            <strong>Phone</strong>
+            <a href="tel:55-70-99-65-12">55-70-99-65-12</a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="item">
+            <strong> Linkedin </strong>
+            <a
+              href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/"
+            >
+              www.linkedin.com/in/gibran-alexis-moreno-zuñiga/
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="work">
+      <h2>Work :</h2>
+
+            <div class="item">
+        <h3>Resuelve tu deuda</h3>
+        <p class="details">
+          Backend Developer<br />
+          2018 - Present
+          <br />
+          <a href="https://resuelvetudeuda.com" target="_blank">
+            resuelvetudeuda.com
+          </a>
+        </p>
+        <p class="summary">Fintech Company</p>
+
+        <h4><strong>Proyects:</strong></h4>
+
+        <h4>Resuelve Bank.</h4>
+        <ul class="highlights">
+          <li>
+            Realization of features for internal processes related to customer
+            bank accounts for different subsidiaries using Elixir and Phoenix
+            framework.
+          </li>
+        </ul>
+        <h4>Resuelve Finances Module</h4>
+        <ul class="highlights">
+          <li>
+            Creation of internal systems related to the company's finances.
+          </li>
+          <li>
+            Creation of a system that manages all the company's income, as well
+            as processing the clients' bank accounts and operations of the
+            entire revenue flow in the finances.
+          </li>
+          <li>
+            Creation of a system that manages all the company's payment flows,
+            as well as the generation of invoices.
+          </li>
+        </ul>
+
+        <h4>New CRM</h4>
+        <ul class="highlights">
+          <li>
+            The CRM used by salespeople was redone, improving code cleanliness
+            and speed, as well as the UI.
+          </li>
+          <li>
+            A service was created for members to add new credit opportunities
+            and check their status.
+          </li>
+          <li>
+            The platform was updated to meet the different needs of the
+            different countries in which it is used. Using Phoenix LiveViews.
+          </li>
+        </ul>
+      </div>
+
+            <div class="item">
+        <h3>YOGOME</h3>
+        <p class="details">
+          Backend Developer<br />
+          2017 - 2018
+          <br />
+          <a href="https://yogome.com" target="_blank"> yogome.com </a>
+        </p>
+        <p class="summary">
+          Yogome was a company dedicated to the development of educational video
+          games.
+        </p>
+
+        <h4><strong>Proyects:</strong></h4>
+
+        <h4>Notification for purchasing systems using webhooks.</h4>
+        <ul class="highlights">
+          <li>
+            Use webhooks from Apple Store, Google play and Stripe using JPA, SQL
+            Server and Google VM instances
+          </li>
+        </ul>
+        <h4>Reto Cuantrix.</h4>
+        <ul class="highlights">
+          <li>
+            Reto cuantrix was a national mathematics and technology competition
+            using our games, the project was in partnership with Televisa, it
+            was the first time something like this was produced in Mexico with
+            more than 15,000 registered users.
+          </li>
+          <li>
+            Realized with Rest Services, JWT, App engine, SQL server, Datastore
+            and more.
+          </li>
+          <li>
+            <a href="https://retocuantrix.mx">retocuantrix.mx</a>
+          </li>
+        </ul>
+        <h4>Imagic Park.</h4>
+        <ul class="highlights">
+          <li>
+            Imagic Park is a diversion park with the theme of the characters of
+            Yogome with the intention of bringing the games to reality and
+            motivate children to continue learning.
+          </li>
+          <li>Registers and purchases system.</li>
+          <li>
+            <a href="http://www.imagicpark.com">www.imagicpark.com</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item">
+        <h3>Materiam</h3>
+        <p class="details">
+          Full Stack Developer.<br />
+          2016 - 2017
+          <br />
+          <a href="https://www.materiam.com" target="_blank"
+            >www.materiam.com</a
+          >
+        </p>
+        <p class="summary">
+          Materiam is a company dedicated to digital manufacturing
+        </p>
+
+        <h4><strong>Proyects:</strong></h4>
+
+        <h4>First stage of the internal system.</h4>
+        <ul class="highlights">
+          <li>
+            Administration of users, warehouse and internal projects using JSF,
+            JPA and Java EE.
+          </li>
+        </ul>
+        <h4>Mobile application development</h4>
+        <ul class="highlights">
+          <li>
+            With the same functionalities as the web application using QT, JS
+            and C ++
+          </li>
+        </ul>
+      </div>
+  </div>
+
+      <div class="item">
+        <div class="item">
+          <h3>Axiom</h3>
+          <p class="details">
+            Full Stack Developer.<br />
+            2014 - 2016
+            <br />
+          </p>
+          <p class="summary">
+            Axiom was a consulting company dedicated to the management of
+            websites dedicated to car sales, with clients such as Mercedes Benz,
+            Lotus, Toyota, Nisan among many others.
+          </p>
+
+          <h4><strong>Proyects:</strong></h4>
+
+          <h4>
+            Development of functionalities for the CRM that managed the
+            information of the Web sites.
+          </h4>
+          <ul class="highlights">
+            <li>
+              Many tasks were automated and processes were created to make
+              adding new customers simpler. All this using Java EE and JSF.
+            </li>
+          </ul>
+          <h4>
+            Front-end development for the different web sites of the car
+            agencies.
+          </h4>
+          <ul class="highlights">
+            <li>
+              Each web page had a completely different design that was
+              implemented from scratch with JSF, HTML and CSS.
+            </li>
+          </ul>
+        </div>
 
 
-<header>
-	<h1>Gibrán Alexis Moreno Zúñiga</h1>
-</header>
-<div id="content" class="container">
-<section id="basics">
-<div class="summary">
-<h3>About :</h3>
-<p> I have 8 years of experience in computing, working in many aspects such as applications, websites, digital manufacturing, industrial environment, consulting and video games. I love giving conferences about the things that I am passionate about and I do so whenever possible. My major desire is to be able to continue offering something of value to society. </p>
-</div>
-<div class="contact">
-<h3>Contact :</h3>
-<div class="left">
-<div class="item email">
-<strong>Email</strong>
-
-	<span class="__cf_email__" data-cfemail="gibranalexis002@gmail.com">gibranalexis002@gmail.com</span>
-</div>
-<div class="item phone">
-<strong>Phone</strong>
-<a href="tel:55-70-99-65-12">55-70-99-65-12</a>
-</div>
-</div>
-<div class="right">
-<div class="item">
-<strong>
-Linkedin
-</strong>
-<a href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/">
-www.linkedin.com/in/gibran-alexis-moreno-zuñiga/
-</a>
-</div>
-</div>
-</div>
-</section>
-<section id="work">
-<h2>Work :</h2>
 
 
-<div class="item">
-	<div class="item">
-	<h3>Axiom</h3>
-	<p class="details">
-	Full Stack Developer.<br>
-	2014 - 2016
-	<br>
-	
-	</p>
-	<p class="summary">
-	Axiom was a consulting company dedicated to the management of websites dedicated to car sales, with clients such as Mercedes Benz, Lotus, Toyota, Nisan among many others.
-	</p>
-		
-	<h4><strong>Proyects:</strong></h4>
-		
-	<h4>Development of functionalities for the CRM that managed the information of the Web sites.</h4>
-	<ul class="highlights">
-		<li>Many tasks were automated and processes were created to make adding new customers simpler. All this using Java EE and JSF.</li>
-	</ul>
-	<h4>Front-end development for the different web sites of the car agencies.</h4>
-	<ul class="highlights">
-		<li>Each web page had a completely different design that was implemented from scratch with JSF, HTML and CSS.</li>
-	</ul>
-</div>
-	
-	<h3>Materiam</h3>
-	<p class="details">
-	Full Stack Developer.<br>
-	2016 - 2017
-	<br>
-	<a href="https://www.materiam.com" target="_blank">www.materiam.com</a>
-	</p>
-	<p class="summary">
-	Materiam is a company dedicated to digital manufacturing
-	</p>
-	
-	<h4><strong>Proyects:</strong></h4>
+    </section>
+    <section id="volunteer">
+      <h2>Participations :</h2>
+      <div class="item">
+        <h3>Instituto Politécnico Nacional</h3>
+        <p class="details">
+          Speaker<br />
+          2017
+          <br />
+        </p>
+        <p class="summary">I presented a speech about genetic algorithms</p>
+      </div>
 
-	<h4>First stage of the internal system.</h4>
-	<ul class="highlights">
-		<li>Administration of users, warehouse and internal projects using JSF, JPA and Java EE.</li>
-	</ul>
-	<h4>Mobile application development</h4>
-	<ul class="highlights">
-		<li>With the same functionalities as the web application using QT, JS and C ++</li>
-	</ul>
-</div>
+      <div class="item">
+        <h3>Political Discussion</h3>
+        <p class="details">
+          Competitor<br />
+          2016
+          <br />
+        </p>
+        <p class="summary">Second place</p>
+      </div>
 
-<div class="item">
-	<h3>YOGOME</h3>
-	<p class="details">
-	Backend Developer<br>
-	2017 - 2018
-	<br>
-	<a href="https://yogome.com" target="_blank"> yogome.com </a>
-	</p>
-	<p class="summary">
-	Yogome was a company dedicated to the development of educational video games.
-	</p>
-	
-	<h4><strong>Proyects:</strong></h4>
+      <div class="item">
+        <h3>Mexican Informatic Olympiad</h3>
+        <p class="details">
+          Competitor<br />
+          2015
+          <br />
+        </p>
+        <p class="summary">Third place and bronze medal</p>
+      </div>
+    </section>
 
-	<h4>Notification for purchasing systems using webhooks.</h4>
-	<ul class="highlights">
-		<li>Use webhooks from Apple Store, Google play and Stripe using JPA, SQL Server and Google VM instances</li>
-	</ul>
-	<h4>Reto Cuantrix.</h4>
-	<ul class="highlights">
-		<li>Reto cuantrix was a national mathematics and technology competition using our games, the project was in partnership with Televisa, it was the first time something like this was produced in Mexico with more than 15,000 registered users.</li>
-		<li>Realized with Rest Services, JWT, App engine, SQL server, Datastore and more.</li>
-		<li>
-			<a href="https://retocuantrix.mx">retocuantrix.mx</a>
-		</li>
-	</ul>
-	<h4>Imagic Park.</h4>
-	<ul class="highlights">
-		<li>Imagic Park is a diversion park with the theme of the characters of Yogome with the intention of bringing the games to reality and motivate children to continue learning.</li>
-		<li>Registers and purchases system.</li>
-		<li>
-			<a href="http://www.imagicpark.com">www.imagicpark.com</a>
-		</li>
-	</ul>
-</div>
-
-<div class="item">
-	<h3>Resuelve tu deuda</h3>
-	<p class="details">
-	Backend Developer<br>
-	2018 - Present
-	<br>
-	<a href="https://resuelvetudeuda.com" target="_blank"> resuelvetudeuda.com </a>
-	</p>
-	<p class="summary">
-	Fintech Company
-	</p>
-	
-	<h4><strong>Proyects:</strong></h4>
-
-	<h4>Resuelve Bank.</h4>
-		<ul class="highlights">
-			<li>Realization of features for internal processes related to customer bank accounts for different subsidiaries using Elixir and Phoenix framework.</li>
-		</ul>
-	<h4>Resuelve Finances Module</h4>
-		<ul class="highlights">
-			<li>Creation of internal systems related to the company's finances.</li>
-			<li>Creation of a system that manages all the company's income, as well as processing the clients' bank accounts and operations of the entire revenue flow in the finances.</li>
-			<li>Creation of a system that manages all the company's payment flows, as well as the generation of invoices.</li>
-		</ul>
-	
-	<h4>New CRM</h4>
-		<ul class="highlights">
-			<li>The CRM used by salespeople was redone, improving code cleanliness and speed, as well as the UI.</li>
-			<li>A service was created for members to add new credit opportunities and check their status.</li>
-			<li>The platform was updated to meet the different needs of the different countries in which it is used. Using Phoenix LiveViews.</li>
-		</ul>
-</div>
-
-
-
-	
-	
-</section>
-<section id="volunteer">
-<h2>Participations :</h2>
-<div class="item">
-<h3>Instituto Politécnico Nacional</h3>
-<p class="details">
-Speaker<br>
-2017
-<br>
-</p>
-<p class="summary">
-I presented a speech about genetic algorithms
-</p>
-</div>
-
-<div class="item">
-<h3>Political Discussion</h3>
-<p class="details">
-Competitor<br>
-2016
-<br>
-</p>
-<p class="summary">
-Second place
-</p>
-</div>
-
-<div class="item">
-	<h3>Mexican Informatic Olympiad</h3>
-<p class="details">
-Competitor<br>
-2015
-<br>
-</p>
-<p class="summary">
-Third place and bronze medal
-</p>
-</div>
-
-</section>
-
-<section id="skills">
-<h2>Skills :</h2>
-<div class="item">
-<ul class="keywords">
-<li>Java EE</li>
-<li>Spring</li>
-<li>Elixir and Phoenix Framework</li>
-<li>SQL, MYSQL & PostgreSql</li>
-<li>Google App Engine</li>
-<li>Mobile development</li>
-<li>Public speaking</li>
-<li>QT/QML</li>
-
-
-</ul>
-</div>
-</section>
-</div>
-<script src="/cdn-cgi/scripts/84a23a00/cloudflare-static/email-decode.min.js"></script>
-
+    <section id="skills">
+      <h2>Skills :</h2>
+      <div class="item">
+        <ul class="keywords">
+          <li>Java EE</li>
+          <li>Spring</li>
+          <li>Elixir and Phoenix Framework</li>
+          <li>SQL, MYSQL & PostgreSql</li>
+          <li>Google App Engine</li>
+          <li>Mobile development</li>
+          <li>Public speaking</li>
+          <li>QT/QML</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <script src="/cdn-cgi/scripts/84a23a00/cloudflare-static/email-decode.min.js"></script>
 </body>
