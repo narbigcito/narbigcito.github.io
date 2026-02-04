@@ -1,427 +1,603 @@
-<body>
-  <link
-    href="//fonts.googleapis.com/css?family=Karla:700"
-    rel="stylesheet"
-    type="text/css"
-  />
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, user-scalable=no, minimal-ui"
-  />
-  <title>Gibrán Alexis Moreno Zúñiga - Developer</title>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Gibrán (narbigcito) — IA, sistemas complejos y auditoría del conocimiento.">
+  <title>narbigcito — IA, sistemas complejos y auditoría del conocimiento</title>
   <style>
-    	/*! normalize.css 2012-02-07T12:37 UTC - http://github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:hover,a:active{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}pre,code,kbd,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:75%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
-    /* General, overall styling */
-    body {
-    	background: #F9F9F9;
-    	color: #333;
-    	font-size: 0.9em;
-    	font-family: sans-serif;
-    	margin-bottom: 100px;
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1520;
+      --text:#e7eef8;
+      --muted:#a8b3c7;
+      --line:#223047;
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
+      --ok:#34d399;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max:1000px;
     }
-    em {
-    	color: #999;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial;
+      background:radial-gradient(1200px 600px at 20% 10%,rgba(167,139,250,.18),transparent 55%),
+                 radial-gradient(900px 500px at 80% 0%,rgba(125,211,252,.16),transparent 52%),
+                 var(--bg);
+      color:var(--text);
+      line-height:1.55;
     }
-    p {
-    	line-height: 1.75em;
-    	margin: 0;
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 60px}
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 0 22px;border-bottom:1px solid rgba(34,48,71,.6)
     }
-    a {
-    	color: #e44037;
+    .brand{display:flex;align-items:center;gap:12px}
+    .dot{
+      width:12px;height:12px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 0 5px rgba(125,211,252,.08);
     }
-    ul {
-    	margin-top: 20px;
-    	margin-bottom: 0;
+    .name{font-weight:800;letter-spacing:.2px}
+    .nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    .nav a{color:var(--muted)}
+    .nav a:hover{color:var(--text)}
+    .hero{padding:34px 0 10px}
+    .hero h1{margin:0 0 10px;font-size:40px;line-height:1.1}
+    .hero p{margin:0;color:var(--muted);font-size:18px;max-width:78ch}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 14px;border-radius:999px;border:1px solid rgba(34,48,71,.9);
+      background:rgba(15,21,32,.75);color:var(--text);box-shadow:var(--shadow)
     }
-    ul li {
-    	line-height: 1.75em;
+    .btn:hover{border-color:rgba(125,211,252,.55);text-decoration:none}
+    .btn.secondary{background:transparent;box-shadow:none;color:var(--muted)}
+    .btn.secondary:hover{color:var(--text)}
+    .grid{margin-top:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+    .card{
+      border:1px solid rgba(34,48,71,.85);
+      background:rgba(15,21,32,.6);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
     }
-    blockquote {
-    	margin: 0;
-    	margin-bottom: 1em;
+    .card h2{margin:0 0 10px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+    .li{
+      padding:12px 12px;border-radius:12px;
+      border:1px solid rgba(34,48,71,.7);
+      background:rgba(11,15,20,.55);
     }
-    /* End general, overall styling */
-    /* Header name styling */
-    header {
-    	max-width: 700px;
-    	margin: 0 auto;
-    	padding: 0 50px;
+    .li strong{display:block;color:var(--text);margin-bottom:3px}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{
+      font-size:12px;color:var(--muted);
+      padding:4px 10px;border-radius:999px;
+      border:1px solid rgba(34,48,71,.7);
+      background:rgba(11,15,20,.55)
     }
-    h1 {
-    	font-size: 4em;
-    	margin: 100px 0 40px;
-    	color: #e44037;
+
+    /* Terminal */
+    .terminal{
+      border-radius:18px;
+      border:1px solid rgba(34,48,71,.85);
+      background:rgba(7,10,14,.72);
+      box-shadow:var(--shadow);
+      overflow:hidden;
     }
-    h2 {
-    	font-size: 3em;
+    .termbar{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:10px 12px;border-bottom:1px solid rgba(34,48,71,.6);
+      background:rgba(15,21,32,.6)
     }
-    h3 {
-    	font-size: 1.5em;
+    .lights{display:flex;gap:8px;align-items:center}
+    .light{width:10px;height:10px;border-radius:999px;opacity:.9}
+    .r{background:#fb7185}
+    .y{background:#fbbf24}
+    .g{background:#34d399}
+    .termmeta{color:var(--muted);font-size:12px}
+    .termwrap{padding:12px}
+    .output{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:13px;
+      color:#dbeafe;
+      white-space:pre-wrap;
+      min-height:220px;
+      max-height:380px;
+      overflow:auto;
+      padding:10px 10px;
+      border:1px solid rgba(34,48,71,.6);
+      border-radius:14px;
+      background:rgba(0,0,0,.25);
     }
-    h1,h2,h3 {
-    	font-family: "Karla", sans-serif;
-    	font-weight: 700;
+    .promptrow{
+      display:flex;gap:10px;align-items:center;
+      margin-top:10px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:13px;
     }
-    /* End header name styling */
-    /* Set width of main body of CV */
-    .container {
-    	max-width: 700px;
-    	padding: 0 50px;
-    	margin: 0 auto;
+    .prompt{color:#93c5fd;user-select:none}
+    .in{
+      flex:1;
+      border:1px solid rgba(34,48,71,.7);
+      background:rgba(11,15,20,.55);
+      color:var(--text);
+      padding:9px 10px;border-radius:12px;
+      outline:none;
     }
-    /* End */
-    .item {
-    	line-height: 1.75em;
+    .hint{color:var(--muted);font-size:12px;margin-top:8px}
+    .kbd{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:12px;
+      padding:2px 6px;border-radius:8px;
+      border:1px solid rgba(34,48,71,.7);
+      background:rgba(11,15,20,.55);
+      color:var(--muted);
     }
-    .item strong {
-    	display: inline-block;
-    	min-width: 20%;
+
+    .footer{
+      margin-top:28px;padding-top:18px;
+      border-top:1px solid rgba(34,48,71,.6);
+      color:var(--muted);font-size:13px;
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap
     }
-    .item + .item {
-    	margin-top: 20px;
-    }
-    section {
-    	padding: 1em 0 4em;
-    	border-top: 1px #E2E2E2 solid;
-    }
-    section:after {
-    	display: block;
-    	content: " ";
-    	clear: both;
-    }
-    /* contact specifics */
-    #basics .contact:after {
-    	display: block;
-    	content: " ";
-    	clear: both;
-    }
-    #basics .contact .left, #basics .contact .right {
-    	float: none;
-    	width: 100%;
-    }
-    #basics .contact .right .item:first-child {
-    	margin-top: 20px;
-    }
-    @media all and (min-width: 700px) {
-    	#basics .contact .left {
-    		width: 50%;
-    		float: left;
-    	}
-    	#basics .contact .right {
-    		width: 50%;
-    		float: right;
-    	}
-    }
-    /* skill specifics */
-    @media all and (min-width: 700px) {
-    	#skills .item {
-    		width: 30%;
-    		float: left;
-    		margin-top: 0;
-    		margin-left: 5%;
-    	}
-    	#skills .item:nth-of-type(3n+1) {
-    		margin-left: 0;
-    	}
-    }
-    /* languages specifics */
-    #languages .item strong {
-    	display: block;
-    }
-    @media all and (min-width: 700px) {
-    	#languages .item {
-    		width: 20%;
-    		float: left;
-    		margin-top: 0;
-    		margin-left: 5%;
-    	}
-    	#languages .item:nth-of-type(4n+1) {
-    		margin-left: 0;
-    		display: block;
-    		content: " ";
-    		clear: both;
-    	}
-    }
-    /* interest specifics */
-    @media all and (min-width: 700px) {
-    	#interests .item {
-    		width: 30%;
-    		float: left;
-    		margin-top: 0;
-    		margin-left: 5%;
-    	}
-    	#interests .item:nth-of-type(3n+1) {
-    		margin-left: 0;
-    		display: block;
-    		content: " ";
-    		clear: both;
-    	}
+
+    @media (max-width:920px){
+      .grid{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
     }
   </style>
-
-  <header>
-    <h1>Gibrán Alexis Moreno Zúñiga</h1>
-  </header>
-  <div id="content" class="container">
-    <section id="basics">
-      <div class="summary">
-        <h3>About :</h3>
-        <p>
-          I have 10 years of experience in computing, working in many aspects
-          such as applications, websites, digital manufacturing, industrial
-          environment, consulting and video games. I love giving conferences
-          about the things that I am passionate about and I do so whenever
-          possible. My major desire is to be able to continue offering something
-          of value to society.
-        </p>
-      </div>
-      <div class="contact">
-        <h3>Contact :</h3>
-        <div class="left">
-          <div class="item email">
-            <strong>Email</strong>
-
-            <span class="__cf_email__" data-cfemail="gibranalexis002@gmail.com"
-              >gibranalexis002@gmail.com</span
-            >
-          </div>
-          <div class="item phone">
-            <strong>Phone</strong>
-            <a href="tel:55-70-99-65-12">55-70-99-65-12</a>
-          </div>
-        </div>
-        <div class="right">
-          <div class="item">
-            <strong> Linkedin </strong>
-            <a
-              href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/"
-            >
-              www.linkedin.com/in/gibran-alexis-moreno-zuñiga/
-            </a>
-          </div>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <div class="name">Gibrán <span style="color:var(--muted);font-weight:700">/ narbigcito</span></div>
+          <div style="color:var(--muted);font-size:13px">IA · Sistemas complejos · Auditoría del conocimiento</div>
         </div>
       </div>
+      <nav class="nav" aria-label="Navegación">
+        <a href="#ahora">Ahora</a>
+        <a href="#cv">CV</a>
+        <a href="#terminal">Terminal</a>
+        <a href="#conectar">Conectar</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <h1>Herramientas para organizar y auditar conocimiento.</h1>
+      <p>
+        Construyo sistemas para convertir información científica y técnica en capacidad real de análisis:
+        detectar inconsistencias, sesgos e incentivos corruptores. Busco pares: ingenieros, académicos y artistas
+        que trabajen con estructuras (y que no se asusten cuando algo no cuadra).
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="#terminal">Abrir terminal →</a>
+
+        <!-- CV: renombra tu PDF a este nombre y súbelo al repo -->
+        <a class="btn" href="./source/resume.pdf" download>Descargar CV</a>
+
+        <a class="btn secondary" href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">Substack</a>
+        <a class="btn secondary" href="https://github.com/narbigcito" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn secondary" href="https://www.instagram.com/elnarbigcito/" target="_blank" rel="noreferrer">Instagram</a>
+        <a class="btn secondary" href="https://calendar.app.google/vkautEEQ5BLAt6wz6" target="_blank" rel="noreferrer">Agendar</a>
+      </div>
+
+      <div class="tagrow" aria-label="Etiquetas">
+        <span class="tag">auditoría científica</span>
+        <span class="tag">epistemología aplicada</span>
+        <span class="tag">texto + imagen</span>
+        <span class="tag">infraestructura</span>
+        <span class="tag">sistemas complejos</span>
+      </div>
     </section>
-    <section id="work">
-      <h2>Work :</h2>
 
-            <div class="item">
-        <h3>Laboratorio de Investigación Espacial LINX</h3>
-        <p class="details">
-          Backend Developer<br />
-          2022 - 2023
-          <br />
-          <a href="https://linx.nucleares.unam.mx" target="_blank">
-            linx.nucleares.unam.mx/
-          </a>
-        </p>
-        <p class="summary">Scientific Research</p>
-
-        <h4><strong>Proyects:</strong></h4>
-
-        <h4>Umbrella</h4>
-        <ul class="highlights">
-          <li>
-            Web and mobile application that manages the inventory of the flora of a locality, as well as collecting information that can be useful for meteorological uses. 
-
-Connection with the Ubrella satellite, the first Mexican satellite created by LINX.
-
-All this using Kotlin and java.
+    <section class="grid">
+      <article class="card" id="ahora">
+        <h2>Qué estoy haciendo ahora</h2>
+        <ul class="list">
+          <li class="li">
+            <strong>Infraestructura de análisis</strong>
+            Pipelines para análisis de texto e imagen (papers, tablas, claims, citas), con trazabilidad y control de cambios.
+          </li>
+          <li class="li">
+            <strong>Auditoría de consistencia científica (experimental)</strong>
+            En vez de “verdad”, genera grados de confianza: coherencia interna, replicabilidad y riesgo de sesgo.
+          </li>
+          <li class="li">
+            <strong>Diseño organizacional</strong>
+            Cómo evitar captura, dogmas y corrupción informativa cuando un sistema crece.
           </li>
         </ul>
+
+        <div style="margin-top:14px;color:var(--muted)">
+          No busco audiencia masiva. Busco gente capaz de construir, criticar y sostener sistemas sin convertirlos en religión.
+        </div>
+      </article>
+
+      <aside class="card" id="cv">
+        <h2>CV (resumen rápido)</h2>
+        <p>Lo esencial, sin humo.</p>
+
+        <ul class="list">
+          <li class="li">
+            <strong>Backend 10+ años</strong>
+            Elixir/Phoenix, Spring(Java), arquitectura escalable y automatización.
+          </li>
+          <li class="li">
+            <strong>Fintech (Bravo)</strong>
+            Contratos automáticos, tablas de amortización, herramientas de creditworthiness.
+          </li>
+          <li class="li">
+            <strong>IA aplicada y sistemas interdisciplinarios</strong>
+            Proyectos con análisis de datos, epistemología y psicopolítica aplicada.
+          </li>
+        </ul>
+
+        <div style="margin-top:12px">
+          <a class="btn" href="./source/resume.pdf" download>Descargar CV</a>
+          <span style="color:var(--muted);font-size:13px;margin-left:10px">Tip: en la terminal escribe <span class="kbd">cv</span></span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card" id="terminal" style="margin-top:16px">
+      <h2>Terminal (minijuego)</h2>
+      <p>Comandos predeterminados. Prueba <span class="kbd">help</span> y <span class="kbd">paper audit</span>.</p>
+
+      <div class="terminal" style="margin-top:12px">
+        <div class="termbar">
+          <div class="lights" aria-hidden="true">
+            <span class="light r"></span>
+            <span class="light y"></span>
+            <span class="light g"></span>
+          </div>
+          <div class="termmeta">narbigcito@logos:~ · <span id="clock"></span></div>
+        </div>
+
+        <div class="termwrap">
+          <div id="out" class="output" aria-live="polite"></div>
+
+          <div class="promptrow">
+            <div class="prompt">narbigcito@logos:~$</div>
+            <input id="in" class="in" type="text" autocomplete="off" spellcheck="false" placeholder="Escribe: help">
+          </div>
+
+          <div class="hint">
+            Tips: <span class="kbd">↑</span>/<span class="kbd">↓</span> historial · <span class="kbd">Tab</span> autocompleta · <span class="kbd">Ctrl</span>+<span class="kbd">L</span> limpia
+          </div>
+        </div>
       </div>
+    </section>
 
-                  <div class="item">
-        <h3>Resuelve tu deuda</h3>
-        <p class="details">
-          Backend Developer<br />
-          2018 - Present
-          <br />
-          <a href="https://resuelvetudeuda.com" target="_blank">
-            resuelvetudeuda.com
-          </a>
-        </p>
-        <p class="summary">Fintech Company</p>
+    <section class="card" id="conectar" style="margin-top:16px">
+      <h2>Conectar</h2>
+      <p>Si quieres colaborar: quién eres, qué sabes hacer, qué quieres construir.</p>
 
-        <h4><strong>Proyects:</strong></h4>
+      <ul class="list">
+        <li class="li"><strong>CV</strong><a href="/source/resume.pdf" download>Descargar resume.pdf</a></li>
+        <li class="li"><strong>GitHub</strong><a href="https://github.com/narbigcito" target="_blank" rel="noreferrer">github.com/narbigcito</a></li>
+        <li class="li"><strong>Substack</strong><a href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">substack.com/@narbigcito</a></li>
+        <li class="li"><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/" target="_blank" rel="noreferrer">Perfil</a></li>
+        <li class="li"><strong>Instagram</strong><a href="https://www.instagram.com/elnarbigcito/" target="_blank" rel="noreferrer">@elnarbigcito</a></li>
+        <li class="li"><strong>Agendar</strong><a href="https://calendar.app.google/vkautEEQ5BLAt6wz6" target="_blank" rel="noreferrer">calendar.app.google</a></li>
+      </ul>
+    </section>
 
-        <h4>Resuelve Bank.</h4>
-        <ul class="highlights">
-          <li>
-            Realization of features for internal processes related to customer
-            bank accounts for different subsidiaries using Elixir and Phoenix
-            framework.
-          </li>
-        </ul>
-        <h4>Resuelve Finances Module</h4>
-        <ul class="highlights">
-          <li>
-            Creation of internal systems related to the company's finances.
-          </li>
-          <li>
-            Creation of a system that manages all the company's income, as well
-            as processing the clients' bank accounts and operations of the
-            entire revenue flow in the finances.
-          </li>
-          <li>
-            Creation of a system that manages all the company's payment flows,
-            as well as the generation of invoices.
-          </li>
-        </ul>
-
-        <h4>New CRM</h4>
-        <ul class="highlights">
-          <li>
-            The CRM used by salespeople was redone, improving code cleanliness
-            and speed, as well as the UI.
-          </li>
-          <li>
-            A service was created for members to add new credit opportunities
-            and check their status.
-          </li>
-          <li>
-            The platform was updated to meet the different needs of the
-            different countries in which it is used. Using Phoenix LiveViews.
-          </li>
-        </ul>
-      </div>
-
-            <div class="item">
-        <h3>YOGOME</h3>
-        <p class="details">
-          Backend Developer<br />
-          2017 - 2018
-          <br />
-          <a href="https://yogome.com" target="_blank"> yogome.com </a>
-        </p>
-        <p class="summary">
-          Yogome was a company dedicated to the development of educational video
-          games.
-        </p>
-
-        <h4><strong>Proyects:</strong></h4>
-
-        <h4>Notification for purchasing systems using webhooks.</h4>
-        <ul class="highlights">
-          <li>
-            Use webhooks from Apple Store, Google play and Stripe using JPA, SQL
-            Server and Google VM instances
-          </li>
-        </ul>
-        <h4>Reto Cuantrix.</h4>
-        <ul class="highlights">
-          <li>
-            Reto cuantrix was a national mathematics and technology competition
-            using our games, the project was in partnership with Televisa, it
-            was the first time something like this was produced in Mexico with
-            more than 15,000 registered users.
-          </li>
-          <li>
-            Realized with Rest Services, JWT, App engine, SQL server, Datastore
-            and more.
-          </li>
-          <li>
-            <a href="https://retocuantrix.mx">retocuantrix.mx</a>
-          </li>
-        </ul>
-        <h4>Imagic Park.</h4>
-        <ul class="highlights">
-          <li>
-            Imagic Park is a diversion park with the theme of the characters of
-            Yogome with the intention of bringing the games to reality and
-            motivate children to continue learning.
-          </li>
-          <li>Registers and purchases system.</li>
-          <li>
-            <a href="http://www.imagicpark.com">www.imagicpark.com</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="item">
-        <h3>Materiam</h3>
-        <p class="details">
-          Full Stack Developer.<br />
-          2016 - 2017
-          <br />
-          <a href="https://www.materiam.com" target="_blank"
-            >www.materiam.com</a
-          >
-        </p>
-        <p class="summary">
-          Materiam is a company dedicated to digital manufacturing
-        </p>
-
-        <h4><strong>Proyects:</strong></h4>
-
-        <h4>First stage of the internal system.</h4>
-        <ul class="highlights">
-          <li>
-            Administration of users, warehouse and internal projects using JSF,
-            JPA and Java EE.
-          </li>
-        </ul>
-        <h4>Mobile application development</h4>
-        <ul class="highlights">
-          <li>
-            With the same functionalities as the web application using QT, JS
-            and C ++
-          </li>
-        </ul>
-      </div>
+    <footer class="footer">
+      <div>© <span id="y"></span> narbigcito. Hecho para atraer pares, no para gustar a todos.</div>
+      <div><a href="#top">Volver arriba ↑</a></div>
+    </footer>
   </div>
 
-</section>
-    <section id="volunteer">
-      <h2>Participations :</h2>
-      <div class="item">
-        <h3>Instituto Politécnico Nacional</h3>
-        <p class="details">
-          Speaker<br />
-          2017
-          <br />
-        </p>
-        <p class="summary">I presented a speech about genetic algorithms</p>
-      </div>
+  <script>
+    const LINKS={
+      github:"https://github.com/narbigcito",
+      substack:"https://substack.com/@narbigcito",
+      linkedin:"https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/",
+      insta:"https://www.instagram.com/elnarbigcito/",
+      schedule:"https://calendar.app.google/vkautEEQ5BLAt6wz6",
+      cv:"gibran-moreno-cv.pdf"
+    };
 
-      <div class="item">
-        <h3>Political Discussion</h3>
-        <p class="details">
-          Competitor<br />
-          2016
-          <br />
-        </p>
-        <p class="summary">Second place</p>
-      </div>
+    const out=document.getElementById("out");
+    const input=document.getElementById("in");
+    document.getElementById("y").textContent=new Date().getFullYear();
 
-      <div class="item">
-        <h3>Mexican Informatic Olympiad</h3>
-        <p class="details">
-          Competitor<br />
-          2015
-          <br />
-        </p>
-        <p class="summary">Third place and bronze medal</p>
-      </div>
-    </section>
+    const clock=document.getElementById("clock");
+    const tick=()=>clock.textContent=new Date().toLocaleString("es-MX",{hour:"2-digit",minute:"2-digit"});
+    tick();setInterval(tick,15000);
 
-    <section id="skills">
-      <h2>Skills :</h2>
-      <div class="item">
-        <ul class="keywords">
-          <li>Java EE</li>
-          <li>Spring</li>
-          <li>Elixir and Phoenix Framework</li>
-          <li>SQL, MYSQL & PostgreSql</li>
-          <li>Google App Engine</li>
-          <li>Mobile development</li>
-          <li>Public speaking</li>
-          <li>Kotlin</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-  <script src="/cdn-cgi/scripts/84a23a00/cloudflare-static/email-decode.min.js"></script>
+    const history=[];
+    let hIdx=0;
+    const promptStr="narbigcito@logos:~$ ";
+
+    const cmds=[
+      "help","about","now","project","links","open","github","substack","linkedin","insta","schedule","cv",
+      "ls","clear","whoami","ascii","paper audit","paper scan","matrix","theme"
+    ];
+
+    let theme="dark";
+    const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+    function esc(s){
+      return s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+    }
+    function writeRaw(html){
+      out.innerHTML+=html;
+      out.scrollTop=out.scrollHeight;
+    }
+    function writeLine(text=""){
+      writeRaw(`<div>${esc(text)}</div>`);
+    }
+    async function typeLine(text="",speed=8){
+      const safe=esc(text);
+      let i=0;
+      writeRaw("<div id='tw'></div>");
+      const el=document.getElementById("tw");
+      while(i<safe.length){
+        el.innerHTML+=safe[i];
+        i++;
+        out.scrollTop=out.scrollHeight;
+        await sleep(speed);
+      }
+      el.removeAttribute("id");
+    }
+
+    function banner(){
+      writeLine("LOGOS terminal v0.1 (demo)");
+      writeLine("Escribe: help");
+      writeLine("");
+    }
+
+    function help(){
+      writeLine("Comandos:");
+      writeLine("  help, about, now, project, links");
+      writeLine("  open <github|substack|linkedin|insta|schedule|cv>");
+      writeLine("  cv (descargar CV)");
+      writeLine("  ls, whoami, ascii, matrix, paper audit, paper scan");
+      writeLine("  clear, theme");
+      writeLine("");
+    }
+
+    async function about(){
+      await typeLine("Soy Gibrán (narbigcito). Construyo herramientas de IA para organizar y auditar conocimiento.",10);
+      await typeLine("Busco pares: ingeniería, academia y arte-sistemas. Cero culto, cero dogma.",10);
+      writeLine("");
+    }
+    async function now(){
+      await typeLine("Ahora mismo:",10);
+      writeLine("- Infraestructura de análisis texto+imagen (papers, tablas, claims).");
+      writeLine("- Auditoría de consistencia científica: grados de confianza, no 'verdad'.");
+      writeLine("- Diseño anti-captura: trazabilidad, control de cambios, disenso técnico.");
+      writeLine("");
+    }
+    async function project(){
+      await typeLine("Proyecto activo: Auditoría de Consistencia Científica (experimental).",10);
+      writeLine("Salida: coherencia interna, replicabilidad, riesgo de sesgo, recomendaciones.");
+      writeLine("Prueba: paper audit");
+      writeLine("");
+    }
+    function links(){
+      writeLine("Links:");
+      writeLine(`- github: ${LINKS.github}`);
+      writeLine(`- substack: ${LINKS.substack}`);
+      writeLine(`- linkedin: ${LINKS.linkedin}`);
+      writeLine(`- insta: ${LINKS.insta}`);
+      writeLine(`- schedule: ${LINKS.schedule}`);
+      writeLine(`- cv: ${LINKS.cv}`);
+      writeLine("");
+    }
+    function doOpen(key){
+      const url=LINKS[key];
+      if(!url){
+        writeLine("Uso: open <github|substack|linkedin|insta|schedule|cv>");
+        writeLine("");
+        return;
+      }
+      window.open(url,"_blank","noopener,noreferrer");
+      writeLine(`Abriendo: ${url}`);
+      writeLine("");
+    }
+    function doCv(){
+      const a=document.createElement("a");
+      a.href=LINKS.cv;
+      a.download="gibran-moreno-cv.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      writeLine("Descargando CV…");
+      writeLine("");
+    }
+    function ls(){
+      writeLine("projects/  texts/  links/  terminal/  cv.pdf");
+      writeLine("Tip: cv");
+      writeLine("");
+    }
+    function whoami(){
+      writeLine("narbigcito");
+      writeLine("role: backend/software engineer · complex systems");
+      writeLine("mode: build + audit + iterate");
+      writeLine("");
+    }
+    function ascii(){
+      writeLine("   _   _            _     _           _ _        ");
+      writeLine("  | \\ | |          | |   (_)         | (_)       ");
+      writeLine("  |  \\| | __ _ _ __| |__  _  __ _  __| |_  ___   ");
+      writeLine("  | . ` |/ _` | '__| '_ \\| |/ _` |/ _` | |/ __|  ");
+      writeLine("  | |\\  | (_| | |  | |_) | | (_| | (_| | | (__   ");
+      writeLine("  |_| \\_|\\__,_|_|  |_.__/|_|\\__,_|\\__,_|_|\\___|  ");
+      writeLine("");
+    }
+    async function matrix(){
+      writeLine("Entrando a modo visual… (fake pero bonito)");
+      const lines=18;
+      for(let i=0;i<lines;i++){
+        const s=Array.from({length:64},()=>Math.random()<.5?"0":"1").join("");
+        writeLine(s);
+        await sleep(35);
+      }
+      writeLine("Listo.");
+      writeLine("");
+    }
+    function themeToggle(){
+      theme=theme==="dark"?"darker":"dark";
+      if(theme==="darker"){
+        document.documentElement.style.setProperty("--bg","#06080c");
+        document.documentElement.style.setProperty("--panel","#0b101a");
+        writeLine("theme: darker");
+      }else{
+        document.documentElement.style.setProperty("--bg","#0b0f14");
+        document.documentElement.style.setProperty("--panel","#0f1520");
+        writeLine("theme: dark");
+      }
+      writeLine("");
+    }
+    async function paperAudit(){
+      writeLine("Cargando paper…");await sleep(350);
+      writeLine("Extrayendo claims…");await sleep(350);
+      writeLine("Buscando contradicciones internas…");await sleep(450);
+
+      const coh=["alta","media","baja"][Math.floor(Math.random()*3)];
+      const rep=["documentada","dudosa","ausente"][Math.floor(Math.random()*3)];
+      const bias=["bajo","medio","alto"][Math.floor(Math.random()*3)];
+
+      writeLine("");
+      writeLine("=== REPORTE (simulado) ===");
+      writeLine(`Coherencia interna: ${coh}`);
+      writeLine(`Replicabilidad: ${rep}`);
+      writeLine(`Riesgo de sesgo: ${bias}`);
+      writeLine("");
+      writeLine("Notas:");
+      writeLine("- Señala supuestos no explicitados.");
+      writeLine("- Traza claims a referencias/citas.");
+      writeLine("- Sugiere pruebas mínimas para refutar/confirmar.");
+      writeLine("");
+    }
+    async function paperScan(){
+      await typeLine("Scan rápido: 3 señales y 1 recomendación.",12);
+      const sig=[
+        "claim fuerte con evidencia débil",
+        "métrica ambigua sin definición operativa",
+        "citas circulares (se referencian entre sí)",
+        "dataset no disponible / no versionado",
+        "conclusión excede resultados"
+      ];
+      const pick=()=>sig[Math.floor(Math.random()*sig.length)];
+      writeLine(`- señal 1: ${pick()}`);
+      writeLine(`- señal 2: ${pick()}`);
+      writeLine(`- señal 3: ${pick()}`);
+      writeLine("- recomendación: publicar protocolo, versionar dataset y definir supuestos.");
+      writeLine("");
+    }
+    function clear(){
+      out.innerHTML="";
+    }
+    function normalize(s){
+      return s.trim().replaceAll(/\s+/g," ");
+    }
+    async function run(cmd){
+      const c=normalize(cmd);
+      if(!c){return;}
+      writeLine(promptStr+c);
+
+      if(c==="help"){help();return;}
+      if(c==="about"){await about();return;}
+      if(c==="now"){await now();return;}
+      if(c==="project"){await project();return;}
+      if(c==="links"){links();return;}
+      if(c==="ls"){ls();return;}
+      if(c==="whoami"){whoami();return;}
+      if(c==="ascii"){ascii();return;}
+      if(c==="matrix"){await matrix();return;}
+      if(c==="theme"){themeToggle();return;}
+      if(c==="clear"){clear();banner();return;}
+
+      if(c==="github"){doOpen("github");return;}
+      if(c==="substack"){doOpen("substack");return;}
+      if(c==="linkedin"){doOpen("linkedin");return;}
+      if(c==="insta"){doOpen("insta");return;}
+      if(c==="schedule"){doOpen("schedule");return;}
+      if(c==="cv"){doCv();return;}
+
+      if(c==="paper audit"){await paperAudit();return;}
+      if(c==="paper scan"){await paperScan();return;}
+
+      if(c.startsWith("open ")){
+        const key=c.slice(5).trim();
+        if(key==="cv"){doCv();return;}
+        doOpen(key);
+        return;
+      }
+
+      writeLine("No entiendo ese comando. Escribe: help");
+      writeLine("");
+    }
+
+    function autocomplete(){
+      const v=normalize(input.value);
+      if(!v){return;}
+      const matches=cmds.filter(x=>x.startsWith(v));
+      if(matches.length===1){
+        input.value=matches[0];
+      }else if(matches.length>1){
+        writeLine(promptStr+v);
+        writeLine(matches.join("  "));
+        writeLine("");
+      }
+    }
+
+    input.addEventListener("keydown",async(e)=>{
+      if(e.key==="Enter"){
+        e.preventDefault();
+        const v=input.value;
+        if(v.trim()){
+          history.push(v);
+          hIdx=history.length;
+        }
+        input.value="";
+        await run(v);
+      }
+      if(e.key==="ArrowUp"){
+        if(history.length===0){return;}
+        e.preventDefault();
+        hIdx=Math.max(0,hIdx-1);
+        input.value=history[hIdx]??"";
+      }
+      if(e.key==="ArrowDown"){
+        if(history.length===0){return;}
+        e.preventDefault();
+        hIdx=Math.min(history.length,hIdx+1);
+        input.value=history[hIdx]??"";
+      }
+      if(e.key==="Tab"){
+        e.preventDefault();
+        autocomplete();
+      }
+      if(e.ctrlKey&&e.key.toLowerCase()==="l"){
+        e.preventDefault();
+        clear();banner();
+      }
+    });
+
+    banner();
+    writeLine("Prueba: about · now · project · paper audit · cv · open github");
+    writeLine("");
+    input.focus();
+  </script>
 </body>
+</html>
+
