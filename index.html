@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Gibrán (narbigcito) — IA, sistemas complejos y auditoría del conocimiento.">
-  <title>narbigcito — IA, sistemas complejos y auditoría del conocimiento</title>
+  <meta name="description" content="Gibrán (narbigcito) — IA, sistemas complejos, antropología experimental y auditoría del conocimiento.">
+  <title>narbigcito — IA, sistemas complejos y antropología experimental</title>
   <style>
     :root{
       --bg:#0b0f14;
@@ -51,12 +51,13 @@
     .nav a:hover{color:var(--text)}
     .hero{padding:34px 0 10px}
     .hero h1{margin:0 0 10px;font-size:40px;line-height:1.1}
-    .hero p{margin:0;color:var(--muted);font-size:18px;max-width:78ch}
+    .hero p{margin:0;color:var(--muted);font-size:18px;max-width:80ch}
     .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .btn{
       display:inline-flex;align-items:center;gap:10px;
       padding:10px 14px;border-radius:999px;border:1px solid rgba(34,48,71,.9);
-      background:rgba(15,21,32,.75);color:var(--text);box-shadow:var(--shadow)
+      background:rgba(15,21,32,.75);color:var(--text);box-shadow:var(--shadow);
+      cursor:pointer;
     }
     .btn:hover{border-color:rgba(125,211,252,.55);text-decoration:none}
     .btn.secondary{background:transparent;box-shadow:none;color:var(--muted)}
@@ -84,6 +85,26 @@
       padding:4px 10px;border-radius:999px;
       border:1px solid rgba(34,48,71,.7);
       background:rgba(11,15,20,.55)
+    }
+
+    /* Lab extras */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+    .noteBox{
+      border:1px solid rgba(34,48,71,.7);
+      background:rgba(11,15,20,.55);
+      border-radius:14px;
+      padding:12px;
+      color:var(--muted);
+      min-height:110px;
+    }
+    .noteTitle{color:var(--text);font-weight:800;margin-bottom:6px}
+    .noteMeta{font-size:12px;color:var(--muted);opacity:.9;margin-top:8px}
+    .pillRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .pill{
+      font-size:12px;color:var(--muted);
+      padding:4px 10px;border-radius:999px;
+      border:1px solid rgba(34,48,71,.7);
+      background:rgba(0,0,0,.18)
     }
 
     /* Terminal */
@@ -153,7 +174,14 @@
 
     @media (max-width:920px){
       .grid{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
       .hero h1{font-size:34px}
+    }
+
+    /* Oculta terminal en teléfono */
+    @media (max-width:720px){
+      #terminal{display:none}
+      .nav a[href="#terminal"]{display:none}
     }
   </style>
 </head>
@@ -164,11 +192,12 @@
         <span class="dot" aria-hidden="true"></span>
         <div>
           <div class="name">Gibrán <span style="color:var(--muted);font-weight:700">/ narbigcito</span></div>
-          <div style="color:var(--muted);font-size:13px">IA · Sistemas complejos · Auditoría del conocimiento</div>
+          <div style="color:var(--muted);font-size:13px">IA · Sistemas complejos · Antropología experimental</div>
         </div>
       </div>
       <nav class="nav" aria-label="Navegación">
         <a href="#ahora">Ahora</a>
+        <a href="#lab">Laboratorio</a>
         <a href="#cv">CV</a>
         <a href="#terminal">Terminal</a>
         <a href="#conectar">Conectar</a>
@@ -178,18 +207,18 @@
     <section class="hero" id="top">
       <h1>Hola, soy el Narbigcito.</h1>
       <p>
-        Construyo sistemas para convertir información científica y técnica en capacidad real de análisis:
-        detectar inconsistencias, sesgos e incentivos corruptores. Busco pares: ingenieros, académicos y artistas
-        que trabajen con estructuras (y que no se asusten cuando algo no cuadra).
+        Construyo herramientas para pensar mejor: IA para organizar información, detectar contradicciones y
+        exponer juegos de poder que se esconden en el lenguaje.
+        También hice un laboratorio de antropología experimental, para cuestionar nuestra realidad en colectivo y con afecto.
+        Busco gente peligrosa en el buen sentido: ingeniería, academia, arte, ganas de crear, de cambiar.
       </p>
 
       <div class="cta">
+        <a class="btn" href="#lab">Ver laboratorio →</a>
         <a class="btn" href="#terminal">Abrir terminal →</a>
 
-        <!-- CV: renombra tu PDF a este nombre y súbelo al repo -->
-<a class="btn" href="./source/resume.pdf" target="_blank" rel="noreferrer">Ver CV (PDF)</a>
-<a class="btn" href="./source/resume.pdf" download="Gibran-Moreno-CV.pdf">Descargar CV</a>
-
+        <a class="btn" href="./source/resume.pdf" target="_blank" rel="noreferrer">Ver CV (PDF)</a>
+        <a class="btn" href="#" data-cv-download>Descargar CV</a>
 
         <a class="btn secondary" href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">Substack</a>
         <a class="btn secondary" href="https://github.com/narbigcito" target="_blank" rel="noreferrer">GitHub</a>
@@ -199,14 +228,77 @@
       </div>
 
       <div class="tagrow" aria-label="Etiquetas">
+        <span class="tag">antropología experimental</span>
         <span class="tag">auditoría científica</span>
         <span class="tag">epistemología aplicada</span>
-        <span class="tag">texto + imagen</span>
-        <span class="tag">infraestructura</span>
+        <span class="tag">cultura + tecnología</span>
         <span class="tag">sistemas complejos</span>
       </div>
     </section>
 
+    <!-- LAB -->
+    <section class="card" id="lab" style="margin-top:16px">
+      <h2>Laboratorio de Antropología Experimental</h2>
+      <p>
+        Un taller raro (en el buen sentido): mezclo ingeniería, teoría y calle.
+        Si la realidad es un sistema… entonces también se puede <span style="color:var(--text);font-weight:700">debuggear</span>.
+      </p>
+
+      <div class="pillRow" aria-label="Píldoras">
+        <span class="pill">lenguaje como infraestructura</span>
+        <span class="pill">incentivos & rituales sociales</span>
+        <span class="pill">tecnología con ética incómoda</span>
+        <span class="pill">arte como instrumento</span>
+      </div>
+
+      <div class="split">
+        <div class="card" style="box-shadow:none">
+          <h2 style="font-size:16px">Qué hago</h2>
+          <ul class="list">
+            <li class="li"><strong>Mapeo de poder invisible</strong>lenguaje, incentivos, propaganda cotidiana, micro-violencias, “lo normal”.</li>
+            <li class="li"><strong>Experimentos culturales</strong>acciones pequeñas que cambian conducta y sentido compartido (sin sermones).</li>
+            <li class="li"><strong>Herramientas híbridas</strong>IA + sistemas complejos + escritura + performance (sí, a veces).</li>
+          </ul>
+        </div>
+
+        <div class="card" style="box-shadow:none">
+          <h2 style="font-size:16px">Qué busco</h2>
+          <ul class="list">
+            <li class="li"><strong>Personas que construyan</strong>infra, software, investigación, arte, comunidad, lenguaje.</li>
+            <li class="li"><strong>Gente que busque el cambio</strong>que se atreva a enfrentar verdades incómodas.</li>
+            <li class="li"><strong>Colaboraciones</strong>prototipos, textos, charlas, proyectos .</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="split" style="margin-top:14px">
+        <div class="noteBox" id="noteBox">
+          <div class="noteTitle">Field note (tap friendly)</div>
+          <div id="noteText">
+            Presiona “Generar nota” para sacar una observación de laboratorio.
+            Úsala como conversación, como idea, o como provocación suave.
+          </div>
+          <div class="noteMeta" id="noteMeta">modo: observación · fuente: calle/teoría/sistemas</div>
+        </div>
+
+        <div class="card" style="box-shadow:none">
+          <h2 style="font-size:16px">Mini ritual (inofensivo)</h2>
+          <p>
+            Si llegaste desde Instagram: hola. Si te dio curiosidad… ya gané.
+            Aquí va una puerta de entrada simple:
+          </p>
+          <div class="cta" style="margin-top:10px">
+            <button class="btn" id="genNote" type="button">Generar nota</button>
+            <a class="btn secondary" href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">Leer textos</a>
+          </div>
+          <div class="hint" style="margin-top:10px">
+            Pro tip: las mejores conversaciones empiezan con una observación rara, no con un CV.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AHORA + CV -->
     <section class="grid">
       <article class="card" id="ahora">
         <h2>Qué estoy haciendo ahora</h2>
@@ -244,21 +336,23 @@
             Contratos automáticos, tablas de amortización, herramientas de creditworthiness.
           </li>
           <li class="li">
-            <strong>IA aplicada y sistemas interdisciplinarios</strong>
-            Proyectos con análisis de datos, epistemología y psicopolítica aplicada.
+            <strong>IA aplicada + enfoque humano</strong>
+            Sistemas que tratan conocimiento como infraestructura, no como “contenido”.
           </li>
         </ul>
 
-        <div style="margin-top:12px">
-          <a class="btn" href="./source/resume.pdf" download>Descargar CV</a>
-          <span style="color:var(--muted);font-size:13px;margin-left:10px">Tip: en la terminal escribe <span class="kbd">cv</span></span>
+        <div class="cta" style="margin-top:12px">
+          <a class="btn" href="./source/resume.pdf" target="_blank" rel="noreferrer">Ver CV (PDF)</a>
+          <a class="btn" href="#" data-cv-download>Descargar CV</a>
         </div>
+        <div class="hint">Tip: en la terminal escribe <span class="kbd">cv</span> (en desktop).</div>
       </aside>
     </section>
 
+    <!-- TERMINAL -->
     <section class="card" id="terminal" style="margin-top:16px">
       <h2>Terminal</h2>
-      <p>Comandos predeterminados. Prueba <span class="kbd">help</span> y <span class="kbd">paper audit</span>.</p>
+      <p>Comandos predeterminados. Prueba <span class="kbd">help</span>, <span class="kbd">fieldnote</span> y <span class="kbd">paper audit</span>.</p>
 
       <div class="terminal" style="margin-top:12px">
         <div class="termbar">
@@ -285,18 +379,18 @@
       </div>
     </section>
 
+    <!-- CONECTAR -->
     <section class="card" id="conectar" style="margin-top:16px">
       <h2>Conectar</h2>
-      <p>Si quieres colaborar: quién eres, qué sabes hacer, qué quieres construir.</p>
+      <p>Si quieres colaborar: quién eres, qué sabes hacer, y qué quieres construir conmigo.</p>
 
       <ul class="list">
-        <li class="li"><strong>CV</strong><a href="./source/resume.pdf" download="Gibran-Moreno-CV.pdf">Descargar CV</a>
-</li>
-        <li class="li"><strong>GitHub</strong><a href="https://github.com/narbigcito" target="_blank" rel="noreferrer">github.com/narbigcito</a></li>
-        <li class="li"><strong>Substack</strong><a href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">substack.com/@narbigcito</a></li>
-        <li class="li"><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/" target="_blank" rel="noreferrer">Perfil</a></li>
-        <li class="li"><strong>Instagram</strong><a href="https://www.instagram.com/elnarbigcito/" target="_blank" rel="noreferrer">@elnarbigcito</a></li>
-        <li class="li"><strong>Agendar</strong><a href="https://calendar.app.google/vkautEEQ5BLAt6wz6" target="_blank" rel="noreferrer">calendar.app.google</a></li>
+        <li class="li"><strong>CV</strong> <a href="./source/resume.pdf" target="_blank" rel="noreferrer">Ver</a> · <a href="#" data-cv-download>Descargar</a></li>
+        <li class="li"><strong>GitHub</strong> <a href="https://github.com/narbigcito" target="_blank" rel="noreferrer">github.com/narbigcito</a></li>
+        <li class="li"><strong>Substack</strong> <a href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">substack.com/@narbigcito</a></li>
+        <li class="li"><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/" target="_blank" rel="noreferrer">Perfil</a></li>
+        <li class="li"><strong>Instagram</strong> <a href="https://www.instagram.com/elnarbigcito/" target="_blank" rel="noreferrer">@elnarbigcito</a></li>
+        <li class="li"><strong>Agendar</strong> <a href="https://calendar.app.google/vkautEEQ5BLAt6wz6" target="_blank" rel="noreferrer">calendar.app.google</a></li>
       </ul>
     </section>
 
@@ -313,12 +407,69 @@
       linkedin:"https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/",
       insta:"https://www.instagram.com/elnarbigcito/",
       schedule:"https://calendar.app.google/vkautEEQ5BLAt6wz6",
-      cv:"gibran-moreno-cv.pdf"
+      cv:"./source/resume.pdf"
     };
 
+    // ====== CV download (forzado) ======
+    async function forceDownload(url,filename){
+      try{
+        const res=await fetch(url,{cache:"no-store"});
+        if(!res.ok){throw new Error("HTTP "+res.status);}
+        const blob=await res.blob();
+        const blobUrl=URL.createObjectURL(blob);
+
+        const a=document.createElement("a");
+        a.href=blobUrl;
+        a.download=filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        setTimeout(()=>URL.revokeObjectURL(blobUrl),1500);
+        return true;
+      }catch(err){
+        console.error(err);
+        return false;
+      }
+    }
+
+    document.querySelectorAll("[data-cv-download]").forEach(el=>{
+      el.addEventListener("click",async(e)=>{
+        e.preventDefault();
+        const ok=await forceDownload(LINKS.cv,"Gibran-Moreno-CV.pdf");
+        if(!ok){
+          alert("No pude descargar el CV. Revisa que exista ./source/resume.pdf en tu repo.");
+        }
+      });
+    });
+
+    // ====== Footer year ======
+    document.getElementById("y").textContent=new Date().getFullYear();
+
+    // ====== Field notes (IG-friendly) ======
+    const notes=[
+      {t:"Observación",x:"La gente no discute ideas: defiende identidades. Cambia el marco y cambia el resultado."},
+      {t:"Método",x:"Si una institución te dice “confía”, suelta también su incentivo. La verdad sin incentivo es sospechosa."},
+      {t:"Lenguaje",x:"Cuando una conversación se vuelve moral, normalmente alguien ya perdió la evidencia."},
+      {t:"Calle",x:"Los sistemas no fallan por maldad; fallan por diseño. Y el diseño suele ser invisible."},
+      {t:"Ritual",x:"Todo grupo tiene liturgia. Si no la diseñas, te la heredan."},
+      {t:"Amor/Política",x:"La intimidad también es infraestructura. Una relación sin lenguaje común se vuelve un malentendido constante."},
+      {t:"Tecnología",x:"La IA no es oráculo. Es espejo con esteroides: amplifica sesgos, pero también te obliga a verlos."},
+      {t:"Sistemas",x:"Una teoría que no tolera preguntas no es teoría: es bandera."}
+    ];
+    function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+    function renderNote(){
+      const n=pick(notes);
+      const box=document.getElementById("noteText");
+      const meta=document.getElementById("noteMeta");
+      box.textContent=n.x;
+      meta.textContent=`modo: ${n.t.toLowerCase()} · timestamp: ${new Date().toLocaleString("es-MX")}`;
+    }
+    document.getElementById("genNote")?.addEventListener("click",renderNote);
+
+    // ====== Terminal ======
     const out=document.getElementById("out");
     const input=document.getElementById("in");
-    document.getElementById("y").textContent=new Date().getFullYear();
 
     const clock=document.getElementById("clock");
     const tick=()=>clock.textContent=new Date().toLocaleString("es-MX",{hour:"2-digit",minute:"2-digit"});
@@ -329,7 +480,7 @@
     const promptStr="narbigcito@logos:~$ ";
 
     const cmds=[
-      "help","about","now","project","links","open","github","substack","linkedin","insta","schedule","cv",
+      "help","about","now","lab","fieldnote","project","links","open","github","substack","linkedin","insta","schedule","cv",
       "ls","clear","whoami","ascii","paper audit","paper scan","matrix","theme"
     ];
 
@@ -361,35 +512,43 @@
     }
 
     function banner(){
-      writeLine("LOGOS terminal v0.1 (demo)");
+      writeLine("LOGOS terminal v0.2 (demo)");
       writeLine("Escribe: help");
       writeLine("");
     }
 
     function help(){
       writeLine("Comandos:");
-      writeLine("  help, about, now, project, links");
+      writeLine("  help, about, now, lab, fieldnote, project, links");
       writeLine("  open <github|substack|linkedin|insta|schedule|cv>");
-      writeLine("  cv (descargar CV)");
+      writeLine("  cv (abrir + descargar CV)");
       writeLine("  ls, whoami, ascii, matrix, paper audit, paper scan");
       writeLine("  clear, theme");
       writeLine("");
     }
 
     async function about(){
-      await typeLine("Soy Gibrán (narbigcito). Construyo herramientas de IA para organizar y auditar conocimiento.",10);
-      await typeLine("Busco pares: ingeniería, academia y arte-sistemas. Cero culto, cero dogma.",10);
+      await typeLine("Soy Gibrán (narbigcito). IA, sistemas complejos y antropología experimental.",10);
+      await typeLine("Me interesa lo incómodo: contradicciones, incentivos, poder invisible y cómo se diseña cultura.",10);
       writeLine("");
     }
     async function now(){
       await typeLine("Ahora mismo:",10);
-      writeLine("- Infraestructura de análisis texto+imagen (papers, tablas, claims).");
-      writeLine("- Auditoría de consistencia científica: grados de confianza, no 'verdad'.");
-      writeLine("- Diseño anti-captura: trazabilidad, control de cambios, disenso técnico.");
+      writeLine("- Herramientas para auditar conocimiento (texto+imagen, trazabilidad, consistencia).");
+      writeLine("- Experimentos culturales: del lenguaje a la conducta (sin moralina).");
+      writeLine("- Infra y escritura: construir + pensar + iterar.");
       writeLine("");
     }
-    async function project(){
-      await typeLine("Proyecto activo: Auditoría de Consistencia Científica (experimental).",10);
+    async function lab(){
+      await typeLine("Laboratorio de Antropología Experimental:",10);
+      writeLine("- Mapeo de poder invisible (lenguaje, incentivos, rituales).");
+      writeLine("- Experimentos culturales (pequeños, medibles, replicables).");
+      writeLine("- Tech + arte como herramientas, no como identidad.");
+      writeLine("Tip: fieldnote");
+      writeLine("");
+    }
+    function project(){
+      writeLine("Proyecto activo: Auditoría de Consistencia Científica (experimental).");
       writeLine("Salida: coherencia interna, replicabilidad, riesgo de sesgo, recomendaciones.");
       writeLine("Prueba: paper audit");
       writeLine("");
@@ -415,24 +574,21 @@
       writeLine(`Abriendo: ${url}`);
       writeLine("");
     }
-    function doCv(){
-      const a=document.createElement("a");
-      a.href=LINKS.cv;
-      a.download="gibran-moreno-cv.pdf";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      writeLine("Descargando CV…");
+    async function doCv(){
+      const url=LINKS.cv;
+      window.open(url,"_blank","noopener,noreferrer");
+      const ok=await forceDownload(url,"Gibran-Moreno-CV.pdf");
+      writeLine(ok?"CV: abierto + descargado.":"CV: abrí el PDF, pero falló la descarga (revisa la ruta).");
       writeLine("");
     }
     function ls(){
-      writeLine("projects/  texts/  links/  terminal/  cv.pdf");
+      writeLine("projects/  texts/  lab/  links/  terminal/  source/resume.pdf");
       writeLine("Tip: cv");
       writeLine("");
     }
     function whoami(){
       writeLine("narbigcito");
-      writeLine("role: backend/software engineer · complex systems");
+      writeLine("role: backend/software engineer · complex systems · experimental anthropology");
       writeLine("mode: build + audit + iterate");
       writeLine("");
     }
@@ -469,6 +625,7 @@
       }
       writeLine("");
     }
+
     async function paperAudit(){
       writeLine("Cargando paper…");await sleep(350);
       writeLine("Extrayendo claims…");await sleep(350);
@@ -506,12 +663,18 @@
       writeLine("- recomendación: publicar protocolo, versionar dataset y definir supuestos.");
       writeLine("");
     }
-    function clear(){
-      out.innerHTML="";
+
+    function fieldnote(){
+      const n=pick(notes);
+      writeLine("Field note:");
+      writeLine(`- ${n.t}: ${n.x}`);
+      writeLine("");
     }
-    function normalize(s){
-      return s.trim().replaceAll(/\s+/g," ");
-    }
+
+    function clear(){out.innerHTML=""}
+
+    function normalize(s){return s.trim().replaceAll(/\s+/g," ")}
+
     async function run(cmd){
       const c=normalize(cmd);
       if(!c){return;}
@@ -520,7 +683,9 @@
       if(c==="help"){help();return;}
       if(c==="about"){await about();return;}
       if(c==="now"){await now();return;}
-      if(c==="project"){await project();return;}
+      if(c==="lab"){await lab();return;}
+      if(c==="fieldnote"){fieldnote();return;}
+      if(c==="project"){project();return;}
       if(c==="links"){links();return;}
       if(c==="ls"){ls();return;}
       if(c==="whoami"){whoami();return;}
@@ -534,14 +699,14 @@
       if(c==="linkedin"){doOpen("linkedin");return;}
       if(c==="insta"){doOpen("insta");return;}
       if(c==="schedule"){doOpen("schedule");return;}
-      if(c==="cv"){doCv();return;}
+      if(c==="cv"){await doCv();return;}
 
       if(c==="paper audit"){await paperAudit();return;}
       if(c==="paper scan"){await paperScan();return;}
 
       if(c.startsWith("open ")){
         const key=c.slice(5).trim();
-        if(key==="cv"){doCv();return;}
+        if(key==="cv"){await doCv();return;}
         doOpen(key);
         return;
       }
@@ -563,7 +728,7 @@
       }
     }
 
-    input.addEventListener("keydown",async(e)=>{
+    input?.addEventListener("keydown",async(e)=>{
       if(e.key==="Enter"){
         e.preventDefault();
         const v=input.value;
@@ -596,10 +761,12 @@
       }
     });
 
-    banner();
-    writeLine("Prueba: about · now · project · paper audit · cv · open github");
-    writeLine("");
-    input.focus();
+    if(out){
+      banner();
+      writeLine("Prueba: about · now · lab · fieldnote · paper audit · cv · open github");
+      writeLine("");
+      input?.focus();
+    }
   </script>
 </body>
 </html>
