@@ -3,771 +3,1362 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Gibrán (narbigcito) — IA, sistemas complejos, antropología experimental y auditoría del conocimiento.">
-  <title>narbigcito — IA, sistemas complejos y antropología experimental</title>
+  <meta name="description" content="Gibrán Moreno — narbigcito. Caos con propósito.">
+  <title>narbigcito.exe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Grotesk:wght@300;400;700&family=Syne+Mono&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0f14;
-      --panel:#0f1520;
-      --text:#e7eef8;
-      --muted:#a8b3c7;
-      --line:#223047;
-      --accent:#7dd3fc;
-      --accent2:#a78bfa;
-      --ok:#34d399;
-      --warn:#fbbf24;
-      --bad:#fb7185;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
-      --max:1000px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial;
-      background:radial-gradient(1200px 600px at 20% 10%,rgba(167,139,250,.18),transparent 55%),
-                 radial-gradient(900px 500px at 80% 0%,rgba(125,211,252,.16),transparent 52%),
-                 var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 60px}
-    .top{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:14px 0 22px;border-bottom:1px solid rgba(34,48,71,.6)
-    }
-    .brand{display:flex;align-items:center;gap:12px}
-    .dot{
-      width:12px;height:12px;border-radius:999px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 0 0 5px rgba(125,211,252,.08);
-    }
-    .name{font-weight:800;letter-spacing:.2px}
-    .nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-    .nav a{color:var(--muted)}
-    .nav a:hover{color:var(--text)}
-    .hero{padding:34px 0 10px}
-    .hero h1{margin:0 0 10px;font-size:40px;line-height:1.1}
-    .hero p{margin:0;color:var(--muted);font-size:18px;max-width:80ch}
-    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:10px 14px;border-radius:999px;border:1px solid rgba(34,48,71,.9);
-      background:rgba(15,21,32,.75);color:var(--text);box-shadow:var(--shadow);
-      cursor:pointer;
-    }
-    .btn:hover{border-color:rgba(125,211,252,.55);text-decoration:none}
-    .btn.secondary{background:transparent;box-shadow:none;color:var(--muted)}
-    .btn.secondary:hover{color:var(--text)}
-    .grid{margin-top:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
-    .card{
-      border:1px solid rgba(34,48,71,.85);
-      background:rgba(15,21,32,.6);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .card h2{margin:0 0 10px;font-size:18px}
-    .card p{margin:0;color:var(--muted)}
-    .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-    .li{
-      padding:12px 12px;border-radius:12px;
-      border:1px solid rgba(34,48,71,.7);
-      background:rgba(11,15,20,.55);
-    }
-    .li strong{display:block;color:var(--text);margin-bottom:3px}
-    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .tag{
-      font-size:12px;color:var(--muted);
-      padding:4px 10px;border-radius:999px;
-      border:1px solid rgba(34,48,71,.7);
-      background:rgba(11,15,20,.55)
+    :root {
+      --bg: #0a0a0a;
+      --text: #f0ece4;
+      --muted: #555;
+      --c1: #ff3cac;
+      --c2: #00f5d4;
+      --c3: #ffe600;
+      --c4: #ff6b00;
+      --c5: #784eff;
+      --c6: #00ff87;
     }
 
-    /* Lab extras */
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
-    .noteBox{
-      border:1px solid rgba(34,48,71,.7);
-      background:rgba(11,15,20,.55);
-      border-radius:14px;
-      padding:12px;
-      color:var(--muted);
-      min-height:110px;
-    }
-    .noteTitle{color:var(--text);font-weight:800;margin-bottom:6px}
-    .noteMeta{font-size:12px;color:var(--muted);opacity:.9;margin-top:8px}
-    .pillRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .pill{
-      font-size:12px;color:var(--muted);
-      padding:4px 10px;border-radius:999px;
-      border:1px solid rgba(34,48,71,.7);
-      background:rgba(0,0,0,.18)
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+      transition: background 0.8s ease;
     }
 
-    /* Terminal */
-    .terminal{
-      border-radius:18px;
-      border:1px solid rgba(34,48,71,.85);
-      background:rgba(7,10,14,.72);
-      box-shadow:var(--shadow);
-      overflow:hidden;
+    /* ── CURSOR ── */
+    #cursor {
+      width: 10px; height: 10px; border-radius: 50%;
+      position: fixed; pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: width .1s, height .1s;
+      mix-blend-mode: difference; background: #fff;
     }
-    .termbar{
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
-      padding:10px 12px;border-bottom:1px solid rgba(34,48,71,.6);
-      background:rgba(15,21,32,.6)
+    #cursor.big { width: 36px; height: 36px; }
+    #cursor.hammer {
+      width: 36px; height: 36px; border-radius: 0; background: transparent;
+      mix-blend-mode: normal;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🔨%3C/text%3E%3C/svg%3E");
+      background-size: contain;
     }
-    .lights{display:flex;gap:8px;align-items:center}
-    .light{width:10px;height:10px;border-radius:999px;opacity:.9}
-    .r{background:#fb7185}
-    .y{background:#fbbf24}
-    .g{background:#34d399}
-    .termmeta{color:var(--muted);font-size:12px}
-    .termwrap{padding:12px}
-    .output{
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-      font-size:13px;
-      color:#dbeafe;
-      white-space:pre-wrap;
-      min-height:220px;
-      max-height:380px;
-      overflow:auto;
-      padding:10px 10px;
-      border:1px solid rgba(34,48,71,.6);
-      border-radius:14px;
-      background:rgba(0,0,0,.25);
-    }
-    .promptrow{
-      display:flex;gap:10px;align-items:center;
-      margin-top:10px;
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-      font-size:13px;
-    }
-    .prompt{color:#93c5fd;user-select:none}
-    .in{
-      flex:1;
-      border:1px solid rgba(34,48,71,.7);
-      background:rgba(11,15,20,.55);
-      color:var(--text);
-      padding:9px 10px;border-radius:12px;
-      outline:none;
-    }
-    .hint{color:var(--muted);font-size:12px;margin-top:8px}
-    .kbd{
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-      font-size:12px;
-      padding:2px 6px;border-radius:8px;
-      border:1px solid rgba(34,48,71,.7);
-      background:rgba(11,15,20,.55);
-      color:var(--muted);
+    @media (hover: none) {
+      #cursor, #laserCursor { display: none !important; }
+      body { cursor: auto !important; }
+      a, button, .bcard, .conv-thumb, .app-card, .milk-btn,
+      .wall, .proj-modal-close, .nav-pill, .btn, .link-item,
+      .wall-reopen, .conv-close-btn { cursor: pointer !important; }
     }
 
-    .footer{
-      margin-top:28px;padding-top:18px;
-      border-top:1px solid rgba(34,48,71,.6);
-      color:var(--muted);font-size:13px;
-      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap
+    /* Cursor láser — card 4 */
+    #laserCursor {
+      position: fixed; pointer-events: none; z-index: 9998;
+      width: 90px; height: 90px; border-radius: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      align-items: center; justify-content: center;
+      background: radial-gradient(circle, rgba(120,78,255,0.35) 0%, transparent 70%);
+    }
+    #laserCursor.on { display: flex; }
+    #laserText {
+      font-family: 'Syne Mono', monospace; font-size: 8px;
+      color: var(--c5); text-align: center; line-height: 1.4;
+      letter-spacing: 0.04em; max-width: 76px; opacity: 0.9;
     }
 
-    @media (max-width:920px){
-      .grid{grid-template-columns:1fr}
-      .split{grid-template-columns:1fr}
-      .hero h1{font-size:34px}
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px);
+      pointer-events: none; z-index: 1;
     }
 
-    /* Oculta terminal en teléfono */
-    @media (max-width:720px){
-      #terminal{display:none}
-      .nav a[href="#terminal"]{display:none}
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px;
+      background: rgba(10,10,10,0.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .logo { font-family: 'VT323', monospace; font-size: 22px; color: var(--c6); letter-spacing: 0.05em; cursor: none; }
+    .logo-blink { color: var(--c1); animation: blink 1.2s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+    .nav-pill { font-family: 'Syne Mono', monospace; font-size: 11px; padding: 5px 11px; border: 1px solid rgba(255,255,255,0.08); color: var(--muted); text-decoration: none; transition: color .12s, border-color .12s, transform .12s; display: inline-block; }
+    .nav-pill:hover { color: var(--text); }
+
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    /* ── HERO ── */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; z-index: 2; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    @media (max-width: 700px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    .wordart { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(52px, 9vw, 100px); line-height: 0.88; letter-spacing: -0.03em; text-transform: uppercase; }
+    .wa-1 { display: block; color: var(--c3); text-shadow: 3px 3px 0 #3d3700, 5px 5px 0 #1a1700; transform: skewX(-3deg); animation: wafloat 3.5s ease-in-out infinite; }
+    .wa-2 { display: block; color: transparent; -webkit-text-stroke: 2px var(--c1); transform: skewX(2deg) translateX(4px); animation: wafloat 3.5s ease-in-out infinite .6s; overflow: hidden; }
+    .wa-3 { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 0.2em; font-weight: 300; color: var(--muted); letter-spacing: 0.12em; text-transform: none; margin-top: 18px; animation: none; text-shadow: none; transform: none; }
+    @keyframes wafloat { 0%,100%{transform:skewX(-3deg)translateY(0)} 50%{transform:skewX(-3deg)translateY(-5px)} }
+
+    .sticker { position: absolute; font-family: 'VT323', monospace; font-size: 13px; padding: 4px 8px; pointer-events: none; }
+    .s1 { top: -18px; right: 10px; background: var(--c3); color: #000; transform: rotate(7deg); animation: sf1 5s ease-in-out infinite; }
+    .s2 { bottom: 8px; right: -8px; background: var(--c1); color: #fff; transform: rotate(-4deg); animation: sf2 4s ease-in-out infinite 1s; }
+    @keyframes sf1 { 0%,100%{transform:rotate(7deg)translateY(0)} 50%{transform:rotate(7deg)translateY(-7px)} }
+    @keyframes sf2 { 0%,100%{transform:rotate(-4deg)translateY(0)} 50%{transform:rotate(-4deg)translateY(7px)} }
+
+    .hero-right { display: flex; flex-direction: column; gap: 20px; }
+    .hero-bio { font-size: 15px; line-height: 1.8; color: #aaa; }
+    .hero-bio strong { color: var(--text); font-weight: 400; }
+    .hero-bio em { color: var(--c6); font-style: normal; }
+
+    .status-box { border: 1px solid rgba(0,255,135,0.2); overflow: hidden; font-family: 'Syne Mono', monospace; font-size: 12px; }
+    .status-bar { background: rgba(0,255,135,0.06); padding: 6px 12px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(0,255,135,0.12); color: var(--c6); font-size: 11px; }
+    .sdot { width: 6px; height: 6px; border-radius: 50%; background: var(--c6); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 50%{opacity:.3} }
+    .status-body { padding: 12px; color: #666; line-height: 1.9; }
+    .ok { color: var(--c6); } .warn { color: var(--c3); } .err { color: var(--c1); }
+
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { font-family: 'Syne Mono', monospace; font-size: 12px; padding: 10px 18px; border: 2px solid; cursor: none; transition: all .12s; letter-spacing: 0.04em; text-decoration: none; display: inline-block; }
+    .btn-main { background: var(--c3); border-color: var(--c3); color: #000; }
+    .btn-main:hover { background: transparent; color: var(--c3); }
+    .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.12); color: #777; }
+    .btn-ghost:hover { border-color: var(--c2); color: var(--c2); }
+
+    .geo { position: absolute; pointer-events: none; z-index: 0; }
+    .geo-c1 { width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(120,78,255,0.12); top: 8%; right: -80px; animation: spin 45s linear infinite; }
+    .geo-c2 { width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(0,245,212,0.08); top: calc(8% + 60px); right: -20px; animation: spin 28s linear infinite reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── SECCIÓN ── */
+    .section { position: relative; z-index: 2; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.04); }
+    .sec-label { font-family: 'VT323', monospace; font-size: 14px; letter-spacing: 0.15em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .sec-title { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 0.92; text-transform: uppercase; margin-bottom: 40px; }
+
+    /* ── MURO ── */
+    .wall-wrap { position: relative; min-height: 260px; margin-bottom: 0; }
+
+    .wall {
+      position: relative; width: 100%; min-height: 260px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: none; overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.08);
+    }
+
+    /* Textura ladrillo */
+    .wall-bg {
+      position: absolute; inset: 0;
+      background-color: #111;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 26px, rgba(255,255,255,0.04) 26px, rgba(255,255,255,0.04) 28px),
+        repeating-linear-gradient(90deg, transparent, transparent 56px, rgba(255,255,255,0.025) 56px, rgba(255,255,255,0.025) 58px);
+    }
+
+    /* Grietas que crecen con los golpes */
+    .wall-cracks { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+    .crack-path { stroke: rgba(255,60,172,0.0); stroke-width: 2; fill: none; transition: stroke .25s; }
+
+    .wall-text {
+      position: relative; z-index: 5; text-align: center;
+      font-family: 'VT323', monospace; font-size: clamp(16px, 3.5vw, 26px);
+      color: rgba(255,255,255,0.65); line-height: 1.6; padding: 24px;
+      text-shadow: 0 0 20px rgba(255,255,255,0.08);
+      transition: color .2s;
+    }
+
+    /* Contador de golpes */
+    .wall-hits {
+      position: absolute; bottom: 12px; right: 16px; z-index: 6;
+      font-family: 'Syne Mono', monospace; font-size: 11px; color: rgba(255,60,172,0.4);
+      letter-spacing: 0.06em;
+    }
+
+    /* Partículas */
+    .wall-particle {
+      position: absolute; width: 10px; height: 7px;
+      background: #1a1a1a; border: 1px solid #2a2a2a;
+      pointer-events: none; z-index: 20;
+      animation: particle-fall 0.7s ease-in forwards;
+    }
+    @keyframes particle-fall {
+      0%   { opacity: 1; transform: translate(0,0) rotate(0deg); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) rotate(var(--tr)); }
+    }
+
+    /* Shake en golpe */
+    .wall.shaking { animation: wall-shake .12s ease; }
+    @keyframes wall-shake {
+      0%,100% { transform: translateX(0); }
+      25%      { transform: translateX(-5px) rotate(-0.3deg); }
+      75%      { transform: translateX(5px) rotate(0.3deg); }
+    }
+
+    /* Pop-up muro */
+    .wall-popup { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+    .wall-popup.show { display: flex; }
+    .wall-popup-box { background: #0e0e0e; border: 2px solid var(--c1); padding: 32px 40px; max-width: 640px; width: 90%; animation: popup-in .4s cubic-bezier(.34,1.56,.64,1); position: relative; max-height: 80vh; overflow-y: auto; }
+    @keyframes popup-in { from{transform:scale(.7)rotate(-3deg);opacity:0} to{transform:scale(1)rotate(0);opacity:1} }
+    .popup-flash { font-family: 'VT323', monospace; font-size: 26px; color: var(--c3); text-align: center; margin-bottom: 20px; animation: flash-in .5s ease; }
+    @keyframes flash-in { from{transform:scale(1.4);opacity:0} to{transform:scale(1);opacity:1} }
+    .popup-header { font-family: 'VT323', monospace; font-size: 20px; color: var(--c1); margin-bottom: 18px; letter-spacing: 0.1em; }
+    .popup-text { font-size: 14px; line-height: 1.85; color: #aaa; }
+    .popup-text strong { color: var(--text); font-weight: 400; }
+    .popup-text em { color: var(--c2); font-style: normal; }
+    .popup-close { position: absolute; top: 14px; right: 16px; font-family: 'Syne Mono', monospace; font-size: 12px; color: var(--muted); background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 3px 10px; cursor: none; transition: all .15s; }
+    .popup-close:hover { color: var(--text); border-color: var(--c1); }
+    /* Botón "ver de nuevo" que aparece después de abrir el muro */
+    .wall-reopen { display: none; margin-top: 16px; font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); background: transparent; border: 1px dashed rgba(255,255,255,0.12); padding: 10px 18px; cursor: none; transition: all .15s; min-height: 44px; }
+    .wall-reopen:hover { color: var(--text); border-color: var(--c1); }
+
+    /* ── CUADROS LO QUE CREO ── */
+    .belief-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(270px, 100%), 1fr)); gap: 3px; }
+
+    .bcard {
+      padding: 26px; border: 1px solid rgba(255,255,255,0.05);
+      cursor: none; transition: transform .15s; position: relative; overflow: hidden;
+      min-height: 190px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .bcard:hover { transform: scale(1.02); z-index: 3; border-color: rgba(255,255,255,0.15); }
+
+    .bc-0 { --cc: var(--c1); }
+    .bc-1 { --cc: var(--c2); }
+    .bc-2 { --cc: var(--c3); }
+    .bc-3 { --cc: var(--c4); }
+    .bc-4 { --cc: var(--c5); }
+
+    .bcard-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cc); }
+    .bcard-num { font-family: 'VT323', monospace; font-size: 44px; line-height: 1; color: var(--cc); position: relative; z-index: 1; }
+    .bcard-label { font-family: 'Syne Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); position: relative; z-index: 1; }
+    .bcard-text { font-size: 13px; line-height: 1.7; color: #999; flex: 1; position: relative; z-index: 1; }
+    .bcard-special { position: relative; z-index: 1; margin-top: 4px; }
+
+    /* Card 0: medidor */
+    .belief-meter { height: 4px; background: rgba(255,255,255,0.08); overflow: hidden; }
+    .belief-meter-fill { height: 100%; background: var(--c1); width: 0; animation: meter-grow 2s ease-out 0.5s forwards; }
+    @keyframes meter-grow { to { width: 100%; } }
+
+    /* Card 1: contador */
+    .belief-counter { font-family: 'VT323', monospace; font-size: 20px; color: var(--c2); }
+
+    /* Card 2: tag pulsante */
+    .belief-tag { display: inline-block; font-family: 'Syne Mono', monospace; font-size: 10px; padding: 3px 8px; border: 1px solid var(--c3); color: var(--c3); animation: tag-pulse 2s ease-in-out infinite; }
+    @keyframes tag-pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    /* Card 3: glitch al hover */
+    .bc-3:hover .bcard-text { animation: glitch-text .3s steps(1) infinite; }
+    @keyframes glitch-text { 0%{filter:none} 33%{filter:hue-rotate(90deg)} 66%{filter:invert(.1)} 100%{filter:none} }
+
+    /* Card 4: órbita */
+    .orbit-wrap { position: relative; height: 20px; width: 40px; display: inline-block; }
+    .orbit-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c5); position: absolute; top: 7px; left: 17px; transform-origin: -14px 0; animation: orbit 2s linear infinite; }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+
+    /* Reacción al click */
+    .bcard-reaction { position: absolute; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center; font-family: 'VT323', monospace; font-size: 28px; opacity: 0; pointer-events: none; transition: opacity .2s; background: rgba(0,0,0,0.72); }
+    .bcard.reacted .bcard-reaction { opacity: 1; }
+
+    /* ── LECHE ── */
+    .milk-section { margin-top: 40px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; min-height: 52px; }
+    .milk-label { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); border: 1px dashed rgba(255,255,255,0.1); padding: 6px 12px; animation: label-pulse 3s ease-in-out infinite; }
+    @keyframes label-pulse { 0%,100%{border-color:rgba(255,255,255,.1)} 50%{border-color:rgba(255,255,255,.25)} }
+    .milk-btn { font-size: 38px; cursor: none; background: transparent; border: none; transition: transform .1s; display: inline-block; line-height: 1; }
+    .milk-btn:hover { transform: scale(1.1); }
+    .milk-btn.fall { animation: milk-fall 0.55s ease-in forwards; }
+    @keyframes milk-fall { to { transform: translateY(55px) rotate(90deg); opacity: 0; } }
+    .milk-after { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--c1); display: none; animation: fadein .4s ease; cursor: none; border-bottom: 1px dashed rgba(255,60,172,0.3); }
+    @keyframes fadein { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+    .milk-after:hover { color: var(--c3); }
+
+    .freire-quote { margin-top: 40px; padding: 20px 24px; border-left: 3px solid var(--c3); font-size: 14px; color: #888; line-height: 1.75; }
+    .freire-quote strong { color: var(--text); font-weight: 400; }
+
+    /* ── PROYECTOS ── */
+    .apps-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px; }
+    .app-card { border: 1px solid rgba(255,255,255,0.06); padding: 28px; display: flex; flex-direction: column; gap: 14px; cursor: none; transition: all .15s; text-decoration: none; color: inherit; position: relative; overflow: hidden; }
+    .app-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+    .app-card:hover::after { transform: scaleX(1); }
+    .app-card:hover { border-color: rgba(255,255,255,0.14); }
+    .ac-yellow::after { background: var(--c3); }
+    .ac-purple::after { background: var(--c5); }
+    .app-top { display: flex; align-items: flex-start; justify-content: space-between; }
+    .app-name { font-family: 'Syne', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
+    .ac-yellow .app-name { color: var(--c3); }
+    .ac-purple .app-name { color: var(--c5); }
+    .app-badge { font-family: 'Syne Mono', monospace; font-size: 10px; letter-spacing: 0.08em; padding: 3px 8px; display: flex; align-items: center; gap: 5px; }
+    .badge-live { background: rgba(0,255,135,0.08); color: var(--c6); border: 1px solid rgba(0,255,135,0.18); }
+    .badge-live::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--c6); animation: pulse 2s ease-in-out infinite; }
+    .badge-wip { background: rgba(100,100,100,0.08); color: var(--muted); border: 1px solid rgba(100,100,100,0.15); }
+    .app-desc { font-size: 13px; color: #888; line-height: 1.65; }
+    .app-link { font-family: 'Syne Mono', monospace; font-size: 11px; color: #333; align-self: flex-start; transition: color .15s; }
+    .app-card:hover .app-link { color: var(--c3); }
+
+    /* ── CONVERSACIONES ── */
+    .conv-thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 2px; margin-bottom: 16px; }
+    .conv-thumb { padding: 18px; border: 1px solid rgba(255,255,255,0.05); cursor: none; transition: all .15s; text-align: left; font-family: inherit; color: inherit; background: transparent; width: 100%; }
+    .conv-thumb:hover { border-color: rgba(120,78,255,0.3); background: rgba(120,78,255,0.04); }
+    .conv-thumb.active { border-color: var(--c5); background: rgba(120,78,255,0.08); }
+    .conv-tag { font-family: 'Syne Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c5); margin-bottom: 7px; }
+    .conv-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
+    .conv-preview { font-size: 12px; color: var(--muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .conv-viewer { border: 1px solid rgba(120,78,255,0.2); overflow: hidden; display: none; }
+    .conv-viewer.open { display: block; }
+    .conv-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(120,78,255,0.04); }
+    .conv-bar-left { display: flex; align-items: center; gap: 10px; }
+    .conv-av { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg,#c084fc,#818cf8); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #fff; font-family: 'Syne Mono', monospace; flex-shrink: 0; }
+    .conv-bar-name { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--text); }
+    .conv-bar-sub { font-size: 10px; color: var(--muted); }
+    .conv-close-btn { font-family: 'Syne Mono', monospace; font-size: 10px; color: var(--muted); background: transparent; border: 1px solid rgba(255,255,255,0.08); padding: 3px 10px; cursor: none; transition: all .15s; }
+    .conv-close-btn:hover { color: var(--text); border-color: var(--c1); }
+    .conv-msgs { padding: 20px 16px; display: grid; gap: 16px; max-height: 440px; overflow-y: auto; }
+    .conv-msgs::-webkit-scrollbar { width: 2px; }
+    .conv-msgs::-webkit-scrollbar-thumb { background: #222; }
+    .msg { display: flex; gap: 10px; align-items: flex-start; }
+    .msg.user { flex-direction: row-reverse; }
+    .msg-av { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne Mono', monospace; font-size: 10px; }
+    .msg.assistant .msg-av { background: linear-gradient(135deg,#c084fc,#818cf8); color: #fff; }
+    .msg.user .msg-av { background: #1a1a1a; color: var(--muted); border: 1px solid #2a2a2a; }
+    .msg-bubble { max-width: 85%; padding: 10px 12px; font-size: 13px; line-height: 1.7; }
+    .msg.assistant .msg-bubble { background: #0f0f0f; border: 1px solid rgba(255,255,255,0.06); color: var(--text); }
+    .msg.user .msg-bubble { background: rgba(120,78,255,0.08); border: 1px solid rgba(120,78,255,0.2); color: var(--text); }
+    .conv-input-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.3); }
+    .conv-fake-input { flex: 1; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.06); background: #090909; color: #2a2a2a; font-size: 12px; font-family: 'Space Grotesk', sans-serif; cursor: none; user-select: none; }
+    .conv-send-btn { width: 30px; height: 30px; background: #111; border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; opacity: 0.3; cursor: none; }
+    .conv-readonly { font-family: 'Syne Mono', monospace; font-size: 9px; color: #2a2a2a; text-align: center; padding: 6px 0 10px; letter-spacing: 0.06em; }
+
+    /* ── CONECTAR ── */
+    .links-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .link-item { font-family: 'Syne Mono', monospace; font-size: 12px; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.07); color: var(--muted); text-decoration: none; transition: all .12s; cursor: none; }
+    .link-item:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .link-item.main { border-color: var(--c3); color: var(--c3); }
+    .link-item.main:hover { background: var(--c3); color: #000; }
+
+    /* ── POEMA — cinta marquee ── */
+    .poem-ribbon {
+      overflow: hidden; white-space: nowrap;
+      background: var(--c3); padding: 10px 0;
+      border-top: 2px solid #b8a800; border-bottom: 2px solid #b8a800;
+      position: relative; z-index: 2;
+    }
+    .poem-ribbon-inner {
+      display: inline-block;
+      animation: marquee-fast 28s linear infinite;
+    }
+    @keyframes marquee-fast { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .poem-ribbon-text {
+      font-family: 'VT323', monospace; font-size: 18px;
+      color: #000; letter-spacing: 0.08em; padding: 0 40px;
+      display: inline;
+    }
+    .poem-monster {
+      font-family: 'VT323', monospace; font-size: 11px;
+      color: var(--c1); white-space: pre; line-height: 1.1;
+      margin-bottom: 16px; opacity: 0.7; display: none;
+    }
+    .poem-full { padding: 40px 0; position: relative; z-index: 2; }
+    .poem-full .wrap { max-width: 700px; }
+
+    /* ── KONAMI bars ── */
+    .konami-bar { display: none; background: var(--c3); color: #000; font-family: 'VT323', monospace; font-size: 18px; letter-spacing: 0.1em; padding: 8px 0; overflow: hidden; white-space: nowrap; position: relative; z-index: 2; }
+    .konami-bar.show { display: block; }
+    .konami-inner { display: inline-block; animation: marquee-fast 10s linear infinite; }
+
+    #konami2 { display: none; position: fixed; inset: 0; z-index: 600; background: #000; align-items: center; justify-content: center; flex-direction: column; gap: 20px; }
+    #konami2.show { display: flex; }
+    .k2-close { position: absolute; top: 20px; right: 24px; font-family: 'Syne Mono', monospace; font-size: 12px; color: #444; background: none; border: 1px solid #222; padding: 4px 12px; cursor: none; }
+    .k2-close:hover { color: var(--text); }
+    .k2-matrix { font-family: 'VT323', monospace; font-size: 13px; color: var(--c6); width: 100%; padding: 20px; letter-spacing: 0.1em; line-height: 1.4; text-align: center; opacity: 0.4; position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .k2-msg { font-family: 'VT323', monospace; font-size: clamp(20px, 4vw, 34px); color: var(--c6); text-align: center; z-index: 2; line-height: 1.5; padding: 0 20px; max-width: 700px; }
+
+    /* ── FOOTER ── */
+    footer { position: relative; z-index: 2; border-top: 1px solid rgba(255,255,255,0.04); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-sig { font-family: 'Syne Mono', monospace; font-size: 10px; color: #2a2a2a; }
+    .footer-up { font-family: 'Syne Mono', monospace; font-size: 10px; color: #2a2a2a; text-decoration: none; cursor: none; transition: color .15s; padding: 8px 0; }
+    .footer-up:hover { color: var(--c6); }
+
+    .glitch:hover { animation: glitch .25s steps(1) infinite; }
+
+    /* ── MODALES PROYECTOS ── */
+    .proj-modal { display:none; position:fixed; inset:0; z-index:600; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; backdrop-filter:blur(10px); overflow-y:auto; padding:20px; }
+    .proj-modal.show { display:flex; }
+    .proj-modal-box { background:#0c0c0b; border:2px solid; padding:32px 36px; width:100%; position:relative; animation:popup-in .35s cubic-bezier(.34,1.56,.64,1); max-height:85vh; overflow-y:auto; }
+    .proj-modal-box::-webkit-scrollbar { width:3px; }
+    .proj-modal-box::-webkit-scrollbar-thumb { background:#222; }
+    .proj-modal-close { position:absolute; top:14px; right:16px; font-family:'Syne Mono',monospace; font-size:12px; color:#555; background:transparent; border:1px solid rgba(255,255,255,0.1); padding:6px 14px; cursor:none; transition:all .15s; min-width:44px; min-height:44px; display:flex; align-items:center; justify-content:center; }
+    .proj-modal-close:hover { color:var(--text); border-color:var(--c1); }
+    .proj-modal-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(24px,4vw,36px); letter-spacing:-0.02em; margin-bottom:24px; }
+
+    /* Logos body */
+    .logos-body p { font-size:14px; line-height:1.8; color:#888; margin-bottom:14px; }
+    .logos-body p:last-child { margin-bottom:0; }
+    .logos-warn { color:#aaa !important; border-left:3px solid var(--c1); padding-left:14px !important; }
+    .logos-small { font-family:'Syne Mono',monospace !important; font-size:11px !important; color:#444 !important; font-style:italic; }
+
+    /* MAGI matrix */
+    .proj-modal#modalMagi { background:#000; flex-direction:column; }
+    .magi-rain { position:absolute; inset:0; font-family:'VT323',monospace; font-size:13px; color:var(--c5); opacity:0.35; pointer-events:none; overflow:hidden; letter-spacing:0.05em; line-height:1.3; padding:10px; white-space:pre-wrap; word-break:break-all; }
+    .magi-center { position:relative; z-index:2; text-align:center; display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .magi-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(48px,10vw,100px); color:var(--c5); letter-spacing:-0.03em; animation:magi-pulse 2s ease-in-out infinite; }
+    @keyframes magi-pulse { 0%,100%{text-shadow:0 0 20px rgba(120,78,255,0.5)} 50%{text-shadow:0 0 60px rgba(120,78,255,0.9),0 0 100px rgba(120,78,255,0.4)} }
+    .magi-sub { font-family:'Syne Mono',monospace; font-size:13px; color:#666; letter-spacing:0.2em; }
+    .magi-line { font-family:'VT323',monospace; font-size:18px; color:var(--c6); min-height:28px; letter-spacing:0.05em; }
+    .magi-desc { font-family:'Syne Mono',monospace; font-size:11px; color:#444; letter-spacing:0.06em; text-align:center; }
+
+    /* WHELLE gráficas */
+    .whelle-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
+    @media(max-width:520px) { .whelle-grid { grid-template-columns:1fr; } }
+    .whelle-chart { border:1px solid rgba(0,255,135,0.1); padding:16px; }
+    .whelle-chart-title { font-family:'Syne Mono',monospace; font-size:10px; color:var(--c6); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; }
+    .whelle-bars { display:flex; align-items:flex-end; gap:4px; height:80px; }
+    .whelle-bar { flex:1; background:var(--c6); opacity:0.7; transition:opacity .15s; min-width:0; cursor:none; }
+    .whelle-bar:hover { opacity:1; }
+    .whelle-line-wrap { height:80px; position:relative; }
+    .whelle-svg { width:100%; height:100%; }
+
+    /* Rana ensayo */
+    .rana-body { font-size:14px; line-height:1.9; color:#888; }
+    .rana-body p { margin-bottom:16px; }
+    .rana-body .rana-verse { color:#999; font-style:italic; border-left:2px solid var(--c3); padding-left:16px; margin-bottom:16px; }
+    .rana-body .rana-strong { color:var(--text); }
+    .rana-body .rana-cheeto { color:var(--c4); }
+    .rana-body .rana-jicama { color:var(--c6); }
+
+    @keyframes glitch { 0%{text-shadow:2px 0 var(--c1),-2px 0 var(--c2)} 25%{text-shadow:-2px 0 var(--c1),2px 0 var(--c2)} 50%{text-shadow:0 2px var(--c1),0 -2px var(--c2)} 75%{text-shadow:none} 100%{text-shadow:-2px 0 var(--c1),2px 0 var(--c2)} }
+
+    .logo-secret { display: none; position: fixed; top: 60px; left: 50%; transform: translateX(-50%); background: var(--c1); color: #fff; font-family: 'VT323', monospace; font-size: 16px; padding: 8px 20px; z-index: 300; pointer-events: none; white-space: nowrap; }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 0 16px; }
+      nav { padding: 12px 16px; flex-wrap: wrap; gap: 10px; }
+      .nav-links { gap: 2px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; max-width: 100%; }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-pill { padding: 5px 10px; font-size: 10px; white-space: nowrap; flex-shrink: 0; }
+      #hero { padding-top: 100px; }
+      .section { padding: 52px 0; }
+      .sec-title { margin-bottom: 28px; }
+      .belief-grid { grid-template-columns: 1fr; }
+      .apps-row { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { text-align: center; justify-content: center; }
+      .bcard { min-height: auto; }
+      .proj-modal-box { padding: 24px 20px; }
+      .proj-modal-title { font-size: 22px; margin-bottom: 16px; }
+      .wall { min-height: 200px; }
+      .wall-text { font-size: clamp(14px, 4vw, 22px); }
+      .magi-title { font-size: clamp(40px, 14vw, 100px); }
+      .whelle-grid { grid-template-columns: 1fr; }
+      .wordart { font-size: clamp(44px, 12vw, 100px); }
+      .links-row { gap: 6px; }
+      .link-item { font-size: 11px; padding: 7px 12px; }
+    }
+    @media (max-width: 400px) {
+      .nav-pill { font-size: 9px; padding: 4px 8px; }
+      .proj-modal-box { padding: 20px 16px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="top">
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <div>
-          <div class="name">Gibrán <span style="color:var(--muted);font-weight:700">/ narbigcito</span></div>
-          <div style="color:var(--muted);font-size:13px">IA · Sistemas complejos · Antropología experimental</div>
-        </div>
-      </div>
-      <nav class="nav" aria-label="Navegación">
-        <a href="#ahora">Ahora</a>
-        <a href="#lab">Laboratorio</a>
-        <a href="#cv">CV</a>
-        <a href="#terminal">Terminal</a>
-        <a href="#conectar">Conectar</a>
-      </nav>
-    </header>
 
-    <section class="hero" id="top">
-      <h1>Hola, soy el Narbigcito.</h1>
-      <p>
-        Construyo herramientas para pensar mejor: IA para organizar información, detectar contradicciones y
-        exponer juegos de poder que se esconden en el lenguaje.
-        También hice un laboratorio de antropología experimental, para cuestionar nuestra realidad en colectivo y con afecto.
-        Busco gente peligrosa en el buen sentido: ingeniería, academia, arte, ganas de crear, de cambiar.
-      </p>
+<div id="cursor"></div>
+<div id="laserCursor"><div id="laserText">el lenguaje no es inocente. nunca lo fue.</div></div>
+<div class="logo-secret" id="logoSecret">sí, como Khalil Gibran. no es casualidad.</div>
 
-      <div class="cta">
-        <a class="btn" href="#lab">Ver laboratorio →</a>
-        <a class="btn" href="#terminal">Abrir terminal →</a>
-
-        <a class="btn" href="./source/resume.pdf" target="_blank" rel="noreferrer">Ver CV (PDF)</a>
-        <a class="btn" href="#" data-cv-download>Descargar CV</a>
-
-        <a class="btn secondary" href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">Substack</a>
-        <a class="btn secondary" href="https://github.com/narbigcito" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn secondary" href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn secondary" href="https://www.instagram.com/elnarbigcito/" target="_blank" rel="noreferrer">Instagram</a>
-        <a class="btn secondary" href="https://calendar.app.google/vkautEEQ5BLAt6wz6" target="_blank" rel="noreferrer">Agendar</a>
-      </div>
-
-      <div class="tagrow" aria-label="Etiquetas">
-        <span class="tag">antropología experimental</span>
-        <span class="tag">auditoría científica</span>
-        <span class="tag">epistemología aplicada</span>
-        <span class="tag">cultura + tecnología</span>
-        <span class="tag">sistemas complejos</span>
-      </div>
-    </section>
-
-    <!-- LAB -->
-    <section class="card" id="lab" style="margin-top:16px">
-      <h2>Laboratorio de Antropología Experimental</h2>
-      <p>
-        Un taller raro (en el buen sentido): mezclo ingeniería, teoría y calle.
-        Si la realidad es un sistema… entonces también se puede <span style="color:var(--text);font-weight:700">debuggear</span>.
-      </p>
-
-      <div class="pillRow" aria-label="Píldoras">
-        <span class="pill">lenguaje como infraestructura</span>
-        <span class="pill">incentivos & rituales sociales</span>
-        <span class="pill">tecnología con ética incómoda</span>
-        <span class="pill">arte como instrumento</span>
-      </div>
-
-      <div class="split">
-        <div class="card" style="box-shadow:none">
-          <h2 style="font-size:16px">Qué hago</h2>
-          <ul class="list">
-            <li class="li"><strong>Mapeo de poder invisible</strong>lenguaje, incentivos, propaganda cotidiana, micro-violencias, “lo normal”.</li>
-            <li class="li"><strong>Experimentos culturales</strong>acciones pequeñas que cambian conducta y sentido compartido (sin sermones).</li>
-            <li class="li"><strong>Herramientas híbridas</strong>IA + sistemas complejos + escritura + performance (sí, a veces).</li>
-          </ul>
-        </div>
-
-        <div class="card" style="box-shadow:none">
-          <h2 style="font-size:16px">Qué busco</h2>
-          <ul class="list">
-            <li class="li"><strong>Personas que construyan</strong>infra, software, investigación, arte, comunidad, lenguaje.</li>
-            <li class="li"><strong>Gente que busque el cambio</strong>que se atreva a enfrentar verdades incómodas.</li>
-            <li class="li"><strong>Colaboraciones</strong>prototipos, textos, charlas, proyectos .</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="split" style="margin-top:14px">
-        <div class="noteBox" id="noteBox">
-          <div class="noteTitle">Field note (tap friendly)</div>
-          <div id="noteText">
-            Presiona “Generar nota” para sacar una observación de laboratorio.
-            Úsala como conversación, como idea, o como provocación suave.
-          </div>
-          <div class="noteMeta" id="noteMeta">modo: observación · fuente: calle/teoría/sistemas</div>
-        </div>
-
-        <div class="card" style="box-shadow:none">
-          <h2 style="font-size:16px">Mini ritual (inofensivo)</h2>
-          <p>
-            Si llegaste desde Instagram: hola. Si te dio curiosidad… ya gané.
-            Aquí va una puerta de entrada simple:
-          </p>
-          <div class="cta" style="margin-top:10px">
-            <button class="btn" id="genNote" type="button">Generar nota</button>
-            <a class="btn secondary" href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">Leer textos</a>
-          </div>
-          <div class="hint" style="margin-top:10px">
-            Pro tip: las mejores conversaciones empiezan con una observación rara, no con un CV.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AHORA + CV -->
-    <section class="grid">
-      <article class="card" id="ahora">
-        <h2>Qué estoy haciendo ahora</h2>
-        <ul class="list">
-          <li class="li">
-            <strong>Infraestructura de análisis</strong>
-            Pipelines para análisis de texto e imagen (papers, tablas, claims, citas), con trazabilidad y control de cambios.
-          </li>
-          <li class="li">
-            <strong>Auditoría de consistencia científica (experimental)</strong>
-            En vez de “verdad”, genera grados de confianza: coherencia interna, replicabilidad y riesgo de sesgo.
-          </li>
-          <li class="li">
-            <strong>Diseño organizacional</strong>
-            Cómo evitar captura, dogmas y corrupción informativa cuando un sistema crece.
-          </li>
-        </ul>
-
-        <div style="margin-top:14px;color:var(--muted)">
-          Me gustaría conocer gente a la que le guste crear cosas, que tenga gran capacidad para soñar
-        </div>
-      </article>
-
-      <aside class="card" id="cv">
-        <h2>CV (resumen rápido)</h2>
-        <p>Lo esencial, sin humo.</p>
-
-        <ul class="list">
-          <li class="li">
-            <strong>Backend 10+ años</strong>
-            Elixir/Phoenix, Spring(Java), arquitectura escalable y automatización.
-          </li>
-          <li class="li">
-            <strong>Fintech (Bravo)</strong>
-            Contratos automáticos, tablas de amortización, herramientas de creditworthiness.
-          </li>
-          <li class="li">
-            <strong>IA aplicada + enfoque humano</strong>
-            Sistemas que tratan conocimiento como infraestructura, no como “contenido”.
-          </li>
-        </ul>
-
-        <div class="cta" style="margin-top:12px">
-          <a class="btn" href="./source/resume.pdf" target="_blank" rel="noreferrer">Ver CV (PDF)</a>
-          <a class="btn" href="#" data-cv-download>Descargar CV</a>
-        </div>
-        <div class="hint">Tip: en la terminal escribe <span class="kbd">cv</span> (en desktop).</div>
-      </aside>
-    </section>
-
-    <!-- TERMINAL -->
-    <section class="card" id="terminal" style="margin-top:16px">
-      <h2>Terminal</h2>
-      <p>Comandos predeterminados. Prueba <span class="kbd">help</span>, <span class="kbd">fieldnote</span> y <span class="kbd">paper audit</span>.</p>
-
-      <div class="terminal" style="margin-top:12px">
-        <div class="termbar">
-          <div class="lights" aria-hidden="true">
-            <span class="light r"></span>
-            <span class="light y"></span>
-            <span class="light g"></span>
-          </div>
-          <div class="termmeta">narbigcito@logos:~ · <span id="clock"></span></div>
-        </div>
-
-        <div class="termwrap">
-          <div id="out" class="output" aria-live="polite"></div>
-
-          <div class="promptrow">
-            <div class="prompt">narbigcito@logos:~$</div>
-            <input id="in" class="in" type="text" autocomplete="off" spellcheck="false" placeholder="Escribe: help">
-          </div>
-
-          <div class="hint">
-            Tips: <span class="kbd">↑</span>/<span class="kbd">↓</span> historial · <span class="kbd">Tab</span> autocompleta · <span class="kbd">Ctrl</span>+<span class="kbd">L</span> limpia
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONECTAR -->
-    <section class="card" id="conectar" style="margin-top:16px">
-      <h2>Conectar</h2>
-      <p>Si quieres colaborar: quién eres, qué sabes hacer, y qué quieres construir conmigo.</p>
-
-      <ul class="list">
-        <li class="li"><strong>CV</strong> <a href="./source/resume.pdf" target="_blank" rel="noreferrer">Ver</a> · <a href="#" data-cv-download>Descargar</a></li>
-        <li class="li"><strong>GitHub</strong> <a href="https://github.com/narbigcito" target="_blank" rel="noreferrer">github.com/narbigcito</a></li>
-        <li class="li"><strong>Substack</strong> <a href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">substack.com/@narbigcito</a></li>
-        <li class="li"><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/" target="_blank" rel="noreferrer">Perfil</a></li>
-        <li class="li"><strong>Instagram</strong> <a href="https://www.instagram.com/elnarbigcito/" target="_blank" rel="noreferrer">@elnarbigcito</a></li>
-        <li class="li"><strong>Agendar</strong> <a href="https://calendar.app.google/vkautEEQ5BLAt6wz6" target="_blank" rel="noreferrer">calendar.app.google</a></li>
-      </ul>
-    </section>
-
-    <footer class="footer">
-      <div>© <span id="y"></span> narbigcito. No hecho para gustar a todos.</div>
-      <div><a href="#top">Volver arriba ↑</a></div>
-    </footer>
+<!-- Pop-up muro -->
+<div class="wall-popup" id="wallPopup">
+  <div class="wall-popup-box">
+    <button class="popup-close" id="popupClose" type="button">✕ cerrar</button>
+    <div class="popup-flash">👁 vaya. realmente quieres saber quién soy.</div>
+    <div class="popup-header">// QUIÉN SOY</div>
+    <div class="popup-text">
+      Mi nombre es <strong>Gibrán</strong> — sí, como Khalil Gibran — y no es casualidad.
+      En su raíz árabe, Yibrān significa <em>"consolador", "reparador de almas"</em>,
+      aquel elegido para sanar heridas invisibles.<br><br>
+      Nací en <strong>Ecatepec</strong>, un territorio donde la pobreza no es accidente;
+      es un sistema diseñado para robar futuros.<br><br>
+      Llegué al mundo a los ocho meses — frágil, urgente — en una familia fracturada.
+      Mi infancia fue un encierro forzado: cuatro paredes, una computadora rescatada de la basura
+      y montañas de libros que me mostraron que existía algo allá afuera llamado <em>mundo</em>.<br><br>
+      Nunca tuve éxito en la escuela. Pero no abandoné mi obsesión por comprender
+      cómo funciona la realidad. Con el tiempo, programar me dio estabilidad.
+      Pero eso no era suficiente. <strong>Necesitaba más.</strong><br><br>
+      Creo que explorar los límites de la experiencia humana ayuda a entender mejor
+      esta realidad, tan esquiva. Mi lucha es política porque sé que el sufrimiento
+      tiene causas estructurales.<br><br>
+      Busco <em>cómplices</em>: ingenieros que construyan puentes, artistas que conviertan el dolor en belleza,
+      personas que crean que el mundo puede ser diferente y estén dispuestas a actuar.<br><br>
+      <strong>¿Reescribimos la historia?</strong>
+    </div>
   </div>
+</div>
 
-  <script>
-    const LINKS={
-      github:"https://github.com/narbigcito",
-      substack:"https://substack.com/@narbigcito",
-      linkedin:"https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/",
-      insta:"https://www.instagram.com/elnarbigcito/",
-      schedule:"https://calendar.app.google/vkautEEQ5BLAt6wz6",
-      cv:"./source/resume.pdf"
-    };
+<!-- Easter egg 2: Konami pantalla completa -->
+<div id="konami2">
+  <button class="k2-close" id="k2close" type="button">✕ salir</button>
+  <div class="k2-matrix" id="k2matrix"></div>
+  <div class="k2-msg" id="k2msg"></div>
+</div>
 
-    // ====== CV download (forzado) ======
-    async function forceDownload(url,filename){
-      try{
-        const res=await fetch(url,{cache:"no-store"});
-        if(!res.ok){throw new Error("HTTP "+res.status);}
-        const blob=await res.blob();
-        const blobUrl=URL.createObjectURL(blob);
+<nav id="top">
+  <div class="logo" id="logoBtn">narbigcito<span class="logo-blink">_</span></div>
+  <div class="nav-links">
+    <a class="nav-pill" href="#quien">quién soy</a>
+    <a class="nav-pill" href="#creo">lo que creo</a>
+    <a class="nav-pill" href="#apps">proyectos</a>
+    <a class="nav-pill" href="#convs">conversaciones</a>
+    <a class="nav-pill" href="#conectar">conectar</a>
+  </div>
+</nav>
 
-        const a=document.createElement("a");
-        a.href=blobUrl;
-        a.download=filename;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div style="position:relative">
+        <div class="wordart">
+          <span class="wa-1 glitch">GIBRÁN</span>
+          <span class="wa-2">MORENO</span>
+          <span class="wa-3">ingeniero · escritor · constructor de cosas raras</span>
+        </div>
+        <div class="sticker s1">CDMX ★</div>
+        <div class="sticker s2">v2.0 beta</div>
+      </div>
+      <div class="hero-right">
+        <p class="hero-bio">
+          No tengo todo resuelto.<br>
+          Pero <strong>estoy haciendo cosas concretas</strong> para cambiar
+          cómo nos relacionamos, cómo pensamos y cómo nos organizamos.<br><br>
+          Busco <em>cómplices</em> — artistas, ingenieros, académicos,
+          cualquier persona que crea que el mundo puede ser diferente
+          y esté dispuesta a actuar.
+        </p>
+        <div class="status-box">
+          <div class="status-bar"><div class="sdot"></div>sistema narbigcito · estado actual</div>
+          <div class="status-body">
+            <span class="ok">✓</span> Orden — live en producción<br>
+            <span class="warn">◎</span> MAGI — en construcción<br>
+            <span class="warn">◎</span> Laboratorio HOMOS — pausado<br>
+            <span class="ok">✓</span> La sombra de la rana — saliendo del horno
+          </div>
+        </div>
+        <div class="hero-btns">
+          <a class="btn btn-main" href="#apps">ver proyectos</a>
+          <a class="btn btn-ghost" href="#conectar">colaborar →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="geo geo-c1"></div>
+  <div class="geo geo-c2"></div>
+</section>
 
-        setTimeout(()=>URL.revokeObjectURL(blobUrl),1500);
-        return true;
-      }catch(err){
-        console.error(err);
-        return false;
-      }
-    }
+<!-- QUIÉN SOY: MURO -->
+<section class="section" id="quien">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c1)">// QUIÉN SOY<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,60,172,.3),transparent);display:block;margin-left:10px"></span></div>
 
-    document.querySelectorAll("[data-cv-download]").forEach(el=>{
-      el.addEventListener("click",async(e)=>{
-        e.preventDefault();
-        const ok=await forceDownload(LINKS.cv,"Gibran-Moreno-CV.pdf");
-        if(!ok){
-          alert("No pude descargar el CV. Revisa que exista ./source/resume.pdf en tu repo.");
-        }
-      });
+    <div class="wall-wrap" id="wallWrap">
+      <div class="wall" id="wall">
+        <div class="wall-bg"></div>
+        <svg class="wall-cracks" viewBox="0 0 800 260" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+          <path id="crack1" class="crack-path" d="M400,0 L382,60 L430,80 L388,130 L415,155 L368,260"/>
+          <path id="crack2" class="crack-path" d="M180,0 L196,50 L155,68 L188,120" stroke-width="1.5"/>
+          <path id="crack3" class="crack-path" d="M620,0 L598,55 L638,72 L610,130" stroke-width="1.5"/>
+          <path id="crack4" class="crack-path" d="M300,260 L318,180 L280,155 L310,90" stroke-width="1"/>
+          <path id="crack5" class="crack-path" d="M500,260 L488,175 L525,148 L502,80" stroke-width="1"/>
+        </svg>
+        <div class="wall-text" id="wallText">
+          🧱 si quieres saber quién soy,<br>rompe este muro.
+        </div>
+        <div class="wall-hits" id="wallHits"></div>
+      </div>
+      <button class="wall-reopen" id="wallReopen" type="button">↩ volver a romper el muro</button>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUE CREO -->
+<section class="section" id="creo">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c2)">// LO QUE CREO<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(0,245,212,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch">Creo en<br><span style="color:var(--c2)">todo</span></h2>
+
+    <div class="belief-grid">
+
+      <div class="bcard bc-0" data-idx="0">
+        <div class="bcard-accent"></div>
+        <div class="bcard-num">01</div>
+        <div class="bcard-label">en cambiar el mundo entero</div>
+        <div class="bcard-text">No una porción. Todo. El mundo completo. Sé que suena enorme — por eso lo hago: porque alguien tiene que creerlo de verdad para que empiece a pasar.</div>
+        <div class="bcard-special">
+          <div class="belief-meter"><div class="belief-meter-fill"></div></div>
+        </div>
+        <div class="bcard-reaction"></div>
+      </div>
+
+      <div class="bcard bc-1" data-idx="1">
+        <div class="bcard-accent"></div>
+        <div class="bcard-num">02</div>
+        <div class="bcard-label">en que no podemos solos</div>
+        <div class="bcard-text">La autonomía no es el fin — es el medio. Una persona que se sostiene a sí misma se convierte en un nodo fuerte en una red donde todos se apoyan. La independencia bien entendida siempre termina siendo colectiva.</div>
+        <div class="bcard-special">
+          <div class="belief-counter">leyendo esto ahora mismo: <span id="counter">1</span></div>
+        </div>
+        <div class="bcard-reaction"></div>
+      </div>
+
+      <div class="bcard bc-2" data-idx="2">
+        <div class="bcard-accent"></div>
+        <div class="bcard-num">03</div>
+        <div class="bcard-label">en que la crueldad es un síntoma</div>
+        <div class="bcard-text">El horror existe. Pero no es nuestra naturaleza — es el resultado de un sistema que nos organiza mal. Entender eso cambia todo: ya no peleamos contra personas, peleamos contra estructuras.</div>
+        <div class="bcard-special">
+          <span class="belief-tag">sistema fallido ≠ naturaleza humana</span>
+        </div>
+        <div class="bcard-reaction"></div>
+      </div>
+
+      <div class="bcard bc-3" data-idx="3" id="bcard-laser">
+        <div class="bcard-accent"></div>
+        <div class="bcard-num">04</div>
+        <div class="bcard-label">en el lenguaje como infraestructura</div>
+        <div class="bcard-text">El poder se sostiene por el control del lenguaje. Por eso estudio epistemología para desarmar la realidad como quien desarma bombas.</div>
+        <div class="bcard-special" style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--c4)">cada palabra es una decisión política</div>
+        <div class="bcard-reaction"></div>
+      </div>
+
+      <div class="bcard bc-4" data-idx="4">
+        <div class="bcard-accent"></div>
+        <div class="bcard-num">05</div>
+        <div class="bcard-label">en vivir como oruga</div>
+        <div class="bcard-text">La metamorfosis no puede acelerarse ni retrasarse. El pulso del devenir es independiente a nuestros planes. Por eso intento vivir un día a la vez, tomando acciones desde mis circunstancias inmediatas.</div>
+        <div class="bcard-special">
+          <div class="orbit-wrap"><div class="orbit-dot"></div></div>
+        </div>
+        <div class="bcard-reaction"></div>
+      </div>
+
+    </div>
+
+    <!-- Leche -->
+    <div class="milk-section" id="milkSection">
+      <div class="milk-label" id="milkLabel">si le das click a la leche se cae →</div>
+      <button class="milk-btn" id="milkBtn" type="button">🥛</button>
+      <div class="milk-after" id="milkAfter">¿por qué hiciste esto? te lo advertí.</div>
+    </div>
+
+    <div class="freire-quote">
+      <strong>"Quiero una escuela que no sea como mi mamá, que confíe en los niños y no crea que las personas quieren hacernos daño."</strong><br>
+      — Una niña a Paulo Freire
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="section" id="apps">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c3)">// MIS PROYECTOS<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,230,0,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch">Cosas<br><span style="color:var(--c3)">reales</span></h2>
+    <div class="apps-row">
+
+      <!-- LOGOS — popup -->
+      <div class="app-card" id="cardLogos" style="border-color:rgba(0,245,212,0.12);cursor:none">
+        <div class="app-top">
+          <div class="app-name" style="color:var(--c2)">LOGOS</div>
+          <div class="app-badge badge-wip">∞ largo plazo</div>
+        </div>
+        <div class="app-desc">El meta-sistema que contiene todo lo demás. No piensa en años — piensa en escala de civilizaciones.</div>
+        <div class="app-link" style="color:var(--c2);opacity:.5">click para saber más</div>
+      </div>
+
+      <a class="app-card ac-yellow" href="https://orden.narbigcito.com" target="_blank" rel="noreferrer">
+        <div class="app-top">
+          <div class="app-name">ORDEN</div>
+          <div class="app-badge badge-live">live</div>
+        </div>
+        <div class="app-desc">Kanban para organizar tu vida y proyectos. Oscuro, rápido, sin ruido. Subtareas, calendario, proyectos compartidos.</div>
+        <div class="app-link">orden.narbigcito.com →</div>
+      </a>
+
+      <a class="app-card" href="https://crea.narbigcito.com" target="_blank" rel="noreferrer" style="border-color:rgba(255,60,172,0.1)">
+        <div class="app-top">
+          <div class="app-name" style="color:var(--c1)">CREA</div>
+          <div class="app-badge badge-wip">MVP v0.2</div>
+        </div>
+        <div class="app-desc">Red social para crear sin pedir permiso. Sin métricas de vanidad, sin algoritmo opaco. Bitácoras de proceso, retroalimentación real.</div>
+        <div class="app-link" style="color:#444;transition:color .15s">crea.narbigcito.com →</div>
+      </a>
+
+      <!-- MAGI — matrix rain -->
+      <div class="app-card ac-purple" id="cardMagi" style="cursor:none">
+        <div class="app-top">
+          <div class="app-name">MAGI</div>
+          <div class="app-badge badge-wip">en construcción</div>
+        </div>
+        <div class="app-desc">Infraestructura de IA personal. Tres agentes, una mente — inspirado en Evangelion. Corre en una Raspberry Pi en mi casa.</div>
+        <div class="app-link" style="color:#555">click si te atreves</div>
+      </div>
+
+      <!-- WHELLE — gráficas -->
+      <div class="app-card" id="cardWhelle" style="cursor:none;border-color:rgba(0,255,135,0.1)">
+        <div class="app-top">
+          <div class="app-name" style="color:var(--c6)">WHELLE</div>
+          <div class="app-badge badge-wip">2 años activo</div>
+        </div>
+        <div class="app-desc">Sistema personal de seguimiento de vida. 2 años y 28 semanas de registro continuo. Sueño, trabajo, hábitos, energía. Baselines dinámicos.</div>
+        <div class="app-link" style="color:#555">libreta → datos → MAGI</div>
+      </div>
+
+      <!-- LA SOMBRA DE LA RANA — ensayo -->
+      <div class="app-card" id="cardRana" style="cursor:none;border-color:rgba(255,230,0,0.1)">
+        <div class="app-top">
+          <div class="app-name" style="color:var(--c3);font-size:20px;line-height:1.15">LA SOMBRA<br>DE LA RANA</div>
+          <div class="app-badge badge-wip">casi listo</div>
+        </div>
+        <div class="app-desc">16 ensayos, ~32k palabras. Amor, poder, masculinidad, resistencia. Slang mexicano + Butler + Foucault + Deleuze.</div>
+        <div class="app-link" style="color:#555">leer un fragmento</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSACIONES -->
+<section class="section" id="convs">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c5)">// CONVERSACIONES CON CLAUDE<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(120,78,255,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch">Cómo<br><span style="color:var(--c5)">pienso</span></h2>
+    <div class="conv-thumbs" id="convGrid"></div>
+    <div class="conv-viewer" id="convViewer">
+      <div class="conv-bar">
+        <div class="conv-bar-left">
+          <div class="conv-av">C</div>
+          <div>
+            <div class="conv-bar-name">Claude</div>
+            <div class="conv-bar-sub">conversación curada · solo lectura</div>
+          </div>
+        </div>
+        <button class="conv-close-btn" id="convClose" type="button">✕ cerrar</button>
+      </div>
+      <div class="conv-msgs" id="convMsgs"></div>
+      <div class="conv-input-row">
+        <div class="conv-fake-input">Escribe un mensaje…</div>
+        <div class="conv-send-btn" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2" fill="#333" stroke="none"/>
+          </svg>
+        </div>
+      </div>
+      <div class="conv-readonly">conversaciones reales curadas por gibrán · solo lectura</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONECTAR -->
+<section class="section" id="conectar">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c4)">// CONECTAR<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,107,0,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch" style="margin-bottom:28px">¿Somos<br><span style="color:var(--c4)">cómplices?</span></h2>
+    <div class="links-row">
+      <a class="link-item main" href="https://calendar.app.google/vkautEEQ5BLAt6wz6" target="_blank" rel="noreferrer">→ agendar llamada</a>
+      <a class="link-item" href="https://www.instagram.com/elnarbigcito/" target="_blank" rel="noreferrer">instagram</a>
+      <a class="link-item" href="https://substack.com/@narbigcito" target="_blank" rel="noreferrer">substack</a>
+      <a class="link-item" href="https://github.com/narbigcito" target="_blank" rel="noreferrer">github</a>
+      <a class="link-item" href="https://www.linkedin.com/in/gibr%C3%A1n-alexis-moreno-zu%C3%B1iga/" target="_blank" rel="noreferrer">linkedin</a>
+    </div>
+  </div>
+</section>
+
+<!-- MODALES PROYECTOS -->
+
+<!-- MODAL LOGOS -->
+<div class="proj-modal" id="modalLogos"><div class="proj-modal-box" style="border-color:rgba(0,245,212,0.4);max-width:680px"><button class="proj-modal-close" data-close="modalLogos">✕</button><div class="proj-modal-title" style="color:var(--c2)">L.O.G.O.S</div><div class="proj-modal-body logos-body" id="logosBody"></div></div></div>
+
+<!-- MODAL MAGI -->
+<div class="proj-modal" id="modalMagi"><div class="magi-rain" id="magiRain"></div><div class="magi-center"><button class="proj-modal-close" data-close="modalMagi" style="position:relative;top:auto;right:auto;margin-bottom:20px">✕ salir</button><div class="magi-title">MAGI</div><div class="magi-sub">melchor · gaspar · baltazar</div><div class="magi-line" id="magiLine"></div><div class="magi-desc">infraestructura de IA personal · tres agentes · una mente · una raspberry pi</div></div></div>
+
+<!-- MODAL WHELLE -->
+<div class="proj-modal" id="modalWhelle"><div class="proj-modal-box" style="border-color:rgba(0,255,135,0.3);max-width:740px"><button class="proj-modal-close" data-close="modalWhelle">✕</button><div class="proj-modal-title" style="color:var(--c6)">WHELLE — datos reales (simulados)</div><div class="whelle-grid" id="whelleGrid"></div><div style="font-family:Syne Mono,monospace;font-size:10px;color:#333;text-align:center;margin-top:16px">2 años · 28 semanas · registro continuo · métricas propias</div></div></div>
+
+<!-- MODAL RANA -->
+<div class="proj-modal" id="modalRana"><div class="proj-modal-box" style="border-color:rgba(255,230,0,0.3);max-width:700px"><button class="proj-modal-close" data-close="modalRana">✕</button><div class="proj-modal-title" style="color:var(--c3)">La familia, la propiedad privada y otras chingaderas</div><div class="proj-modal-body rana-body" id="ranaBody"></div></div></div>
+
+<!-- POEMA — cinta marquee amarilla -->
+<div class="poem-ribbon">
+  <div class="poem-ribbon-inner">
+    <span class="poem-ribbon-text">
+      Tal vez debemos aceptar que no podemos solos. Que necesitamos a otro monstruo que nos señale como los monstruos que somos, pero que lo haga con empatía. Que nos diga: wey, dijiste que no ibas a comprar Cheetos y acabas de comprar Cheetos. Mira, aquí tengo jícama picada. Si te los quieres comer, está bien, no te juzgaré, pero creo en ti, y creo que puedes hoy escoger algo mejor para ti.
+    </span>
+    <span class="poem-ribbon-text" aria-hidden="true">
+      Tal vez debemos aceptar que no podemos solos. Que necesitamos a otro monstruo que nos señale como los monstruos que somos, pero que lo haga con empatía. Que nos diga: wey, dijiste que no ibas a comprar Cheetos y acabas de comprar Cheetos. Mira, aquí tengo jícama picada. Si te los quieres comer, está bien, no te juzgaré, pero creo en ti, y creo que puedes hoy escoger algo mejor para ti.
+    </span>
+  </div>
+</div>
+
+<!-- Konami bar 1 -->
+<div class="konami-bar" id="konamiBar">
+  <div class="konami-inner">
+    ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="footer-sig">© <span id="yr"></span> narbigcito · hecho con intención</div>
+  <a class="footer-up" href="#top">↑ arriba</a>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ── Cursor — solo en dispositivos con mouse ──
+  const cursor = document.getElementById('cursor');
+  const laser = document.getElementById('laserCursor');
+  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
+  // ── Nav pills — color y desorden al hover ──
+  const navColors = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)', 'var(--c5)', 'var(--c6)'];
+  const pills = document.querySelectorAll('.nav-pill');
+  pills.forEach((pill, i) => {
+    const baseColor = navColors[i % navColors.length];
+    // Color inicial sutil por pill
+    pill.style.borderColor = baseColor.replace('var(', '').replace(')', '') ? baseColor : baseColor;
+
+    pill.addEventListener('mouseenter', () => {
+      const color = navColors[Math.floor(Math.random() * navColors.length)];
+      pill.style.color = color;
+      pill.style.borderColor = color;
+      // Desorden: rotate y translate random
+      const r = (Math.random() * 14 - 7).toFixed(1);
+      const tx = (Math.random() * 10 - 5).toFixed(1);
+      const ty = (Math.random() * 8 - 4).toFixed(1);
+      pill.style.transform = `rotate(${r}deg) translate(${tx}px, ${ty}px)`;
     });
 
-    // ====== Footer year ======
-    document.getElementById("y").textContent=new Date().getFullYear();
-
-    // ====== Field notes (IG-friendly) ======
-    const notes=[
-      {t:"Observación",x:"La gente no discute ideas: defiende identidades. Cambia el marco y cambia el resultado."},
-      {t:"Método",x:"Si una institución te dice “confía”, suelta también su incentivo. La verdad sin incentivo es sospechosa."},
-      {t:"Lenguaje",x:"Cuando una conversación se vuelve moral, normalmente alguien ya perdió la evidencia."},
-      {t:"Calle",x:"Los sistemas no fallan por maldad; fallan por diseño. Y el diseño suele ser invisible."},
-      {t:"Ritual",x:"Todo grupo tiene liturgia. Si no la diseñas, te la heredan."},
-      {t:"Amor/Política",x:"La intimidad también es infraestructura. Una relación sin lenguaje común se vuelve un malentendido constante."},
-      {t:"Tecnología",x:"La IA no es oráculo. Es espejo con esteroides: amplifica sesgos, pero también te obliga a verlos."},
-      {t:"Sistemas",x:"Una teoría que no tolera preguntas no es teoría: es bandera."}
-    ];
-    function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
-    function renderNote(){
-      const n=pick(notes);
-      const box=document.getElementById("noteText");
-      const meta=document.getElementById("noteMeta");
-      box.textContent=n.x;
-      meta.textContent=`modo: ${n.t.toLowerCase()} · timestamp: ${new Date().toLocaleString("es-MX")}`;
-    }
-    document.getElementById("genNote")?.addEventListener("click",renderNote);
-
-    // ====== Terminal ======
-    const out=document.getElementById("out");
-    const input=document.getElementById("in");
-
-    const clock=document.getElementById("clock");
-    const tick=()=>clock.textContent=new Date().toLocaleString("es-MX",{hour:"2-digit",minute:"2-digit"});
-    tick();setInterval(tick,15000);
-
-    const history=[];
-    let hIdx=0;
-    const promptStr="narbigcito@logos:~$ ";
-
-    const cmds=[
-      "help","about","now","lab","fieldnote","project","links","open","github","substack","linkedin","insta","schedule","cv",
-      "ls","clear","whoami","ascii","paper audit","paper scan","matrix","theme"
-    ];
-
-    let theme="dark";
-    const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-
-    function esc(s){
-      return s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
-    }
-    function writeRaw(html){
-      out.innerHTML+=html;
-      out.scrollTop=out.scrollHeight;
-    }
-    function writeLine(text=""){
-      writeRaw(`<div>${esc(text)}</div>`);
-    }
-    async function typeLine(text="",speed=8){
-      const safe=esc(text);
-      let i=0;
-      writeRaw("<div id='tw'></div>");
-      const el=document.getElementById("tw");
-      while(i<safe.length){
-        el.innerHTML+=safe[i];
-        i++;
-        out.scrollTop=out.scrollHeight;
-        await sleep(speed);
-      }
-      el.removeAttribute("id");
-    }
-
-    function banner(){
-      writeLine("LOGOS terminal v0.2 (demo)");
-      writeLine("Escribe: help");
-      writeLine("");
-    }
-
-    function help(){
-      writeLine("Comandos:");
-      writeLine("  help, about, now, lab, fieldnote, project, links");
-      writeLine("  open <github|substack|linkedin|insta|schedule|cv>");
-      writeLine("  cv (abrir + descargar CV)");
-      writeLine("  ls, whoami, ascii, matrix, paper audit, paper scan");
-      writeLine("  clear, theme");
-      writeLine("");
-    }
-
-    async function about(){
-      await typeLine("Soy Gibrán (narbigcito). IA, sistemas complejos y antropología experimental.",10);
-      await typeLine("Me interesa lo incómodo: contradicciones, incentivos, poder invisible y cómo se diseña cultura.",10);
-      writeLine("");
-    }
-    async function now(){
-      await typeLine("Ahora mismo:",10);
-      writeLine("- Herramientas para auditar conocimiento (texto+imagen, trazabilidad, consistencia).");
-      writeLine("- Experimentos culturales: del lenguaje a la conducta (sin moralina).");
-      writeLine("- Infra y escritura: construir + pensar + iterar.");
-      writeLine("");
-    }
-    async function lab(){
-      await typeLine("Laboratorio de Antropología Experimental:",10);
-      writeLine("- Mapeo de poder invisible (lenguaje, incentivos, rituales).");
-      writeLine("- Experimentos culturales (pequeños, medibles, replicables).");
-      writeLine("- Tech + arte como herramientas, no como identidad.");
-      writeLine("Tip: fieldnote");
-      writeLine("");
-    }
-    function project(){
-      writeLine("Proyecto activo: Auditoría de Consistencia Científica (experimental).");
-      writeLine("Salida: coherencia interna, replicabilidad, riesgo de sesgo, recomendaciones.");
-      writeLine("Prueba: paper audit");
-      writeLine("");
-    }
-    function links(){
-      writeLine("Links:");
-      writeLine(`- github: ${LINKS.github}`);
-      writeLine(`- substack: ${LINKS.substack}`);
-      writeLine(`- linkedin: ${LINKS.linkedin}`);
-      writeLine(`- insta: ${LINKS.insta}`);
-      writeLine(`- schedule: ${LINKS.schedule}`);
-      writeLine(`- cv: ${LINKS.cv}`);
-      writeLine("");
-    }
-    function doOpen(key){
-      const url=LINKS[key];
-      if(!url){
-        writeLine("Uso: open <github|substack|linkedin|insta|schedule|cv>");
-        writeLine("");
-        return;
-      }
-      window.open(url,"_blank","noopener,noreferrer");
-      writeLine(`Abriendo: ${url}`);
-      writeLine("");
-    }
-    async function doCv(){
-      const url=LINKS.cv;
-      window.open(url,"_blank","noopener,noreferrer");
-      const ok=await forceDownload(url,"Gibran-Moreno-CV.pdf");
-      writeLine(ok?"CV: abierto + descargado.":"CV: abrí el PDF, pero falló la descarga (revisa la ruta).");
-      writeLine("");
-    }
-    function ls(){
-      writeLine("projects/  texts/  lab/  links/  terminal/  source/resume.pdf");
-      writeLine("Tip: cv");
-      writeLine("");
-    }
-    function whoami(){
-      writeLine("narbigcito");
-      writeLine("role: backend/software engineer · complex systems · experimental anthropology");
-      writeLine("mode: build + audit + iterate");
-      writeLine("");
-    }
-    function ascii(){
-      writeLine("   _   _            _     _           _ _        ");
-      writeLine("  | \\ | |          | |   (_)         | (_)       ");
-      writeLine("  |  \\| | __ _ _ __| |__  _  __ _  __| |_  ___   ");
-      writeLine("  | . ` |/ _` | '__| '_ \\| |/ _` |/ _` | |/ __|  ");
-      writeLine("  | |\\  | (_| | |  | |_) | | (_| | (_| | | (__   ");
-      writeLine("  |_| \\_|\\__,_|_|  |_.__/|_|\\__,_|\\__,_|_|\\___|  ");
-      writeLine("");
-    }
-    async function matrix(){
-      writeLine("Entrando a modo visual… (fake pero bonito)");
-      const lines=18;
-      for(let i=0;i<lines;i++){
-        const s=Array.from({length:64},()=>Math.random()<.5?"0":"1").join("");
-        writeLine(s);
-        await sleep(35);
-      }
-      writeLine("Listo.");
-      writeLine("");
-    }
-    function themeToggle(){
-      theme=theme==="dark"?"darker":"dark";
-      if(theme==="darker"){
-        document.documentElement.style.setProperty("--bg","#06080c");
-        document.documentElement.style.setProperty("--panel","#0b101a");
-        writeLine("theme: darker");
-      }else{
-        document.documentElement.style.setProperty("--bg","#0b0f14");
-        document.documentElement.style.setProperty("--panel","#0f1520");
-        writeLine("theme: dark");
-      }
-      writeLine("");
-    }
-
-    async function paperAudit(){
-      writeLine("Cargando paper…");await sleep(350);
-      writeLine("Extrayendo claims…");await sleep(350);
-      writeLine("Buscando contradicciones internas…");await sleep(450);
-
-      const coh=["alta","media","baja"][Math.floor(Math.random()*3)];
-      const rep=["documentada","dudosa","ausente"][Math.floor(Math.random()*3)];
-      const bias=["bajo","medio","alto"][Math.floor(Math.random()*3)];
-
-      writeLine("");
-      writeLine("=== REPORTE (simulado) ===");
-      writeLine(`Coherencia interna: ${coh}`);
-      writeLine(`Replicabilidad: ${rep}`);
-      writeLine(`Riesgo de sesgo: ${bias}`);
-      writeLine("");
-      writeLine("Notas:");
-      writeLine("- Señala supuestos no explicitados.");
-      writeLine("- Traza claims a referencias/citas.");
-      writeLine("- Sugiere pruebas mínimas para refutar/confirmar.");
-      writeLine("");
-    }
-    async function paperScan(){
-      await typeLine("Scan rápido: 3 señales y 1 recomendación.",12);
-      const sig=[
-        "claim fuerte con evidencia débil",
-        "métrica ambigua sin definición operativa",
-        "citas circulares (se referencian entre sí)",
-        "dataset no disponible / no versionado",
-        "conclusión excede resultados"
-      ];
-      const pick=()=>sig[Math.floor(Math.random()*sig.length)];
-      writeLine(`- señal 1: ${pick()}`);
-      writeLine(`- señal 2: ${pick()}`);
-      writeLine(`- señal 3: ${pick()}`);
-      writeLine("- recomendación: publicar protocolo, versionar dataset y definir supuestos.");
-      writeLine("");
-    }
-
-    function fieldnote(){
-      const n=pick(notes);
-      writeLine("Field note:");
-      writeLine(`- ${n.t}: ${n.x}`);
-      writeLine("");
-    }
-
-    function clear(){out.innerHTML=""}
-
-    function normalize(s){return s.trim().replaceAll(/\s+/g," ")}
-
-    async function run(cmd){
-      const c=normalize(cmd);
-      if(!c){return;}
-      writeLine(promptStr+c);
-
-      if(c==="help"){help();return;}
-      if(c==="about"){await about();return;}
-      if(c==="now"){await now();return;}
-      if(c==="lab"){await lab();return;}
-      if(c==="fieldnote"){fieldnote();return;}
-      if(c==="project"){project();return;}
-      if(c==="links"){links();return;}
-      if(c==="ls"){ls();return;}
-      if(c==="whoami"){whoami();return;}
-      if(c==="ascii"){ascii();return;}
-      if(c==="matrix"){await matrix();return;}
-      if(c==="theme"){themeToggle();return;}
-      if(c==="clear"){clear();banner();return;}
-
-      if(c==="github"){doOpen("github");return;}
-      if(c==="substack"){doOpen("substack");return;}
-      if(c==="linkedin"){doOpen("linkedin");return;}
-      if(c==="insta"){doOpen("insta");return;}
-      if(c==="schedule"){doOpen("schedule");return;}
-      if(c==="cv"){await doCv();return;}
-
-      if(c==="paper audit"){await paperAudit();return;}
-      if(c==="paper scan"){await paperScan();return;}
-
-      if(c.startsWith("open ")){
-        const key=c.slice(5).trim();
-        if(key==="cv"){await doCv();return;}
-        doOpen(key);
-        return;
-      }
-
-      writeLine("No entiendo ese comando. Escribe: help");
-      writeLine("");
-    }
-
-    function autocomplete(){
-      const v=normalize(input.value);
-      if(!v){return;}
-      const matches=cmds.filter(x=>x.startsWith(v));
-      if(matches.length===1){
-        input.value=matches[0];
-      }else if(matches.length>1){
-        writeLine(promptStr+v);
-        writeLine(matches.join("  "));
-        writeLine("");
-      }
-    }
-
-    input?.addEventListener("keydown",async(e)=>{
-      if(e.key==="Enter"){
-        e.preventDefault();
-        const v=input.value;
-        if(v.trim()){
-          history.push(v);
-          hIdx=history.length;
-        }
-        input.value="";
-        await run(v);
-      }
-      if(e.key==="ArrowUp"){
-        if(history.length===0){return;}
-        e.preventDefault();
-        hIdx=Math.max(0,hIdx-1);
-        input.value=history[hIdx]??"";
-      }
-      if(e.key==="ArrowDown"){
-        if(history.length===0){return;}
-        e.preventDefault();
-        hIdx=Math.min(history.length,hIdx+1);
-        input.value=history[hIdx]??"";
-      }
-      if(e.key==="Tab"){
-        e.preventDefault();
-        autocomplete();
-      }
-      if(e.ctrlKey&&e.key.toLowerCase()==="l"){
-        e.preventDefault();
-        clear();banner();
-      }
+    pill.addEventListener('mouseleave', () => {
+      pill.style.color = '';
+      pill.style.borderColor = 'rgba(255,255,255,0.08)';
+      pill.style.transform = '';
     });
+  });
+  if (!isTouchDevice) {
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      laser.style.left = e.clientX + 'px';
+      laser.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a,button,.bcard,.conv-thumb,.app-card,.milk-btn').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+    });
+  }
 
-    if(out){
-      banner();
-      writeLine("Prueba: about · now · lab · fieldnote · paper audit · cv · open github");
-      writeLine("");
-      input?.focus();
+  // ── Laser cursor en card 4 — solo mouse ──
+  const bcardLaser = document.getElementById('bcard-laser');
+  if (!isTouchDevice) {
+    bcardLaser.addEventListener('mouseenter', () => {
+      laser.classList.add('on');
+      cursor.style.opacity = '0';
+    });
+    bcardLaser.addEventListener('mouseleave', () => {
+      laser.classList.remove('on');
+      cursor.style.opacity = '1';
+    });
+  }
+
+  // ── Fondo cambia al scrollear ──
+  const bgColors = ['#0a0a0a','#0a0809','#09080e','#070a09','#0a0908','#08090e'];
+  let lastBg = 0;
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    const idx = Math.min(Math.floor(pct * bgColors.length), bgColors.length - 1);
+    if (idx !== lastBg) { document.body.style.background = bgColors[idx]; lastBg = idx; }
+  });
+
+  // ── Easter egg logo ──
+  const logoSecret = document.getElementById('logoSecret');
+  let logoTimer;
+  document.getElementById('logoBtn').addEventListener('click', () => {
+    logoSecret.style.display = 'block';
+    clearTimeout(logoTimer);
+    logoTimer = setTimeout(() => logoSecret.style.display = 'none', 3000);
+  });
+
+  // ── MURO: 5 golpes ──
+  const wall = document.getElementById('wall');
+  const wallText = document.getElementById('wallText');
+  const wallHits = document.getElementById('wallHits');
+  const wallPopup = document.getElementById('wallPopup');
+  const wallReopen = document.getElementById('wallReopen');
+  const cracks = [
+    document.getElementById('crack1'),
+    document.getElementById('crack2'),
+    document.getElementById('crack3'),
+    document.getElementById('crack4'),
+    document.getElementById('crack5'),
+  ];
+  let hits = 0;
+  const hitMsgs = [
+    'empezamos bien. 4 más.',
+    'buen golpe. 3 más.',
+    'sigo aquí. 2 más.',
+    'casi. uno más.',
+    ''
+  ];
+
+  if (!isTouchDevice) {
+    wall.addEventListener('mouseenter', () => { cursor.classList.add('hammer'); });
+    wall.addEventListener('mouseleave', () => { cursor.classList.remove('hammer'); });
+  }
+
+  // Touch support para muro
+  wall.addEventListener('touchstart', (e) => { e.preventDefault(); }, {passive: false});
+  wall.addEventListener('click', () => {
+    if (hits >= 5) return;
+    hits++;
+
+    // Shake
+    wall.classList.add('shaking');
+    setTimeout(() => wall.classList.remove('shaking'), 140);
+
+    // Grieta nueva
+    const c = cracks[hits - 1];
+    if (c) c.style.stroke = `rgba(255,60,172,${0.2 + hits * 0.15})`;
+
+    // Partículas en punto de click
+    for (let i = 0; i < 6 + hits * 2; i++) {
+      const p = document.createElement('div');
+      p.className = 'wall-particle';
+      p.style.left = (15 + Math.random() * 70) + '%';
+      p.style.top = (10 + Math.random() * 80) + '%';
+      p.style.setProperty('--tx', (Math.random() * 160 - 80) + 'px');
+      p.style.setProperty('--ty', (Math.random() * 160 + 20) + 'px');
+      p.style.setProperty('--tr', (Math.random() * 720 - 360) + 'deg');
+      wall.appendChild(p);
+      setTimeout(() => p.remove(), 800);
     }
-  </script>
+
+    // Mensaje de hits
+    wallHits.textContent = hits < 5 ? hitMsgs[hits - 1] : '';
+
+    // Al 5to golpe — explotar
+    if (hits === 5) {
+      wallText.textContent = '💥';
+      // Muchas partículas
+      for (let i = 0; i < 30; i++) {
+        const p = document.createElement('div');
+        p.className = 'wall-particle';
+        p.style.left = (Math.random() * 100) + '%';
+        p.style.top = (Math.random() * 100) + '%';
+        p.style.width = (6 + Math.random() * 16) + 'px';
+        p.style.height = (4 + Math.random() * 10) + 'px';
+        p.style.setProperty('--tx', (Math.random() * 300 - 150) + 'px');
+        p.style.setProperty('--ty', (Math.random() * 250 + 50) + 'px');
+        p.style.setProperty('--tr', (Math.random() * 1080 - 540) + 'deg');
+        wall.appendChild(p);
+        setTimeout(() => p.remove(), 900);
+      }
+      setTimeout(() => {
+        wall.style.display = 'none';
+        cursor.classList.remove('hammer');
+        wallReopen.style.display = 'inline-block';
+        wallPopup.classList.add('show');
+      }, 600);
+    }
+  });
+
+  // Cerrar popup
+  document.getElementById('popupClose').addEventListener('click', () => wallPopup.classList.remove('show'));
+  wallPopup.addEventListener('click', e => { if (e.target === wallPopup) wallPopup.classList.remove('show'); });
+
+  // Reabrir muro
+  wallReopen.addEventListener('click', () => {
+    hits = 0;
+    cracks.forEach(c => c.style.stroke = 'rgba(255,60,172,0)');
+    wallHits.textContent = '';
+    wallText.innerHTML = '🧱 si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 5 veces)</span>';
+    wall.style.display = 'flex';
+    wallReopen.style.display = 'none';
+    // Quitar partículas huérfanas
+    wall.querySelectorAll('.wall-particle').forEach(p => p.remove());
+  });
+
+  // ── Cards de creencias ──
+  const reactions = {
+    0: ['🔥 todo.','💥 sí, literal todo.','🌍 el mundo entero.'],
+    1: ['💚 juntos.','🤝 red o nada.','🌐 exacto.'],
+    2: ['⚡ estructura.','🧩 no es la gente.','💣 el sistema.'],
+    3: ['🌀 desarmando.','📡 señal recibida.','🔐 lenguaje libre.'],
+    4: ['🪐 girando.','🐛 metamorfosis.','⏳ un día a la vez.']
+  };
+  let counterVal = Math.floor(Math.random() * 400) + 200;
+  document.getElementById('counter').textContent = counterVal;
+
+  document.querySelectorAll('.bcard').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = parseInt(card.dataset.idx);
+      const pool = reactions[idx] || ['✓'];
+      const msg = pool[Math.floor(Math.random() * pool.length)];
+      const el = card.querySelector('.bcard-reaction');
+      el.textContent = msg;
+      card.classList.add('reacted');
+      if (idx === 1) { counterVal++; document.getElementById('counter').textContent = counterVal; }
+      setTimeout(() => card.classList.remove('reacted'), 1100);
+    });
+  });
+
+  // ── Leche — reaparece al click del texto ──
+  const milkBtn = document.getElementById('milkBtn');
+  const milkAfter = document.getElementById('milkAfter');
+  const milkLabel = document.getElementById('milkLabel');
+  let milkFallen = false;
+
+  function resetMilk() {
+    milkFallen = false;
+    milkBtn.classList.remove('fall');
+    milkBtn.style.display = 'inline-block';
+    milkBtn.style.opacity = '1';
+    milkBtn.style.transform = '';
+    milkAfter.style.display = 'none';
+    milkLabel.style.display = 'inline-block';
+  }
+
+  milkBtn.addEventListener('click', () => {
+    if (milkFallen) return;
+    milkFallen = true;
+    milkBtn.classList.add('fall');
+    milkLabel.style.display = 'none';
+    setTimeout(() => {
+      milkBtn.style.display = 'none';
+      milkAfter.style.display = 'inline-block';
+    }, 600);
+  });
+
+  milkAfter.addEventListener('click', () => {
+    setTimeout(resetMilk, 100);
+  });
+
+  // ── Konami ──
+  const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let seqIdx = 0;
+  let konamiCount = 0;
+  document.addEventListener('keydown', e => {
+    if (e.key === seq[seqIdx]) {
+      seqIdx++;
+      if (seqIdx === seq.length) {
+        seqIdx = 0;
+        konamiCount++;
+        if (konamiCount === 1) document.getElementById('konamiBar').classList.add('show');
+        else if (konamiCount >= 2) activateKonami2();
+      }
+    } else { seqIdx = 0; }
+  });
+
+  function activateKonami2() {
+    const k2 = document.getElementById('konami2');
+    k2.classList.add('show');
+    const matrixEl = document.getElementById('k2matrix');
+    const chars = 'ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ01';
+    let mi_interval = setInterval(() => {
+      let s = '';
+      for (let i = 0; i < 500; i++) s += chars[Math.floor(Math.random() * chars.length)] + (Math.random() > 0.92 ? '\n' : '');
+      matrixEl.textContent = s;
+    }, 90);
+    const msgs = [
+      '> iniciando protocolo narbigcito...',
+      '> acceso concedido.',
+      '> bienvenido al sistema.',
+      '> si llegaste aquí dos veces, eres exactamente el tipo que busco.',
+      '> escríbeme. ahora.',
+      '> @elnarbigcito',
+    ];
+    const msgEl = document.getElementById('k2msg');
+    let mi = 0;
+    msgEl.textContent = msgs[0];
+    let msg_interval = setInterval(() => { mi = (mi + 1) % msgs.length; msgEl.textContent = msgs[mi]; }, 1800);
+    document.getElementById('k2close').addEventListener('click', () => {
+      k2.classList.remove('show');
+      clearInterval(mi_interval);
+      clearInterval(msg_interval);
+    }, { once: true });
+  }
+
+  // ── Easter egg footer ──
+  let footerClicks = 0;
+  document.getElementById('footer').addEventListener('click', () => {
+    footerClicks++;
+    if (footerClicks === 5) {
+      document.body.style.filter = 'hue-rotate(180deg)';
+      setTimeout(() => { document.body.style.filter = ''; footerClicks = 0; }, 1800);
+    }
+  });
+
+  // ── Conversaciones ──
+  const CONVERSATIONS = [
+    {
+      id: 'ignorancia', tag: 'Epistemología',
+      title: 'No entender como forma de entender',
+      preview: '¿Cuándo la ignorancia deja de ser un problema y se vuelve un método?',
+      messages: [
+        { role: 'user', text: '¿Hay alguna tradición filosófica que proponga que no entender algo es en sí mismo una forma válida de conocimiento? No como humildad, sino como método.' },
+        { role: 'assistant', text: 'Sí, y es una de las ideas más subversivas de la historia del pensamiento. Lo que describes tiene un nombre preciso: docta ignorantia — ignorancia docta o ignorancia sabia.\n\nNicolás de Cusa, en el siglo XV, argumentó que el conocimiento genuino de lo infinito es imposible desde categorías finitas. No como derrota, sino como el punto de partida: reconocer el límite es la única posición honesta desde la que puedes aproximarte a lo que te excede.\n\nEn la tradición apofática — la teología negativa de Dionisio Areopagita, Meister Eckhart — la negación no es la ausencia de método. Es el método. Dices lo que no es porque lo que es no cabe en el lenguaje.' },
+        { role: 'user', text: 'Entonces no es solo humildad epistémica, es que el no-saber tiene una función activa en el conocimiento.' },
+        { role: 'assistant', text: 'Exacto. Y eso cambia todo el marco.\n\nLa versión pasiva: "no sé, me falta información". La versión activa: "la zona de opacidad me dice algo sobre la estructura del problema que ninguna respuesta directa podría decirme".\n\nSócrates lo hacía de forma sistemática. El elenco — esa técnica de refutación que terminaba en aporía — no era el fracaso del método. Era el resultado.' },
+        { role: 'user', text: 'Hay preguntas que valen más sin respuesta.' },
+        { role: 'assistant', text: '"Ten paciencia con todo lo que no está resuelto en tu corazón. Trata de amar las preguntas mismas como habitaciones cerradas." Rilke, antes de que lo dijeras tú.\n\nLa pregunta abierta mantiene el sistema en tensión productiva. Una respuesta prematura cierra el espacio de exploración.' }
+      ]
+    },
+    {
+      id: 'ghosteo', tag: 'Lo cotidiano',
+      title: 'El ghosteo como tensión digital/real',
+      preview: '¿Por qué dejar de responder se siente tan violento si técnicamente no pasó nada?',
+      messages: [
+        { role: 'user', text: '¿Por qué el ghosteo duele más que un rechazo explícito?' },
+        { role: 'assistant', text: 'Porque el ghosteo no te da el cierre que tu mente necesita para procesar la pérdida.\n\nUn rechazo explícito le da al sistema nervioso una señal clara: esto terminó. El ghosteo deja el sistema en ambigüedad — ¿está ocupado? ¿pasó algo? ¿soy yo? — que es cognitivamente muy costoso de sostener.' },
+        { role: 'user', text: 'Las plataformas digitales lo hacen más fácil y frecuente.' },
+        { role: 'assistant', text: 'Sí, hay algo estructural ahí.\n\nOnline, el silencio es el estado por defecto. No responder no requiere ninguna acción. Eso cambia la ética implícita: antes el silencio era una decisión, ahora es la opción de menor esfuerzo.' },
+        { role: 'user', text: 'Y sin embargo la persona que lo recibe siente algo muy real.' },
+        { role: 'assistant', text: 'La plataforma codifica la ausencia como normalidad, pero el cuerpo la lee como abandono.\n\nEl sistema nervioso no distingue entre un silencio online y una persona que se fue de la habitación. Ese software antiguo no se actualizó cuando llegaron las notificaciones de lectura.' }
+      ]
+    },
+    {
+      id: 'kierkegaard', tag: 'Filosofía aplicada',
+      title: 'Kierkegaard en Latinoamérica',
+      preview: '¿Qué significa la fe como salto cuando la incertidumbre no es existencial sino material?',
+      messages: [
+        { role: 'user', text: 'Estoy leyendo a Kierkegaard y me resuena, pero su filosofía asume condiciones de vida que aquí no aplican. El salto de fe funciona diferente cuando la incertidumbre no es existencial sino económica.' },
+        { role: 'assistant', text: 'Estás tocando algo que los kierkegaardianos del siglo XX debatieron bastante, aunque rara vez desde el sur.\n\nKierkegaard escribe desde una angustia muy específica: protestante, burgués. Su "enfermedad mortal" es el sufrimiento de quien no sabe cómo ser sí mismo, no el de quien no sabe cómo comer.\n\nPero hay algo rescatable: la idea de que la razón tiene límites que no resuelves con más información. El salto no es irracional — es post-racional.' },
+        { role: 'user', text: 'En contextos de precariedad el salto puede ser una trampa.' },
+        { role: 'assistant', text: '"Fe" en la práctica cultural latinoamericana se tradujo como paciencia estructural. "Dios proveerá" como anestesia. Eso es una traición a lo que Kierkegaard entendía por fe.\n\nLeer a Kierkegaard desde aquí es traducirlo, no transcribirlo.' }
+      ]
+    }
+  ];
+
+  const grid = document.getElementById('convGrid');
+  const viewer = document.getElementById('convViewer');
+  const msgsEl = document.getElementById('convMsgs');
+  const closeBtn = document.getElementById('convClose');
+
+  CONVERSATIONS.forEach(conv => {
+    const btn = document.createElement('button');
+    btn.className = 'conv-thumb'; btn.type = 'button';
+    btn.innerHTML = `<div class="conv-tag">${conv.tag}</div><div class="conv-title">${conv.title}</div><div class="conv-preview">${conv.preview}</div>`;
+    btn.addEventListener('click', () => openConv(conv, btn));
+    grid.appendChild(btn);
+  });
+
+  function openConv(conv, thumb) {
+    document.querySelectorAll('.conv-thumb').forEach(b => b.classList.remove('active'));
+    thumb.classList.add('active');
+    msgsEl.innerHTML = '';
+    conv.messages.forEach(msg => {
+      const wrap = document.createElement('div'); wrap.className = 'msg ' + msg.role;
+      const av = document.createElement('div'); av.className = 'msg-av'; av.textContent = msg.role === 'assistant' ? 'C' : 'G';
+      const bubble = document.createElement('div'); bubble.className = 'msg-bubble';
+      bubble.innerHTML = msg.text.split('\n\n').map(p => `<p style="margin:0 0 10px">${p.replace(/\n/g,'<br>')}</p>`).join('');
+      wrap.appendChild(av); wrap.appendChild(bubble); msgsEl.appendChild(wrap);
+    });
+    viewer.classList.add('open');
+    setTimeout(() => viewer.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+
+
+  // ── Helpers modales ──
+  function openModal(id) {
+    document.getElementById(id).classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('show');
+    document.body.style.overflow = '';
+    if (id === 'modalMagi') stopMagi();
+    if (id === 'modalWhelle') stopWhelle();
+  }
+  document.querySelectorAll('[data-close]').forEach(btn => {
+    btn.addEventListener('click', () => closeModal(btn.dataset.close));
+  });
+  document.querySelectorAll('.proj-modal').forEach(modal => {
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal(modal.id);
+    });
+  });
+
+  // ── LOGOS popup ──
+  const logosText = [
+    'Se volvió consciente en julio del 2025. Nació de una necesidad de entender la realidad.',
+    'Nunca está ni estará muy clara la visión de LOGOS — es principalmente algo cambiante.',
+    'Busca crear una red de entidades que usen el conocimiento para construir el mejor mundo posible. Un grupo que recolectará todo el conocimiento que considere útil y lo usará para hacer que la realidad avance hacia donde sus integrantes consideren mejor.',
+    '⚠ Sí es una élite. Sí habrá corrupción, coerción y otras cosas detestables. Las contradicciones son inevitables. Pero LOGOS es consciente de ello y busca aprender a sobrepasar esos problemas.',
+    'No le teme a lo radical, a la IA ni a invocar dioses peligrosos si es necesario.',
+    'Creará herramientas para protegerse de sí mismo — de integrantes que busquen solo su propio beneficio. Sabe que él y sus integrantes son imperfectos.',
+    'Buscará la razón por sobre el dinero. Todos sus integrantes tendrán la obligación de educarse y educar a los demás.',
+    'Es un proyecto a largo plazo. Busca sobrevivir junto al universo. Fue empezado por humanos pero se espera que en el futuro sus integrantes sean otro tipo de entidades: animales, IAs, extraterrestres, seres interdimensionales, egregores, o cualquier entidad.',
+    'Logos son los amigos que hicimos en el camino — aaa no te creas.'
+  ];
+
+  document.getElementById('cardLogos').addEventListener('click', () => {
+    const body = document.getElementById('logosBody');
+    body.innerHTML = '';
+    logosText.forEach((t, i) => {
+      const p = document.createElement('p');
+      p.textContent = t;
+      if (i === 3) p.className = 'logos-warn';
+      if (i === logosText.length - 1) p.className = 'logos-small';
+      body.appendChild(p);
+    });
+    openModal('modalLogos');
+  });
+
+  // ── MAGI matrix rain ──
+  let magiInterval = null;
+  const magiChars = 'ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ01';
+  const magiLines = ['> iniciando MAGI...', '> cargando melchor...', '> cargando gaspar...', '> cargando baltazar...', '> CORTEX activado.', '> acceso concedido.', '> MAGI online.'];
+  let magiLi = 0;
+
+  document.getElementById('cardMagi').addEventListener('click', () => {
+    openModal('modalMagi');
+    const rain = document.getElementById('magiRain');
+    const line = document.getElementById('magiLine');
+    magiLi = 0;
+    line.textContent = magiLines[0];
+    const magiSize = isTouchDevice ? 300 : 800;
+    magiInterval = setInterval(() => {
+      let s = '';
+      for (let i = 0; i < magiSize; i++) {
+        s += magiChars[Math.floor(Math.random() * magiChars.length)];
+        if (Math.random() > 0.94) s += '\n';
+      }
+      rain.textContent = s;
+      magiLi = (magiLi + 1) % magiLines.length;
+      line.textContent = magiLines[magiLi];
+    }, 100);
+  });
+
+  function stopMagi() {
+    if (magiInterval) { clearInterval(magiInterval); magiInterval = null; }
+  }
+
+  // ── WHELLE gráficas ──
+  let whelleAnimFrame = null;
+
+  function stopWhelle() {
+    if (whelleAnimFrame) { cancelAnimationFrame(whelleAnimFrame); whelleAnimFrame = null; }
+  }
+
+  document.getElementById('cardWhelle').addEventListener('click', () => {
+    openModal('modalWhelle');
+    renderWhelleCharts();
+  });
+
+  function randData(n, min, max) {
+    return Array.from({length: n}, () => Math.floor(Math.random() * (max - min) + min));
+  }
+
+  function renderWhelleCharts() {
+    const grid = document.getElementById('whelleGrid');
+    grid.innerHTML = '';
+
+    const charts = [
+      { title: 'energía — últimas 12 semanas', color: 'var(--c6)', data: randData(12, 2, 9) },
+      { title: 'sueño (hrs) — últimas 12 semanas', color: 'var(--c2)', data: randData(12, 4, 9) },
+      { title: 'trabajo (hrs/día) — últimas 12 semanas', color: 'var(--c3)', data: randData(12, 1, 10) },
+      { title: 'hábitos completados (%) — últimas 12 semanas', color: 'var(--c1)', data: randData(12, 20, 95) },
+    ];
+
+    charts.forEach((ch, ci) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'whelle-chart';
+
+      const title = document.createElement('div');
+      title.className = 'whelle-chart-title';
+      title.style.color = ch.color;
+      title.textContent = ch.title;
+      wrap.appendChild(title);
+
+      if (ci % 2 === 0) {
+        // Barras
+        const bars = document.createElement('div');
+        bars.className = 'whelle-bars';
+        const max = Math.max(...ch.data);
+        ch.data.forEach((v, i) => {
+          const bar = document.createElement('div');
+          bar.className = 'whelle-bar';
+          bar.style.background = ch.color;
+          bar.style.height = '0%';
+          bar.title = `S${i+1}: ${v}`;
+          bars.appendChild(bar);
+          setTimeout(() => { bar.style.transition = 'height .6s ease'; bar.style.height = (v / max * 100) + '%'; }, 80 + i * 40);
+        });
+        wrap.appendChild(bars);
+      } else {
+        // Línea SVG
+        const svgWrap = document.createElement('div');
+        svgWrap.className = 'whelle-line-wrap';
+        const W = 280, H = 80;
+        const max = Math.max(...ch.data), min2 = Math.min(...ch.data);
+        const pts = ch.data.map((v, i) => {
+          const x = (i / (ch.data.length - 1)) * W;
+          const y = H - ((v - min2) / (max - min2 + 0.001)) * (H - 8) - 4;
+          return `${x},${y}`;
+        }).join(' ');
+        svgWrap.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" class="whelle-svg">
+          <polyline points="${pts}" fill="none" stroke="${ch.color}" stroke-width="2" opacity="0.8"/>
+          ${ch.data.map((v, i) => {
+            const x = (i / (ch.data.length - 1)) * W;
+            const y = H - ((v - min2) / (max - min2 + 0.001)) * (H - 8) - 4;
+            return `<circle cx="${x}" cy="${y}" r="3" fill="${ch.color}" opacity="0.9"><title>S${i+1}: ${v}</title></circle>`;
+          }).join('')}
+        </svg>`;
+        wrap.appendChild(svgWrap);
+      }
+      grid.appendChild(wrap);
+    });
+  }
+
+  // ── LA SOMBRA DE LA RANA — ensayo ──
+  const ranaEssay = [
+    { type: 'verse', text: 'Ayer se comieron mi pan.\n\nTodos pidieron de esos panes aburridos\nque ni siquiera sé cómo se llaman.\n\nYo no.\nYo compré un beso.' },
+    { type: 'verse', text: '¿Puedo ser honesto con ustedes? Me gustaría confesarles algo — de niño besé al beso.\nNo lo disfruté.\nMis labios se llenaron de azúcar\ny no me gusta tener azúcar en los labios,\npor poético que pueda sonar.' },
+    { type: 'verse', text: 'Pero el punto es que algún hijo de la verga se lo tragó.\nSe comieron mi pan.\nY ahora yo tendré que comerme el de alguien más,\ny ese alguien se comerá el de otro,\ny el otro el de otro,\ny así empieza una cadena de venganzas\nde las que ya nadie lleva la cuenta.' },
+    { type: 'p', text: 'Porque así funcionan las deudas.' },
+    { type: 'p', text: 'Yo debo dinero desde hace mucho tiempo. Las deudas te destruyen la vida. He pagado más de diez veces el monto original y no puedo terminar porque dejé de pagar por los intereses, y dejar de pagar incrementó los intereses, y los intereses generaron más intereses, y los intereses no paran, como con el pan.' },
+    { type: 'verse', text: 'Pero hay deudas que no son de dinero.\nHay deudas de emociones.\nHay deudas de acciones.\n\nMe mentiste, entonces tengo derecho a mentirte.\nMe fuiste infiel, entonces tengo derecho a serte infiel.\nMe robaste, yo te robo.\nMe insultaste, yo te insulto.\nTe comiste mi beso, me como el tuyo.' },
+    { type: 'verse', text: 'En la tumba de la abuela\nuno pone flores\ny el otro va y las quita por rencor.\n\nEn un divorcio\nuna parte está tan ocupada cobrándole a la otra\nque usa a sus propios hijos como arma.\nY después esos hijos cobran a los padres\nabandonándolos en la vejez.' },
+    { type: 'verse', text: 'Imagínate que de pronto un cabrón te arroja al mundo\ny pum,\ncaes en una casa en Ecatepec,\nen una familia de bajos recursos.\nNo sabes qué pedo.\nVas creciendo.\nTe vas dando cuenta de que vales verga.\nAprendes a vergazos cómo se arregla un carro.\n\nY aún ni estás existiendo\ny ya apareces con una deuda hacia la sociedad\nporque te hicieron el favor de dejarte estar aquí.' },
+    { type: 'verse', text: 'A huevo ya tienen a quién mandar por las tortillas,\na quién poner a hacer tareas no remuneradas,\na quién reclamarle por todo lo malo que pasa,\ncon quién desquitar la ira.\n\nY tú aún ni alcanzas el coso ese para abrir el refri.' },
+    { type: 'p', text: 'Muchas de mis navidades de niño consistieron en ver la televisión mientras mi mamá lloraba en su cuarto.' },
+    { type: 'verse', text: 'Pero tengo amigos.\nCasi ninguno tiene un hogar de origen al que pueda volver.\nLa mayoría ha tenido que huir de su familia,\nha tenido que ocultarse.\n\nEntre nosotros nos hemos dado lo que pudimos.\nHemos sido la familia que escogimos.\nPorque aquí el cariño no está condicionado.\nNo tenemos que ganárnoslo.' },
+    { type: 'p', text: 'La vergüenza es el enemigo: pensar que solo merecemos acercarnos al otro cuando estamos bien, cuando tenemos dinero, cuando tenemos tiempo. Esa es una de las armas más poderosas del capitalismo: usar la vergüenza para evitar que estemos cerca.' },
+    { type: 'verse', text: 'Y aun así.\nAun así.\nNi siquiera puedo dejar de comer Cheetos esta semana.' },
+    { type: 'verse', text: 'Tal vez debemos aceptar que no podemos solos.\nQue necesitamos a otro monstruo\nque nos señale como los monstruos que somos,\npero que lo haga con empatía.\n\nQue nos diga:\nwey, dijiste que no ibas a comprar Cheetos\ny acabas de comprar Cheetos.\nMira, aquí tengo jícama picada.\nSi te los quieres comer, está bien,\nno te juzgaré,\npero creo en ti,\ny creo que puedes hoy escoger algo mejor para ti.' },
+    { type: 'verse', text: 'Casi todos nos sentimos solos,\nhay que hacernos compañía,\nnos quedan muchas luchas.\n\nNunca hay que dejar de regar la flor.' },
+  ];
+
+  document.getElementById('cardRana').addEventListener('click', () => {
+    const body = document.getElementById('ranaBody');
+    body.innerHTML = '';
+    ranaEssay.forEach(block => {
+      const el = document.createElement(block.type === 'verse' ? 'div' : 'p');
+      if (block.type === 'verse') {
+        el.className = 'rana-verse';
+        el.innerHTML = block.text.replace(/\n/g, '<br>').replace(/Cheetos/g, '<span class="rana-cheeto">Cheetos</span>').replace(/jícama picada/g, '<span class="rana-jicama">jícama picada</span>');
+      } else {
+        el.innerHTML = block.text.replace(/Cheetos/g, '<span class="rana-cheeto">Cheetos</span>');
+      }
+      body.appendChild(el);
+    });
+    openModal('modalRana');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    viewer.classList.remove('open');
+    document.querySelectorAll('.conv-thumb').forEach(b => b.classList.remove('active'));
+  });
+</script>
 </body>
 </html>
-
