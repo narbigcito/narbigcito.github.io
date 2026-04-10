@@ -147,8 +147,9 @@
     .wall {
       position: relative; width: 100%; min-height: 260px;
       display: flex; align-items: center; justify-content: center;
-      cursor: none; overflow: hidden;
+      cursor: pointer; overflow: hidden;
       border: 2px solid rgba(255,255,255,0.08);
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
     }
 
     /* Textura ladrillo */
@@ -280,7 +281,7 @@
 
     /* ── PROYECTOS ── */
     .apps-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px; }
-    .app-card { border: 1px solid rgba(255,255,255,0.06); padding: 28px; display: flex; flex-direction: column; gap: 14px; cursor: none; transition: all .15s; text-decoration: none; color: inherit; position: relative; overflow: hidden; }
+    .app-card { border: 1px solid rgba(255,255,255,0.06); padding: 28px; display: flex; flex-direction: column; gap: 14px; cursor: none; transition: all .15s; text-decoration: none; color: inherit; position: relative; overflow: hidden; touch-action: manipulation; }
     .app-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform .25s; }
     .app-card:hover::after { transform: scaleX(1); }
     .app-card:hover { border-color: rgba(255,255,255,0.14); }
@@ -524,7 +525,7 @@
           <span class="wa-2">MORENO</span>
           <span class="wa-3">ingeniero · escritor · constructor de cosas raras</span>
         </div>
-        <div class="sticker s1">A webo, soy de Ecatepec ★</div>
+        <div class="sticker s1">A Webo, soy de Ecatepec ★</div>
         <div class="sticker s2">v2.0 beta</div>
       </div>
       <div class="hero-right">
@@ -562,7 +563,7 @@
     <div class="sec-label" style="color:var(--c1)">// QUIÉN SOY<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,60,172,.3),transparent);display:block;margin-left:10px"></span></div>
 
     <div class="wall-wrap" id="wallWrap">
-      <div class="wall" id="wall">
+      <div class="wall" id="wall" style="cursor:pointer;touch-action:manipulation">
         <div class="wall-bg"></div>
         <svg class="wall-cracks" viewBox="0 0 800 260" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
           <path id="crack1" class="crack-path" d="M400,0 L382,60 L430,80 L388,130 L415,155 L368,260"/>
@@ -576,7 +577,7 @@
         </div>
         <div class="wall-hits" id="wallHits"></div>
       </div>
-      <button class="wall-reopen" id="wallReopen" type="button">↩ volver a romper el muro</button>
+      <button class="wall-reopen" id="wallReopen" type="button" style="touch-action:manipulation">↩ volver a romper el muro</button>
     </div>
   </div>
 </section>
@@ -666,7 +667,7 @@
     <div class="apps-row">
 
       <!-- LOGOS — popup -->
-      <div class="app-card" id="cardLogos" style="border-color:rgba(0,245,212,0.12);cursor:none">
+      <div class="app-card" id="cardLogos" style="border-color:rgba(0,245,212,0.12);cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name" style="color:var(--c2)">LOGOS</div>
           <div class="app-badge badge-wip">∞ largo plazo</div>
@@ -694,7 +695,7 @@
       </a>
 
       <!-- MAGI — matrix rain -->
-      <div class="app-card ac-purple" id="cardMagi" style="cursor:none">
+      <div class="app-card ac-purple" id="cardMagi" style="cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name">MAGI</div>
           <div class="app-badge badge-wip">en construcción</div>
@@ -704,7 +705,7 @@
       </div>
 
       <!-- WHELLE — gráficas -->
-      <div class="app-card" id="cardWhelle" style="cursor:none;border-color:rgba(0,255,135,0.1)">
+      <div class="app-card" id="cardWhelle" style="border-color:rgba(0,255,135,0.1);cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name" style="color:var(--c6)">WHELLE</div>
           <div class="app-badge badge-wip">2 años activo</div>
@@ -714,7 +715,7 @@
       </div>
 
       <!-- LA SOMBRA DE LA RANA — ensayo -->
-      <div class="app-card" id="cardRana" style="cursor:none;border-color:rgba(255,230,0,0.1)">
+      <div class="app-card" id="cardRana" style="border-color:rgba(255,230,0,0.1);cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name" style="color:var(--c3);font-size:20px;line-height:1.15">LA SOMBRA<br>DE LA RANA</div>
           <div class="app-badge badge-wip">casi listo</div>
@@ -916,9 +917,8 @@
     wall.addEventListener('mouseleave', () => { cursor.classList.remove('hammer'); });
   }
 
-  // Touch support para muro
-  wall.addEventListener('touchstart', (e) => { e.preventDefault(); }, {passive: false});
-  wall.addEventListener('click', () => {
+  // Touch + click para muro
+  function handleWallHit() {
     if (hits >= 5) return;
     hits++;
 
@@ -970,7 +970,10 @@
         wallPopup.classList.add('show');
       }, 600);
     }
-  });
+  }
+
+  wall.addEventListener('click', handleWallHit);
+  wall.addEventListener('touchend', (e) => { e.preventDefault(); handleWallHit(); }, {passive: false});
 
   // Cerrar popup
   document.getElementById('popupClose').addEventListener('click', () => wallPopup.classList.remove('show'));
