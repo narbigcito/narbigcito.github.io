@@ -22,15 +22,24 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--bg); transition: background 0.8s ease; }
 
     body {
-      background: var(--bg);
+      background: transparent;
       color: var(--text);
       font-family: 'Space Grotesk', sans-serif;
       overflow-x: hidden;
       cursor: none;
-      transition: background 0.8s ease;
+    }
+
+    #tideCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      z-index: -1;
+      pointer-events: none;
     }
 
     /* ── CURSOR ── */
@@ -112,12 +121,24 @@
     @keyframes sf1 { 0%,100%{transform:rotate(7deg)translateY(0)} 50%{transform:rotate(7deg)translateY(-7px)} }
     @keyframes sf2 { 0%,100%{transform:rotate(-4deg)translateY(0)} 50%{transform:rotate(-4deg)translateY(7px)} }
 
+    .hero-left { display: flex; flex-direction: column; gap: 28px; }
     .hero-right { display: flex; flex-direction: column; gap: 20px; }
-    .hero-bio { font-size: 15px; line-height: 1.8; color: #aaa; }
+    .hero-bio {
+      font-size: 15px; line-height: 1.8; color: #c8c4b8;
+      background: rgba(10,10,10,0.68); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 22px;
+    }
     .hero-bio strong { color: var(--text); font-weight: 400; }
     .hero-bio em { color: var(--c6); font-style: normal; }
 
-    .status-box { border: 1px solid rgba(0,255,135,0.2); overflow: hidden; font-family: 'Syne Mono', monospace; font-size: 12px; }
+    .status-box {
+      border: 1px solid rgba(0,255,135,0.2); overflow: hidden;
+      font-family: 'Syne Mono', monospace; font-size: 12px;
+      background: rgba(10,10,10,0.72); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
     .status-bar { background: rgba(0,255,135,0.06); padding: 6px 12px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(0,255,135,0.12); color: var(--c6); font-size: 11px; }
     .sdot { width: 6px; height: 6px; border-radius: 50%; background: var(--c6); animation: pulse 2s ease-in-out infinite; }
     @keyframes pulse { 50%{opacity:.3} }
@@ -128,8 +149,8 @@
     .btn { font-family: 'Syne Mono', monospace; font-size: 12px; padding: 10px 18px; border: 2px solid; cursor: none; transition: all .12s; letter-spacing: 0.04em; text-decoration: none; display: inline-block; }
     .btn-main { background: var(--c3); border-color: var(--c3); color: #000; }
     .btn-main:hover { background: transparent; color: var(--c3); }
-    .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.12); color: #777; }
-    .btn-ghost:hover { border-color: var(--c2); color: var(--c2); }
+    .btn-ghost { background: rgba(10,10,10,0.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-color: rgba(255,255,255,0.18); color: #aaa; }
+    .btn-ghost:hover { border-color: var(--c2); color: var(--c2); background: rgba(10,10,10,0.85); }
 
     .geo { position: absolute; pointer-events: none; z-index: 0; }
     .geo-c1 { width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(120,78,255,0.12); top: 8%; right: -80px; animation: spin 45s linear infinite; }
@@ -142,28 +163,32 @@
     .sec-title { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 0.92; text-transform: uppercase; margin-bottom: 40px; }
 
     /* ── MURO ── */
-    .wall-wrap { position: relative; min-height: 260px; margin-bottom: 0; }
+    .wall-wrap { position: relative; min-height: 320px; margin-bottom: 0; }
 
     .wall {
-      position: relative; width: 100%; min-height: 260px;
+      position: relative; width: 100%; min-height: 320px;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer; overflow: hidden;
-      border: 2px solid rgba(255,255,255,0.08);
+      border: 3px solid #0a0806;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);
       touch-action: manipulation; -webkit-tap-highlight-color: transparent;
     }
 
     /* Textura ladrillo */
     .wall-bg {
       position: absolute; inset: 0;
-      background-color: #111;
+      background-color: #1a110c;
       background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 26px, rgba(255,255,255,0.04) 26px, rgba(255,255,255,0.04) 28px),
-        repeating-linear-gradient(90deg, transparent, transparent 56px, rgba(255,255,255,0.025) 56px, rgba(255,255,255,0.025) 58px);
+        /* Brick pattern: staggered rows, 160x74 tile */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='74' viewBox='0 0 160 74'><defs><linearGradient id='b' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23382720'/><stop offset='1' stop-color='%231f140f'/></linearGradient><linearGradient id='c' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%233a2a22'/><stop offset='1' stop-color='%23231611'/></linearGradient></defs><rect width='160' height='74' fill='%230a0705'/><rect x='1' y='1' width='78' height='34' fill='url(%23b)'/><rect x='81' y='1' width='78' height='34' fill='url(%23c)'/><rect x='-39' y='39' width='78' height='34' fill='url(%23c)'/><rect x='41' y='39' width='78' height='34' fill='url(%23b)'/><rect x='121' y='39' width='78' height='34' fill='url(%23c)'/><path d='M8 6 L18 4 M30 10 L52 12 M62 22 L76 20 M92 8 L110 12 M130 26 L152 22' stroke='%23000' stroke-opacity='0.35' stroke-width='0.6' fill='none'/><path d='M6 45 L22 49 M54 62 L70 58 M90 50 L118 54 M130 66 L154 62' stroke='%23000' stroke-opacity='0.35' stroke-width='0.6' fill='none'/><circle cx='24' cy='18' r='0.8' fill='%23000' opacity='0.4'/><circle cx='58' cy='10' r='0.7' fill='%23000' opacity='0.35'/><circle cx='104' cy='24' r='0.8' fill='%23000' opacity='0.4'/><circle cx='140' cy='14' r='0.6' fill='%23000' opacity='0.3'/><circle cx='18' cy='58' r='0.7' fill='%23000' opacity='0.35'/><circle cx='74' cy='52' r='0.8' fill='%23000' opacity='0.4'/><circle cx='108' cy='66' r='0.6' fill='%23000' opacity='0.3'/></svg>"),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.4));
+      background-size: 160px 74px, 100% 100%;
+      background-repeat: repeat, no-repeat;
     }
 
     /* Grietas que crecen con los golpes */
     .wall-cracks { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
-    .crack-path { stroke: rgba(255,60,172,0.0); stroke-width: 2; fill: none; transition: stroke .25s; }
+    .crack-path { stroke: rgba(255,60,172,0.0); stroke-width: 2; fill: none; transition: stroke .25s, stroke-width .25s; filter: drop-shadow(0 0 6px rgba(255,60,172,0.4)); }
 
     .wall-text {
       position: relative; z-index: 5; text-align: center;
@@ -214,18 +239,21 @@
     .popup-close { position: absolute; top: 14px; right: 16px; font-family: 'Syne Mono', monospace; font-size: 12px; color: var(--muted); background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 3px 10px; cursor: none; transition: all .15s; }
     .popup-close:hover { color: var(--text); border-color: var(--c1); }
     /* Botón "ver de nuevo" que aparece después de abrir el muro */
-    .wall-reopen { display: none; margin-top: 16px; font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); background: transparent; border: 1px dashed rgba(255,255,255,0.12); padding: 10px 18px; cursor: none; transition: all .15s; min-height: 44px; }
-    .wall-reopen:hover { color: var(--text); border-color: var(--c1); }
+    .wall-reopen { display: none; margin-top: 16px; font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); background: rgba(10,10,10,0.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px dashed rgba(255,255,255,0.18); padding: 10px 18px; cursor: none; transition: all .15s; min-height: 44px; }
+    .wall-reopen:hover { color: var(--text); border-color: var(--c1); background: rgba(10,10,10,0.85); }
 
     /* ── CUADROS LO QUE CREO ── */
     .belief-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(270px, 100%), 1fr)); gap: 3px; }
 
     .bcard {
-      padding: 26px; border: 1px solid rgba(255,255,255,0.05);
-      cursor: none; transition: transform .15s; position: relative; overflow: hidden;
+      padding: 26px; border: 1px solid rgba(255,255,255,0.08);
+      cursor: none; transition: transform .15s, border-color .15s, background .15s;
+      position: relative; overflow: hidden;
       min-height: 190px; display: flex; flex-direction: column; gap: 10px;
+      background: rgba(10,10,10,0.72);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     }
-    .bcard:hover { transform: scale(1.02); z-index: 3; border-color: rgba(255,255,255,0.15); }
+    .bcard:hover { transform: scale(1.02); z-index: 3; border-color: rgba(255,255,255,0.2); background: rgba(10,10,10,0.82); }
 
     .bc-0 { --cc: var(--c1); }
     .bc-1 { --cc: var(--c2); }
@@ -281,7 +309,7 @@
 
     /* ── PROYECTOS ── */
     .apps-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px; }
-    .app-card { border: 1px solid rgba(255,255,255,0.06); padding: 28px; display: flex; flex-direction: column; gap: 14px; cursor: none; transition: all .15s; text-decoration: none; color: inherit; position: relative; overflow: hidden; touch-action: manipulation; }
+    .app-card { border: 1px solid rgba(255,255,255,0.08); padding: 28px; display: flex; flex-direction: column; gap: 14px; cursor: none; transition: all .15s; text-decoration: none; color: inherit; position: relative; overflow: hidden; touch-action: manipulation; background: rgba(10,10,10,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
     .app-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform .25s; }
     .app-card:hover::after { transform: scaleX(1); }
     .app-card:hover { border-color: rgba(255,255,255,0.14); }
@@ -301,13 +329,13 @@
 
     /* ── CONVERSACIONES ── */
     .conv-thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 2px; margin-bottom: 16px; }
-    .conv-thumb { padding: 18px; border: 1px solid rgba(255,255,255,0.05); cursor: none; transition: all .15s; text-align: left; font-family: inherit; color: inherit; background: transparent; width: 100%; }
-    .conv-thumb:hover { border-color: rgba(120,78,255,0.3); background: rgba(120,78,255,0.04); }
-    .conv-thumb.active { border-color: var(--c5); background: rgba(120,78,255,0.08); }
+    .conv-thumb { padding: 18px; border: 1px solid rgba(255,255,255,0.08); cursor: none; transition: all .15s; text-align: left; font-family: inherit; color: inherit; background: rgba(10,10,10,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); width: 100%; }
+    .conv-thumb:hover { border-color: rgba(120,78,255,0.4); background: rgba(20,14,40,0.82); }
+    .conv-thumb.active { border-color: var(--c5); background: rgba(40,20,90,0.75); }
     .conv-tag { font-family: 'Syne Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c5); margin-bottom: 7px; }
     .conv-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
     .conv-preview { font-size: 12px; color: var(--muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .conv-viewer { border: 1px solid rgba(120,78,255,0.2); overflow: hidden; display: none; }
+    .conv-viewer { border: 1px solid rgba(120,78,255,0.25); overflow: hidden; display: none; background: rgba(10,10,15,0.78); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
     .conv-viewer.open { display: block; }
     .conv-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(120,78,255,0.04); }
     .conv-bar-left { display: flex; align-items: center; gap: 10px; }
@@ -331,11 +359,13 @@
     .conv-fake-input { flex: 1; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.06); background: #090909; color: #2a2a2a; font-size: 12px; font-family: 'Space Grotesk', sans-serif; cursor: none; user-select: none; }
     .conv-send-btn { width: 30px; height: 30px; background: #111; border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; opacity: 0.3; cursor: none; }
     .conv-readonly { font-family: 'Syne Mono', monospace; font-size: 9px; color: #2a2a2a; text-align: center; padding: 6px 0 10px; letter-spacing: 0.06em; }
+    .conv-thumb-external { border-style: dashed; text-decoration: none; }
+    .conv-thumb-external:hover { border-color: var(--c6); background: rgba(0,255,135,0.05); }
 
     /* ── CONECTAR ── */
     .links-row { display: flex; flex-wrap: wrap; gap: 8px; }
-    .link-item { font-family: 'Syne Mono', monospace; font-size: 12px; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.07); color: var(--muted); text-decoration: none; transition: all .12s; cursor: none; }
-    .link-item:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .link-item { font-family: 'Syne Mono', monospace; font-size: 12px; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.1); color: var(--muted); text-decoration: none; transition: all .12s; cursor: none; background: rgba(10,10,10,0.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .link-item:hover { color: var(--text); border-color: rgba(255,255,255,0.25); background: rgba(10,10,10,0.85); }
     .link-item.main { border-color: var(--c3); color: var(--c3); }
     .link-item.main:hover { background: var(--c3); color: #000; }
 
@@ -377,9 +407,9 @@
     .k2-msg { font-family: 'VT323', monospace; font-size: clamp(20px, 4vw, 34px); color: var(--c6); text-align: center; z-index: 2; line-height: 1.5; padding: 0 20px; max-width: 700px; }
 
     /* ── FOOTER ── */
-    footer { position: relative; z-index: 2; border-top: 1px solid rgba(255,255,255,0.04); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    .footer-sig { font-family: 'Syne Mono', monospace; font-size: 10px; color: #2a2a2a; }
-    .footer-up { font-family: 'Syne Mono', monospace; font-size: 10px; color: #2a2a2a; text-decoration: none; cursor: none; transition: color .15s; padding: 8px 0; }
+    footer { position: relative; z-index: 2; border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(10,10,10,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .footer-sig { font-family: 'Syne Mono', monospace; font-size: 10px; color: #555; }
+    .footer-up { font-family: 'Syne Mono', monospace; font-size: 10px; color: #555; text-decoration: none; cursor: none; transition: color .15s; padding: 8px 0; }
     .footer-up:hover { color: var(--c6); }
 
     .glitch:hover { animation: glitch .25s steps(1) infinite; }
@@ -465,6 +495,7 @@
 </head>
 <body>
 
+<canvas id="tideCanvas"></canvas>
 <div id="cursor"></div>
 <div id="laserCursor"><div id="laserText">el lenguaje no es inocente. nunca lo fue.</div></div>
 <div class="logo-secret" id="logoSecret">sí, como Khalil Gibran. no es casualidad.</div>
@@ -519,16 +550,16 @@
 <section id="hero">
   <div class="wrap">
     <div class="hero-grid">
-      <div style="position:relative">
-        <div class="wordart">
-          <span class="wa-1 glitch">GIBRÁN</span>
-          <span class="wa-2">MORENO</span>
-          <span class="wa-3">ingeniero · escritor · constructor de cosas raras</span>
+      <div class="hero-left">
+        <div class="wordart-wrap" style="position:relative">
+          <div class="wordart">
+            <span class="wa-1 glitch">GIBRÁN</span>
+            <span class="wa-2">MORENO</span>
+            <span class="wa-3">ingeniero · escritor · constructor de cosas raras</span>
+          </div>
+          <div class="sticker s1">A Webo, soy de Ecatepec ★</div>
+          <div class="sticker s2">v2.0 beta</div>
         </div>
-        <div class="sticker s1">A Webo, soy de Ecatepec ★</div>
-        <div class="sticker s2">v2.0 beta</div>
-      </div>
-      <div class="hero-right">
         <p class="hero-bio">
           No tengo todo resuelto.<br>
           Pero <strong>estoy haciendo cosas concretas</strong> para cambiar
@@ -537,6 +568,8 @@
           cualquier persona que crea que el mundo puede ser diferente
           y esté dispuesta a actuar.
         </p>
+      </div>
+      <div class="hero-right">
         <div class="status-box">
           <div class="status-bar"><div class="sdot"></div>sistema narbigcito · estado actual</div>
           <div class="status-body">
@@ -573,7 +606,7 @@
           <path id="crack5" class="crack-path" d="M500,260 L488,175 L525,148 L502,80" stroke-width="1"/>
         </svg>
         <div class="wall-text" id="wallText">
-          🧱 si quieres saber quién soy,<br>rompe este muro.
+          🧱 si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>
         </div>
         <div class="wall-hits" id="wallHits"></div>
       </div>
@@ -878,7 +911,7 @@
   window.addEventListener('scroll', () => {
     const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
     const idx = Math.min(Math.floor(pct * bgColors.length), bgColors.length - 1);
-    if (idx !== lastBg) { document.body.style.background = bgColors[idx]; lastBg = idx; }
+    if (idx !== lastBg) { document.documentElement.style.background = bgColors[idx]; lastBg = idx; }
   });
 
   // ── Easter egg logo ──
@@ -890,7 +923,8 @@
     logoTimer = setTimeout(() => logoSecret.style.display = 'none', 3000);
   });
 
-  // ── MURO: 5 golpes ──
+  // ── MURO: 11 golpes ──
+  const MAX_HITS = 11;
   const wall = document.getElementById('wall');
   const wallText = document.getElementById('wallText');
   const wallHits = document.getElementById('wallHits');
@@ -905,11 +939,16 @@
   ];
   let hits = 0;
   const hitMsgs = [
-    'empezamos bien. 4 más.',
-    'buen golpe. 3 más.',
-    'sigo aquí. 2 más.',
-    'casi. uno más.',
-    ''
+    'apenas lo rozaste. 10 más.',
+    'suena hueco. 9 más.',
+    'primera grieta. 8 más.',
+    'eso ya dolió. 7 más.',
+    'el muro respira. 6 más.',
+    'casi la mitad. 5 más.',
+    'se tambalea. 4 más.',
+    'siento algo. 3 más.',
+    'ya mero. 2 más.',
+    'una más. solo una.',
   ];
 
   if (!isTouchDevice) {
@@ -917,21 +956,34 @@
     wall.addEventListener('mouseleave', () => { cursor.classList.remove('hammer'); });
   }
 
+  function updateCracks() {
+    // Spread hits across 5 cracks; each crack darkens and thickens progressively as it receives hits.
+    const currentCrack = Math.min(Math.floor((hits - 1) * 5 / MAX_HITS), 4);
+    for (let i = 0; i <= currentCrack; i++) {
+      const crackStart = Math.floor(i * MAX_HITS / 5);
+      const crackEnd = Math.floor((i + 1) * MAX_HITS / 5);
+      const t = Math.min((hits - crackStart) / Math.max(crackEnd - crackStart, 1), 1);
+      const op = Math.min(0.3 + t * 0.7, 1);
+      const sw = 1.5 + t * 2.5;
+      cracks[i].style.stroke = `rgba(255,60,172,${op})`;
+      cracks[i].style.strokeWidth = sw.toString();
+    }
+  }
+
   // Touch + click para muro
   function handleWallHit() {
-    if (hits >= 5) return;
+    if (hits >= MAX_HITS) return;
     hits++;
 
     // Shake
     wall.classList.add('shaking');
     setTimeout(() => wall.classList.remove('shaking'), 140);
 
-    // Grieta nueva
-    const c = cracks[hits - 1];
-    if (c) c.style.stroke = `rgba(255,60,172,${0.2 + hits * 0.15})`;
+    updateCracks();
 
     // Partículas en punto de click
-    for (let i = 0; i < 6 + hits * 2; i++) {
+    const pCount = 4 + Math.floor(hits * 0.8);
+    for (let i = 0; i < pCount; i++) {
       const p = document.createElement('div');
       p.className = 'wall-particle';
       p.style.left = (15 + Math.random() * 70) + '%';
@@ -944,21 +996,20 @@
     }
 
     // Mensaje de hits
-    wallHits.textContent = hits < 5 ? hitMsgs[hits - 1] : '';
+    wallHits.textContent = hits < MAX_HITS ? hitMsgs[hits - 1] : '';
 
-    // Al 5to golpe — explotar
-    if (hits === 5) {
+    // Al golpe final — explotar
+    if (hits === MAX_HITS) {
       wallText.textContent = '💥';
-      // Muchas partículas
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 50; i++) {
         const p = document.createElement('div');
         p.className = 'wall-particle';
         p.style.left = (Math.random() * 100) + '%';
         p.style.top = (Math.random() * 100) + '%';
-        p.style.width = (6 + Math.random() * 16) + 'px';
-        p.style.height = (4 + Math.random() * 10) + 'px';
-        p.style.setProperty('--tx', (Math.random() * 300 - 150) + 'px');
-        p.style.setProperty('--ty', (Math.random() * 250 + 50) + 'px');
+        p.style.width = (6 + Math.random() * 18) + 'px';
+        p.style.height = (4 + Math.random() * 12) + 'px';
+        p.style.setProperty('--tx', (Math.random() * 360 - 180) + 'px');
+        p.style.setProperty('--ty', (Math.random() * 280 + 60) + 'px');
         p.style.setProperty('--tr', (Math.random() * 1080 - 540) + 'deg');
         wall.appendChild(p);
         setTimeout(() => p.remove(), 900);
@@ -982,9 +1033,9 @@
   // Reabrir muro
   wallReopen.addEventListener('click', () => {
     hits = 0;
-    cracks.forEach(c => c.style.stroke = 'rgba(255,60,172,0)');
+    cracks.forEach(c => { c.style.stroke = 'rgba(255,60,172,0)'; c.style.strokeWidth = '2'; });
     wallHits.textContent = '';
-    wallText.innerHTML = '🧱 si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 5 veces)</span>';
+    wallText.innerHTML = '🧱 si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>';
     wall.style.display = 'flex';
     wallReopen.style.display = 'none';
     // Quitar partículas huérfanas
@@ -1169,6 +1220,15 @@
     viewer.classList.add('open');
     setTimeout(() => viewer.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
   }
+
+  // Thumbnail "Ver más" - enlace externo
+  const moreBtn = document.createElement('a');
+  moreBtn.className = 'conv-thumb conv-thumb-external';
+  moreBtn.href = 'https://claude-mock.narbigcito.com';
+  moreBtn.target = '_blank';
+  moreBtn.rel = 'noreferrer';
+  moreBtn.innerHTML = `<div class="conv-tag">Archivo</div><div class="conv-title">Ver más conversaciones ↗</div><div class="conv-preview">Explora el archivo completo de diálogos con Claude</div>`;
+  grid.appendChild(moreBtn);
 
 
   // ── Helpers modales ──
@@ -1362,6 +1422,204 @@
     viewer.classList.remove('open');
     document.querySelectorAll('.conv-thumb').forEach(b => b.classList.remove('active'));
   });
+
+  // ── TIDE SHADER BACKGROUND ──
+  (function initTide() {
+    const tideCanvas = document.getElementById('tideCanvas');
+    const gl = tideCanvas.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: false });
+    if (!gl) return;
+
+    const VERT = `
+      attribute vec2 a_pos;
+      void main() { gl_Position = vec4(a_pos, 0., 1.); }
+    `;
+
+    const FRAG_TIDE = `
+      precision highp float;
+      uniform vec2 u_res, u_mouse, u_click;
+      uniform float u_time, u_clickTime, u_intensity, u_radius;
+
+      vec3 hsv2rgb(vec3 c){
+        vec4 K=vec4(1.,2./3.,1./3.,3.);
+        vec3 p=abs(fract(c.xxx+K.xyz)*6.-K.www);
+        return c.z*mix(K.xxx,clamp(p-K.xxx,0.,1.),c.y);
+      }
+
+      float fbm(vec2 p){
+        float v=0., a=0.5;
+        for(int i=0;i<6;i++){
+          v+=a*sin(p.x+sin(p.y+u_time*0.3));
+          p=p*2.1+vec2(1.3,1.7);
+          a*=0.5;
+        }
+        return v;
+      }
+
+      float sdPetal(vec2 p, float r, float angle){
+        float c=cos(angle), s=sin(angle);
+        p = vec2(c*p.x+s*p.y, -s*p.x+c*p.y);
+        p.x = abs(p.x);
+        return length(p - vec2(clamp(p.x,0.,r),0.)) - r*0.3;
+      }
+
+      void main(){
+        vec2 uv = gl_FragCoord.xy / u_res;
+        uv.y = 1. - uv.y;
+        vec2 m = u_mouse;
+
+        float aspect = u_res.x / u_res.y;
+        vec2 uvA = vec2(uv.x * aspect, uv.y);
+        vec2 mA  = vec2(m.x * aspect, m.y);
+        float dist = length(uvA - mA);
+
+        vec2 dir = normalize(uvA - mA + 0.0001);
+        float pull = u_radius * u_intensity;
+        vec2 warped = uv + dir * (pull / (dist * dist + 0.15)) * 0.04;
+
+        float age = max(0., u_time - u_clickTime);
+        vec2 cA  = vec2(u_click.x * aspect, u_click.y);
+        float cdist = length(uvA - cA);
+
+        float f1 = fbm(warped * 2.8 + vec2(u_time * 0.15, 0.));
+        float f2 = fbm(warped * 2.2 + vec2(0., u_time * 0.11) + f1 * 0.4);
+        float f3 = fbm(warped * 1.8 - vec2(u_time * 0.09) + f2 * 0.3);
+
+        float hue = f3 * 0.5 + 0.55;
+        float sat = 0.85 + f1 * 0.15;
+        float brightness = pow(clamp(f2 * 0.5 + f3 * 0.5, 0., 1.), 1.4);
+
+        float globalTide = pow(clamp(brightness * 0.7 + 0.15, 0., 1.), 2.2);
+        float ribbon = exp(-dist * 1.8) * 0.6;
+
+        vec3 fluidCol = hsv2rgb(vec3(hue, sat, 1.0));
+        vec3 col = vec3(0.);
+        col += fluidCol * (globalTide + ribbon) * u_intensity;
+
+        float R = age * 0.75;
+
+        float bloom = 0.;
+        for(int i=0;i<8;i++){
+          float a = float(i) * 0.785398;
+          vec2 pv = uvA - cA;
+          pv.y = -pv.y;
+          float d = sdPetal(pv - vec2(cos(a),sin(a))*R*0.5, 0.15 + R*0.05, a);
+          bloom += smoothstep(0.04, 0., d) * exp(-age * 1.3) * u_intensity;
+        }
+
+        float rings = 0.;
+        for(int r=0;r<5;r++){
+          float fi = float(r);
+          float ringR = R * (0.35 + fi * 0.18);
+          float ringW = smoothstep(0.022, 0., abs(cdist - ringR));
+          rings += ringW * exp(-age * (1.2 + fi * 0.4)) * (1. - fi * 0.15);
+        }
+
+        vec3 bloomHue = hsv2rgb(vec3(hue + 0.15 + age * 0.05, 0.9, 1.0));
+        vec3 ringCol  = mix(vec3(1.), bloomHue, 0.4);
+
+        col += bloomHue * bloom;
+        col += ringCol  * rings * 0.85;
+
+        col = clamp(col, 0., 1.);
+        gl_FragColor = vec4(col, 1.);
+      }
+    `;
+
+    function compile(type, src) {
+      const s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+        console.error(gl.getShaderInfoLog(s));
+        return null;
+      }
+      return s;
+    }
+
+    const v = compile(gl.VERTEX_SHADER, VERT);
+    const f = compile(gl.FRAGMENT_SHADER, FRAG_TIDE);
+    if (!v || !f) return;
+    const prog = gl.createProgram();
+    gl.attachShader(prog, v);
+    gl.attachShader(prog, f);
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(prog));
+      return;
+    }
+
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    const posLoc = gl.getAttribLocation(prog, 'a_pos');
+
+    function resize() {
+      const w = tideCanvas.clientWidth  || window.innerWidth;
+      const h = tideCanvas.clientHeight || window.innerHeight;
+      const dpr = Math.min(devicePixelRatio, 2);
+      tideCanvas.width  = Math.round(w * dpr);
+      tideCanvas.height = Math.round(h * dpr);
+      gl.viewport(0, 0, tideCanvas.width, tideCanvas.height);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    let uTime = 0, lastTime = 0;
+    let uMouse = [0.5, 0.5], targetMouse = [0.5, 0.5];
+    let uClick = [0.5, 0.5], uClickTime = -999;
+    const U_INTENSITY = 1.0, U_RADIUS = 0.25;
+
+    window.addEventListener('mousemove', e => {
+      targetMouse = [e.clientX / window.innerWidth, 1 - e.clientY / window.innerHeight];
+    });
+    window.addEventListener('touchmove', e => {
+      const t = e.touches[0];
+      targetMouse = [t.clientX / window.innerWidth, 1 - t.clientY / window.innerHeight];
+    }, { passive: true });
+    window.addEventListener('click', e => {
+      uClick = [e.clientX / window.innerWidth, 1 - e.clientY / window.innerHeight];
+      uClickTime = uTime;
+    });
+    window.addEventListener('touchstart', e => {
+      const t = e.touches[0];
+      uClick = [t.clientX / window.innerWidth, 1 - t.clientY / window.innerHeight];
+      uClickTime = uTime;
+    }, { passive: true });
+
+    const uRes = gl.getUniformLocation(prog, 'u_res');
+    const uT = gl.getUniformLocation(prog, 'u_time');
+    const uM = gl.getUniformLocation(prog, 'u_mouse');
+    const uC = gl.getUniformLocation(prog, 'u_click');
+    const uCT = gl.getUniformLocation(prog, 'u_clickTime');
+    const uI = gl.getUniformLocation(prog, 'u_intensity');
+    const uR = gl.getUniformLocation(prog, 'u_radius');
+
+    function render(ts) {
+      requestAnimationFrame(render);
+      const dt = Math.min((ts - lastTime) / 1000, 0.05);
+      lastTime = ts;
+      uTime += dt;
+
+      uMouse[0] += (targetMouse[0] - uMouse[0]) * 0.06;
+      uMouse[1] += (targetMouse[1] - uMouse[1]) * 0.06;
+
+      gl.useProgram(prog);
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.enableVertexAttribArray(posLoc);
+      gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+      gl.uniform2f(uRes, tideCanvas.width, tideCanvas.height);
+      gl.uniform1f(uT, uTime);
+      gl.uniform2f(uM, uMouse[0], uMouse[1]);
+      gl.uniform2f(uC, uClick[0], uClick[1]);
+      gl.uniform1f(uCT, uClickTime);
+      gl.uniform1f(uI, U_INTENSITY);
+      gl.uniform1f(uR, U_RADIUS);
+
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    }
+    requestAnimationFrame(t => { lastTime = t; requestAnimationFrame(render); });
+  })();
 </script>
 </body>
 </html>
