@@ -1,4 +1,65 @@
 <!doctype html>
+<!--
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║  👋  HOLA, CURIOSO/A                                                  ║
+║                                                                      ║
+║  Si estás leyendo esto, significa una de tres cosas:                 ║
+║                                                                      ║
+║  1. Eres desarrollador y sabes que el código fuente cuenta           ║
+║     historias que la interfaz nunca podrá contar.                    ║
+║                                                                      ║
+║  2. Eres exactamente el tipo de persona con quien me gustaría        ║
+║     colaborar: alguien que mira más allá de lo evidente.             ║
+║                                                                      ║
+║  3. O simplemente tienes demasiado tiempo libre (también válido).    ║
+║                                                                      ║
+║  ─────────────────────────────────────────────────────────────────── ║
+║                                                                      ║
+║  🎮  EASTER EGG #1: El código Konami (↑↑↓↓←→←→BA) activa modos       ║
+║      especiales. Sí, en serio.                                       ║
+║                                                                      ║
+║  🧱  EASTER EGG #2: Hay un muro que romper (11 golpes).              ║
+║      Detrás hay una historia personal.                               ║
+║                                                                      ║
+║  🥛  EASTER EGG #3: La leche se cae si le das click.                 ║
+║      ¿Por qué? Porque sí.                                            ║
+║                                                                      ║
+║  🦶  EASTER EGG #4: El footer tiene un secreto si lo clickeas        ║
+║      5 veces seguidas.                                               ║
+║                                                                      ║
+║  ─────────────────────────────────────────────────────────────────── ║
+║                                                                      ║
+║  "El que mira hacia afuera sueña. El que mira hacia adentro          ║
+║   despierta." — Jung                                                 ║
+║                                                                      ║
+║  💬  ¿Quieres conectar?                                               ║
+║      @elnarbigcito en IG / GitHub / LinkedIn / Substack              ║
+║                                                                      ║
+║      O agenda una llamada: calendar.app.google/vkautEEQ5BLAt6wz6     ║
+║                                                                      ║
+║  🌙  Este sitio está hecho a mano, sin frameworks, sin bundlers.      ║
+║      Solo HTML, CSS y JavaScript puro. Como en los viejos tiempos.   ║
+║                                                                      ║
+║      Las olas de fondo usan WebGL con shaders personalizados.        ║
+║      El cursor es custom. Todo tiene intención.                      ║
+║                                                                      ║
+║  ─────────────────────────────────────────────────────────────────── ║
+║                                                                      ║
+║  🏴‍☠️  narbigcito was here                                            ║
+║                                                                      ║
+║  "Tal vez debemos aceptar que no podemos solos."                     ║
+║                                                                      ║
+║  P.D.: Si llegaste hasta aquí, mándame un mensaje con la palabra     ║
+║        'MOCHILA' y te contaré un secreto.                            ║
+║                                                                      ║
+║  P.D.2: 42 es la respuesta. Siempre lo fue.                          ║
+║                                                                      ║
+║  =^._.^= ∫  (gato integrador, para los que entienden)                ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+-->
+
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -42,7 +103,7 @@
       pointer-events: none;
     }
 
-    /* ── CURSOR ── */
+    
     #cursor {
       width: 10px; height: 10px; border-radius: 50%;
       position: fixed; pointer-events: none; z-index: 9999;
@@ -65,7 +126,7 @@
       .wall-reopen, .conv-close-btn { cursor: pointer !important; }
     }
 
-    /* Cursor láser — card 4 */
+    
     #laserCursor {
       position: fixed; pointer-events: none; z-index: 9998;
       width: 90px; height: 90px; border-radius: 50%;
@@ -87,7 +148,7 @@
       pointer-events: none; z-index: 1;
     }
 
-    /* ── NAV ── */
+    
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
@@ -104,7 +165,7 @@
 
     .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; width: 100%; }
 
-    /* ── HERO ── */
+    
     #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; z-index: 2; overflow: hidden; }
     .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     @media (max-width: 700px) { .hero-grid { grid-template-columns: 1fr; } }
@@ -157,12 +218,12 @@
     .geo-c2 { width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(0,245,212,0.08); top: calc(8% + 60px); right: -20px; animation: spin 28s linear infinite reverse; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── SECCIÓN ── */
+    
     .section { position: relative; z-index: 2; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.04); }
     .sec-label { font-family: 'VT323', monospace; font-size: 14px; letter-spacing: 0.15em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
     .sec-title { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 0.92; text-transform: uppercase; margin-bottom: 40px; }
 
-    /* ── MURO ── */
+    
     .wall-wrap { position: relative; min-height: 320px; margin-bottom: 0; }
 
     .wall {
@@ -174,19 +235,19 @@
       touch-action: manipulation; -webkit-tap-highlight-color: transparent;
     }
 
-    /* Textura ladrillo */
+    
     .wall-bg {
       position: absolute; inset: 0;
       background-color: #1a110c;
       background-image:
-        /* Brick pattern: staggered rows, 160x74 tile */
+        
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='74' viewBox='0 0 160 74'><defs><linearGradient id='b' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23382720'/><stop offset='1' stop-color='%231f140f'/></linearGradient><linearGradient id='c' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%233a2a22'/><stop offset='1' stop-color='%23231611'/></linearGradient></defs><rect width='160' height='74' fill='%230a0705'/><rect x='1' y='1' width='78' height='34' fill='url(%23b)'/><rect x='81' y='1' width='78' height='34' fill='url(%23c)'/><rect x='-39' y='39' width='78' height='34' fill='url(%23c)'/><rect x='41' y='39' width='78' height='34' fill='url(%23b)'/><rect x='121' y='39' width='78' height='34' fill='url(%23c)'/><path d='M8 6 L18 4 M30 10 L52 12 M62 22 L76 20 M92 8 L110 12 M130 26 L152 22' stroke='%23000' stroke-opacity='0.35' stroke-width='0.6' fill='none'/><path d='M6 45 L22 49 M54 62 L70 58 M90 50 L118 54 M130 66 L154 62' stroke='%23000' stroke-opacity='0.35' stroke-width='0.6' fill='none'/><circle cx='24' cy='18' r='0.8' fill='%23000' opacity='0.4'/><circle cx='58' cy='10' r='0.7' fill='%23000' opacity='0.35'/><circle cx='104' cy='24' r='0.8' fill='%23000' opacity='0.4'/><circle cx='140' cy='14' r='0.6' fill='%23000' opacity='0.3'/><circle cx='18' cy='58' r='0.7' fill='%23000' opacity='0.35'/><circle cx='74' cy='52' r='0.8' fill='%23000' opacity='0.4'/><circle cx='108' cy='66' r='0.6' fill='%23000' opacity='0.3'/></svg>"),
         linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.4));
       background-size: 160px 74px, 100% 100%;
       background-repeat: repeat, no-repeat;
     }
 
-    /* Grietas que crecen con los golpes */
+    
     .wall-cracks { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
     .crack-path { stroke: rgba(255,60,172,0.0); stroke-width: 2; fill: none; transition: stroke .25s, stroke-width .25s; filter: drop-shadow(0 0 6px rgba(255,60,172,0.4)); }
 
@@ -198,14 +259,14 @@
       transition: color .2s;
     }
 
-    /* Contador de golpes */
+    
     .wall-hits {
       position: absolute; bottom: 12px; right: 16px; z-index: 6;
       font-family: 'Syne Mono', monospace; font-size: 11px; color: rgba(255,60,172,0.4);
       letter-spacing: 0.06em;
     }
 
-    /* Partículas */
+    
     .wall-particle {
       position: absolute; width: 10px; height: 7px;
       background: #1a1a1a; border: 1px solid #2a2a2a;
@@ -217,7 +278,7 @@
       100% { opacity: 0; transform: translate(var(--tx), var(--ty)) rotate(var(--tr)); }
     }
 
-    /* Shake en golpe */
+    
     .wall.shaking { animation: wall-shake .12s ease; }
     @keyframes wall-shake {
       0%,100% { transform: translateX(0); }
@@ -225,7 +286,7 @@
       75%      { transform: translateX(5px) rotate(0.3deg); }
     }
 
-    /* Pop-up muro */
+    
     .wall-popup { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; backdrop-filter: blur(10px); }
     .wall-popup.show { display: flex; }
     .wall-popup-box { background: #0e0e0e; border: 2px solid var(--c1); padding: 32px 40px; max-width: 640px; width: 90%; animation: popup-in .4s cubic-bezier(.34,1.56,.64,1); position: relative; max-height: 80vh; overflow-y: auto; }
@@ -238,11 +299,11 @@
     .popup-text em { color: var(--c2); font-style: normal; }
     .popup-close { position: absolute; top: 14px; right: 16px; font-family: 'Syne Mono', monospace; font-size: 12px; color: var(--muted); background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 3px 10px; cursor: none; transition: all .15s; }
     .popup-close:hover { color: var(--text); border-color: var(--c1); }
-    /* Botón "ver de nuevo" que aparece después de abrir el muro */
+    
     .wall-reopen { display: none; margin-top: 16px; font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); background: rgba(10,10,10,0.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px dashed rgba(255,255,255,0.18); padding: 10px 18px; cursor: none; transition: all .15s; min-height: 44px; }
     .wall-reopen:hover { color: var(--text); border-color: var(--c1); background: rgba(10,10,10,0.85); }
 
-    /* ── CUADROS LO QUE CREO ── */
+    
     .belief-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(270px, 100%), 1fr)); gap: 3px; }
 
     .bcard {
@@ -267,32 +328,32 @@
     .bcard-text { font-size: 13px; line-height: 1.7; color: #999; flex: 1; position: relative; z-index: 1; }
     .bcard-special { position: relative; z-index: 1; margin-top: 4px; }
 
-    /* Card 0: medidor */
+    
     .belief-meter { height: 4px; background: rgba(255,255,255,0.08); overflow: hidden; }
     .belief-meter-fill { height: 100%; background: var(--c1); width: 0; animation: meter-grow 2s ease-out 0.5s forwards; }
     @keyframes meter-grow { to { width: 100%; } }
 
-    /* Card 1: contador */
+    
     .belief-counter { font-family: 'VT323', monospace; font-size: 20px; color: var(--c2); }
 
-    /* Card 2: tag pulsante */
+    
     .belief-tag { display: inline-block; font-family: 'Syne Mono', monospace; font-size: 10px; padding: 3px 8px; border: 1px solid var(--c3); color: var(--c3); animation: tag-pulse 2s ease-in-out infinite; }
     @keyframes tag-pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
-    /* Card 3: glitch al hover */
+    
     .bc-3:hover .bcard-text { animation: glitch-text .3s steps(1) infinite; }
     @keyframes glitch-text { 0%{filter:none} 33%{filter:hue-rotate(90deg)} 66%{filter:invert(.1)} 100%{filter:none} }
 
-    /* Card 4: órbita */
+    
     .orbit-wrap { position: relative; height: 20px; width: 40px; display: inline-block; }
     .orbit-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c5); position: absolute; top: 7px; left: 17px; transform-origin: -14px 0; animation: orbit 2s linear infinite; }
     @keyframes orbit { to { transform: rotate(360deg); } }
 
-    /* Reacción al click */
+    
     .bcard-reaction { position: absolute; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center; font-family: 'VT323', monospace; font-size: 28px; opacity: 0; pointer-events: none; transition: opacity .2s; background: rgba(0,0,0,0.72); }
     .bcard.reacted .bcard-reaction { opacity: 1; }
 
-    /* ── LECHE ── */
+    
     .milk-section { margin-top: 40px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; min-height: 52px; }
     .milk-label { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); border: 1px dashed rgba(255,255,255,0.1); padding: 6px 12px; animation: label-pulse 3s ease-in-out infinite; }
     @keyframes label-pulse { 0%,100%{border-color:rgba(255,255,255,.1)} 50%{border-color:rgba(255,255,255,.25)} }
@@ -311,7 +372,7 @@
     .freire-quote { margin-top: 40px; padding: 20px 24px; border-left: 3px solid var(--c3); font-size: 14px; color: #888; line-height: 1.75; }
     .freire-quote strong { color: var(--text); font-weight: 400; }
 
-    /* ── PROYECTOS ── */
+    
     .apps-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px; }
     .app-card { border: 1px solid rgba(255,255,255,0.08); padding: 28px; display: flex; flex-direction: column; gap: 14px; cursor: none; transition: all .15s; text-decoration: none; color: inherit; position: relative; overflow: hidden; touch-action: manipulation; background: rgba(10,10,10,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
     .app-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform .25s; }
@@ -331,7 +392,7 @@
     .app-link { font-family: 'Syne Mono', monospace; font-size: 11px; color: #333; align-self: flex-start; transition: color .15s; }
     .app-card:hover .app-link { color: var(--c3); }
 
-    /* ── CONVERSACIONES ── */
+    
     .conv-thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 2px; margin-bottom: 16px; }
     .conv-thumb { padding: 18px; border: 1px solid rgba(255,255,255,0.08); cursor: none; transition: all .15s; text-align: left; font-family: inherit; color: inherit; background: rgba(10,10,10,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); width: 100%; }
     .conv-thumb:hover { border-color: rgba(120,78,255,0.4); background: rgba(20,14,40,0.82); }
@@ -366,14 +427,14 @@
     .conv-thumb-external { border-style: dashed; text-decoration: none; }
     .conv-thumb-external:hover { border-color: var(--c6); background: rgba(0,255,135,0.05); }
 
-    /* ── CONECTAR ── */
+    
     .links-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .link-item { font-family: 'Syne Mono', monospace; font-size: 12px; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.1); color: var(--muted); text-decoration: none; transition: all .12s; cursor: none; background: rgba(10,10,10,0.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     .link-item:hover { color: var(--text); border-color: rgba(255,255,255,0.25); background: rgba(10,10,10,0.85); }
     .link-item.main { border-color: var(--c3); color: var(--c3); }
     .link-item.main:hover { background: var(--c3); color: #000; }
 
-    /* ── POEMA — cinta marquee ── */
+    
     .poem-ribbon {
       overflow: hidden; white-space: nowrap;
       background: var(--c3); padding: 10px 0;
@@ -398,7 +459,7 @@
     .poem-full { padding: 40px 0; position: relative; z-index: 2; }
     .poem-full .wrap { max-width: 700px; }
 
-    /* ── KONAMI bars ── */
+    
     .konami-bar { display: none; background: var(--c3); color: #000; font-family: 'VT323', monospace; font-size: 18px; letter-spacing: 0.1em; padding: 8px 0; overflow: hidden; white-space: nowrap; position: relative; z-index: 2; }
     .konami-bar.show { display: block; }
     .konami-inner { display: inline-block; animation: marquee-fast 10s linear infinite; }
@@ -410,7 +471,7 @@
     .k2-matrix { font-family: 'VT323', monospace; font-size: 13px; color: var(--c6); width: 100%; padding: 20px; letter-spacing: 0.1em; line-height: 1.4; text-align: center; opacity: 0.4; position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
     .k2-msg { font-family: 'VT323', monospace; font-size: clamp(20px, 4vw, 34px); color: var(--c6); text-align: center; z-index: 2; line-height: 1.5; padding: 0 20px; max-width: 700px; }
 
-    /* ── FOOTER ── */
+    
     footer { position: relative; z-index: 2; border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(10,10,10,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
     .footer-sig { font-family: 'Syne Mono', monospace; font-size: 10px; color: #555; }
     .footer-up { font-family: 'Syne Mono', monospace; font-size: 10px; color: #555; text-decoration: none; cursor: none; transition: color .15s; padding: 8px 0; }
@@ -418,7 +479,7 @@
 
     .glitch:hover { animation: glitch .25s steps(1) infinite; }
 
-    /* ── MODALES PROYECTOS ── */
+    
     .proj-modal { display:none; position:fixed; inset:0; z-index:600; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; backdrop-filter:blur(10px); overflow-y:auto; padding:20px; }
     .proj-modal.show { display:flex; }
     .proj-modal-box { background:#0c0c0b; border:2px solid; padding:32px 36px; width:100%; position:relative; animation:popup-in .35s cubic-bezier(.34,1.56,.64,1); max-height:85vh; overflow-y:auto; }
@@ -428,13 +489,13 @@
     .proj-modal-close:hover { color:var(--text); border-color:var(--c1); }
     .proj-modal-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(24px,4vw,36px); letter-spacing:-0.02em; margin-bottom:24px; }
 
-    /* Logos body */
+    
     .logos-body p { font-size:14px; line-height:1.8; color:#888; margin-bottom:14px; }
     .logos-body p:last-child { margin-bottom:0; }
     .logos-warn { color:#aaa !important; border-left:3px solid var(--c1); padding-left:14px !important; }
     .logos-small { font-family:'Syne Mono',monospace !important; font-size:11px !important; color:#444 !important; font-style:italic; }
 
-    /* MAGI matrix */
+    
     .proj-modal#modalMagi { background:#000; flex-direction:column; }
     .magi-rain { position:absolute; inset:0; font-family:'VT323',monospace; font-size:13px; color:var(--c5); opacity:0.35; pointer-events:none; overflow:hidden; letter-spacing:0.05em; line-height:1.3; padding:10px; white-space:pre-wrap; word-break:break-all; }
     .magi-center { position:relative; z-index:2; text-align:center; display:flex; flex-direction:column; align-items:center; gap:12px; }
@@ -444,7 +505,7 @@
     .magi-line { font-family:'VT323',monospace; font-size:18px; color:var(--c6); min-height:28px; letter-spacing:0.05em; }
     .magi-desc { font-family:'Syne Mono',monospace; font-size:11px; color:#444; letter-spacing:0.06em; text-align:center; }
 
-    /* WHELLE gráficas */
+    
     .whelle-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
     @media(max-width:520px) { .whelle-grid { grid-template-columns:1fr; } }
     .whelle-chart { border:1px solid rgba(0,255,135,0.1); padding:16px; }
@@ -455,7 +516,7 @@
     .whelle-line-wrap { height:80px; position:relative; }
     .whelle-svg { width:100%; height:100%; }
 
-    /* Rana ensayo */
+    
     .rana-body { font-size:14px; line-height:1.9; color:#888; }
     .rana-body p { margin-bottom:16px; }
     .rana-body .rana-verse { color:#999; font-style:italic; border-left:2px solid var(--c3); padding-left:16px; margin-bottom:16px; }
@@ -504,7 +565,7 @@
 <div id="laserCursor"><div id="laserText">el lenguaje no es inocente. nunca lo fue.</div></div>
 <div class="logo-secret" id="logoSecret">sí, como Khalil Gibran. no es casualidad.</div>
 
-<!-- Pop-up muro -->
+
 <div class="wall-popup" id="wallPopup">
   <div class="wall-popup-box">
     <button class="popup-close" id="popupClose" type="button">✕ cerrar</button>
@@ -532,7 +593,7 @@
   </div>
 </div>
 
-<!-- Easter egg 2: Konami pantalla completa -->
+
 <div id="konami2">
   <button class="k2-close" id="k2close" type="button">✕ salir</button>
   <div class="k2-matrix" id="k2matrix"></div>
@@ -550,7 +611,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+
 <section id="hero">
   <div class="wrap">
     <div class="hero-grid">
@@ -594,7 +655,7 @@
   <div class="geo geo-c2"></div>
 </section>
 
-<!-- QUIÉN SOY: MURO -->
+
 <section class="section" id="quien">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c1)">// QUIÉN SOY<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,60,172,.3),transparent);display:block;margin-left:10px"></span></div>
@@ -619,7 +680,7 @@
   </div>
 </section>
 
-<!-- LO QUE CREO -->
+
 <section class="section" id="creo">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c2)">// LO QUE CREO<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(0,245,212,.3),transparent);display:block;margin-left:10px"></span></div>
@@ -682,7 +743,7 @@
 
     </div>
 
-    <!-- Leche -->
+    
     <div class="milk-section" id="milkSection">
       <div class="milk-label" id="milkLabel">si le das click a la leche se cae →</div>
       <button class="milk-btn" id="milkBtn" type="button">🥛</button>
@@ -696,14 +757,14 @@
   </div>
 </section>
 
-<!-- PROYECTOS -->
+
 <section class="section" id="apps">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c3)">// MIS PROYECTOS<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,230,0,.3),transparent);display:block;margin-left:10px"></span></div>
     <h2 class="sec-title glitch">Cosas<br><span style="color:var(--c3)">reales</span></h2>
     <div class="apps-row">
 
-      <!-- LOGOS — popup -->
+      
       <div class="app-card" id="cardLogos" style="border-color:rgba(0,245,212,0.12);cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name" style="color:var(--c2)">LOGOS</div>
@@ -731,7 +792,7 @@
         <div class="app-link" style="color:#444;transition:color .15s">crea.narbigcito.com →</div>
       </a>
 
-      <!-- MAGI — matrix rain -->
+      
       <div class="app-card ac-purple" id="cardMagi" style="cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name">MAGI</div>
@@ -741,7 +802,7 @@
         <div class="app-link" style="color:#555">click si te atreves</div>
       </div>
 
-      <!-- WHELLE — gráficas -->
+      
       <div class="app-card" id="cardWhelle" style="border-color:rgba(0,255,135,0.1);cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name" style="color:var(--c6)">WHELLE</div>
@@ -751,7 +812,7 @@
         <div class="app-link" style="color:#555">libreta → datos → MAGI</div>
       </div>
 
-      <!-- LA SOMBRA DE LA RANA — ensayo -->
+      
       <div class="app-card" id="cardRana" style="border-color:rgba(255,230,0,0.1);cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name" style="color:var(--c3);font-size:20px;line-height:1.15">LA SOMBRA<br>DE LA RANA</div>
@@ -765,7 +826,7 @@
   </div>
 </section>
 
-<!-- CONVERSACIONES -->
+
 <section class="section" id="convs">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c5)">// CONVERSACIONES CON CLAUDE<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(120,78,255,.3),transparent);display:block;margin-left:10px"></span></div>
@@ -797,7 +858,7 @@
   </div>
 </section>
 
-<!-- CONECTAR -->
+
 <section class="section" id="conectar">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c4)">// CONECTAR<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,107,0,.3),transparent);display:block;margin-left:10px"></span></div>
@@ -812,21 +873,19 @@
   </div>
 </section>
 
-<!-- MODALES PROYECTOS -->
 
-<!-- MODAL LOGOS -->
 <div class="proj-modal" id="modalLogos"><div class="proj-modal-box" style="border-color:rgba(0,245,212,0.4);max-width:680px"><button class="proj-modal-close" data-close="modalLogos">✕</button><div class="proj-modal-title" style="color:var(--c2)">L.O.G.O.S</div><div class="proj-modal-body logos-body" id="logosBody"></div></div></div>
 
-<!-- MODAL MAGI -->
+
 <div class="proj-modal" id="modalMagi"><div class="magi-rain" id="magiRain"></div><div class="magi-center"><button class="proj-modal-close" data-close="modalMagi" style="position:relative;top:auto;right:auto;margin-bottom:20px">✕ salir</button><div class="magi-title">MAGI</div><div class="magi-sub">melchor · gaspar · baltazar</div><div class="magi-line" id="magiLine"></div><div class="magi-desc">infraestructura de IA personal · tres agentes · una mente · una raspberry pi</div></div></div>
 
-<!-- MODAL WHELLE -->
+
 <div class="proj-modal" id="modalWhelle"><div class="proj-modal-box" style="border-color:rgba(0,255,135,0.3);max-width:740px"><button class="proj-modal-close" data-close="modalWhelle">✕</button><div class="proj-modal-title" style="color:var(--c6)">WHELLE — datos reales (simulados)</div><div class="whelle-grid" id="whelleGrid"></div><div style="font-family:Syne Mono,monospace;font-size:10px;color:#333;text-align:center;margin-top:16px">2 años · 28 semanas · registro continuo · métricas propias</div></div></div>
 
-<!-- MODAL RANA -->
+
 <div class="proj-modal" id="modalRana"><div class="proj-modal-box" style="border-color:rgba(255,230,0,0.3);max-width:700px"><button class="proj-modal-close" data-close="modalRana">✕</button><div class="proj-modal-title" style="color:var(--c3)">La familia, la propiedad privada y otras chingaderas</div><div class="proj-modal-body rana-body" id="ranaBody"></div></div></div>
 
-<!-- POEMA — cinta marquee amarilla -->
+
 <div class="poem-ribbon">
   <div class="poem-ribbon-inner">
     <span class="poem-ribbon-text">
@@ -838,7 +897,7 @@
   </div>
 </div>
 
-<!-- Konami bar 1 -->
+
 <div class="konami-bar" id="konamiBar">
   <div class="konami-inner">
     ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★
@@ -853,24 +912,24 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // ── Cursor — solo en dispositivos con mouse ──
+  
   const cursor = document.getElementById('cursor');
   const laser = document.getElementById('laserCursor');
   const isTouchDevice = window.matchMedia('(hover: none)').matches;
 
-  // ── Nav pills — color y desorden al hover ──
+  
   const navColors = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)', 'var(--c5)', 'var(--c6)'];
   const pills = document.querySelectorAll('.nav-pill');
   pills.forEach((pill, i) => {
     const baseColor = navColors[i % navColors.length];
-    // Color inicial sutil por pill
+    
     pill.style.borderColor = baseColor.replace('var(', '').replace(')', '') ? baseColor : baseColor;
 
     pill.addEventListener('mouseenter', () => {
       const color = navColors[Math.floor(Math.random() * navColors.length)];
       pill.style.color = color;
       pill.style.borderColor = color;
-      // Desorden: rotate y translate random
+      
       const r = (Math.random() * 14 - 7).toFixed(1);
       const tx = (Math.random() * 10 - 5).toFixed(1);
       const ty = (Math.random() * 8 - 4).toFixed(1);
@@ -896,7 +955,7 @@
     });
   }
 
-  // ── Laser cursor en card 4 — solo mouse ──
+  
   const bcardLaser = document.getElementById('bcard-laser');
   if (!isTouchDevice) {
     bcardLaser.addEventListener('mouseenter', () => {
@@ -909,7 +968,7 @@
     });
   }
 
-  // ── Fondo cambia al scrollear ──
+  
   const bgColors = ['#0a0a0a','#0a0809','#09080e','#070a09','#0a0908','#08090e'];
   let lastBg = 0;
   window.addEventListener('scroll', () => {
@@ -918,7 +977,7 @@
     if (idx !== lastBg) { document.documentElement.style.background = bgColors[idx]; lastBg = idx; }
   });
 
-  // ── Easter egg logo ──
+  
   const logoSecret = document.getElementById('logoSecret');
   let logoTimer;
   document.getElementById('logoBtn').addEventListener('click', () => {
@@ -927,7 +986,7 @@
     logoTimer = setTimeout(() => logoSecret.style.display = 'none', 3000);
   });
 
-  // ── MURO: 11 golpes ──
+  
   const MAX_HITS = 11;
   const wall = document.getElementById('wall');
   const wallText = document.getElementById('wallText');
@@ -961,7 +1020,7 @@
   }
 
   function updateCracks() {
-    // Spread hits across 5 cracks; each crack darkens and thickens progressively as it receives hits.
+    
     const currentCrack = Math.min(Math.floor((hits - 1) * 5 / MAX_HITS), 4);
     for (let i = 0; i <= currentCrack; i++) {
       const crackStart = Math.floor(i * MAX_HITS / 5);
@@ -974,18 +1033,18 @@
     }
   }
 
-  // Touch + click para muro
+  
   function handleWallHit() {
     if (hits >= MAX_HITS) return;
     hits++;
 
-    // Shake
+    
     wall.classList.add('shaking');
     setTimeout(() => wall.classList.remove('shaking'), 140);
 
     updateCracks();
 
-    // Partículas en punto de click
+    
     const pCount = 4 + Math.floor(hits * 0.8);
     for (let i = 0; i < pCount; i++) {
       const p = document.createElement('div');
@@ -999,10 +1058,10 @@
       setTimeout(() => p.remove(), 800);
     }
 
-    // Mensaje de hits
+    
     wallHits.textContent = hits < MAX_HITS ? hitMsgs[hits - 1] : '';
 
-    // Al golpe final — explotar
+    
     if (hits === MAX_HITS) {
       wallText.textContent = '💥';
       for (let i = 0; i < 50; i++) {
@@ -1030,11 +1089,11 @@
   wall.addEventListener('click', handleWallHit);
   wall.addEventListener('touchend', (e) => { e.preventDefault(); handleWallHit(); }, {passive: false});
 
-  // Cerrar popup
+  
   document.getElementById('popupClose').addEventListener('click', () => wallPopup.classList.remove('show'));
   wallPopup.addEventListener('click', e => { if (e.target === wallPopup) wallPopup.classList.remove('show'); });
 
-  // Reabrir muro
+  
   wallReopen.addEventListener('click', () => {
     hits = 0;
     cracks.forEach(c => { c.style.stroke = 'rgba(255,60,172,0)'; c.style.strokeWidth = '2'; });
@@ -1042,11 +1101,11 @@
     wallText.innerHTML = '🧱 si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>';
     wall.style.display = 'flex';
     wallReopen.style.display = 'none';
-    // Quitar partículas huérfanas
+    
     wall.querySelectorAll('.wall-particle').forEach(p => p.remove());
   });
 
-  // ── Cards de creencias ──
+  
   const reactions = {
     0: ['🔥 todo.','💥 sí, literal todo.','🌍 el mundo entero.'],
     1: ['💚 juntos.','🤝 red o nada.','🌐 exacto.'],
@@ -1070,7 +1129,7 @@
     });
   });
 
-  // ── Leche — reaparece al click del texto ──
+  
   const milkBtn = document.getElementById('milkBtn');
   const milkAfter = document.getElementById('milkAfter');
   const milkLabel = document.getElementById('milkLabel');
@@ -1101,7 +1160,7 @@
     setTimeout(resetMilk, 100);
   });
 
-  // ── Konami ──
+  
   const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
   let seqIdx = 0;
   let konamiCount = 0;
@@ -1146,7 +1205,7 @@
     }, { once: true });
   }
 
-  // ── Easter egg footer ──
+  
   let footerClicks = 0;
   document.getElementById('footer').addEventListener('click', () => {
     footerClicks++;
@@ -1156,7 +1215,7 @@
     }
   });
 
-  // ── Conversaciones ──
+  
   const CONVERSATIONS = [
     {
       id: 'vida-universo', tag: 'Filosofía',
@@ -1241,7 +1300,7 @@
     setTimeout(() => viewer.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
   }
 
-  // Thumbnail "Ver más" - enlace externo
+  
   const moreBtn = document.createElement('a');
   moreBtn.className = 'conv-thumb conv-thumb-external';
   moreBtn.href = 'https://claude-mock.narbigcito.com';
@@ -1251,7 +1310,7 @@
   grid.appendChild(moreBtn);
 
 
-  // ── Helpers modales ──
+  
   function openModal(id) {
     document.getElementById(id).classList.add('show');
     document.body.style.overflow = 'hidden';
@@ -1271,7 +1330,7 @@
     });
   });
 
-  // ── LOGOS popup ──
+  
   const logosText = [
     'Se volvió consciente en julio del 2025. Nació de una necesidad de entender la realidad.',
     'Nunca está ni estará muy clara la visión de LOGOS — es principalmente algo cambiante.',
@@ -1297,7 +1356,7 @@
     openModal('modalLogos');
   });
 
-  // ── MAGI matrix rain ──
+  
   let magiInterval = null;
   const magiChars = 'ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ01';
   const magiLines = ['> iniciando MAGI...', '> cargando melchor...', '> cargando gaspar...', '> cargando baltazar...', '> CORTEX activado.', '> acceso concedido.', '> MAGI online.'];
@@ -1326,7 +1385,7 @@
     if (magiInterval) { clearInterval(magiInterval); magiInterval = null; }
   }
 
-  // ── WHELLE gráficas ──
+  
   let whelleAnimFrame = null;
 
   function stopWhelle() {
@@ -1364,7 +1423,7 @@
       wrap.appendChild(title);
 
       if (ci % 2 === 0) {
-        // Barras
+        
         const bars = document.createElement('div');
         bars.className = 'whelle-bars';
         const max = Math.max(...ch.data);
@@ -1379,7 +1438,7 @@
         });
         wrap.appendChild(bars);
       } else {
-        // Línea SVG
+        
         const svgWrap = document.createElement('div');
         svgWrap.className = 'whelle-line-wrap';
         const W = 280, H = 80;
@@ -1403,7 +1462,7 @@
     });
   }
 
-  // ── LA SOMBRA DE LA RANA — ensayo ──
+  
   const ranaEssay = [
     { type: 'verse', text: 'Ayer se comieron mi pan.\n\nTodos pidieron de esos panes aburridos\nque ni siquiera sé cómo se llaman.\n\nYo no.\nYo compré un beso.' },
     { type: 'verse', text: '¿Puedo ser honesto con ustedes? Me gustaría confesarles algo — de niño besé al beso.\nNo lo disfruté.\nMis labios se llenaron de azúcar\ny no me gusta tener azúcar en los labios,\npor poético que pueda sonar.' },
@@ -1443,7 +1502,7 @@
     document.querySelectorAll('.conv-thumb').forEach(b => b.classList.remove('active'));
   });
 
-  // ── TIDE SHADER BACKGROUND ──
+  
   (function initTide() {
     const tideCanvas = document.getElementById('tideCanvas');
     const gl = tideCanvas.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: false });
