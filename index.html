@@ -579,6 +579,21 @@
     .arena-block-text { font-size: 12px; line-height: 1.55; color: #b8b4a8; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
     .arena-block-title { font-size: 12px; line-height: 1.4; color: var(--text); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
+    .eventos-list { display: flex; flex-direction: column; gap: 2px; }
+    .evento { display: flex; align-items: center; gap: 18px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.08); background: rgba(10,10,10,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: border-color .15s, background .15s; }
+    .evento:hover { border-color: rgba(120,78,255,0.4); background: rgba(20,14,40,0.6); }
+    .evento.pasado { opacity: 0.42; }
+    .evento-fecha { font-family: 'VT323', monospace; font-size: 26px; color: var(--c5); line-height: 1; min-width: 92px; flex-shrink: 0; }
+    .evento-fecha-yr { display: block; font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+    .evento-main { flex: 1; min-width: 0; }
+    .evento-nombre { font-size: 15px; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
+    .evento-meta { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+    .evento-tipo { color: var(--c3); text-transform: uppercase; }
+    .evento-badge { font-family: 'Syne Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 9px; border: 1px solid; flex-shrink: 0; align-self: center; }
+    .evento-badge.pasado { color: var(--muted); border-color: rgba(255,255,255,0.15); }
+    .evento-badge.soon { color: var(--c6); border-color: rgba(0,255,135,0.4); background: rgba(0,255,135,0.06); animation: pulse 1.4s ease-in-out infinite; }
+    @media (max-width: 640px) { .evento { flex-wrap: wrap; gap: 10px 14px; } .evento-fecha { min-width: 70px; font-size: 22px; } .evento-main { flex-basis: 100%; order: 3; } }
+
     #letras { padding: 0; border-top: 1px solid rgba(255,255,255,0.04); position: relative; z-index: 2; }
     .letras-wrap { position: relative; }
     #letrasCanvas { display: block; width: 100%; height: 340px; background: #000; }
@@ -919,6 +934,15 @@
 </section>
 
 
+<section class="section" id="eventos">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c5)"><span data-i18n="eventos_label">// PRÓXIMAMENTE</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(120,78,255,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch" data-i18n-html="eventos_title">Eventos<br><span style="color:var(--c5)">próximos</span></h2>
+    <div class="eventos-list" id="eventosList"></div>
+  </div>
+</section>
+
+
 <section class="section" id="conectar">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c4)"><span data-i18n="conectar_label">// CONECTAR</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,107,0,.3),transparent);display:block;margin-left:10px"></span></div>
@@ -1057,6 +1081,14 @@
       arena_more: 'ver todo en are.na →',
       arena_badge: 'siempre creciendo',
       arena_card_desc: 'donde guardo lo que me inspira — links, imágenes, textos, fragmentos. mi cerebro externalizado.',
+      eventos_label: '// PRÓXIMAMENTE',
+      eventos_title: 'Eventos<br><span style="color:var(--c5)">próximos</span>',
+      evento_badge_pasado: 'pasado',
+      evento_badge_soon: 'muy pronto',
+      evento_tipo_performance: 'performance',
+      evento_tipo_charla: 'charla',
+      evento_tipo_laboratorio: 'laboratorio',
+      evento_tipo_lectura: 'lectura',
       hit_msgs: ['apenas lo rozaste. 10 más.','suena hueco. 9 más.','primera grieta. 8 más.','eso ya dolió. 7 más.','el muro respira. 6 más.','casi la mitad. 5 más.','se tambalea. 4 más.','siento algo. 3 más.','ya mero. 2 más.','una más. solo una.'],
       konami2_msgs: ['> iniciando protocolo narbigcito...','> acceso concedido.','> bienvenido al sistema.','> si llegaste aquí dos veces, eres exactamente el tipo que busco.','> escríbeme. ahora.','> @elnarbigcito'],
       magi_lines: ['> iniciando MAGI...','> cargando melchor...','> cargando gaspar...','> cargando baltazar...','> CORTEX activado.','> acceso concedido.','> MAGI online.'],
@@ -1148,6 +1180,14 @@
       arena_more: 'see everything on are.na →',
       arena_badge: 'always growing',
       arena_card_desc: 'where i keep what inspires me — links, images, texts, fragments. my externalized brain.',
+      eventos_label: '// UPCOMING',
+      eventos_title: 'Upcoming<br><span style="color:var(--c5)">events</span>',
+      evento_badge_pasado: 'past',
+      evento_badge_soon: 'soon',
+      evento_tipo_performance: 'performance',
+      evento_tipo_charla: 'talk',
+      evento_tipo_laboratorio: 'lab',
+      evento_tipo_lectura: 'reading',
       hit_msgs: ['barely touched it. 10 more.','sounds hollow. 9 more.','first crack. 8 more.','that one hurt. 7 more.','the wall breathes. 6 more.','almost halfway. 5 more.','it\'s wobbling. 4 more.','i feel something. 3 more.','almost there. 2 more.','one more. just one.'],
       konami2_msgs: ['> initiating narbigcito protocol...','> access granted.','> welcome to the system.','> if you got here twice, you\'re exactly who i\'m looking for.','> write to me. now.','> @elnarbigcito'],
       magi_lines: ['> booting MAGI...','> loading melchor...','> loading gaspar...','> loading baltazar...','> CORTEX activated.','> access granted.','> MAGI online.'],
@@ -1183,6 +1223,7 @@
     if (wt && wt.style.display !== 'none') wt.innerHTML = T('wall_text');
     const mb = document.getElementById('convMoreBtn');
     if (mb) mb.innerHTML = `<div class="conv-tag">${T('conv_archive_tag')}</div><div class="conv-title">${T('conv_archive_title')}</div><div class="conv-preview">${T('conv_archive_preview')}</div>`;
+    if (window.__renderEventos) window.__renderEventos();
   }
 
   (function initLang() {
@@ -1764,6 +1805,69 @@
   });
 
   
+
+  (function initEventos() {
+    const list = document.getElementById('eventosList');
+    if (!list) return;
+
+
+    const EVENTOS = [
+      { fecha: '2025-08-20', nombre: 'Lectura — La sombra de la rana', tipo: 'lectura', lugar: 'CDMX (por definir)' },
+      { fecha: '2025-09-05', nombre: 'Slam de poesía Hilvana', tipo: 'performance', lugar: 'CDMX' },
+    ];
+
+    const MES = {
+      es: ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'],
+      en: ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'],
+    };
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = (s === null || s === undefined) ? '' : String(s);
+      return d.innerHTML;
+    }
+
+    function render() {
+      list.innerHTML = '';
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const curYear = today.getFullYear();
+      const mes = MES[currentLang] || MES.es;
+
+      const items = EVENTOS.map(ev => {
+        const parts = ev.fecha.split('-').map(Number);
+        return Object.assign({}, ev, { dateObj: new Date(parts[0], parts[1] - 1, parts[2]), y: parts[0], m: parts[1], d: parts[2] });
+      }).sort((a, b) => a.dateObj - b.dateObj);
+
+      items.forEach(ev => {
+        const diffDays = Math.round((ev.dateObj - today) / 86400000);
+        const past = diffDays < 0;
+        const soon = diffDays >= 0 && diffDays <= 7;
+
+        const row = document.createElement('div');
+        row.className = 'evento' + (past ? ' pasado' : '');
+
+        const yrTag = (ev.y !== curYear) ? '<span class="evento-fecha-yr">' + ev.y + '</span>' : '';
+        const tipoLabel = T('evento_tipo_' + ev.tipo);
+        let badge = '';
+        if (past) badge = '<span class="evento-badge pasado">' + esc(T('evento_badge_pasado')) + '</span>';
+        else if (soon) badge = '<span class="evento-badge soon">' + esc(T('evento_badge_soon')) + '</span>';
+
+        row.innerHTML =
+          '<div class="evento-fecha">' + ev.d + ' ' + mes[ev.m - 1] + yrTag + '</div>' +
+          '<div class="evento-main">' +
+            '<div class="evento-nombre">' + esc(ev.nombre) + '</div>' +
+            '<div class="evento-meta"><span class="evento-tipo">' + esc(tipoLabel) + '</span> · ' + esc(ev.lugar) + '</div>' +
+          '</div>' +
+          badge;
+        list.appendChild(row);
+      });
+    }
+
+    render();
+    // let the language switcher re-render (month names, type labels, badges)
+    window.__renderEventos = render;
+  })();
 
   (function initArena() {
     const grid = document.getElementById('arenaGrid');
