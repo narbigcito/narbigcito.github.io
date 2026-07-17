@@ -558,6 +558,13 @@
       .nav-pill { font-size: 9px; padding: 4px 8px; }
       .proj-modal-box { padding: 20px 16px; }
     }
+
+
+    #letras { padding: 0; border-top: 1px solid rgba(255,255,255,0.04); position: relative; z-index: 2; }
+    .letras-wrap { position: relative; }
+    #letrasCanvas { display: block; width: 100%; height: 340px; background: #000; }
+    .letras-label { position: absolute; top: 16px; left: 24px; font-family: 'Syne Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; pointer-events: none; z-index: 2; text-shadow: 0 0 8px rgba(0,0,0,0.8); }
+    @media (max-width: 640px) { #letrasCanvas { height: 240px; } .letras-label { left: 16px; } }
   </style>
   <script defer src="https://analytics.narbigcito.com/script.js" data-website-id="0ba1b1cf-6142-437f-a65b-a92e386e6a94"></script>
 </head>
@@ -681,6 +688,14 @@
       </div>
       <button class="wall-reopen" id="wallReopen" type="button" style="touch-action:manipulation" data-i18n="wall_reopen">↩ volver a romper el muro</button>
     </div>
+  </div>
+</section>
+
+
+<section id="letras">
+  <div class="letras-wrap">
+    <div class="letras-label" data-i18n="letras_label">// FRAGMENTOS FLOTANDO</div>
+    <canvas id="letrasCanvas"></canvas>
   </div>
 </section>
 
@@ -995,6 +1010,7 @@
       konami_bar: '★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★',
       footer_sig: ' · hecho con intención',
       footer_up: '↑ arriba',
+      letras_label: '// FRAGMENTOS FLOTANDO',
       hit_msgs: ['apenas lo rozaste. 10 más.','suena hueco. 9 más.','primera grieta. 8 más.','eso ya dolió. 7 más.','el muro respira. 6 más.','casi la mitad. 5 más.','se tambalea. 4 más.','siento algo. 3 más.','ya mero. 2 más.','una más. solo una.'],
       konami2_msgs: ['> iniciando protocolo narbigcito...','> acceso concedido.','> bienvenido al sistema.','> si llegaste aquí dos veces, eres exactamente el tipo que busco.','> escríbeme. ahora.','> @elnarbigcito'],
       magi_lines: ['> iniciando MAGI...','> cargando melchor...','> cargando gaspar...','> cargando baltazar...','> CORTEX activado.','> acceso concedido.','> MAGI online.'],
@@ -1080,6 +1096,7 @@
       konami_bar: '★ COLLABORATOR MODE ACTIVATED ★ if you got here with the konami code, i like you. write to me. seriously. ★ COLLABORATOR MODE ACTIVATED ★ if you got here with the konami code, i like you. write to me. seriously. ★ COLLABORATOR MODE ACTIVATED ★ if you got here with the konami code, i like you. write to me. seriously. ★',
       footer_sig: ' · made with intention',
       footer_up: '↑ top',
+      letras_label: '// FLOATING FRAGMENTS',
       hit_msgs: ['barely touched it. 10 more.','sounds hollow. 9 more.','first crack. 8 more.','that one hurt. 7 more.','the wall breathes. 6 more.','almost halfway. 5 more.','it\'s wobbling. 4 more.','i feel something. 3 more.','almost there. 2 more.','one more. just one.'],
       konami2_msgs: ['> initiating narbigcito protocol...','> access granted.','> welcome to the system.','> if you got here twice, you\'re exactly who i\'m looking for.','> write to me. now.','> @elnarbigcito'],
       magi_lines: ['> booting MAGI...','> loading melchor...','> loading gaspar...','> loading baltazar...','> CORTEX activated.','> access granted.','> MAGI online.'],
@@ -1696,6 +1713,138 @@
   });
 
   
+
+  (function initLetras() {
+    const canvas = document.getElementById('letrasCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cs = getComputedStyle(document.documentElement);
+    const colors = ['--c1','--c2','--c3','--c4','--c5','--c6']
+      .map(v => cs.getPropertyValue(v).trim())
+      .filter(Boolean);
+
+
+    const fragments = [
+      'creo en cambiar el mundo entero',
+      'no podemos solos',
+      'el lenguaje no es inocente',
+      'nunca hay que dejar de regar la flor',
+      'cada palabra es una decisión política',
+      'aquí tengo jícama picada',
+      'caos con propósito',
+      'reparador de almas',
+      'narbigcito was here',
+      '=^._.^= ∫',
+      '42',
+      'const T = key => TRANSLATIONS[lang][key]',
+      'requestAnimationFrame(render)',
+      'gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)',
+      'vec3 hsv2rgb(vec3 c)',
+      'for (int i = 0; i < 8; i++)',
+      'float fbm(vec2 p)',
+      '<html lang="es">',
+      'if (hits >= MAX_HITS) return;',
+      'MAGI online',
+      'melchor · gaspar · baltazar',
+    ];
+
+    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+    let W = 0, H = 0, particles = [], raf = null, running = false;
+
+    function resize() {
+      W = canvas.clientWidth;
+      H = canvas.clientHeight;
+      canvas.width = Math.round(W * DPR);
+      canvas.height = Math.round(H * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+
+    function makeParticles() {
+      const isMobile = window.matchMedia('(max-width: 640px)').matches;
+      const count = isMobile ? 18 : 36;
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        const txt = fragments[Math.floor(Math.random() * fragments.length)];
+        const size = 11 + Math.random() * 8;
+        ctx.font = size + "px 'Syne Mono', monospace";
+        const w = ctx.measureText(txt).width;
+        particles.push({
+          txt, size, w,
+          x: Math.random() * Math.max(1, W - w),
+          y: Math.random() * Math.max(1, H - size),
+          vx: (Math.random() * 2 - 1) * 0.4 || 0.2,
+          vy: (Math.random() * 2 - 1) * 0.4 || 0.2,
+          color: colors[Math.floor(Math.random() * colors.length)] || '#fff',
+          alpha: 0.35 + Math.random() * 0.5,
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, W, H);
+      ctx.textBaseline = 'top';
+      for (const p of particles) {
+        ctx.font = p.size + "px 'Syne Mono', monospace";
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.fillText(p.txt, p.x, p.y);
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function step() {
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x <= 0) { p.x = 0; p.vx = Math.abs(p.vx); }
+        else if (p.x + p.w >= W) { p.x = W - p.w; p.vx = -Math.abs(p.vx); }
+        if (p.y <= 0) { p.y = 0; p.vy = Math.abs(p.vy); }
+        else if (p.y + p.size >= H) { p.y = H - p.size; p.vy = -Math.abs(p.vy); }
+      }
+      draw();
+      raf = requestAnimationFrame(step);
+    }
+
+    function start() {
+      if (running || reduced) return;
+      running = true;
+      raf = requestAnimationFrame(step);
+    }
+    function stop() {
+      running = false;
+      if (raf) cancelAnimationFrame(raf);
+      raf = null;
+    }
+
+    resize();
+    makeParticles();
+    draw();
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { resize(); makeParticles(); draw(); }, 150);
+    });
+
+
+    if (reduced) return;
+
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => e.isIntersecting ? start() : stop());
+      }, { threshold: 0.01 });
+      io.observe(canvas);
+    } else {
+      start();
+    }
+  })();
+
   (function initTide() {
     const tideCanvas = document.getElementById('tideCanvas');
     const gl = tideCanvas.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: false });
