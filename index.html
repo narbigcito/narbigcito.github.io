@@ -560,6 +560,25 @@
     }
 
 
+    .app-card-arena { grid-column: span 2; border-color: rgba(0,245,212,0.35); background: rgba(0,245,212,0.04); animation: arena-in .7s cubic-bezier(.34,1.56,.64,1) both; }
+    .app-card-arena::after { background: var(--c2); }
+    .app-card-arena:hover { border-color: rgba(0,245,212,0.6); background: rgba(0,245,212,0.07); }
+    .app-card-arena .app-name { color: var(--c2); font-size: 40px; }
+    .app-card-arena .app-desc { color: #a9b8b5; font-size: 14px; }
+    .badge-arena { background: rgba(0,245,212,0.08); color: var(--c2); border: 1px solid rgba(0,245,212,0.3); }
+    .badge-arena::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--c2); animation: pulse 2s ease-in-out infinite; }
+    @keyframes arena-in { from { opacity: 0; transform: translateY(20px) scale(.985); } to { opacity: 1; transform: none; } }
+    @media (max-width: 640px) { .app-card-arena { grid-column: auto; } .app-card-arena .app-name { font-size: 30px; } }
+
+    .arena-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 8px; }
+    .arena-block { border: 1px solid rgba(0,245,212,0.12); background: rgba(10,10,10,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); text-decoration: none; color: inherit; display: flex; flex-direction: column; overflow: hidden; min-height: 130px; cursor: none; transition: border-color .15s, transform .15s; }
+    .arena-block:hover { border-color: rgba(0,245,212,0.4); transform: translateY(-2px); }
+    .arena-block-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: #0d0d0d; }
+    .arena-block-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .arena-block-kind { font-family: 'Syne Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c2); opacity: 0.7; }
+    .arena-block-text { font-size: 12px; line-height: 1.55; color: #b8b4a8; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+    .arena-block-title { font-size: 12px; line-height: 1.4; color: var(--text); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
     #letras { padding: 0; border-top: 1px solid rgba(255,255,255,0.04); position: relative; z-index: 2; }
     .letras-wrap { position: relative; }
     #letrasCanvas { display: block; width: 100%; height: 340px; background: #000; }
@@ -783,7 +802,17 @@
     <h2 class="sec-title glitch" data-i18n-html="apps_title">Cosas<br><span style="color:var(--c3)">reales</span></h2>
     <div class="apps-row">
 
-      
+
+      <a class="app-card app-card-arena" href="https://www.are.na/el-narbigcito" target="_blank" rel="noreferrer">
+        <div class="app-top">
+          <div class="app-name">ARE.NA</div>
+          <div class="app-badge badge-arena" data-i18n="arena_badge">siempre creciendo</div>
+        </div>
+        <div class="app-desc" data-i18n="arena_card_desc">donde guardo lo que me inspira — links, imágenes, textos, fragmentos. mi cerebro externalizado.</div>
+        <div class="app-link" style="color:var(--c2);opacity:.6">are.na/el-narbigcito →</div>
+      </a>
+
+
       <div class="app-card" id="cardLogos" style="border-color:rgba(0,245,212,0.12);cursor:pointer;touch-action:manipulation">
         <div class="app-top">
           <div class="app-name" style="color:var(--c2)">LOGOS</div>
@@ -873,6 +902,18 @@
         </div>
       </div>
       <div class="conv-readonly" data-i18n="conv_readonly">conversaciones reales curadas por gibrán · solo lectura</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="arena" style="display:none">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c2)"><span data-i18n="arena_label">// DESDE ARE.NA</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(0,245,212,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch" data-i18n-html="arena_title">Cerebro<br><span style="color:var(--c2)">externo</span></h2>
+    <div class="arena-grid" id="arenaGrid"></div>
+    <div style="margin-top:16px">
+      <a class="link-item" href="https://www.are.na/el-narbigcito" target="_blank" rel="noreferrer" data-i18n="arena_more">ver todo en are.na →</a>
     </div>
   </div>
 </section>
@@ -1011,6 +1052,11 @@
       footer_sig: ' · hecho con intención',
       footer_up: '↑ arriba',
       letras_label: '// FRAGMENTOS FLOTANDO',
+      arena_label: '// DESDE ARE.NA',
+      arena_title: 'Cerebro<br><span style="color:var(--c2)">externo</span>',
+      arena_more: 'ver todo en are.na →',
+      arena_badge: 'siempre creciendo',
+      arena_card_desc: 'donde guardo lo que me inspira — links, imágenes, textos, fragmentos. mi cerebro externalizado.',
       hit_msgs: ['apenas lo rozaste. 10 más.','suena hueco. 9 más.','primera grieta. 8 más.','eso ya dolió. 7 más.','el muro respira. 6 más.','casi la mitad. 5 más.','se tambalea. 4 más.','siento algo. 3 más.','ya mero. 2 más.','una más. solo una.'],
       konami2_msgs: ['> iniciando protocolo narbigcito...','> acceso concedido.','> bienvenido al sistema.','> si llegaste aquí dos veces, eres exactamente el tipo que busco.','> escríbeme. ahora.','> @elnarbigcito'],
       magi_lines: ['> iniciando MAGI...','> cargando melchor...','> cargando gaspar...','> cargando baltazar...','> CORTEX activado.','> acceso concedido.','> MAGI online.'],
@@ -1097,6 +1143,11 @@
       footer_sig: ' · made with intention',
       footer_up: '↑ top',
       letras_label: '// FLOATING FRAGMENTS',
+      arena_label: '// FROM ARE.NA',
+      arena_title: 'External<br><span style="color:var(--c2)">brain</span>',
+      arena_more: 'see everything on are.na →',
+      arena_badge: 'always growing',
+      arena_card_desc: 'where i keep what inspires me — links, images, texts, fragments. my externalized brain.',
       hit_msgs: ['barely touched it. 10 more.','sounds hollow. 9 more.','first crack. 8 more.','that one hurt. 7 more.','the wall breathes. 6 more.','almost halfway. 5 more.','it\'s wobbling. 4 more.','i feel something. 3 more.','almost there. 2 more.','one more. just one.'],
       konami2_msgs: ['> initiating narbigcito protocol...','> access granted.','> welcome to the system.','> if you got here twice, you\'re exactly who i\'m looking for.','> write to me. now.','> @elnarbigcito'],
       magi_lines: ['> booting MAGI...','> loading melchor...','> loading gaspar...','> loading baltazar...','> CORTEX activated.','> access granted.','> MAGI online.'],
@@ -1713,6 +1764,102 @@
   });
 
   
+
+  (function initArena() {
+    const grid = document.getElementById('arenaGrid');
+    const section = document.getElementById('arena');
+    if (!grid || !section) return;
+
+    const USER = 'el-narbigcito';
+    const CACHE_KEY = 'narbig_arena_v1';
+    const API = 'https://api.are.na/v3/users/' + USER + '/contents?per=24';
+    const MAX_BLOCKS = 8;
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = (s === null || s === undefined) ? '' : String(s);
+      return d.innerHTML;
+    }
+
+    function imgUrl(img) {
+      if (!img || typeof img !== 'object') return null;
+      return (img.large && img.large.src)
+        || (img.display && img.display.src)
+        || (img.medium && img.medium.src)
+        || (img.square && img.square.src)
+        || img.src || null;
+    }
+
+    function kindLabel(type) {
+      const es = { Image: 'imagen', Link: 'link', Text: 'texto', Media: 'media', Attachment: 'archivo' };
+      const en = { Image: 'image', Link: 'link', Text: 'text', Media: 'media', Attachment: 'file' };
+      const map = (currentLang === 'en') ? en : es;
+      return map[type] || String(type || '').toLowerCase();
+    }
+
+    function render(blocks) {
+      if (!Array.isArray(blocks)) return false;
+      const usable = blocks.filter(b => b && b.type && b.type !== 'Channel');
+      if (!usable.length) return false;
+
+      const frag = document.createDocumentFragment();
+      usable.slice(0, MAX_BLOCKS).forEach(b => {
+        const href = (b.source && b.source.url) ? b.source.url : 'https://www.are.na/block/' + b.id;
+        const a = document.createElement('a');
+        a.className = 'arena-block';
+        a.href = href;
+        a.target = '_blank';
+        a.rel = 'noreferrer';
+
+        const img = imgUrl(b.image);
+        let inner = '';
+        if (img) {
+          inner += '<img class="arena-block-img" loading="lazy" alt="' + esc(b.title || 'are.na') + '" src="' + esc(img) + '">';
+        }
+        inner += '<div class="arena-block-body"><div class="arena-block-kind">' + esc(kindLabel(b.type)) + '</div>';
+        if (b.type === 'Text') {
+          const txt = (b.content && (b.content.plain || b.content.markdown)) || b.title || '';
+          inner += '<div class="arena-block-text">' + esc(txt) + '</div>';
+        } else {
+          const title = b.title || b.generated_title || (b.source && b.source.url) || '';
+          if (title && !img) inner += '<div class="arena-block-title">' + esc(title) + '</div>';
+        }
+        inner += '</div>';
+        a.innerHTML = inner;
+        frag.appendChild(a);
+      });
+
+      grid.appendChild(frag);
+      section.style.display = '';
+
+      if (!isTouchDevice) {
+        grid.querySelectorAll('.arena-block').forEach(el => {
+          el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+          el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+        });
+      }
+      return true;
+    }
+
+    // one call per session: serve from cache if present
+    try {
+      const cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const data = JSON.parse(cached);
+        if (data && data.length && render(data)) return;
+      }
+    } catch (e) { /* ignore */ }
+
+    fetch(API)
+      .then(r => r.ok ? r.json() : Promise.reject(new Error('arena ' + r.status)))
+      .then(j => {
+        const blocks = (j && j.data) || [];
+        if (!blocks.length) return;
+        try { sessionStorage.setItem(CACHE_KEY, JSON.stringify(blocks)); } catch (e) { /* quota */ }
+        render(blocks);
+      })
+      .catch(() => { /* hide silently — section stays display:none */ });
+  })();
 
   (function initLetras() {
     const canvas = document.getElementById('letrasCanvas');
