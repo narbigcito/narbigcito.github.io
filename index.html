@@ -589,6 +589,9 @@
     .evento-nombre { font-size: 15px; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
     .evento-meta { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
     .evento-tipo { color: var(--c3); text-transform: uppercase; }
+    .evento-link { text-decoration: none; color: inherit; cursor: none; }
+    .evento-flyer { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--c5); letter-spacing: 0.04em; margin-top: 7px; transition: color .15s, transform .15s; }
+    .evento-link:hover .evento-flyer { color: var(--c6); transform: translateX(3px); }
     .evento-badge { font-family: 'Syne Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 9px; border: 1px solid; flex-shrink: 0; align-self: center; }
     .evento-badge.pasado { color: var(--muted); border-color: rgba(255,255,255,0.15); }
     .evento-badge.soon { color: var(--c6); border-color: rgba(0,255,135,0.4); background: rgba(0,255,135,0.06); animation: pulse 1.4s ease-in-out infinite; }
@@ -701,6 +704,15 @@
 </section>
 
 
+<section class="section" id="eventos">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c5)"><span data-i18n="eventos_label">// PRÓXIMAMENTE</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(120,78,255,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch" data-i18n-html="eventos_title">Eventos<br><span style="color:var(--c5)">próximos</span></h2>
+    <div class="eventos-list" id="eventosList"></div>
+  </div>
+</section>
+
+
 <section class="section" id="quien">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c1)"><span data-i18n="quien_label">// QUIÉN SOY</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,60,172,.3),transparent);display:block;margin-left:10px"></span></div>
@@ -730,6 +742,18 @@
   <div class="letras-wrap">
     <div class="letras-label" data-i18n="letras_label">// FRAGMENTOS FLOTANDO</div>
     <canvas id="letrasCanvas"></canvas>
+  </div>
+</section>
+
+
+<section class="section" id="arena" style="display:none">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c2)"><span data-i18n="arena_label">// DESDE ARE.NA</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(0,245,212,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch" data-i18n-html="arena_title">Cerebro<br><span style="color:var(--c2)">externo</span></h2>
+    <div class="arena-grid" id="arenaGrid"></div>
+    <div style="margin-top:16px">
+      <a class="link-item" href="https://www.are.na/el-narbigcito" target="_blank" rel="noreferrer" data-i18n="arena_more">ver todo en are.na →</a>
+    </div>
   </div>
 </section>
 
@@ -922,27 +946,6 @@
 </section>
 
 
-<section class="section" id="arena" style="display:none">
-  <div class="wrap">
-    <div class="sec-label" style="color:var(--c2)"><span data-i18n="arena_label">// DESDE ARE.NA</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(0,245,212,.3),transparent);display:block;margin-left:10px"></span></div>
-    <h2 class="sec-title glitch" data-i18n-html="arena_title">Cerebro<br><span style="color:var(--c2)">externo</span></h2>
-    <div class="arena-grid" id="arenaGrid"></div>
-    <div style="margin-top:16px">
-      <a class="link-item" href="https://www.are.na/el-narbigcito" target="_blank" rel="noreferrer" data-i18n="arena_more">ver todo en are.na →</a>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="eventos">
-  <div class="wrap">
-    <div class="sec-label" style="color:var(--c5)"><span data-i18n="eventos_label">// PRÓXIMAMENTE</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(120,78,255,.3),transparent);display:block;margin-left:10px"></span></div>
-    <h2 class="sec-title glitch" data-i18n-html="eventos_title">Eventos<br><span style="color:var(--c5)">próximos</span></h2>
-    <div class="eventos-list" id="eventosList"></div>
-  </div>
-</section>
-
-
 <section class="section" id="conectar">
   <div class="wrap">
     <div class="sec-label" style="color:var(--c4)"><span data-i18n="conectar_label">// CONECTAR</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,107,0,.3),transparent);display:block;margin-left:10px"></span></div>
@@ -1089,6 +1092,8 @@
       evento_tipo_charla: 'charla',
       evento_tipo_laboratorio: 'laboratorio',
       evento_tipo_lectura: 'lectura',
+      evento_tipo_festival: 'festival',
+      evento_flyer: 'ver flyer ↗',
       hit_msgs: ['apenas lo rozaste. 10 más.','suena hueco. 9 más.','primera grieta. 8 más.','eso ya dolió. 7 más.','el muro respira. 6 más.','casi la mitad. 5 más.','se tambalea. 4 más.','siento algo. 3 más.','ya mero. 2 más.','una más. solo una.'],
       konami2_msgs: ['> iniciando protocolo narbigcito...','> acceso concedido.','> bienvenido al sistema.','> si llegaste aquí dos veces, eres exactamente el tipo que busco.','> escríbeme. ahora.','> @elnarbigcito'],
       magi_lines: ['> iniciando MAGI...','> cargando melchor...','> cargando gaspar...','> cargando baltazar...','> CORTEX activado.','> acceso concedido.','> MAGI online.'],
@@ -1188,6 +1193,8 @@
       evento_tipo_charla: 'talk',
       evento_tipo_laboratorio: 'lab',
       evento_tipo_lectura: 'reading',
+      evento_tipo_festival: 'festival',
+      evento_flyer: 'view flyer ↗',
       hit_msgs: ['barely touched it. 10 more.','sounds hollow. 9 more.','first crack. 8 more.','that one hurt. 7 more.','the wall breathes. 6 more.','almost halfway. 5 more.','it\'s wobbling. 4 more.','i feel something. 3 more.','almost there. 2 more.','one more. just one.'],
       konami2_msgs: ['> initiating narbigcito protocol...','> access granted.','> welcome to the system.','> if you got here twice, you\'re exactly who i\'m looking for.','> write to me. now.','> @elnarbigcito'],
       magi_lines: ['> booting MAGI...','> loading melchor...','> loading gaspar...','> loading baltazar...','> CORTEX activated.','> access granted.','> MAGI online.'],
@@ -1812,8 +1819,7 @@
 
 
     const EVENTOS = [
-      { fecha: '2025-08-20', nombre: 'Lectura — La sombra de la rana', tipo: 'lectura', lugar: 'CDMX (por definir)' },
-      { fecha: '2025-09-05', nombre: 'Slam de poesía Hilvana', tipo: 'performance', lugar: 'CDMX' },
+      { fecha: '2026-08-08', nombre: 'Festival del Fracaso — concierto, bazar, talleres y tomatazos', tipo: 'festival', lugar: 'Tochcalli · Durango 1-B, Flores Magón, Cuernavaca, Morelos', link: 'https://www.instagram.com/p/DajDOdFywiL/' },
     ];
 
     const MES = {
@@ -1844,8 +1850,10 @@
         const past = diffDays < 0;
         const soon = diffDays >= 0 && diffDays <= 7;
 
-        const row = document.createElement('div');
-        row.className = 'evento' + (past ? ' pasado' : '');
+        const hasLink = !!ev.link;
+        const row = document.createElement(hasLink ? 'a' : 'div');
+        row.className = 'evento' + (past ? ' pasado' : '') + (hasLink ? ' evento-link' : '');
+        if (hasLink) { row.href = ev.link; row.target = '_blank'; row.rel = 'noreferrer'; }
 
         const yrTag = (ev.y !== curYear) ? '<span class="evento-fecha-yr">' + ev.y + '</span>' : '';
         const tipoLabel = T('evento_tipo_' + ev.tipo);
@@ -1858,6 +1866,7 @@
           '<div class="evento-main">' +
             '<div class="evento-nombre">' + esc(ev.nombre) + '</div>' +
             '<div class="evento-meta"><span class="evento-tipo">' + esc(tipoLabel) + '</span> · ' + esc(ev.lugar) + '</div>' +
+            (hasLink ? '<div class="evento-flyer">' + esc(T('evento_flyer')) + '</div>' : '') +
           '</div>' +
           badge;
         list.appendChild(row);
