@@ -602,6 +602,19 @@
     #letrasCanvas { display: block; width: 100%; height: 340px; background: #000; }
     .letras-label { position: absolute; top: 16px; left: 24px; font-family: 'Syne Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; pointer-events: none; z-index: 2; text-shadow: 0 0 8px rgba(0,0,0,0.8); }
     @media (max-width: 640px) { #letrasCanvas { height: 240px; } .letras-label { left: 16px; } }
+
+    /* ── superficies con cuerpo (sin vidrio esmerilado) ── */
+    .bcard, .app-card, .conv-thumb, .status-box, .link-item {
+      backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+      background: #121212 !important;
+      border: 2px solid #2b2b2b !important;
+      box-shadow: 5px 5px 0 #000;
+    }
+    .bcard:hover, .app-card:hover, .conv-thumb:hover { border-color: #f0ece4 !important; box-shadow: 7px 7px 0 #000; }
+    .bcard:hover { transform: none; }
+    .conv-thumb.active { border-color: var(--c5) !important; box-shadow: 5px 5px 0 var(--c5); }
+    .btn:active, .link-item:active, .nav-pill:active { box-shadow: 0 0 0 #000; translate: 3px 3px !important; }
+    .btn-main { box-shadow: 4px 4px 0 #000; }
   </style>
   <script defer src="https://analytics.narbigcito.com/script.js" data-website-id="0ba1b1cf-6142-437f-a65b-a92e386e6a94"></script>
 </head>
@@ -616,7 +629,7 @@
 <div class="wall-popup" id="wallPopup">
   <div class="wall-popup-box">
     <button class="popup-close" id="popupClose" type="button" data-i18n="popup_close">✕ cerrar</button>
-    <div class="popup-flash" data-i18n="popup_flash">👁 vaya. realmente quieres saber quién soy.</div>
+    <div class="popup-flash" data-i18n="popup_flash">vaya. realmente quieres saber quién soy.</div>
     <div class="popup-header" data-i18n="popup_header">// QUIÉN SOY</div>
     <div class="popup-text" data-i18n-html="popup_text">
       Mi nombre es <strong>Gibrán</strong> — sí, como Khalil Gibran — y no es casualidad.
@@ -728,7 +741,7 @@
           <path id="crack5" class="crack-path" d="M500,260 L488,175 L525,148 L502,80" stroke-width="1"/>
         </svg>
         <div class="wall-text" id="wallText" data-i18n-html="wall_text">
-          🧱 si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>
+          si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>
         </div>
         <div class="wall-hits" id="wallHits"></div>
       </div>
@@ -1004,7 +1017,7 @@
       laser_text: 'el lenguaje no es inocente. nunca lo fue.',
       logo_secret: 'sí, como Khalil Gibran. no es casualidad.',
       popup_close: '✕ cerrar',
-      popup_flash: '👁 vaya. realmente quieres saber quién soy.',
+      popup_flash: 'vaya. realmente quieres saber quién soy.',
       popup_header: '// QUIÉN SOY',
       popup_text: 'Mi nombre es <strong>Gibrán</strong> — sí, como Khalil Gibran — y no es casualidad. En su raíz árabe, Yibrān significa <em>"consolador", "reparador de almas"</em>, aquel elegido para sanar heridas invisibles.<br><br>Nací en <strong>Ecatepec</strong>, un territorio donde la pobreza no es accidente; es un sistema diseñado para robar futuros.<br><br>Llegué al mundo a los ocho meses — frágil, urgente — en una familia fracturada. Mi infancia fue un encierro forzado: cuatro paredes, una computadora rescatada de la basura y montañas de libros que me mostraron que existía algo allá afuera llamado <em>mundo</em>.<br><br>Nunca tuve éxito en la escuela. Pero no abandoné mi obsesión por comprender cómo funciona la realidad. Con el tiempo, programar me dio estabilidad. Pero eso no era suficiente. <strong>Necesitaba más.</strong><br><br>Creo que explorar los límites de la experiencia humana ayuda a entender mejor esta realidad, tan esquiva. Mi lucha es política porque sé que el sufrimiento tiene causas estructurales.<br><br>Busco <em>cómplices</em>: ingenieros que construyan puentes, artistas que conviertan el dolor en belleza, personas que crean que el mundo puede ser diferente y estén dispuestas a actuar.<br><br><strong>¿Reescribimos la historia?</strong>',
       k2_close: '✕ salir',
@@ -1020,7 +1033,7 @@
       btn_projects: 'ver proyectos',
       btn_collaborate: 'colaborar →',
       quien_label: '// QUIÉN SOY',
-      wall_text: '🧱 si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>',
+      wall_text: 'si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>',
       wall_reopen: '↩ volver a romper el muro',
       creo_label: '// LO QUE CREO',
       creo_title: 'Creo en<br><span style="color:var(--c2)">todo</span>',
@@ -1105,7 +1118,7 @@
       laser_text: 'language is never innocent. it never was.',
       logo_secret: 'yes, like Khalil Gibran. not a coincidence.',
       popup_close: '✕ close',
-      popup_flash: '👁 well. you really want to know who i am.',
+      popup_flash: 'well. you really want to know who i am.',
       popup_header: '// WHO I AM',
       popup_text: 'My name is <strong>Gibrán</strong> — yes, like Khalil Gibran — and that\'s no coincidence. In its Arabic root, Yibrān means <em>"consoler", "healer of souls"</em>, one chosen to mend invisible wounds.<br><br>I was born in <strong>Ecatepec</strong>, a place where poverty is no accident; it\'s a system designed to steal futures.<br><br>I came into the world at eight months — fragile, urgent — into a fractured family. My childhood was a forced enclosure: four walls, a computer rescued from the trash, and mountains of books that showed me there was something out there called the <em>world</em>.<br><br>I never succeeded in school. But I never abandoned my obsession with understanding how reality works. Over time, programming gave me stability. But that wasn\'t enough. <strong>I needed more.</strong><br><br>I believe that exploring the limits of human experience helps us better understand this elusive reality. My struggle is political because I know that suffering has structural causes.<br><br>I\'m looking for <em>accomplices</em>: engineers who build bridges, artists who transform pain into beauty, people who believe the world can be different and are willing to act.<br><br><strong>Shall we rewrite history?</strong>',
       k2_close: '✕ exit',
@@ -1121,7 +1134,7 @@
       btn_projects: 'see projects',
       btn_collaborate: 'collaborate →',
       quien_label: '// WHO I AM',
-      wall_text: '🧱 if you want to know who i am,<br>break this wall.<br><span style="font-size:0.65em;opacity:0.5">(hit it 11 times)</span>',
+      wall_text: 'if you want to know who i am,<br>break this wall.<br><span style="font-size:0.65em;opacity:0.5">(hit it 11 times)</span>',
       wall_reopen: '↩ break the wall again',
       creo_label: '// WHAT I BELIEVE',
       creo_title: 'I believe in<br><span style="color:var(--c2)">everything</span>',
@@ -2302,6 +2315,6 @@
     requestAnimationFrame(t => { lastTime = t; requestAnimationFrame(render); });
   })();
 </script>
-<script src="assets/criaturas.js" defer></script>
+<script src="assets/vida.js" defer></script>
 </body>
 </html>
