@@ -28,7 +28,7 @@
     ".bicho svg *{pointer-events:visiblePainted}",
     ".bicho{pointer-events:none;position:fixed;left:0;top:0;z-index:70;touch-action:none;user-select:none;-webkit-user-select:none;will-change:transform}",
     ".bicho .cuerpo{transform-origin:50% 100%}",
-    ".bicho svg{display:block;overflow:visible;filter:url(#vida-hervor)}",
+    ".bicho svg{display:block;overflow:visible}",
     ".bicho.dormido{opacity:.6}",
     ".bicho.dormido svg *{pointer-events:none}",
     ".bicho .bur{position:absolute;bottom:100%;left:50%;transform:translate(-50%,4px);white-space:nowrap;",
@@ -45,7 +45,20 @@
     "#vida-zzz:active{box-shadow:0 0 0 " + INK + ";translate:3px 3px}",
     "@media (hover:none){#vida-zzz{cursor:auto}}",
     "@media (max-width:700px){#vida-zzz{top:auto;bottom:10px;right:10px;font-size:10px;padding:4px 8px}}",
-    "@media print{.bicho,.mosca,#vida-zzz,.zeta,.obj-vida{display:none}}"
+    "#vida-bote{position:fixed;right:18px;bottom:0;width:58px;height:74px;z-index:66;background:none;border:0;padding:0;cursor:pointer;transform-origin:50% 100%}",
+    "#vida-bote .bur{bottom:100%;margin-bottom:8px}",
+    "body.arrastrando #vida-bote{scale:1.25}",
+    "body.arrastrando #vida-bote .tapa{transform:rotate(-60deg)}",
+    "#vida-reparar{position:fixed;left:50%;top:78px;translate:-50% -200px;z-index:210;display:flex;align-items:center;gap:8px;",
+    "background:#FFD23F;color:" + INK + ";border:3px solid " + INK + ";box-shadow:5px 5px 0 " + INK + ";padding:10px 16px;",
+    "font:700 14px 'Space Grotesk',sans-serif;cursor:pointer;transition:translate .35s cubic-bezier(.3,1.5,.5,1)}",
+    "#vida-reparar.on{translate:-50% 0}",
+    "#vida-reparar:active{box-shadow:0 0 0 " + INK + "}",
+    ".bicho.enojada svg{filter:drop-shadow(0 0 6px rgba(255,40,40,.8)) saturate(1.6) hue-rotate(-18deg)}",
+    ".roto-vida{filter:saturate(.7)}",
+    ".grieta-vida{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}",
+    "@media (max-width:700px){#vida-bote{right:auto;left:10px;width:46px;height:58px}#vida-reparar{top:auto;bottom:70px;translate:-50% 200px}#vida-reparar.on{translate:-50% 0}}",
+    "@media print{.bicho,.mosca,#vida-zzz,.zeta,.obj-vida,#vida-bote,#vida-reparar{display:none}}"
   ].join("");
   var st = document.createElement("style");
   st.textContent = css;
@@ -55,7 +68,7 @@
   var defs = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   defs.setAttribute("width", "0"); defs.setAttribute("height", "0");
   defs.style.position = "absolute";
-  defs.innerHTML = '<filter id="vida-hervor"><feTurbulence id="vida-turb" type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1"/>' +
+  defs.innerHTML = '<filter id="vida-hervor" filterUnits="userSpaceOnUse" x="-90" y="-90" width="320" height="330"><feTurbulence id="vida-turb" type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1"/>' +
     '<feDisplacementMap in="SourceGraphic" scale="2.2"/></filter>';
   document.body.appendChild(defs);
   var turb = defs.querySelector("#vida-turb");
@@ -68,6 +81,8 @@
     M.x = e.clientX; M.y = e.clientY; M.t = performance.now();
   }, { passive: true });
 
+  var TACTIL = window.matchMedia("(hover: none)").matches;
+  function son() { if (window.__sonido) window.__sonido.tocar.apply(null, arguments); }
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function rnd(a, b) { return a + Math.random() * (b - a); }
   function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
@@ -219,6 +234,9 @@
       cuerpo: el.querySelector(".cuerpo"), bur: el.querySelector(".bur")
     };
     for (var k in extra) b[k] = extra[k];
+    // El trazo tembloroso va en el <g> y no en el <svg>: con el filtro en el <svg> y overflow visible,
+    // algunos navegadores de celular dejaban una copia vieja de la cabeza al girar el cuello.
+    if (!TACTIL) b.cuerpo.setAttribute("filter", "url(#vida-hervor)");
     b.pupBase = Array.prototype.map.call(b.pupilas, function (p) { return [+p.getAttribute("cx"), +p.getAttribute("cy")]; });
     b.lidH = +b.parpado.getAttribute("height") || 0;
     return b;
@@ -244,6 +262,7 @@
   R.x = 40; R.y = window.innerHeight - R.h; R.modo = "suelo"; R.piso = true;
 
   function decir(b, txt, ms) {
+    son("voz", b.nombre, txt);
     b.bur.textContent = txt;
     b.bur.classList.add("on");
     clearTimeout(b.bur._t);
@@ -285,6 +304,7 @@
       if (dormidas) return;
       e.preventDefault();
       agarrado = b; b.modo = "agarrado"; b.sup = null; b.piso = false;
+      document.body.classList.add("arrastrando");
       b.offX = e.clientX - b.x; b.offY = e.clientY - b.y;
       hist = [{ x: e.clientX, y: e.clientY, t: performance.now() }];
       b.el.setPointerCapture(e.pointerId);
@@ -299,6 +319,8 @@
     function soltar(e) {
       if (agarrado !== b) return;
       agarrado = null;
+      document.body.classList.remove("arrastrando");
+      if (sobreBote(b)) { tirar(b); return; }
       var a = hist[0], z = hist[hist.length - 1], dt = Math.max(16, z.t - a.t) / 1000;
       b.vx = clamp((z.x - a.x) / dt, -1600, 1600);
       b.vy = clamp((z.y - a.y) / dt, -1600, 1600);
@@ -318,6 +340,7 @@
   document.body.appendChild(btn);
   function pintarBtn() { btn.textContent = dormidas ? "despertar a los bichos" : "zzz · mandar a dormir"; }
   function dormir(si) {
+    if (dormidas !== si) son(si ? "dormir" : "despertar");
     dormidas = si;
     try { localStorage.setItem(LS, si ? "dormidas" : "despiertas"); } catch (e) {}
     bichos.forEach(function (b) {
@@ -394,6 +417,7 @@
   }
 
   function saltarA(b, tx, pieY, sup) {
+    if (b === R) son("boing");
     var dx = tx - b.x, dy = (pieY - b.h) - b.y;
     // Si el destino está más alto, apunta 40 px por encima y alarga el salto:
     // así llega ya de bajada y el aterrizaje sobre la tarjeta no falla por
@@ -430,6 +454,7 @@
 
   function pasoFisica(b, dt, now) {
     var H = window.innerHeight;
+    if (b.modo === "basura") return;
     if (b.modo === "agarrado") {
       var tx = M.x - b.offX, ty = M.y - b.offY;
       b.vx = (tx - b.x) / Math.max(dt, 0.001);
@@ -450,7 +475,7 @@
       if (b.vy > 0 && !dormidas) {
         var cands = superficies(now).slice();
         var otro = b === R ? J : null;
-        if (otro && otro.modo !== "agarrado") cands.push({ bicho: otro });
+        if (otro && otro.modo !== "agarrado" && otro.modo !== "basura") cands.push({ bicho: otro });
         for (var i = 0; i < cands.length; i++) {
           var bb = borde(cands[i]);
           if (cx > bb.left + 6 && cx < bb.right - 6 && prevPie <= bb.top + 2 && pie >= bb.top) {
@@ -641,6 +666,7 @@
       e.vy += G * dt; e.y += e.vy * dt;
       if (e.y >= pisoY) {
         e.y = pisoY;
+        if (e.rebotes === 0) son("mesa");
         if (e.rebotes < 2 && Math.abs(e.vy) > 200) { e.vy = -e.vy * 0.35; e.rebotes++; e.vsq -= 0.15; }
         else { e.vy = 0; e.fase = "van"; e.t = 0; }
         // la caída sacude lo que haya cerca
@@ -682,7 +708,7 @@
       poner(e.vaso, baseV.x + (m.x + 8 - baseV.x) * s, baseV.y + (m.y - baseV.y) * s, -s * 20);
       if (e.t > 0.55 && !e.chocaron) {
         e.chocaron = true;
-        decir(J, "¡salud!", 1000); decir(R, "¡salud!", 1000);
+        decir(J, "¡salud!", 1000); decir(R, "¡salud!", 1000); son("clink");
         J.animo = 1; R.animo = 1; R.vsq -= 0.08; J.vsq -= 0.05;
         e.vsq -= 0.06;
       }
@@ -809,6 +835,7 @@
         e.vx = hacia * clamp(dist * 0.9, 220, 520);
         e.vy = -rnd(850, 1100);
         e[key] = 0.5;
+        son("pelota");
         e.toques++;
         b.vsq -= 0.07; b.animo = 1;
         if (Math.random() < 0.55) decir(b, pick(frases), 900);
@@ -914,29 +941,146 @@
 
   /* ---- leer una tarjeta juntas ---- */
 
-  function extracto(el) {
-    var txt = (el.innerText || "").replace(/\s+/g, " ").trim();
-    if (!txt) return null;
-    return txt.length > 34 ? txt.slice(0, 33).trim() + "…" : txt;
+  /* Qué hay en una tarjeta, según de qué sección sea. Con esto las criaturas
+     comentan lo que de verdad está en la página: el último post de Substack, lo
+     que Gibrán guardó en Are.na, sus creencias, sus proyectos, los eventos. */
+  function txt(el, sel) {
+    var n = sel ? el.querySelector(sel) : el;
+    return n ? (n.innerText || n.textContent || "").replace(/\s+/g, " ").trim() : "";
   }
+  function cortar(s, n) { n = n || 38; return s.length > n ? s.slice(0, n - 1).replace(/[\s,.;:]+\S*$/, "") + "…" : s; }
+  function extracto(el) {
+    var s = txt(el);
+    return s ? cortar(s, 34) : null;
+  }
+  var SEL_COMENTABLE = ".arena-block, .substack-post, .bcard, .evento, .app-card, .conv-thumb, .status-box, .wall-wrap, .sec-title";
+
+  // Devuelve una plática ([[quién, qué], ...]) sobre esa tarjeta, o null.
+  function charlaDe(el) {
+    var c = el.classList, q = function (s) { return "«" + cortar(s) + "»"; };
+    if (c.contains("substack-post")) {
+      var tit = txt(el, "h3") || txt(el, "h4"), sub = txt(el, ".substack-sub");
+      var meta = txt(el, ".substack-meta") || txt(el, ".substack-date");
+      var min = (meta.match(/(\d+)\s*min/) || [])[1];
+      if (!tit) return null;
+      var op = [
+        [[R, "¿ya leíste " + q(tit) + "?"], [J, "lo tengo en pendientes"], [R, "llevas tres semanas diciendo eso"], [J, min ? "es que son " + min + " minutos" : "es que está largo"], [R, "tú tienes todo el tiempo del mundo, vives en una página"]],
+        [[J, q(tit)], [R, "qué título"], [J, "¿tú qué opinas?"], [R, "que lo lea quien nos está viendo y nos cuente"]],
+        [[R, "este lo escribió hace poco"], [J, q(tit)], [R, "¿ya cambió de opinión?"], [J, "pregúntale, contesta los comentarios"]]
+      ];
+      if (sub) op.push(
+        [[J, "aquí dice: " + q(sub)], [R, "uf"], [J, "¿uf bueno o uf malo?"], [R, "uf de que me dejó pensando"]],
+        [[R, "me gusta cuando escribe enojado"], [J, "¿este es enojado?"], [R, q(sub) + "… sí, tantito"]]
+      );
+      return pick(op);
+    }
+    if (c.contains("arena-block")) {
+      var kind = txt(el, ".arena-block-kind").toLowerCase();
+      var texto = txt(el, ".arena-block-text") || txt(el, ".arena-block-title");
+      var img = el.querySelector("img"), alt = img ? (img.getAttribute("alt") || "") : "";
+      if (alt === "are.na") alt = "";
+      if (img) return pick([
+        [[R, "¿qué es esa foto?"], [J, alt ? q(alt) + ", dice" : "no sé, pero me gusta"], [R, "¿la habrá tomado él?"], [J, "o se la encontró, que también cuenta"]],
+        [[J, "esa imagen tiene buena luz"], [R, "¿tú qué sabes de luz?"], [J, "vivo en una pantalla, sé todo de luz"]],
+        [[R, "guarda puras cosas bonitas en are.na"], [J, "y luego nos pone aquí a nosotras"], [R, "¿eso qué quiere decir?"], [J, "nada, sigue"]]
+      ]);
+      if (!texto) return null;
+      return pick([
+        [[R, "lo guardó en are.na: " + q(texto)], [J, "¿y por qué guardaría eso?"], [R, "porque le hizo ruido, supongo"], [J, "a mí también me hace ruido"]],
+        [[J, q(texto)], [R, "eso suena a algo que dirías tú"], [J, "yo no hablo así"], [R, "hablas peor"]],
+        [[R, "¡a ver, a ver!"], [R, "aquí dice: " + q(texto)], [J, "profundo"], [R, "o no entendí"], [J, "yo tampoco"]],
+        [[J, kind.indexOf("link") >= 0 ? "un link: " + q(texto) : "otro fragmento: " + q(texto)], [R, "¿le picamos?"], [J, "luego nos perdemos tres horas"], [R, "como siempre"]]
+      ]);
+    }
+    if (c.contains("bcard")) {
+      var lab = txt(el, ".bcard-label"), bt = txt(el, ".bcard-text"), num = txt(el, ".bcard-num");
+      if (!lab) return null;
+      return pick([
+        [[J, "cree " + q(lab)], [R, "¿tú crees en eso?"], [J, "yo creo en las hojas de arriba"], [R, "eso no es una creencia, es hambre"]],
+        [[R, "aquí dice " + q(bt)], [J, "está fuerte"], [R, "por eso está en «lo que creo»"]],
+        [[R, "la " + (num || "de aquí") + " es mi favorita"], [J, "¿por?"], [R, q(lab)], [J, "ok, te la compro"]]
+      ]);
+    }
+    if (c.contains("app-card")) {
+      var nom = txt(el, ".app-name").toUpperCase();
+      if (nom.indexOf("ORDEN") >= 0) return [[R, "¿tú usas Orden?"], [J, "para organizar mis siestas"], [R, "¿y funciona?"], [J, "tengo tres pendientes: dormir, dormir y comer hojas"]];
+      if (nom.indexOf("CREA") >= 0) return [[J, "Crea es una red sin likes"], [R, "¿y cómo sé si le caigo bien a alguien?"], [J, "hablándole, como antes"]];
+      if (nom.indexOf("MAGI") >= 0) return [[R, "MAGI son tres IAs que viven en una Raspberry"], [J, "¿y no se pelean?"], [R, "todo el tiempo, por eso son tres"]];
+      if (nom.indexOf("WHELLE") >= 0) return [[J, "Whelle anota cuánto duerme"], [R, "¿y cuánto duerme?"], [J, "menos de lo que debería"], [R, "como todos"]];
+      if (nom.indexOf("LOGOS") >= 0) return [[R, "¿qué es LOGOS?"], [J, "nadie sabe bien"], [R, "¿ni él?"], [J, "él menos, y así le gusta"]];
+      if (nom.indexOf("RANA") >= 0) return [[R, "¡«La sombra de la rana»! hablan de mí"], [J, "no creo que sea de ti"], [R, "hay una rana en el título, es de mí"]];
+      if (nom.indexOf("ARE.NA") >= 0) return [[J, "su cerebro de afuera"], [R, "el mío cabe en una mosca"], [J, "se nota"]];
+      return [[R, "¿qué es " + q(nom.toLowerCase()) + "?"], [J, "otro de sus proyectos"], [R, "tiene muchos"], [J, "y todos le quitan el sueño"]];
+    }
+    if (c.contains("evento")) {
+      var en = txt(el, ".evento-nombre"), ef = txt(el, ".evento-fecha");
+      if (!en) return null;
+      if (c.contains("pasado")) return [[J, q(en) + " ya pasó"], [R, "¿y fuimos?"], [J, "nosotras no salimos de la pantalla"], [R, "algún día"]];
+      return [[R, "¿vamos a " + q(en) + "?"], [J, "¿cuándo es?"], [R, ef || "pronto"], [J, "apúntalo en Orden"]];
+    }
+    if (c.contains("conv-thumb")) return [[R, "aquí guarda sus pláticas con Claude"], [J, "¿con una IA?"], [R, "sí, como nosotras pero más formal"]];
+    if (c.contains("status-box")) return [[J, "mira, MAGI sigue en construcción"], [R, "como todo en esta vida"], [J, "como tú"], [R, "oye"]];
+    if (c.contains("wall-wrap")) return [[R, "¿ya rompieron el muro?"], [J, "son diecisiete golpes"], [R, "del otro lado cuenta su historia"], [J, "shh, no hagas spoiler"]];
+    if (c.contains("sec-title")) { var st = txt(el); if (!st) return null; return [[R, q(st)], [J, "buen título"], [R, "se tardó horas en escogerlo"]]; }
+    return null;
+  }
+
+  function comentables(maxDist) {
+    var H = window.innerHeight, out = [];
+    document.querySelectorAll(SEL_COMENTABLE).forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < 70 || r.bottom > H + 40 || r.top > H - 60 || r.width < 60 || r.right < 0 || r.left > ancho) return;
+      if (el._roto) return;
+      if (maxDist) {
+        var cx = (r.left + r.right) / 2, cy = (r.top + r.bottom) / 2, cerca = false;
+        bichos.forEach(function (b) { if (Math.hypot(cx - (b.x + b.w / 2), cy - (b.y + b.h / 2)) < maxDist) cerca = true; });
+        if (!cerca) return;
+      }
+      out.push(el);
+    });
+    return out;
+  }
+
   function iniciarLeer() {
     var H = window.innerHeight, cand = [];
-    document.querySelectorAll(".arena-block, .substack-post, .bcard, .evento").forEach(function (el) {
+    comentables().forEach(function (el) {
       var r = el.getBoundingClientRect();
-      if (r.top > 160 && r.top < H - 90 && r.width > 90 && r.left > 0 && r.right < ancho && extracto(el)) cand.push(el);
+      if (r.top > 160 && r.top < H - 90 && r.width > 90 && r.left > 0 && r.right < ancho) cand.push(el);
     });
-    if (!cand.length) return null;
-    var el = pick(cand);
-    var cita = extracto(el);
-    var e = { tipo: "leer", fase: "van", t: 0, tarjeta: el,
-      charla: pick([
-        [[R, "¡a ver, a ver!"], [R, "aquí dice: «" + cita + "»"], [J, "profundo"], [R, "o no entendí"], [J, "yo tampoco"]],
-        [[J, "¿qué dice ahí arriba?"], [R, "«" + cita + "»"], [J, "¿y eso qué significa?"], [R, "que hay que leer más"], [J, "ay, no"]],
-        [[R, "esta me gusta"], [J, "¿por?"], [R, "«" + cita + "»"], [J, "ok, sí está buena"]]
-      ]), linea: 0, sigLinea: 0.4 };
-    decir(R, pick(["¡mira esto!", "ven, lee conmigo"]), 1300);
+    // se tardan en elegir: prueban tarjetas hasta encontrar una de la que tengan algo que decir
+    var el = null, charla = null;
+    for (var i = 0; i < 6 && cand.length && !charla; i++) { el = pick(cand); charla = charlaDe(el); }
+    if (!charla) return null;
+    var e = { tipo: "leer", fase: "van", t: 0, tarjeta: el, charla: charla, linea: 0, sigLinea: 0.4 };
+    decir(R, pick(["¡mira esto!", "ven, lee conmigo", "¿ya viste esto?"]), 1300);
     return e;
   }
+
+  /* Comentario al paso: sin dejar lo que están haciendo, cada tanto una de las dos
+     voltea a ver algo cercano y lo comenta (dos o tres frases, nada más). */
+  var comentario = null, sigComentario = rnd(14, 24);
+  function pasoComentario(dt) {
+    if (comentario) {
+      var el = comentario.el, r = el.getBoundingClientRect();
+      // voltean a verlo mientras hablan (si no van caminando a otra parte)
+      bichos.forEach(function (b) {
+        if (b.modo === "agarrado" || b.modo === "basura" || (b === J && J.accion === "caminar")) return;
+        b.dir = (r.left + r.right) / 2 > b.x + b.w / 2 ? 1 : -1;
+      });
+      if (correrCharla(comentario, dt, 2.2)) { comentario = null; sigComentario = rnd(16, 30); }
+      return;
+    }
+    if (escena || dormidas || agarrado || J.modo === "basura" || R.modo === "basura") return;
+    sigComentario -= dt;
+    if (sigComentario > 0) return;
+    sigComentario = 6;
+    var cand = comentables(520);
+    if (!cand.length) return;
+    var el2 = pick(cand), ch = charlaDe(el2);
+    if (!ch) return;
+    comentario = { el: el2, charla: ch.slice(0, Math.random() < 0.5 ? 2 : 3), linea: 0, sigLinea: 0 };
+  }
+
   function pasoLeer(e, dt) {
     var H = window.innerHeight;
     e.t += dt;
@@ -1046,17 +1190,247 @@
     if (e.fase === "despierta" && e.t > 1.8) terminarEscena();
   }
 
+
+  /* =================================================================
+     EL BOTE DE BASURA
+     Parece que ahí se tiran las criaturas para quitarlas. Con una sí
+     funciona: se queda adentro (asomándose) hasta que le das clic al bote.
+     Pero si tiras a la segunda cuando la primera ya está adentro, salen
+     las dos furiosas y se ponen a romper la página. Aparece un botón
+     para reconstruirla.
+  ================================================================= */
+
+  var BOTE_SVG =
+    '<svg viewBox="0 0 60 76" width="100%" height="100%" style="overflow:visible">' +
+    '<g class="ojos-bote" style="opacity:0">' +
+    '<circle cx="24" cy="15" r="4.5" fill="#fff" stroke="' + INK + '" stroke-width="2"/><circle cx="25" cy="16" r="2" fill="' + INK + '"/>' +
+    '<circle cx="36" cy="15" r="4.5" fill="#fff" stroke="' + INK + '" stroke-width="2"/><circle cx="37" cy="16" r="2" fill="' + INK + '"/></g>' +
+    '<path d="M8 22 L52 22 L47 74 L13 74 Z" fill="#8E9AA6" stroke="' + INK + '" stroke-width="3" stroke-linejoin="round"/>' +
+    '<path d="M21 30 L22 66 M30 30 L30 66 M39 30 L38 66" stroke="' + INK + '" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>' +
+    '<g class="tapa" style="transform-origin:6px 20px;transition:transform .18s cubic-bezier(.3,1.6,.5,1)">' +
+    '<rect x="4" y="14" width="52" height="8" rx="2" fill="#A7B3BF" stroke="' + INK + '" stroke-width="3"/>' +
+    '<rect x="23" y="9" width="14" height="6" rx="2" fill="#A7B3BF" stroke="' + INK + '" stroke-width="2.5"/></g>' +
+    '</svg>';
+
+  var bote = document.createElement("button");
+  bote.type = "button";
+  bote.id = "vida-bote";
+  bote.setAttribute("aria-label", "bote de basura");
+  bote.title = "bote de basura";
+  bote.innerHTML = BOTE_SVG + '<span class="bur"></span>';
+  document.body.appendChild(bote);
+  var tapa = bote.querySelector(".tapa"), ojosBote = bote.querySelector(".ojos-bote"), burBote = bote.querySelector(".bur");
+  var enBote = [];   // quién está adentro
+
+  function decirBote(txt, ms) {
+    burBote.textContent = txt; burBote.classList.add("on");
+    clearTimeout(burBote._t);
+    burBote._t = setTimeout(function () { burBote.classList.remove("on"); }, ms || 1500);
+  }
+  function rectBote() { return bote.getBoundingClientRect(); }
+  function sobreBote(b) {
+    var r = rectBote(), cx = b.x + b.w / 2, cy = b.y + b.h / 2;
+    return Math.hypot(cx - (r.left + r.width / 2), cy - (r.top + r.height / 2)) < Math.max(80, b.w * 0.8);
+  }
+  function brincaBote(f) {
+    bote.animate([{ transform: "scale(1)" }, { transform: "scale(" + (1 + f) + "," + (1 - f) + ")" }, { transform: "scale(1)" }],
+      { duration: 380, easing: "cubic-bezier(.3,1.6,.5,1)" });
+  }
+
+  function tirar(b) {
+    var otra = b === J ? R : J;
+    if (otra.sup && otra.sup.bicho === b) { otra.modo = "aire"; otra.sup = null; }
+    b.modo = "basura"; b.sup = null; b.vx = 0; b.vy = 0;
+    b.el.style.display = "none";
+    b.bur.classList.remove("on");
+    enBote.push(b);
+    son("bote");
+    tapa.style.transform = "rotate(0deg)";
+    brincaBote(0.2);
+    if (escena) terminarEscena();
+    comentario = null;
+    if (enBote.length === 2) { setTimeout(furia, 700); return; }
+    ojosBote.style.opacity = 1;
+    decirBote(b === J ? "¡oye!" : "¡croac!", 1200);
+    setTimeout(function () { if (b.modo === "basura" && enBote.length === 1) decir(otra, pick(["¿a dónde se fue?", "¿la tiraste?", "…"]), 1500); }, 1300);
+  }
+
+  function sacar(b, vx, vy) {
+    var r = rectBote();
+    b.el.style.display = "";
+    b.x = r.left + r.width / 2 - b.w / 2; b.y = r.top - b.h * 0.6;
+    b.vx = vx; b.vy = vy; b.modo = "aire"; b.sup = null;
+    enBote = enBote.filter(function (o) { return o !== b; });
+    if (!enBote.length) ojosBote.style.opacity = 0;
+    brincaBote(0.25);
+  }
+
+  bote.addEventListener("click", function () {
+    if (enBote.length === 1) {
+      var b = enBote[0];
+      tapa.style.transform = "rotate(-70deg)"; son("tapa");
+      setTimeout(function () { tapa.style.transform = "rotate(0deg)"; }, 450);
+      sacar(b, rnd(-350, -150), -900);
+      setTimeout(function () { decir(b, pick(["¡gracias!", "apesta ahí adentro", "no lo vuelvas a hacer"]), 1600); }, 350);
+    } else {
+      brincaBote(0.12);
+      decirBote(pick(["vacío", "aquí no hay nadie", "tírame algo"]), 1100);
+    }
+  });
+
+  /* ---- la furia ---- */
+
+  var SEL_ROMPIBLE = ".bcard, .app-card, .status-box, .conv-thumb, .evento, .sec-title, .sec-label, .arena-block, .substack-post, .btn, .link-item, .sticker, .wall-wrap, .red, .hero-bio";
+  var rotos = [];
+  var btnReparar = document.createElement("button");
+  btnReparar.type = "button";
+  btnReparar.id = "vida-reparar";
+  btnReparar.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 21l9-9M14 4l6 6-3 3-6-6z" stroke="' + INK + '" stroke-width="2.6" fill="#FFFDF5" stroke-linejoin="round" stroke-linecap="round"/></svg><span>reconstruir el sitio</span>';
+  document.body.appendChild(btnReparar);
+
+  function grieta() {
+    var s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.setAttribute("class", "grieta-vida");
+    s.setAttribute("viewBox", "0 0 100 100");
+    s.setAttribute("preserveAspectRatio", "none");
+    var x = rnd(20, 80), y = rnd(15, 60), d = "M" + x + " " + y;
+    for (var i = 0; i < 5; i++) { x += rnd(-14, 14); y += rnd(6, 14); d += " L" + x.toFixed(1) + " " + y.toFixed(1); }
+    s.innerHTML = '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="2.2" vector-effect="non-scaling-stroke"/>' +
+      '<path d="' + d + '" fill="none" stroke="#fff" stroke-width="1" vector-effect="non-scaling-stroke" transform="translate(1.2 .8)" opacity=".5"/>';
+    return s;
+  }
+
+  function romper(el, fuerza) {
+    if (!el || el._roto) return false;
+    el._roto = true;
+    var f = fuerza || 1;
+    var rot = rnd(-16, 16) * f, dy = rnd(18, 70) * f, dx = rnd(-26, 26) * f;
+    el._rotoAnim = el.animate([
+      { transform: "translate(0,0) rotate(0deg)" },
+      { transform: "translate(" + (dx * 0.3).toFixed(1) + "px,-16px) rotate(" + (rot * 0.3).toFixed(1) + "deg)", offset: 0.25 },
+      { transform: "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + rot.toFixed(1) + "deg)" }
+    ], { duration: 650, easing: "cubic-bezier(.3,1.35,.5,1)", fill: "forwards" });
+    if (getComputedStyle(el).position === "static") { el._posAntes = el.style.position; el.style.position = "relative"; }
+    var g = grieta(); el.appendChild(g); el._grieta = g;
+    el.classList.add("roto-vida");
+    rotos.push(el);
+    son("romper");
+    var r = el.getBoundingClientRect();
+    if (window.__agua) window.__agua.onda(r.left + r.width / 2, r.top + r.height / 2, 0.7);
+    btnReparar.classList.add("on");
+    cacheT = 0;
+    return true;
+  }
+
+  function reconstruir() {
+    son("reparar");
+    rotos.forEach(function (el, i) {
+      var actual = getComputedStyle(el).transform;
+      if (el._rotoAnim) el._rotoAnim.cancel();
+      el.animate([{ transform: actual === "none" ? "none" : actual }, { transform: "none" }],
+        { duration: 520, delay: i * 45, easing: "cubic-bezier(.3,1.5,.5,1)" });
+      if (el._grieta) el._grieta.remove();
+      if (el._posAntes !== undefined) { el.style.position = el._posAntes; delete el._posAntes; }
+      el.classList.remove("roto-vida");
+      el._roto = false; el._rotoAnim = null; el._grieta = null;
+    });
+    rotos = [];
+    btnReparar.classList.remove("on");
+    J.el.classList.remove("enojada"); R.el.classList.remove("enojada");
+    if (escena && escena.tipo === "furia") terminarEscena();
+    setTimeout(function () { decir(J, pick(["perdón", "nos pasamos", "ya, ya estamos bien"]), 1600); }, 300);
+    setTimeout(function () { decir(R, pick(["pero no nos vuelvas a tirar", "croac… perdón", "fue su idea"]), 1600); }, 1200);
+    cacheT = 0;
+  }
+  btnReparar.addEventListener("click", reconstruir);
+
+  function rompibles(cerca, x, y, radio) {
+    var H = window.innerHeight, out = [];
+    document.querySelectorAll(SEL_ROMPIBLE).forEach(function (el) {
+      if (el._roto || el.closest(".roto-vida")) return;
+      var r = el.getBoundingClientRect();
+      if (r.bottom < 60 || r.top > H - 20 || r.width < 30 || r.right < 0 || r.left > ancho) return;
+      if (cerca && Math.hypot((r.left + r.right) / 2 - x, (r.top + r.bottom) / 2 - y) > radio) return;
+      out.push(el);
+    });
+    return out;
+  }
+
+  function furia() {
+    tapa.style.transform = "rotate(-100deg)";
+    ojosBote.style.opacity = 0;
+    decirBote("¡¿QUÉ?!", 900); son("bote");
+    bote.animate([{ transform: "rotate(0)" }, { transform: "rotate(-14deg)" }, { transform: "rotate(12deg)" }, { transform: "rotate(-8deg)" }, { transform: "rotate(0)" }], { duration: 500 });
+    setTimeout(function () {
+      sacar(J, rnd(-500, -300), -1100);
+      sacar(R, rnd(-250, -80), -1300);
+      J.el.classList.add("enojada"); R.el.classList.add("enojada");
+      decir(J, pick(["¡¿a las dos?!", "¡ahora sí!"]), 1600);
+      setTimeout(function () { decir(R, pick(["¡se va a enterar!", "¡a romper todo!"]), 1600); }, 500);
+      setTimeout(function () { tapa.style.transform = "rotate(0deg)"; }, 600);
+      escena = { tipo: "furia", t: 0, sigJ: 1.2, sigR: 0.8, golpeJ: 0 };
+    }, 550);
+  }
+
+  var GRITOS_J = ["¡pum!", "¡toma!", "¡y esto por la basura!", "¡fuera!", "¡cabezazo!"];
+  var GRITOS_R = ["¡croac-crash!", "¡ja!", "¡otra!", "¡esto también!", "¡crac!"];
+
+  function pasoFuria(e, dt) {
+    var H = window.innerHeight;
+    e.t += dt;
+    // la rana brinca de tarjeta en tarjeta y cada una donde cae se rompe
+    if (R.modo === "encima" && R.sup && R.sup.el && !R.sup.el._roto) {
+      if (romper(R.sup.el, 1.1)) { decir(R, pick(GRITOS_R), 900); R.animo = 1; }
+      R.modo = "aire"; R.sup = null; R.vy = -650; R.vx = rnd(-200, 200);
+    }
+    e.sigR -= dt;
+    if (e.sigR <= 0 && R.modo !== "aire" && R.modo !== "agarrado") {
+      var obj = pick(rompibles(true, R.x + R.w / 2, R.y, 700).filter(function (el) {
+        var r = el.getBoundingClientRect(); return r.top > 80 && r.width > 70 && el.matches(SEL_SUP);
+      }));
+      if (obj) {
+        var r = obj.getBoundingClientRect();
+        saltarA(R, clamp(r.left + r.width / 2 - R.w / 2, r.left, r.right - R.w), r.top, { el: obj });
+      } else saltarA(R, clamp(R.x + rnd(-250, 250), 0, ancho - R.w), H, null);
+      e.sigR = rnd(0.6, 1.1);
+    }
+    // la jirafa camina rápido y da cabezazos a lo que tenga cerca
+    if (J.modo !== "agarrado" && J.modo !== "aire") {
+      if (!e.metaJ || Math.abs(J.x - e.metaJ) < 8) e.metaJ = rnd(20, ancho - J.w - 20);
+      J.vel0 = J.vel0 || J.vel;
+      J.dir = e.metaJ > J.x ? 1 : -1;
+      J.x += J.dir * 170 * dt; J._camina = true;
+    }
+    e.golpeJ = Math.max(0, e.golpeJ - dt);
+    e.sigJ -= dt;
+    if (e.sigJ <= 0 && J.modo !== "agarrado") {
+      var cab = { x: J.x + (J.dir > 0 ? J.w * 0.85 : J.w * 0.15), y: J.y };
+      var victima = pick(rompibles(true, cab.x, cab.y, 380));
+      if (victima && romper(victima, 1.3)) { decir(J, pick(GRITOS_J), 900); e.golpeJ = 0.35; J.vsq -= 0.1; }
+      e.sigJ = rnd(0.9, 1.6);
+    }
+    // se cansan
+    if (e.t > 24) {
+      J._camina = false;
+      decir(J, "ya me desquité", 1600);
+      setTimeout(function () { decir(R, "yo también… ¿y ahora quién arregla esto?", 2000); }, 800);
+      J.el.classList.remove("enojada"); R.el.classList.remove("enojada");
+      terminarEscena();
+    }
+  }
+
   /* ---- control ---- */
 
   function iniciarEscena(tipo) {
-    if (escena || dormidas || agarrado) return false;
+    if (escena || dormidas || agarrado || J.modo === "basura" || R.modo === "basura") return false;
     if (!tipo) {
       // de noche la fogata es la favorita; de día nunca aparece
-      var bolsa = ["mesa", "mesa", "pelota", "pelota", "leer", "carrera", "siesta"];
+      var bolsa = ["mesa", "mesa", "pelota", "pelota", "leer", "leer", "leer", "carrera", "siesta"];
       if (esDeNoche()) bolsa.push("fogata", "fogata", "fogata");
       tipo = pick(bolsa);
     }
     if (mosca) { mosca.el.remove(); mosca = null; }
+    comentario = null;
     J.accion = null; J._camina = false;
     var hacer = { mesa: iniciarMesa, pelota: iniciarPelota, fogata: iniciarFogata, leer: iniciarLeer, carrera: iniciarCarrera, siesta: iniciarSiesta };
     escena = (hacer[tipo] || iniciarMesa)();
@@ -1092,7 +1466,7 @@
       return;
     }
     if (dormidas) { terminarEscena(); return; }
-    if (agarrado && escena.tipo !== "pelota") { terminarEscena("agarre"); return; }
+    if (agarrado && escena.tipo !== "pelota" && escena.tipo !== "furia") { terminarEscena("agarre"); return; }
     var tt = now / 1000;
     switch (escena.tipo) {
       case "mesa": pasoMesa(escena, dt); break;
@@ -1101,11 +1475,12 @@
       case "leer": pasoLeer(escena, dt); break;
       case "carrera": pasoCarrera(escena, dt); break;
       case "siesta": pasoSiesta(escena, dt); break;
+      case "furia": pasoFuria(escena, dt); break;
     }
   }
 
   // para probar desde la consola: __vida.escena("mesa" | "pelota" | "fogata" | "leer" | "carrera" | "siesta")
-  window.__vida = { escena: iniciarEscena, terminar: terminarEscena, estado: function () { return escena && (escena.tipo + ":" + (escena.fase || "")); },
+  window.__vida = { escena: iniciarEscena, terminar: terminarEscena, tirar: function (n) { tirar(n === "rana" ? R : J); }, reconstruir: function () { reconstruir(); }, rotos: function () { return rotos.length; }, estado: function () { return escena && (escena.tipo + ":" + (escena.fase || "")); },
     debug: function () {
       var r = function (n) { return Math.round(n); };
       var o = { J: [r(J.x), r(J.y), J.modo, J.dir], R: [r(R.x), r(R.y), R.modo, R.sup ? (R.sup.el ? R.sup.el.className : "bicho") : null] };
@@ -1130,10 +1505,11 @@
     var sups = superficies(now);
     var cursorVivo = now - M.t < 3500;
     pasoEscenas(dt, now);
+    pasoComentario(dt);
 
     /* ----- rana ----- */
     pasoFisica(R, dt, now);
-    if (!escena && !dormidas && R.modo !== "agarrado" && R.modo !== "aire") {
+    if (!escena && !dormidas && R.modo !== "agarrado" && R.modo !== "aire" && R.modo !== "basura") {
       R.decidir -= dt;
       // la mosca manda: si hay mosca, la caza
       var presa = null;
@@ -1176,7 +1552,7 @@
       lenguaL.style.display = lenguaP.style.display = "";
       if (k > 0.95 && !obj.hecho) {
         obj.hecho = true;
-        if (obj.mosca && mosca) { mosca.el.remove(); mosca = null; sigMosca = rnd(14, 26); decir(R, pick(["¡ñam!", "rica", "¡gracias!"]), 1100); R.animo = 1; }
+        if (obj.mosca && mosca) { mosca.el.remove(); mosca = null; sigMosca = rnd(14, 26); decir(R, pick(["¡ñam!", "rica", "¡gracias!"]), 1100); R.animo = 1; son("ñam"); }
         else if (obj.el) { sacudir(obj.el, 5, 3); }
         else decir(R, pick(["casi te atrapo", "¿eres mosca?", "croac"]), 1100);
       }
@@ -1192,7 +1568,7 @@
     /* ----- jirafa ----- */
     pasoFisica(J, dt, now);
     var camina = false;
-    if (!escena && !dormidas && J.modo !== "agarrado" && J.modo !== "aire") {
+    if (!escena && !dormidas && J.modo !== "agarrado" && J.modo !== "aire" && J.modo !== "basura") {
       J.decidir -= dt;
       if (!J.accion || J.duracion <= 0) { decidirJirafa(J); }
       J.duracion -= dt;
@@ -1228,6 +1604,7 @@
     if (escena && escena.tipo === "mesa" && escena.fase !== "cae" && escena.fase !== "van") cuelloRot = 6 + Math.sin(t * 1.4) * 2;
     if (escena && escena.tipo === "leer" && escena.fase === "platica") cuelloRot = -12 + Math.sin(t * 1.1) * 2;
     if (J.siesta) cuelloRot = 50 + Math.sin(t * 1.2) * 2;
+    if (escena && escena.tipo === "furia" && escena.golpeJ > 0) cuelloRot = 40;
     if (dormidas) cuelloRot = 55;
     if (!dormidas && cursorVivo && J.accion !== "mordisquear") {
       var jr = J.el.getBoundingClientRect();
@@ -1245,7 +1622,7 @@
 
     /* ----- mosca ----- */
     if (!dormidas) {
-      if (!mosca) { if (!escena) { sigMosca -= dt; if (sigMosca <= 0) soltarMosca(); } }
+      if (!mosca) { if (!escena && R.modo !== "basura") { sigMosca -= dt; if (sigMosca <= 0) soltarMosca(); } }
       else {
         mosca.t += dt;
         var ax = Math.sin(mosca.t * 1.7) * 220 + Math.sin(mosca.t * 5.3) * 90;

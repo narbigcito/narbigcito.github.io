@@ -92,7 +92,7 @@
     if (movil) {
       s0 = 1; var ini = (W - total + gap) / 2, acc = 0;
       for (var j = 0; j < f.i; j++) acc += 48 + gap;
-      x0 = ini + acc; y0 = H - 72;
+      x0 = ini + acc; y0 = H - 128;   // arriba del botón zzz y del bote
     } else {
       var acc2 = 0;
       for (var q = 0; q < f.i; q++) acc2 += fichas[q].w + gap;

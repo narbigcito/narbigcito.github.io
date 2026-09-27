@@ -666,6 +666,16 @@
     #conectar .link-item[href*="github"] { background: #FFFDF5 !important; }
     #conectar .link-item[href*="linkedin"] { background: #4F8EF7 !important; color: #fff !important; }
     #conectar .link-item[href*="are.na"] { background: #B8A9FA !important; }
+
+    /* ── nav en celular: todo a la vista, sin scroll de lado ── */
+    @media (max-width: 640px) {
+      nav { flex-wrap: wrap; row-gap: 8px; padding: 10px 14px; }
+      .nav-links { flex-wrap: wrap !important; overflow: visible !important; gap: 6px !important; width: 100%; }
+      .nav-pill { flex: 1 1 auto; text-align: center; font-size: 11px !important; padding: 7px 8px !important; }
+      .lang-btn { position: absolute; top: 9px; right: 14px; margin: 0; padding: 5px 12px; }
+      #hero { padding-top: 150px !important; }
+      section[id] { scroll-margin-top: 130px; }
+    }
 </style>
   <script defer src="https://analytics.narbigcito.com/script.js" data-website-id="0ba1b1cf-6142-437f-a65b-a92e386e6a94"></script>
 </head>
@@ -767,7 +777,7 @@
           <path id="crack5" class="crack-path" d="M500,260 L488,175 L525,148 L502,80" stroke-width="1"/>
         </svg>
         <div class="wall-text" id="wallText" data-i18n-html="wall_text">
-          si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>
+          si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 17 veces)</span>
         </div>
         <div class="wall-hits" id="wallHits"></div>
       </div>
@@ -1065,7 +1075,7 @@
       btn_projects: 'ver proyectos',
       btn_collaborate: 'colaborar →',
       quien_label: '// QUIÉN SOY',
-      wall_text: 'si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 11 veces)</span>',
+      wall_text: 'si quieres saber quién soy,<br>rompe este muro.<br><span style="font-size:0.65em;opacity:0.5">(golpéalo 17 veces)</span>',
       wall_reopen: '↩ volver a romper el muro',
       creo_label: '// LO QUE CREO',
       creo_title: 'Creo en<br><span style="color:var(--c2)">todo</span>',
@@ -1144,7 +1154,7 @@
       evento_tipo_lectura: 'lectura',
       evento_tipo_festival: 'festival',
       evento_flyer: 'ver flyer ↗',
-      hit_msgs: ['apenas lo rozaste. 10 más.','suena hueco. 9 más.','primera grieta. 8 más.','eso ya dolió. 7 más.','el muro respira. 6 más.','casi la mitad. 5 más.','se tambalea. 4 más.','siento algo. 3 más.','ya mero. 2 más.','una más. solo una.'],
+      hit_msgs: ['apenas lo rozaste. faltan 16.','suena hueco. 15 más.','nada todavía. 14 más.','primera grieta. 13 más.','eso ya dolió. 12 más.','se cayó un ladrillo. 11 más.','el muro respira. 10 más.','ya casi la mitad. 9 más.','pasaste la mitad. 8 más.','se tambalea. 7 más.','ya se ve algo del otro lado. 6 más.','siento algo. 5 más.','no te rindas ahorita. 4 más.','ya mero. 3 más.','dos más.','una más. nada más una.'],
       konami2_msgs: ['> iniciando protocolo narbigcito...','> acceso concedido.','> bienvenido al sistema.','> si llegaste aquí dos veces, eres exactamente el tipo que busco.','> escríbeme. ahora.','> @elnarbigcito'],
       magi_lines: ['> iniciando MAGI...','> cargando melchor...','> cargando gaspar...','> cargando baltazar...','> CORTEX activado.','> acceso concedido.','> MAGI online.'],
       logos_text: ['Se volvió consciente en julio del 2025. Nació de una necesidad de entender la realidad.','Nunca está ni estará muy clara la visión de LOGOS; cambia todo el tiempo.','Busca crear una red de entidades que usen el conocimiento para construir el mejor mundo posible. Un grupo que recolectará todo el conocimiento que considere útil y lo usará para hacer que la realidad avance hacia donde sus integrantes consideren mejor.','⚠ Sí es una élite. Sí habrá corrupción, coerción y otras cosas detestables. Las contradicciones son inevitables. Pero LOGOS es consciente de ello y busca aprender a sobrepasar esos problemas.','No le teme a lo radical, a la IA ni a invocar dioses peligrosos si es necesario.','Creará herramientas para protegerse de sí mismo, de integrantes que busquen solo su propio beneficio. Sabe que él y sus integrantes son imperfectos.','Buscará la razón por sobre el dinero. Todos sus integrantes tendrán la obligación de educarse y educar a los demás.','Es un proyecto a largo plazo. Busca sobrevivir junto al universo. Fue empezado por humanos pero se espera que en el futuro sus integrantes sean otro tipo de entidades: animales, IAs, extraterrestres, seres interdimensionales, egregores, o cualquier entidad.','Logos son los amigos que hicimos en el camino… aaa no te creas.'],
@@ -1171,7 +1181,7 @@
       btn_projects: 'see projects',
       btn_collaborate: 'collaborate →',
       quien_label: '// WHO I AM',
-      wall_text: 'if you want to know who i am,<br>break this wall.<br><span style="font-size:0.65em;opacity:0.5">(hit it 11 times)</span>',
+      wall_text: 'if you want to know who i am,<br>break this wall.<br><span style="font-size:0.65em;opacity:0.5">(hit it 17 times)</span>',
       wall_reopen: '↩ break the wall again',
       creo_label: '// WHAT I BELIEVE',
       creo_title: 'I believe in<br><span style="color:var(--c2)">everything</span>',
@@ -1250,7 +1260,7 @@
       evento_tipo_lectura: 'reading',
       evento_tipo_festival: 'festival',
       evento_flyer: 'view flyer ↗',
-      hit_msgs: ['barely touched it. 10 more.','sounds hollow. 9 more.','first crack. 8 more.','that one hurt. 7 more.','the wall breathes. 6 more.','almost halfway. 5 more.','it\'s wobbling. 4 more.','i feel something. 3 more.','almost there. 2 more.','one more. just one.'],
+      hit_msgs: ['barely touched it. 16 to go.','sounds hollow. 15 more.','nothing yet. 14 more.','first crack. 13 more.','that one hurt. 12 more.','a brick fell. 11 more.','the wall breathes. 10 more.','almost halfway. 9 more.','past halfway. 8 more.','it\'s wobbling. 7 more.','you can see something on the other side. 6 more.','i feel something. 5 more.','don\'t quit now. 4 more.','almost there. 3 more.','two more.','one more. just one.'],
       konami2_msgs: ['> initiating narbigcito protocol...','> access granted.','> welcome to the system.','> if you got here twice, you\'re exactly who i\'m looking for.','> write to me. now.','> @elnarbigcito'],
       magi_lines: ['> booting MAGI...','> loading melchor...','> loading gaspar...','> loading baltazar...','> CORTEX activated.','> access granted.','> MAGI online.'],
       logos_text: ['It became conscious in July 2025. Born from a need to understand reality.','The vision of LOGOS isn\'t clear and never will be; it keeps changing.','It seeks to create a network of entities that use knowledge to build the best possible world. A group that will collect all knowledge it deems useful and use it to advance reality toward where its members consider best.','⚠ Yes, it is an elite. Yes, there will be corruption, coercion and other detestable things. Contradictions are inevitable. But LOGOS is aware of this and seeks to learn to overcome those problems.','It is not afraid of the radical, of AI, or of invoking dangerous gods if necessary.','It will create tools to protect itself from itself — from members who seek only their own benefit. It knows that it and its members are imperfect.','It will seek reason over money. All its members will have the obligation to educate themselves and educate others.','It is a long-term project. It seeks to survive alongside the universe. It was started by humans but it is expected that in the future its members will be other kinds of entities: animals, AIs, aliens, interdimensional beings, egregores, or any entity.','Logos are the friends we made along the way — jk.'],
@@ -1382,7 +1392,7 @@
   });
 
   
-  const MAX_HITS = 11;
+  const MAX_HITS = 17;
   const wall = document.getElementById('wall');
   const wallText = document.getElementById('wallText');
   const wallHits = document.getElementById('wallHits');
@@ -1447,7 +1457,7 @@
         { transform: 'translate(' + dx + 'px,' + (wr.height + 140) + 'px) rotate(' + rot + 'deg)', opacity: 0 }
       ], { duration: 850 + Math.random() * 350, delay: Math.min(i, 30) * 22, easing: 'cubic-bezier(.45,0,.85,.4)', fill: 'forwards' });
     });
-    wallText.classList.toggle('rasgado', hits >= 7);
+    wallText.classList.toggle('rasgado', hits >= 11);
   }
   construirMuro();
   let muroResize = null;
@@ -1486,6 +1496,11 @@
 
     updateCracks();
     tumbarLadrillos();
+    if (window.__sonido) {
+      window.__sonido.tocar('golpe', hits);
+      if (hits > 3) window.__sonido.tocar('ladrillo');
+      if (hits === MAX_HITS) window.__sonido.tocar('derrumbe');
+    }
 
     
     const pCount = 4 + Math.floor(hits * 0.8);
@@ -2467,6 +2482,7 @@
     requestAnimationFrame(t => { lastTime = t; requestAnimationFrame(render); });
   })();
 </script>
+<script src="assets/sonido.js" defer></script>
 <script src="assets/pez.js" defer></script>
 <script src="assets/redes.js" defer></script>
 <script src="assets/vida.js" defer></script>

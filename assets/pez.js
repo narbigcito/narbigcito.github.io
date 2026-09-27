@@ -32,7 +32,7 @@
   window.addEventListener("resize", medir);
 
   // tamaño: "medio grande", proporcional a la pantalla
-  var escala = Math.max(0.65, Math.min(1.25, W / 1100));
+  var escala = Math.max(0.65, Math.min(1.25, W / 1100)) * 1.7;   // grande: casi un tercio de la pantalla en escritorio
   var N = 14, SEG = 12 * escala, ANCHO = 24 * escala;
   var PERFIL = [0.62, 0.9, 1, 1, 0.95, 0.86, 0.75, 0.63, 0.5, 0.39, 0.29, 0.21, 0.15, 0.11];
   var MANCHAS = [[2, 0.2, 0.55], [4, -0.35, 0.45], [6, 0.3, 0.4], [8, -0.1, 0.35]]; // segmento, lado, radio
@@ -63,7 +63,7 @@
     pez.giro *= Math.pow(0.4, dt);
     var giro = pez.giro;
     // lejos de las orillas: gira hacia el centro con más ganas mientras más cerca esté
-    var m = 140, cx = W / 2, cy = H / 2;
+    var m = 120 + 60 * escala, cx = W / 2, cy = H / 2;
     if (pez.x < m || pez.x > W - m || pez.y < m || pez.y > H - m) {
       var haciaCentro = Math.atan2(cy - pez.y, cx - pez.x);
       giro += angDif(haciaCentro, pez.rumbo) * 1.6;
@@ -117,8 +117,10 @@
     return { izq: izq, der: der };
   }
 
-  function curva(pts) {
-    ctx.moveTo(pts[0][0], pts[0][1]);
+  // seguir = true continúa el mismo trazo (lineTo). Antes cada lado abría su propio
+  // subtrazo con moveTo y el relleno dejaba huecos transparentes en el cuerpo.
+  function curva(pts, seguir) {
+    if (seguir) ctx.lineTo(pts[0][0], pts[0][1]); else ctx.moveTo(pts[0][0], pts[0][1]);
     for (var i = 1; i < pts.length - 1; i++) {
       var mx = (pts[i][0] + pts[i + 1][0]) / 2, my = (pts[i][1] + pts[i + 1][1]) / 2;
       ctx.quadraticCurveTo(pts[i][0], pts[i][1], mx, my);
@@ -150,11 +152,11 @@
     ctx.save();
     ctx.translate(22 * escala, 34 * escala);
     ctx.globalAlpha = 0.28;
-    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse()); ctx.closePath();
+    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse(), true); ctx.closePath();
     ctx.fillStyle = "#000"; ctx.fill();
     ctx.restore();
 
-    ctx.globalAlpha = 0.93;
+    ctx.globalAlpha = 1;
     // aletas pectorales (salen del segmento 3 y remolinean)
     var p3i = c.izq[3], p3d = c.der[3];
     var remo = Math.sin(t * 5) * 0.35;
@@ -176,7 +178,7 @@
     ctx.restore();
 
     // cuerpo
-    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse()); ctx.closePath();
+    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse(), true); ctx.closePath();
     ctx.fillStyle = "#FF6B4A"; ctx.fill();
     // manchas crema de koi
     ctx.save(); ctx.clip();
@@ -187,7 +189,7 @@
       ctx.fillStyle = "#FFF3E0"; ctx.fill();
     });
     ctx.restore();
-    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse()); ctx.closePath();
+    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse(), true); ctx.closePath();
     ctx.lineWidth = 3; ctx.strokeStyle = INK; ctx.stroke();
 
     // aleta dorsal: una línea sobre el lomo que se mece
