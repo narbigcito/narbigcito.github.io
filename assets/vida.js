@@ -44,7 +44,7 @@
     "#vida-zzz:hover{opacity:1}",
     "#vida-zzz:active{box-shadow:0 0 0 " + INK + ";translate:3px 3px}",
     "@media (hover:none){#vida-zzz{cursor:auto}}",
-    "@media (max-width:700px){#vida-zzz{top:auto;bottom:10px;right:10px;font-size:10px;padding:4px 8px}}",
+    "@media (max-width:700px){#vida-zzz{top:9px;right:128px;z-index:210;font-size:10px;padding:5px 8px;box-shadow:2px 2px 0 #FFFDF5}}",
     "#vida-bote{position:fixed;right:18px;bottom:0;width:58px;height:74px;z-index:66;background:none;border:0;padding:0;cursor:pointer;transform-origin:50% 100%}",
     "#vida-bote .bur{bottom:100%;margin-bottom:8px}",
     "body.arrastrando #vida-bote{scale:1.25}",
@@ -57,7 +57,9 @@
     ".bicho.enojada svg{filter:drop-shadow(0 0 6px rgba(255,40,40,.8)) saturate(1.6) hue-rotate(-18deg)}",
     ".roto-vida{filter:saturate(.7)}",
     ".grieta-vida{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}",
-    "@media (max-width:700px){#vida-bote{right:auto;left:10px;width:46px;height:58px}#vida-reparar{top:auto;bottom:70px;translate:-50% 200px}#vida-reparar.on{translate:-50% 0}}",
+    "#vida-bote{z-index:72}.bicho.agarrada{z-index:76}",
+    "body.cerca-final #vida-bote{opacity:0;pointer-events:none;transition:opacity .3s}body.cerca-final.arrastrando #vida-bote{opacity:1}",
+    "@media (max-width:700px){#vida-bote{right:10px;left:auto;bottom:4px;width:46px;height:58px}#vida-reparar{top:auto;bottom:70px;translate:-50% 200px}#vida-reparar.on{translate:-50% 0}}",
     "@media print{.bicho,.mosca,#vida-zzz,.zeta,.obj-vida,#vida-bote,#vida-reparar{display:none}}"
   ].join("");
   var st = document.createElement("style");
@@ -304,7 +306,7 @@
       if (dormidas) return;
       e.preventDefault();
       agarrado = b; b.modo = "agarrado"; b.sup = null; b.piso = false;
-      document.body.classList.add("arrastrando");
+      document.body.classList.add("arrastrando"); b.el.classList.add("agarrada");
       b.offX = e.clientX - b.x; b.offY = e.clientY - b.y;
       hist = [{ x: e.clientX, y: e.clientY, t: performance.now() }];
       b.el.setPointerCapture(e.pointerId);
@@ -319,7 +321,7 @@
     function soltar(e) {
       if (agarrado !== b) return;
       agarrado = null;
-      document.body.classList.remove("arrastrando");
+      document.body.classList.remove("arrastrando"); b.el.classList.remove("agarrada");
       if (sobreBote(b)) { tirar(b); return; }
       var a = hist[0], z = hist[hist.length - 1], dt = Math.max(16, z.t - a.t) / 1000;
       b.vx = clamp((z.x - a.x) / dt, -1600, 1600);
@@ -338,7 +340,13 @@
   var btn = document.createElement("button");
   btn.id = "vida-zzz"; btn.type = "button";
   document.body.appendChild(btn);
-  function pintarBtn() { btn.textContent = dormidas ? "despertar a los bichos" : "zzz · mandar a dormir"; }
+  var chico = window.matchMedia("(max-width: 700px)");
+  function pintarBtn() {
+    if (chico.matches) btn.textContent = dormidas ? "despertar" : "zzz";
+    else btn.textContent = dormidas ? "despertar a los bichos" : "zzz · mandar a dormir";
+    btn.setAttribute("aria-label", dormidas ? "despertar a los bichos" : "mandar a dormir a los bichos");
+  }
+  if (chico.addEventListener) chico.addEventListener("change", function () { pintarBtn(); });
   function dormir(si) {
     if (dormidas !== si) son(si ? "dormir" : "despertar");
     dormidas = si;
@@ -537,7 +545,14 @@
       "translate(" + (b.dir < 0 ? b.w * 0 : 0) + " 0)");
     b.el.style.transform = "translate(" + b.x.toFixed(1) + "px," + b.y.toFixed(1) + "px) rotate(" + b.rot.toFixed(2) + "deg)";
     var svg = b.el.querySelector("svg");
-    svg.style.transform = "scale(" + (b.dir * sx).toFixed(3) + "," + (b.sq + resp).toFixed(3) + ")";
+    // Voltearse no es instantáneo: la escala horizontal pasa por cero en ~120 ms.
+    // Si algo cambia la dirección muy seguido, se ve como un titubeo y no como
+    // dos cabezas encimadas parpadeando.
+    var dtv = b._tPrev ? Math.min(0.05, t - b._tPrev) : 0.016; b._tPrev = t;
+    if (b.dirVis === undefined) b.dirVis = b.dir;
+    var paso = dtv / 0.12 * 2;
+    b.dirVis += clamp(b.dir - b.dirVis, -paso, paso);
+    svg.style.transform = "scale(" + (b.dirVis * sx).toFixed(3) + "," + (b.sq + resp).toFixed(3) + ")";
     svg.style.transformOrigin = "50% 100%";
   }
 
@@ -576,6 +591,8 @@
   function jirafaVaA(x, dt) {
     var dx = x - J.x;
     if (Math.abs(dx) < 3) { J._camina = false; return true; }
+    // si el destino quedó apenas detrás (una pelota que rebota junto a ella), no se da la vuelta
+    if ((dx > 0 ? 1 : -1) !== J.dir && Math.abs(dx) < 16) { J._camina = false; return true; }
     J.dir = dx > 0 ? 1 : -1;
     J.x += J.dir * Math.min(Math.abs(dx), J.vel * 2.2 * dt);
     J._camina = true;
@@ -1221,6 +1238,12 @@
   document.body.appendChild(bote);
   var tapa = bote.querySelector(".tapa"), ojosBote = bote.querySelector(".ojos-bote"), burBote = bote.querySelector(".bur");
   var enBote = [];   // quién está adentro
+  // cerca del final el bote se hace a un lado para no tapar los links de "conectar"
+  (function () {
+    var fin = document.getElementById("conectar");
+    if (!fin || !window.IntersectionObserver) return;
+    new IntersectionObserver(function (es) { document.body.classList.toggle("cerca-final", es[0].isIntersecting); }).observe(fin);
+  })();
 
   function decirBote(txt, ms) {
     burBote.textContent = txt; burBote.classList.add("on");
@@ -1573,12 +1596,20 @@
       if (!J.accion || J.duracion <= 0) { decidirJirafa(J); }
       J.duracion -= dt;
       if (J.accion === "caminar") {
-        var lim = J.sup ? borde(J.sup) : { left: 0, right: ancho - 150 };
+        var lim = J.sup ? borde(J.sup) : { left: 0, right: ancho - 70 };
         var nx = J.x + J.dir * J.vel * dt;
         var centro = nx + J.w / 2;
-        if (centro < lim.left + 10 || centro > lim.right - 10) {
+        if (lim.right - lim.left < 40) {
+          J.accion = null; J.duracion = rnd(1, 2);                // no cabe: mejor se queda quieta
+        } else if (centro < lim.left + 10 || centro > lim.right - 10) {
+          // Antes aquí solo se invertía la dirección. Si ya estaba fuera del límite
+          // (en una esquina, tras una escena o un aventón), se volteaba en CADA cuadro
+          // y el parpadeo izquierda-derecha se veía como una jirafa de dos cabezas.
+          // Ahora voltea hacia adentro una sola vez y camina hacia allá.
+          var haciaDentro = centro < lim.left + 10 ? 1 : -1;
           if (J.sup && Math.random() < 0.3) { J.x = nx; }          // a veces se cae, por despistada
-          else J.dir *= -1;
+          else if (J.dir !== haciaDentro) J.dir = haciaDentro;
+          else { J.x = nx; camina = true; }
         } else {
           J.x = nx;
           camina = true;

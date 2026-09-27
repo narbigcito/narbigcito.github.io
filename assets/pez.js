@@ -21,18 +21,20 @@
   cv.style.cssText = "position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none";
   document.body.appendChild(cv);
   var ctx = cv.getContext("2d");
+  var sombraCv = document.createElement("canvas"), sombraCtx = sombraCv.getContext("2d");
   var W = 0, H = 0, dpr = 1;
   function medir() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = window.innerWidth; H = window.innerHeight;
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    sombraCv.width = cv.width; sombraCv.height = cv.height;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   medir();
   window.addEventListener("resize", medir);
 
   // tamaño: "medio grande", proporcional a la pantalla
-  var escala = Math.max(0.65, Math.min(1.25, W / 1100)) * 1.7;   // grande: casi un tercio de la pantalla en escritorio
+  var escala = Math.max(0.82, Math.min(1.25, W / 1100)) * 1.7;   // grande: casi un tercio de la pantalla en escritorio
   var N = 14, SEG = 12 * escala, ANCHO = 24 * escala;
   var PERFIL = [0.62, 0.9, 1, 1, 0.95, 0.86, 0.75, 0.63, 0.5, 0.39, 0.29, 0.21, 0.15, 0.11];
   var MANCHAS = [[2, 0.2, 0.55], [4, -0.35, 0.45], [6, 0.3, 0.4], [8, -0.1, 0.35]]; // segmento, lado, radio
@@ -63,12 +65,16 @@
     pez.giro *= Math.pow(0.4, dt);
     var giro = pez.giro;
     // lejos de las orillas: gira hacia el centro con más ganas mientras más cerca esté
-    var m = 120 + 60 * escala, cx = W / 2, cy = H / 2;
+    var m = Math.min(120 + 60 * escala, Math.min(W, H) * 0.18), cx = W / 2, cy = H / 2;
     if (pez.x < m || pez.x > W - m || pez.y < m || pez.y > H - m) {
       var haciaCentro = Math.atan2(cy - pez.y, cx - pez.x);
       giro += angDif(haciaCentro, pez.rumbo) * 1.6;
     }
-    pez.rumbo += giro * dt * 1.8;
+    // Radio de giro mínimo proporcional al largo del cuerpo: si gira más cerrado que
+    // eso, la cadena de vértebras se enrosca y el pez se ve hecho bolita.
+    var largo = N * SEG;
+    var giroMax = (pez.vel * escala) / (largo * 0.4);
+    pez.rumbo += Math.max(-giroMax, Math.min(giroMax, giro * 1.8)) * dt;
 
     // de vez en cuando se le antoja acelerar
     pez.sigAcelera -= dt;
@@ -129,6 +135,33 @@
     ctx.lineTo(u[0], u[1]);
   }
 
+  /* Silueta del cuerpo como unión de piezas (un círculo por vértebra y un trapecio
+     entre cada par). Si el cuerpo se dobla mucho, un contorno único se cruza consigo
+     mismo y el relleno deja huecos; rellenando pieza por pieza eso no puede pasar.
+     `extra` engorda la silueta: se usa para pintar primero el borde negro. */
+  function silueta(c, extra, color) {
+    ctx.fillStyle = color;
+    for (var i = 0; i < N; i++) {
+      var q = c.izq[i], w = PERFIL[i] * ANCHO + extra;
+      ctx.beginPath(); ctx.arc(q[4], q[5], w, 0, 6.2832); ctx.fill();
+      if (i < N - 1) {
+        var a = c.izq[i], b = c.izq[i + 1], d1 = c.der[i], d2 = c.der[i + 1];
+        var e1 = extra, e2 = extra;
+        ctx.beginPath();
+        ctx.moveTo(a[0] + a[2] * e1, a[1] + a[3] * e1);
+        ctx.lineTo(b[0] + b[2] * e2, b[1] + b[3] * e2);
+        ctx.lineTo(d2[0] - d2[2] * e2, d2[1] - d2[3] * e2);
+        ctx.lineTo(d1[0] - d1[2] * e1, d1[1] - d1[3] * e1);
+        ctx.closePath(); ctx.fill();
+      }
+    }
+  }
+  function clipSilueta(c) {
+    ctx.beginPath();
+    for (var i = 0; i < N; i++) { var q = c.izq[i]; ctx.moveTo(q[4] + PERFIL[i] * ANCHO, q[5]); ctx.arc(q[4], q[5], PERFIL[i] * ANCHO, 0, 6.2832); }
+    ctx.clip();
+  }
+
   function aleta(base, largo, anchoA, angulo, color) {
     ctx.save();
     ctx.translate(base[0], base[1]);
@@ -152,8 +185,12 @@
     ctx.save();
     ctx.translate(22 * escala, 34 * escala);
     ctx.globalAlpha = 0.28;
-    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse(), true); ctx.closePath();
-    ctx.fillStyle = "#000"; ctx.fill();
+    // la sombra se pinta sólida en un canvas aparte para que las piezas no se sumen
+    sombraCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    sombraCtx.clearRect(0, 0, W, H);
+    var real = ctx; ctx = sombraCtx; silueta(c, 0, "#000"); ctx = real;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(sombraCv, 22 * escala * dpr, 34 * escala * dpr);
     ctx.restore();
 
     ctx.globalAlpha = 1;
@@ -177,11 +214,11 @@
     ctx.lineWidth = 2.5; ctx.strokeStyle = INK; ctx.stroke();
     ctx.restore();
 
-    // cuerpo
-    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse(), true); ctx.closePath();
-    ctx.fillStyle = "#FF6B4A"; ctx.fill();
+    // cuerpo: primero la silueta negra un poco más gorda (ese es el borde), luego la naranja
+    silueta(c, 3, INK);
+    silueta(c, 0, "#FF6B4A");
     // manchas crema de koi
-    ctx.save(); ctx.clip();
+    ctx.save(); clipSilueta(c);
     MANCHAS.forEach(function (mm) {
       var q = c.izq[mm[0]], w = PERFIL[mm[0]] * ANCHO;
       ctx.beginPath();
@@ -189,8 +226,6 @@
       ctx.fillStyle = "#FFF3E0"; ctx.fill();
     });
     ctx.restore();
-    ctx.beginPath(); curva(c.izq); curva(c.der.slice().reverse(), true); ctx.closePath();
-    ctx.lineWidth = 3; ctx.strokeStyle = INK; ctx.stroke();
 
     // aleta dorsal: una línea sobre el lomo que se mece
     ctx.beginPath();

@@ -88,7 +88,16 @@
       var n = Math.max(1, Math.min(5, Math.round((texto || "").length / 7)));
       for (var i = 0; i < n; i++) tono(base * r(0.85, 1.25), 0.055, "triangle", 0.05, null, i * 0.075);
     },
-    plop: function () { tono(r(700, 900), 0.13, "sine", 0.07, 160); },
+    // Una gota en el agua: lo que se oye es la burbujita que se forma debajo,
+    // un tono que SUBE muy rápido (no que baja), más un chapoteo corto y a veces
+    // una o dos gotitas que rebotan después.
+    plop: function () {
+      var f0 = r(420, 560);
+      tono(f0, 0.07, "sine", 0.16, f0 * r(2.6, 3.4));
+      ruido(0.09, 0.07, "bandpass", r(1800, 2600), 700);
+      if (Math.random() < 0.7) { var f1 = r(700, 950); tono(f1, 0.05, "sine", 0.06, f1 * 2.8, r(0.09, 0.16)); }
+      if (Math.random() < 0.4) { var f2 = r(1000, 1300); tono(f2, 0.04, "sine", 0.035, f2 * 2.5, r(0.2, 0.3)); }
+    },
     pelota: function () { tono(r(170, 210), 0.08, "sine", 0.16, 90); },
     clink: function () { tono(2300, 0.45, "sine", 0.06); tono(3170, 0.35, "sine", 0.04); },
     ñam: function () { tono(320, 0.1, "sine", 0.1, 130); },
@@ -133,12 +142,13 @@
     "#vida-sonido{position:fixed;right:12px;top:100px;z-index:80;font:11px 'Syne Mono',monospace;letter-spacing:.04em;" +
     "background:#141414;color:#FFFDF5;border:2px solid #FFFDF5;padding:5px 10px;cursor:pointer;opacity:.75;box-shadow:3px 3px 0 #FFFDF5}" +
     "#vida-sonido:hover{opacity:1}" +
-    "@media (max-width:700px){#vida-sonido{top:auto;bottom:10px;right:auto;left:66px;font-size:10px;padding:4px 8px}}" +
+    "@media (max-width:700px){#vida-sonido{top:9px;right:62px;z-index:210;font-size:10px;padding:5px 8px;box-shadow:2px 2px 0 #FFFDF5}}" +
     "@media print{#vida-sonido{display:none}}";
   document.head.appendChild(st);
   var btn = document.createElement("button");
   btn.id = "vida-sonido"; btn.type = "button";
-  function pintar() { btn.textContent = activo ? "sonido: sí" : "sonido: no"; btn.setAttribute("aria-pressed", activo ? "true" : "false"); }
+  var chico = window.matchMedia("(max-width: 700px)");
+  function pintar() { btn.textContent = chico.matches ? (activo ? "♪ sí" : "♪ no") : (activo ? "sonido: sí" : "sonido: no"); btn.setAttribute("aria-pressed", activo ? "true" : "false"); }
   pintar();
   btn.addEventListener("click", function () {
     activo = !activo;
