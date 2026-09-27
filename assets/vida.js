@@ -252,7 +252,7 @@
 
   /* ---- superficies: el suelo, las tarjetas, y la otra criatura ---- */
 
-  var SEL_SUP = ".bcard, .app-card, .status-box, .conv-thumb, .wall-wrap, .evento, .sec-title, .eventos-list, .arena-block, .substack-post, .mesa-vida";
+  var SEL_SUP = ".bcard, .app-card, .status-box, .conv-thumb, .wall-wrap, .evento, .sec-title, .eventos-list, .arena-block, .substack-post, .mesa-vida, .red";
   var cacheSup = [], cacheT = 0;
   function superficies(now) {
     if (now - cacheT < 250) return cacheSup;

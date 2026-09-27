@@ -99,7 +99,7 @@
       width: 100vw;
       height: 100vh;
       display: block;
-      z-index: -1;
+      z-index: -2;
       pointer-events: none;
     }
 
@@ -654,7 +654,19 @@
     .wall-reopen { background: #0e0e0e; border: 2px solid #3a3a3a; box-shadow: 4px 4px 0 #000; }
     .arena-block { background: #121212 !important; border: 2px solid #2b2b2b !important; box-shadow: 4px 4px 0 #000; }
     .arena-block:hover { border-color: var(--c2) !important; }
-  </style>
+  
+    /* ── redes del final: fichas grandes con color de cada red ── */
+    #conectar .links-row { gap: 12px; }
+    #conectar .link-item { font-size: 15px; padding: 12px 18px; border: 3px solid #141414 !important; box-shadow: 4px 4px 0 #141414; color: #141414 !important; font-weight: 700; }
+    #conectar .link-item:hover { box-shadow: 6px 6px 0 #141414; }
+    #conectar .link-item:active { box-shadow: 0 0 0 #141414; }
+    #conectar .link-item.main { background: var(--c3) !important; }
+    #conectar .link-item[href*="instagram"] { background: #FF6B9D !important; }
+    #conectar .link-item[href*="substack"] { background: #FF6719 !important; }
+    #conectar .link-item[href*="github"] { background: #FFFDF5 !important; }
+    #conectar .link-item[href*="linkedin"] { background: #4F8EF7 !important; color: #fff !important; }
+    #conectar .link-item[href*="are.na"] { background: #B8A9FA !important; }
+</style>
   <script defer src="https://analytics.narbigcito.com/script.js" data-website-id="0ba1b1cf-6142-437f-a65b-a92e386e6a94"></script>
 </head>
 <body>
@@ -670,25 +682,7 @@
     <button class="popup-close" id="popupClose" type="button" data-i18n="popup_close">✕ cerrar</button>
     <div class="popup-flash" data-i18n="popup_flash">vaya. realmente quieres saber quién soy.</div>
     <div class="popup-header" data-i18n="popup_header">// QUIÉN SOY</div>
-    <div class="popup-text" data-i18n-html="popup_text">
-      Mi nombre es <strong>Gibrán</strong> — sí, como Khalil Gibran — y no es casualidad.
-      En su raíz árabe, Yibrān significa <em>"consolador", "reparador de almas"</em>,
-      aquel elegido para sanar heridas invisibles.<br><br>
-      Nací en <strong>Ecatepec</strong>, un territorio donde la pobreza no es accidente;
-      es un sistema diseñado para robar futuros.<br><br>
-      Llegué al mundo a los ocho meses — frágil, urgente — en una familia fracturada.
-      Mi infancia fue un encierro forzado: cuatro paredes, una computadora rescatada de la basura
-      y montañas de libros que me mostraron que existía algo allá afuera llamado <em>mundo</em>.<br><br>
-      Nunca tuve éxito en la escuela. Pero no abandoné mi obsesión por comprender
-      cómo funciona la realidad. Con el tiempo, programar me dio estabilidad.
-      Pero eso no era suficiente. <strong>Necesitaba más.</strong><br><br>
-      Creo que explorar los límites de la experiencia humana ayuda a entender mejor
-      esta realidad, tan esquiva. Mi lucha es política porque sé que el sufrimiento
-      tiene causas estructurales.<br><br>
-      Busco <em>cómplices</em>: ingenieros que construyan puentes, artistas que conviertan el dolor en belleza,
-      personas que crean que el mundo puede ser diferente y estén dispuestas a actuar.<br><br>
-      <strong>¿Reescribimos la historia?</strong>
-    </div>
+    <div class="popup-text" data-i18n-html="popup_text">Me llamo <strong>Gibrán</strong>, sí, como Khalil Gibran, y no es casualidad. En su raíz árabe, Yibrān quiere decir <em>"consolador"</em> o <em>"reparador de almas"</em>: el que cura heridas que no se ven.<br><br>Nací en <strong>Ecatepec</strong>, donde la pobreza no es un accidente. Es un sistema hecho para robarte el futuro.<br><br>Nací a los ocho meses, prematuro, en una familia rota. De niño casi no salía: cuatro paredes, una computadora rescatada de la basura y montañas de libros que me enseñaron que allá afuera había algo llamado <em>mundo</em>.<br><br>En la escuela nunca me fue bien, pero tampoco dejé de obsesionarme con entender cómo funciona la realidad. Con los años, programar me dio estabilidad, aunque no me bastó.<br><br>Creo que explorar los límites de la experiencia humana ayuda a entender esta realidad tan escurridiza. Mi lucha es política porque sé que el sufrimiento tiene causas estructurales.<br><br>Busco <em>cómplices</em>: ingenieros que construyan puentes, artistas que conviertan el dolor en algo bello, gente que crea que el mundo puede ser distinto y quiera hacer algo al respecto.<br><br><strong>¿Te animas?</strong></div>
   </div>
 </div>
 
@@ -725,14 +719,7 @@
           <div class="sticker s1">A Webo, soy de Ecatepec ★</div>
           <div class="sticker s2">v2.0 beta</div>
         </div>
-        <p class="hero-bio" data-i18n-html="hero_bio">
-          No tengo todo resuelto.<br>
-          Pero <strong>estoy haciendo cosas concretas</strong> para cambiar
-          cómo nos relacionamos, cómo pensamos y cómo nos organizamos.<br><br>
-          Busco <em>cómplices</em> — artistas, ingenieros, académicos,
-          cualquier persona que crea que el mundo puede ser diferente
-          y esté dispuesta a actuar.
-        </p>
+        <p class="hero-bio" data-i18n-html="hero_bio">No tengo todo resuelto.<br>Pero <strong>estoy haciendo cosas concretas</strong> para cambiar cómo nos relacionamos, cómo pensamos y cómo nos organizamos.<br><br>Busco <em>cómplices</em>: artistas, ingenieros, académicos o quien sea que crea que el mundo puede ser distinto y tenga ganas de hacer algo al respecto.</p>
       </div>
       <div class="hero-right">
         <div class="status-box">
@@ -790,12 +777,7 @@
 </section>
 
 
-<section id="letras">
-  <div class="letras-wrap">
-    <div class="letras-label" data-i18n="letras_label">// FRAGMENTOS FLOTANDO</div>
-    <canvas id="letrasCanvas"></canvas>
-  </div>
-</section>
+
 
 
 <section class="section" id="arena" style="display:none">
@@ -832,7 +814,7 @@
         <div class="bcard-accent"></div>
         <div class="bcard-num">01</div>
         <div class="bcard-label" data-i18n="belief_0_label">en cambiar el mundo entero</div>
-        <div class="bcard-text" data-i18n="belief_0_text">No una porción. Todo. El mundo completo. Sé que suena enorme — por eso lo hago: porque alguien tiene que creerlo de verdad para que empiece a pasar.</div>
+        <div class="bcard-text" data-i18n="belief_0_text">El mundo completo, no un pedacito. Ya sé que suena enorme. Lo hago justo por eso: si nadie se lo cree de verdad, nunca empieza a pasar.</div>
         <div class="bcard-special">
           <div class="belief-meter"><div class="belief-meter-fill"></div></div>
         </div>
@@ -843,7 +825,7 @@
         <div class="bcard-accent"></div>
         <div class="bcard-num">02</div>
         <div class="bcard-label" data-i18n="belief_1_label">en que no podemos solos</div>
-        <div class="bcard-text" data-i18n="belief_1_text">La autonomía no es el fin — es el medio. Una persona que se sostiene a sí misma se convierte en un nodo fuerte en una red donde todos se apoyan. La independencia bien entendida siempre termina siendo colectiva.</div>
+        <div class="bcard-text" data-i18n="belief_1_text">La autonomía me sirve para algo más grande. Cuando alguien aprende a sostenerse, también puede sostener a otros, y de ahí sale una red donde todos nos apoyamos. La independencia bien entendida termina siendo colectiva.</div>
         <div class="bcard-special">
           <div class="belief-counter"><span data-i18n="belief_1_counter">leyendo esto ahora mismo:</span> <span id="counter">1</span></div>
         </div>
@@ -854,7 +836,7 @@
         <div class="bcard-accent"></div>
         <div class="bcard-num">03</div>
         <div class="bcard-label" data-i18n="belief_2_label">en que la crueldad es un síntoma</div>
-        <div class="bcard-text" data-i18n="belief_2_text">El horror existe. Pero no es nuestra naturaleza — es el resultado de un sistema que nos organiza mal. Entender eso cambia todo: ya no peleamos contra personas, peleamos contra estructuras.</div>
+        <div class="bcard-text" data-i18n="belief_2_text">El horror existe, pero no creo que venga de nuestra naturaleza. Viene de un sistema que nos organiza mal. Cuando entiendes eso, dejas de pelear contra personas y empiezas a pelear contra estructuras.</div>
         <div class="bcard-special">
           <span class="belief-tag" data-i18n="belief_2_tag">sistema fallido ≠ naturaleza humana</span>
         </div>
@@ -874,7 +856,7 @@
         <div class="bcard-accent"></div>
         <div class="bcard-num">05</div>
         <div class="bcard-label" data-i18n="belief_4_label">en vivir como oruga</div>
-        <div class="bcard-text" data-i18n="belief_4_text">La metamorfosis no puede acelerarse ni retrasarse. El pulso del devenir es independiente a nuestros planes. Por eso intento vivir un día a la vez, tomando acciones desde mis circunstancias inmediatas.</div>
+        <div class="bcard-text" data-i18n="belief_4_text">La metamorfosis no se puede apurar ni retrasar, y lo que va a pasar no sigue nuestros planes. Por eso intento vivir un día a la vez y actuar con lo que tengo enfrente.</div>
         <div class="bcard-special">
           <div class="orbit-wrap"><div class="orbit-dot"></div></div>
         </div>
@@ -910,7 +892,7 @@
           <div class="app-name">ARE.NA</div>
           <div class="app-badge badge-arena" data-i18n="arena_badge">siempre creciendo</div>
         </div>
-        <div class="app-desc" data-i18n="arena_card_desc">donde guardo lo que me inspira — links, imágenes, textos, fragmentos. mi cerebro externalizado.</div>
+        <div class="app-desc" data-i18n="arena_card_desc">aquí guardo lo que me llama la atención: links, imágenes, pedazos de textos. es como mi cerebro, pero afuera.</div>
         <div class="app-link" style="color:var(--c2);opacity:.6">are.na/el-narbigcito →</div>
       </a>
 
@@ -920,7 +902,7 @@
           <div class="app-name" style="color:var(--c2)">LOGOS</div>
           <div class="app-badge badge-wip" data-i18n="logos_badge">∞ largo plazo</div>
         </div>
-        <div class="app-desc" data-i18n="logos_desc">El meta-sistema que contiene todo lo demás. No piensa en años — piensa en escala de civilizaciones.</div>
+        <div class="app-desc" data-i18n="logos_desc">El proyecto que contiene a todos los demás. Lo pienso en siglos, no en años.</div>
         <div class="app-link" style="color:var(--c2);opacity:.5" data-i18n="logos_link">click para saber más</div>
       </div>
 
@@ -929,7 +911,7 @@
           <div class="app-name">ORDEN</div>
           <div class="app-badge badge-live" data-i18n="badge_live">live</div>
         </div>
-        <div class="app-desc" data-i18n="orden_desc">Kanban para organizar tu vida y proyectos. Oscuro, rápido, sin ruido. Subtareas, calendario, proyectos compartidos.</div>
+        <div class="app-desc" data-i18n="orden_desc">Un kanban para organizar tu vida y tus proyectos, con subtareas, calendario y proyectos compartidos. Es oscuro y carga rápido.</div>
         <div class="app-link">orden.narbigcito.com →</div>
       </a>
 
@@ -938,7 +920,7 @@
           <div class="app-name" style="color:var(--c1)">CREA</div>
           <div class="app-badge badge-wip">MVP v0.2</div>
         </div>
-        <div class="app-desc" data-i18n="crea_desc">Red social para crear sin pedir permiso. Sin métricas de vanidad, sin algoritmo opaco. Bitácoras de proceso, retroalimentación real.</div>
+        <div class="app-desc" data-i18n="crea_desc">Una red social para crear sin pedir permiso. Compartes bitácoras de tu proceso y recibes comentarios de verdad. No hay contador de likes ni un algoritmo que decida qué ves.</div>
         <div class="app-link" style="color:#444;transition:color .15s">crea.narbigcito.com →</div>
       </a>
 
@@ -948,7 +930,7 @@
           <div class="app-name">MAGI</div>
           <div class="app-badge badge-wip" data-i18n="badge_wip_magi">en construcción</div>
         </div>
-        <div class="app-desc" data-i18n="magi_desc_card">Infraestructura de IA personal. Tres agentes, una mente — inspirado en Evangelion. Corre en una Raspberry Pi en mi casa.</div>
+        <div class="app-desc" data-i18n="magi_desc_card">Mi infraestructura personal de IA: tres agentes que funcionan como una sola mente, inspirados en Evangelion. Corre en una Raspberry Pi en mi casa.</div>
         <div class="app-link" style="color:#555" data-i18n="magi_link">click si te atreves</div>
       </div>
 
@@ -958,7 +940,7 @@
           <div class="app-name" style="color:var(--c6)">WHELLE</div>
           <div class="app-badge badge-wip" data-i18n="badge_wip_2years">2 años activo</div>
         </div>
-        <div class="app-desc" data-i18n="whelle_desc">Sistema personal de seguimiento de vida. 2 años y 28 semanas de registro continuo. Sueño, trabajo, hábitos, energía. Baselines dinámicos.</div>
+        <div class="app-desc" data-i18n="whelle_desc">Mi sistema para registrar mi vida. Llevo 2 años y 28 semanas anotando sueño, trabajo, hábitos y energía, y las referencias se ajustan solas con mis datos.</div>
         <div class="app-link" style="color:#555" data-i18n="whelle_link">libreta → datos → MAGI</div>
       </div>
 
@@ -968,7 +950,7 @@
           <div class="app-name" style="color:var(--c3);font-size:20px;line-height:1.15">LA SOMBRA<br>DE LA RANA</div>
           <div class="app-badge badge-wip" data-i18n="badge_wip_soon">casi listo</div>
         </div>
-        <div class="app-desc" data-i18n="rana_desc">16 ensayos, ~32k palabras. Amor, poder, masculinidad, resistencia. Slang mexicano + Butler + Foucault + Deleuze.</div>
+        <div class="app-desc" data-i18n="rana_desc">16 ensayos, unas 32 mil palabras, sobre amor, poder, masculinidad y resistencia. Mezclo slang mexicano con Butler, Foucault y Deleuze.</div>
         <div class="app-link" style="color:#555" data-i18n="rana_link">leer un fragmento</div>
       </div>
 
@@ -1056,7 +1038,7 @@
 </div>
 
 <footer id="footer">
-  <div class="footer-sig">© <span id="yr"></span> narbigcito<span data-i18n="footer_sig"> · hecho con intención</span></div>
+  <div class="footer-sig">© <span id="yr"></span> narbigcito<span data-i18n="footer_sig"> · hecho desde la CDMX</span></div>
   <a class="footer-up" href="#top" data-i18n="footer_up">↑ arriba</a>
 </footer>
 
@@ -1069,7 +1051,7 @@
       popup_close: '✕ cerrar',
       popup_flash: 'vaya. realmente quieres saber quién soy.',
       popup_header: '// QUIÉN SOY',
-      popup_text: 'Mi nombre es <strong>Gibrán</strong> — sí, como Khalil Gibran — y no es casualidad. En su raíz árabe, Yibrān significa <em>"consolador", "reparador de almas"</em>, aquel elegido para sanar heridas invisibles.<br><br>Nací en <strong>Ecatepec</strong>, un territorio donde la pobreza no es accidente; es un sistema diseñado para robar futuros.<br><br>Llegué al mundo a los ocho meses — frágil, urgente — en una familia fracturada. Mi infancia fue un encierro forzado: cuatro paredes, una computadora rescatada de la basura y montañas de libros que me mostraron que existía algo allá afuera llamado <em>mundo</em>.<br><br>Nunca tuve éxito en la escuela. Pero no abandoné mi obsesión por comprender cómo funciona la realidad. Con el tiempo, programar me dio estabilidad. Pero eso no era suficiente. <strong>Necesitaba más.</strong><br><br>Creo que explorar los límites de la experiencia humana ayuda a entender mejor esta realidad, tan esquiva. Mi lucha es política porque sé que el sufrimiento tiene causas estructurales.<br><br>Busco <em>cómplices</em>: ingenieros que construyan puentes, artistas que conviertan el dolor en belleza, personas que crean que el mundo puede ser diferente y estén dispuestas a actuar.<br><br><strong>¿Reescribimos la historia?</strong>',
+      popup_text: 'Me llamo <strong>Gibrán</strong>, sí, como Khalil Gibran, y no es casualidad. En su raíz árabe, Yibrān quiere decir <em>"consolador"</em> o <em>"reparador de almas"</em>: el que cura heridas que no se ven.<br><br>Nací en <strong>Ecatepec</strong>, donde la pobreza no es un accidente. Es un sistema hecho para robarte el futuro.<br><br>Nací a los ocho meses, prematuro, en una familia rota. De niño casi no salía: cuatro paredes, una computadora rescatada de la basura y montañas de libros que me enseñaron que allá afuera había algo llamado <em>mundo</em>.<br><br>En la escuela nunca me fue bien, pero tampoco dejé de obsesionarme con entender cómo funciona la realidad. Con los años, programar me dio estabilidad, aunque no me bastó.<br><br>Creo que explorar los límites de la experiencia humana ayuda a entender esta realidad tan escurridiza. Mi lucha es política porque sé que el sufrimiento tiene causas estructurales.<br><br>Busco <em>cómplices</em>: ingenieros que construyan puentes, artistas que conviertan el dolor en algo bello, gente que crea que el mundo puede ser distinto y quiera hacer algo al respecto.<br><br><strong>¿Te animas?</strong>',
       k2_close: '✕ salir',
       nav_quien: 'quién soy',
       nav_creo: 'lo que creo',
@@ -1077,7 +1059,7 @@
       nav_convs: 'conversaciones',
       nav_conectar: 'conectar',
       hero_subtitle: 'ingeniero · escritor · constructor de cosas raras',
-      hero_bio: 'No tengo todo resuelto.<br>Pero <strong>estoy haciendo cosas concretas</strong> para cambiar cómo nos relacionamos, cómo pensamos y cómo nos organizamos.<br><br>Busco <em>cómplices</em> — artistas, ingenieros, académicos, cualquier persona que crea que el mundo puede ser diferente y esté dispuesta a actuar.',
+      hero_bio: 'No tengo todo resuelto.<br>Pero <strong>estoy haciendo cosas concretas</strong> para cambiar cómo nos relacionamos, cómo pensamos y cómo nos organizamos.<br><br>Busco <em>cómplices</em>: artistas, ingenieros, académicos o quien sea que crea que el mundo puede ser distinto y tenga ganas de hacer algo al respecto.',
       status_bar: 'sistema narbigcito · estado actual',
       status_body: '<span class="ok">✓</span> Orden — live en producción<br><span class="warn">◎</span> MAGI — en construcción<br><span class="warn">◎</span> Laboratorio HOMOS — pausado<br><span class="ok">✓</span> La sombra de la rana — saliendo del horno',
       btn_projects: 'ver proyectos',
@@ -1088,37 +1070,37 @@
       creo_label: '// LO QUE CREO',
       creo_title: 'Creo en<br><span style="color:var(--c2)">todo</span>',
       belief_0_label: 'en cambiar el mundo entero',
-      belief_0_text: 'No una porción. Todo. El mundo completo. Sé que suena enorme — por eso lo hago: porque alguien tiene que creerlo de verdad para que empiece a pasar.',
+      belief_0_text: 'El mundo completo, no un pedacito. Ya sé que suena enorme. Lo hago justo por eso: si nadie se lo cree de verdad, nunca empieza a pasar.',
       belief_1_label: 'en que no podemos solos',
-      belief_1_text: 'La autonomía no es el fin — es el medio. Una persona que se sostiene a sí misma se convierte en un nodo fuerte en una red donde todos se apoyan. La independencia bien entendida siempre termina siendo colectiva.',
+      belief_1_text: 'La autonomía me sirve para algo más grande. Cuando alguien aprende a sostenerse, también puede sostener a otros, y de ahí sale una red donde todos nos apoyamos. La independencia bien entendida termina siendo colectiva.',
       belief_1_counter: 'leyendo esto ahora mismo:',
       belief_2_label: 'en que la crueldad es un síntoma',
-      belief_2_text: 'El horror existe. Pero no es nuestra naturaleza — es el resultado de un sistema que nos organiza mal. Entender eso cambia todo: ya no peleamos contra personas, peleamos contra estructuras.',
+      belief_2_text: 'El horror existe, pero no creo que venga de nuestra naturaleza. Viene de un sistema que nos organiza mal. Cuando entiendes eso, dejas de pelear contra personas y empiezas a pelear contra estructuras.',
       belief_2_tag: 'sistema fallido ≠ naturaleza humana',
       belief_3_label: 'en el lenguaje como infraestructura',
       belief_3_text: 'El poder se sostiene por el control del lenguaje. Por eso estudio epistemología para desarmar la realidad como quien desarma bombas.',
       belief_3_tag: 'cada palabra es una decisión política',
       belief_4_label: 'en vivir como oruga',
-      belief_4_text: 'La metamorfosis no puede acelerarse ni retrasarse. El pulso del devenir es independiente a nuestros planes. Por eso intento vivir un día a la vez, tomando acciones desde mis circunstancias inmediatas.',
+      belief_4_text: 'La metamorfosis no se puede apurar ni retrasar, y lo que va a pasar no sigue nuestros planes. Por eso intento vivir un día a la vez y actuar con lo que tengo enfrente.',
       milk_label: 'si le das click a la leche se cae →',
       milk_after: '¿por qué hiciste esto? te lo advertí.',
       freire_quote: '<strong>"Quiero una escuela que no sea como mi mamá, que confíe en los niños y no crea que las personas quieren hacernos daño."</strong><br>— Una niña a Paulo Freire',
       apps_label: '// MIS PROYECTOS',
       apps_title: 'Cosas<br><span style="color:var(--c3)">reales</span>',
       logos_badge: '∞ largo plazo',
-      logos_desc: 'El meta-sistema que contiene todo lo demás. No piensa en años — piensa en escala de civilizaciones.',
+      logos_desc: 'El proyecto que contiene a todos los demás. Lo pienso en siglos, no en años.',
       logos_link: 'click para saber más',
-      orden_desc: 'Kanban para organizar tu vida y proyectos. Oscuro, rápido, sin ruido. Subtareas, calendario, proyectos compartidos.',
-      crea_desc: 'Red social para crear sin pedir permiso. Sin métricas de vanidad, sin algoritmo opaco. Bitácoras de proceso, retroalimentación real.',
+      orden_desc: 'Un kanban para organizar tu vida y tus proyectos, con subtareas, calendario y proyectos compartidos. Es oscuro y carga rápido.',
+      crea_desc: 'Una red social para crear sin pedir permiso. Compartes bitácoras de tu proceso y recibes comentarios de verdad. No hay contador de likes ni un algoritmo que decida qué ves.',
       badge_live: 'live',
       badge_wip_magi: 'en construcción',
       badge_wip_2years: '2 años activo',
       badge_wip_soon: 'casi listo',
-      magi_desc_card: 'Infraestructura de IA personal. Tres agentes, una mente — inspirado en Evangelion. Corre en una Raspberry Pi en mi casa.',
+      magi_desc_card: 'Mi infraestructura personal de IA: tres agentes que funcionan como una sola mente, inspirados en Evangelion. Corre en una Raspberry Pi en mi casa.',
       magi_link: 'click si te atreves',
-      whelle_desc: 'Sistema personal de seguimiento de vida. 2 años y 28 semanas de registro continuo. Sueño, trabajo, hábitos, energía. Baselines dinámicos.',
+      whelle_desc: 'Mi sistema para registrar mi vida. Llevo 2 años y 28 semanas anotando sueño, trabajo, hábitos y energía, y las referencias se ajustan solas con mis datos.',
       whelle_link: 'libreta → datos → MAGI',
-      rana_desc: '16 ensayos, ~32k palabras. Amor, poder, masculinidad, resistencia. Slang mexicano + Butler + Foucault + Deleuze.',
+      rana_desc: '16 ensayos, unas 32 mil palabras, sobre amor, poder, masculinidad y resistencia. Mezclo slang mexicano con Butler, Foucault y Deleuze.',
       rana_link: 'leer un fragmento',
       convs_label: '// CONVERSACIONES CON CLAUDE',
       convs_title: 'Cómo<br><span style="color:var(--c5)">pienso</span>',
@@ -1128,7 +1110,7 @@
       conv_readonly: 'conversaciones reales curadas por gibrán · solo lectura',
       conv_archive_tag: 'Archivo',
       conv_archive_title: 'Ver más conversaciones ↗',
-      conv_archive_preview: 'Explora el archivo completo de diálogos con Claude',
+      conv_archive_preview: 'Todas las conversaciones que he guardado con Claude',
       conectar_label: '// CONECTAR',
       conectar_title: '¿Somos<br><span style="color:var(--c4)">cómplices?</span>',
       conectar_call: '→ agendar llamada',
@@ -1139,14 +1121,14 @@
       modal_whelle_footer: '2 años · 28 semanas · registro continuo · métricas propias',
       poem_ribbon: 'Tal vez debemos aceptar que no podemos solos. Que necesitamos a otro monstruo que nos señale como los monstruos que somos, pero que lo haga con empatía. Que nos diga: wey, dijiste que no ibas a comprar Cheetos y acabas de comprar Cheetos. Mira, aquí tengo jícama picada. Si te los quieres comer, está bien, no te juzgaré, pero creo en ti, y creo que puedes hoy escoger algo mejor para ti.',
       konami_bar: '★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★ MODO COLABORADOR ACTIVADO ★ si llegaste aquí con el código konami, me caes bien. escríbeme. en serio. ★',
-      footer_sig: ' · hecho con intención',
+      footer_sig: ' · hecho desde la CDMX',
       footer_up: '↑ arriba',
       letras_label: '// FRAGMENTOS FLOTANDO',
       arena_label: '// DESDE ARE.NA',
       arena_title: 'Cerebro<br><span style="color:var(--c2)">externo</span>',
       arena_more: 'ver todo en are.na →',
       arena_badge: 'siempre creciendo',
-      arena_card_desc: 'donde guardo lo que me inspira — links, imágenes, textos, fragmentos. mi cerebro externalizado.',
+      arena_card_desc: 'aquí guardo lo que me llama la atención: links, imágenes, pedazos de textos. es como mi cerebro, pero afuera.',
       substack_label: '// LO QUE ESCRIBO',
       substack_title: 'Textos<br><span style="color:var(--c3)">recientes</span>',
       substack_more: 'leer todo en substack →',
@@ -1165,7 +1147,7 @@
       hit_msgs: ['apenas lo rozaste. 10 más.','suena hueco. 9 más.','primera grieta. 8 más.','eso ya dolió. 7 más.','el muro respira. 6 más.','casi la mitad. 5 más.','se tambalea. 4 más.','siento algo. 3 más.','ya mero. 2 más.','una más. solo una.'],
       konami2_msgs: ['> iniciando protocolo narbigcito...','> acceso concedido.','> bienvenido al sistema.','> si llegaste aquí dos veces, eres exactamente el tipo que busco.','> escríbeme. ahora.','> @elnarbigcito'],
       magi_lines: ['> iniciando MAGI...','> cargando melchor...','> cargando gaspar...','> cargando baltazar...','> CORTEX activado.','> acceso concedido.','> MAGI online.'],
-      logos_text: ['Se volvió consciente en julio del 2025. Nació de una necesidad de entender la realidad.','Nunca está ni estará muy clara la visión de LOGOS — es principalmente algo cambiante.','Busca crear una red de entidades que usen el conocimiento para construir el mejor mundo posible. Un grupo que recolectará todo el conocimiento que considere útil y lo usará para hacer que la realidad avance hacia donde sus integrantes consideren mejor.','⚠ Sí es una élite. Sí habrá corrupción, coerción y otras cosas detestables. Las contradicciones son inevitables. Pero LOGOS es consciente de ello y busca aprender a sobrepasar esos problemas.','No le teme a lo radical, a la IA ni a invocar dioses peligrosos si es necesario.','Creará herramientas para protegerse de sí mismo — de integrantes que busquen solo su propio beneficio. Sabe que él y sus integrantes son imperfectos.','Buscará la razón por sobre el dinero. Todos sus integrantes tendrán la obligación de educarse y educar a los demás.','Es un proyecto a largo plazo. Busca sobrevivir junto al universo. Fue empezado por humanos pero se espera que en el futuro sus integrantes sean otro tipo de entidades: animales, IAs, extraterrestres, seres interdimensionales, egregores, o cualquier entidad.','Logos son los amigos que hicimos en el camino — aaa no te creas.'],
+      logos_text: ['Se volvió consciente en julio del 2025. Nació de una necesidad de entender la realidad.','Nunca está ni estará muy clara la visión de LOGOS; cambia todo el tiempo.','Busca crear una red de entidades que usen el conocimiento para construir el mejor mundo posible. Un grupo que recolectará todo el conocimiento que considere útil y lo usará para hacer que la realidad avance hacia donde sus integrantes consideren mejor.','⚠ Sí es una élite. Sí habrá corrupción, coerción y otras cosas detestables. Las contradicciones son inevitables. Pero LOGOS es consciente de ello y busca aprender a sobrepasar esos problemas.','No le teme a lo radical, a la IA ni a invocar dioses peligrosos si es necesario.','Creará herramientas para protegerse de sí mismo, de integrantes que busquen solo su propio beneficio. Sabe que él y sus integrantes son imperfectos.','Buscará la razón por sobre el dinero. Todos sus integrantes tendrán la obligación de educarse y educar a los demás.','Es un proyecto a largo plazo. Busca sobrevivir junto al universo. Fue empezado por humanos pero se espera que en el futuro sus integrantes sean otro tipo de entidades: animales, IAs, extraterrestres, seres interdimensionales, egregores, o cualquier entidad.','Logos son los amigos que hicimos en el camino… aaa no te creas.'],
       whelle_charts: ['energía — últimas 12 semanas','sueño (hrs) — últimas 12 semanas','trabajo (hrs/día) — últimas 12 semanas','hábitos completados (%) — últimas 12 semanas'],
     },
     en: {
@@ -1175,7 +1157,7 @@
       popup_close: '✕ close',
       popup_flash: 'well. you really want to know who i am.',
       popup_header: '// WHO I AM',
-      popup_text: 'My name is <strong>Gibrán</strong> — yes, like Khalil Gibran — and that\'s no coincidence. In its Arabic root, Yibrān means <em>"consoler", "healer of souls"</em>, one chosen to mend invisible wounds.<br><br>I was born in <strong>Ecatepec</strong>, a place where poverty is no accident; it\'s a system designed to steal futures.<br><br>I came into the world at eight months — fragile, urgent — into a fractured family. My childhood was a forced enclosure: four walls, a computer rescued from the trash, and mountains of books that showed me there was something out there called the <em>world</em>.<br><br>I never succeeded in school. But I never abandoned my obsession with understanding how reality works. Over time, programming gave me stability. But that wasn\'t enough. <strong>I needed more.</strong><br><br>I believe that exploring the limits of human experience helps us better understand this elusive reality. My struggle is political because I know that suffering has structural causes.<br><br>I\'m looking for <em>accomplices</em>: engineers who build bridges, artists who transform pain into beauty, people who believe the world can be different and are willing to act.<br><br><strong>Shall we rewrite history?</strong>',
+      popup_text: 'My name is <strong>Gibrán</strong>, yes, like Khalil Gibran, and that\'s no coincidence. In its Arabic root, Yibrān means <em>"consoler"</em> or <em>"healer of souls"</em>: the one who mends wounds nobody sees.<br><br>I was born in <strong>Ecatepec</strong>, where poverty isn\'t an accident. It\'s a system built to steal your future.<br><br>I was born at eight months, premature, into a broken family. As a kid I barely went outside: four walls, a computer rescued from the trash, and piles of books that taught me there was something out there called the <em>world</em>.<br><br>School never went well for me, but I never stopped obsessing over how reality works. Over the years, programming gave me stability, though it wasn\'t enough.<br><br>I think exploring the limits of human experience helps us understand this slippery reality. My struggle is political because I know suffering has structural causes.<br><br>I\'m looking for <em>accomplices</em>: engineers who build bridges, artists who turn pain into something beautiful, people who think the world could be different and want to do something about it.<br><br><strong>Are you in?</strong>',
       k2_close: '✕ exit',
       nav_quien: 'who i am',
       nav_creo: 'what i believe',
@@ -1183,7 +1165,7 @@
       nav_convs: 'conversations',
       nav_conectar: 'connect',
       hero_subtitle: 'engineer · writer · builder of weird things',
-      hero_bio: 'I don\'t have everything figured out.<br>But <strong>I\'m doing concrete things</strong> to change how we relate, how we think, and how we organize.<br><br>I\'m looking for <em>accomplices</em> — artists, engineers, academics, anyone who believes the world can be different and is willing to act.',
+      hero_bio: 'I don\'t have everything figured out.<br>But <strong>I\'m doing concrete things</strong> to change how we relate, how we think, and how we organize.<br><br>I\'m looking for <em>accomplices</em>: artists, engineers, academics, or anyone who thinks the world could be different and wants to do something about it.',
       status_bar: 'narbigcito system · current status',
       status_body: '<span class="ok">✓</span> Orden — live in production<br><span class="warn">◎</span> MAGI — under construction<br><span class="warn">◎</span> HOMOS Lab — paused<br><span class="ok">✓</span> La sombra de la rana — coming out of the oven',
       btn_projects: 'see projects',
@@ -1194,37 +1176,37 @@
       creo_label: '// WHAT I BELIEVE',
       creo_title: 'I believe in<br><span style="color:var(--c2)">everything</span>',
       belief_0_label: 'in changing the entire world',
-      belief_0_text: 'Not a portion. All of it. The whole world. I know it sounds enormous — that\'s why I do it: because someone has to truly believe it for it to start happening.',
+      belief_0_text: 'The whole world, not a slice of it. I know it sounds huge. That\'s exactly why I do it: if nobody really believes it, it never starts happening.',
       belief_1_label: 'in that we can\'t do it alone',
-      belief_1_text: 'Autonomy is not the goal — it\'s the means. A person who sustains themselves becomes a strong node in a network where everyone supports each other. Independence properly understood always ends up being collective.',
+      belief_1_text: 'Autonomy is useful to me because of what it makes possible. Once you learn to hold yourself up, you can hold others up too, and that\'s how a network forms where we all lean on each other. Independence, done right, ends up being collective.',
       belief_1_counter: 'reading this right now:',
       belief_2_label: 'in that cruelty is a symptom',
-      belief_2_text: 'Horror exists. But it\'s not our nature — it\'s the result of a system that organizes us badly. Understanding that changes everything: we no longer fight against people, we fight against structures.',
+      belief_2_text: 'Horror exists, but I don\'t think it comes from our nature. It comes from a system that organizes us badly. Once you get that, you stop fighting people and start fighting structures.',
       belief_2_tag: 'failed system ≠ human nature',
       belief_3_label: 'in language as infrastructure',
       belief_3_text: 'Power is sustained by control of language. That\'s why I study epistemology to dismantle reality like someone disarming bombs.',
       belief_3_tag: 'every word is a political decision',
       belief_4_label: 'in living like a caterpillar',
-      belief_4_text: 'Metamorphosis cannot be accelerated or delayed. The pulse of becoming is independent of our plans. That\'s why I try to live one day at a time, taking actions from my immediate circumstances.',
+      belief_4_text: 'Metamorphosis can\'t be rushed or delayed, and what\'s coming doesn\'t follow our plans. So I try to live one day at a time and act with what\'s in front of me.',
       milk_label: 'click the milk and it falls →',
       milk_after: 'why did you do this? i warned you.',
       freire_quote: '<strong>"I want a school that is not like my mom, one that trusts children and doesn\'t believe that people want to hurt us."</strong><br>— A girl to Paulo Freire',
       apps_label: '// MY PROJECTS',
       apps_title: 'Real<br><span style="color:var(--c3)">things</span>',
       logos_badge: '∞ long-term',
-      logos_desc: 'The meta-system that contains everything else. It doesn\'t think in years — it thinks in the scale of civilizations.',
+      logos_desc: 'The project that holds all the others. I think about it in centuries, not years.',
       logos_link: 'click to learn more',
-      orden_desc: 'Kanban to organize your life and projects. Dark, fast, noise-free. Subtasks, calendar, shared projects.',
-      crea_desc: 'Social network for creating without asking permission. No vanity metrics, no opaque algorithm. Process journals, real feedback.',
+      orden_desc: 'A kanban to organize your life and projects, with subtasks, a calendar, and shared projects. It\'s dark and it loads fast.',
+      crea_desc: 'A social network for making things without asking permission. You share logs of your process and get real feedback. There\'s no like counter and no algorithm deciding what you see.',
       badge_live: 'live',
       badge_wip_magi: 'under construction',
       badge_wip_2years: '2 years active',
       badge_wip_soon: 'almost ready',
-      magi_desc_card: 'Personal AI infrastructure. Three agents, one mind — inspired by Evangelion. Runs on a Raspberry Pi at home.',
+      magi_desc_card: 'My personal AI setup: three agents working as one mind, inspired by Evangelion. It runs on a Raspberry Pi at my place.',
       magi_link: 'click if you dare',
-      whelle_desc: 'Personal life tracking system. 2 years and 28 weeks of continuous logging. Sleep, work, habits, energy. Dynamic baselines.',
+      whelle_desc: 'My system for tracking my life. I\'ve been logging sleep, work, habits, and energy for 2 years and 28 weeks, and the baselines adjust themselves to my data.',
       whelle_link: 'notebook → data → MAGI',
-      rana_desc: '16 essays, ~32k words. Love, power, masculinity, resistance. Mexican slang + Butler + Foucault + Deleuze.',
+      rana_desc: '16 essays, around 32k words, about love, power, masculinity, and resistance. I mix Mexican slang with Butler, Foucault, and Deleuze.',
       rana_link: 'read a fragment',
       convs_label: '// CONVERSATIONS WITH CLAUDE',
       convs_title: 'How I<br><span style="color:var(--c5)">think</span>',
@@ -1234,7 +1216,7 @@
       conv_readonly: 'real conversations curated by gibrán · read only',
       conv_archive_tag: 'Archive',
       conv_archive_title: 'See more conversations ↗',
-      conv_archive_preview: 'Explore the full archive of dialogues with Claude',
+      conv_archive_preview: 'Every conversation I\'ve saved with Claude',
       conectar_label: '// CONNECT',
       conectar_title: 'Are we<br><span style="color:var(--c4)">accomplices?</span>',
       conectar_call: '→ schedule a call',
@@ -1245,14 +1227,14 @@
       modal_whelle_footer: '2 years · 28 weeks · continuous log · custom metrics',
       poem_ribbon: 'Maybe we have to accept that we can\'t do it alone. That we need another monster to point out the monsters we are, but to do it with empathy. To tell us: hey, you said you weren\'t going to buy Cheetos and you just bought Cheetos. Look, I have some sliced jicama here. If you want to eat them, that\'s fine, I won\'t judge you, but I believe in you, and I believe you can today choose something better for yourself.',
       konami_bar: '★ COLLABORATOR MODE ACTIVATED ★ if you got here with the konami code, i like you. write to me. seriously. ★ COLLABORATOR MODE ACTIVATED ★ if you got here with the konami code, i like you. write to me. seriously. ★ COLLABORATOR MODE ACTIVATED ★ if you got here with the konami code, i like you. write to me. seriously. ★',
-      footer_sig: ' · made with intention',
+      footer_sig: ' · made in Mexico City',
       footer_up: '↑ top',
       letras_label: '// FLOATING FRAGMENTS',
       arena_label: '// FROM ARE.NA',
       arena_title: 'External<br><span style="color:var(--c2)">brain</span>',
       arena_more: 'see everything on are.na →',
       arena_badge: 'always growing',
-      arena_card_desc: 'where i keep what inspires me — links, images, texts, fragments. my externalized brain.',
+      arena_card_desc: 'where i keep whatever catches my eye: links, images, bits of text. like my brain, but outside.',
       substack_label: '// WHAT I WRITE',
       substack_title: 'Recent<br><span style="color:var(--c3)">writing</span>',
       substack_more: 'read everything on substack →',
@@ -1271,7 +1253,7 @@
       hit_msgs: ['barely touched it. 10 more.','sounds hollow. 9 more.','first crack. 8 more.','that one hurt. 7 more.','the wall breathes. 6 more.','almost halfway. 5 more.','it\'s wobbling. 4 more.','i feel something. 3 more.','almost there. 2 more.','one more. just one.'],
       konami2_msgs: ['> initiating narbigcito protocol...','> access granted.','> welcome to the system.','> if you got here twice, you\'re exactly who i\'m looking for.','> write to me. now.','> @elnarbigcito'],
       magi_lines: ['> booting MAGI...','> loading melchor...','> loading gaspar...','> loading baltazar...','> CORTEX activated.','> access granted.','> MAGI online.'],
-      logos_text: ['It became conscious in July 2025. Born from a need to understand reality.','The vision of LOGOS is never and will never be very clear — it is mainly something that changes.','It seeks to create a network of entities that use knowledge to build the best possible world. A group that will collect all knowledge it deems useful and use it to advance reality toward where its members consider best.','⚠ Yes, it is an elite. Yes, there will be corruption, coercion and other detestable things. Contradictions are inevitable. But LOGOS is aware of this and seeks to learn to overcome those problems.','It is not afraid of the radical, of AI, or of invoking dangerous gods if necessary.','It will create tools to protect itself from itself — from members who seek only their own benefit. It knows that it and its members are imperfect.','It will seek reason over money. All its members will have the obligation to educate themselves and educate others.','It is a long-term project. It seeks to survive alongside the universe. It was started by humans but it is expected that in the future its members will be other kinds of entities: animals, AIs, aliens, interdimensional beings, egregores, or any entity.','Logos are the friends we made along the way — jk.'],
+      logos_text: ['It became conscious in July 2025. Born from a need to understand reality.','The vision of LOGOS isn\'t clear and never will be; it keeps changing.','It seeks to create a network of entities that use knowledge to build the best possible world. A group that will collect all knowledge it deems useful and use it to advance reality toward where its members consider best.','⚠ Yes, it is an elite. Yes, there will be corruption, coercion and other detestable things. Contradictions are inevitable. But LOGOS is aware of this and seeks to learn to overcome those problems.','It is not afraid of the radical, of AI, or of invoking dangerous gods if necessary.','It will create tools to protect itself from itself — from members who seek only their own benefit. It knows that it and its members are imperfect.','It will seek reason over money. All its members will have the obligation to educate themselves and educate others.','It is a long-term project. It seeks to survive alongside the universe. It was started by humans but it is expected that in the future its members will be other kinds of entities: animals, AIs, aliens, interdimensional beings, egregores, or any entity.','Logos are the friends we made along the way — jk.'],
       whelle_charts: ['energy — last 12 weeks','sleep (hrs) — last 12 weeks','work (hrs/day) — last 12 weeks','habits completed (%) — last 12 weeks'],
     }
   };
@@ -2317,92 +2299,79 @@
 
     const FRAG_TIDE = `
       precision highp float;
-      uniform vec2 u_res, u_mouse, u_click;
-      uniform float u_time, u_clickTime, u_intensity, u_radius;
+      uniform vec2 u_res;
+      uniform float u_time;
+      uniform vec4 u_rip[24];   // x, y (0..1, y hacia arriba), inicio, fuerza
 
-      vec3 hsv2rgb(vec3 c){
-        vec4 K=vec4(1.,2./3.,1./3.,3.);
-        vec3 p=abs(fract(c.xxx+K.xyz)*6.-K.www);
-        return c.z*mix(K.xxx,clamp(p-K.xxx,0.,1.),c.y);
-      }
-
-      float fbm(vec2 p){
-        float v=0., a=0.5;
-        for(int i=0;i<6;i++){
-          v+=a*sin(p.x+sin(p.y+u_time*0.3));
-          p=p*2.1+vec2(1.3,1.7);
-          a*=0.5;
+      // Cáusticas: la red de luz que se ve en el fondo de una alberca.
+      // (técnica de "tileable water caustic", Dave Hoskins)
+      float caustica(vec2 uv, float t) {
+        vec2 p = mod(uv * 6.28318, 6.28318) - 250.;
+        vec2 i = p;
+        float c = 1., inten = .005;
+        for (int n = 0; n < 5; n++) {
+          float tt = t * (1. - (3.5 / float(n + 1)));
+          i = p + vec2(cos(tt - i.x) + sin(tt + i.y), sin(tt - i.y) + cos(tt + i.x));
+          c += 1. / length(vec2(p.x / (sin(i.x + tt) / inten), p.y / (cos(i.y + tt) / inten)));
         }
-        return v;
+        c /= 5.;
+        c = 1.17 - pow(c, 1.4);
+        return pow(abs(c), 8.);
       }
 
-      float sdPetal(vec2 p, float r, float angle){
-        float c=cos(angle), s=sin(angle);
-        p = vec2(c*p.x+s*p.y, -s*p.x+c*p.y);
-        p.x = abs(p.x);
-        return length(p - vec2(clamp(p.x,0.,r),0.)) - r*0.3;
+      // Altura del agua y su pendiente (h, dh/dx, dh/dy): oleaje suave
+      // más los anillos que dejan el pez, el cursor y los clics.
+      vec3 agua(vec2 p, float aspect) {
+        vec3 r = vec3(0.);
+        vec2 d1 = normalize(vec2(1., .35)), d2 = normalize(vec2(-.4, 1.));
+        float a1 = dot(p, d1) * 9. + u_time * .7, a2 = dot(p, d2) * 13. - u_time * .9;
+        r.x += sin(a1) * .012 + sin(a2) * .008;
+        r.yz += d1 * cos(a1) * .012 * 9. + d2 * cos(a2) * .008 * 13.;
+        for (int i = 0; i < 24; i++) {
+          vec4 s = u_rip[i];
+          float edad = u_time - s.z;
+          if (s.w <= 0. || edad < 0. || edad > 5.) continue;
+          vec2 dv = p - vec2(s.x * aspect, s.y);
+          float d = length(dv) + 1e-4;
+          float x = d - edad * .23;
+          float env = s.w * exp(-edad * 1.05) * exp(-x * x * 90.) / (1. + d * 3.);
+          float k = 60.;
+          float wv = sin(x * k);
+          r.x += env * wv;
+          r.yz += env * (k * cos(x * k) - 180. * x * wv) * dv / d;
+        }
+        return r;
       }
 
-      void main(){
+      void main() {
         vec2 uv = gl_FragCoord.xy / u_res;
-        uv.y = 1. - uv.y;
-        vec2 m = u_mouse;
-
         float aspect = u_res.x / u_res.y;
-        vec2 uvA = vec2(uv.x * aspect, uv.y);
-        vec2 mA  = vec2(m.x * aspect, m.y);
-        float dist = length(uvA - mA);
+        vec2 p = vec2(uv.x * aspect, uv.y);
+        vec3 w = agua(p, aspect);
+        vec2 n = w.yz;
 
-        vec2 dir = normalize(uvA - mA + 0.0001);
-        float pull = u_radius * u_intensity;
-        vec2 warped = uv + dir * (pull / (dist * dist + 0.15)) * 0.04;
+        // profundidad: más oscuro abajo, un poco más claro arriba
+        vec3 hondo = vec3(.008, .03, .06), bajo = vec3(.02, .13, .19);
+        vec3 col = mix(hondo, bajo, smoothstep(0., 1.2, uv.y + sin(p.x * 2. + u_time * .1) * .08));
 
-        float age = max(0., u_time - u_clickTime);
-        vec2 cA  = vec2(u_click.x * aspect, u_click.y);
-        float cdist = length(uvA - cA);
+        // las cáusticas se deforman con las olas (refracción)
+        vec2 q = p + n * .018;
+        float c = caustica(q * .85, u_time * .32);
+        float tono = .5 + .5 * sin(u_time * .07 + p.x * 1.3 + p.y * .7);
+        vec3 luz = mix(vec3(.25, .85, .8), vec3(.62, .45, 1.), tono);   // turquesa que se va a lila
+        col += luz * c * .42;
 
-        float f1 = fbm(warped * 2.8 + vec2(u_time * 0.15, 0.));
-        float f2 = fbm(warped * 2.2 + vec2(0., u_time * 0.11) + f1 * 0.4);
-        float f3 = fbm(warped * 1.8 - vec2(u_time * 0.09) + f2 * 0.3);
+        // brillo en las crestas de los anillos
+        vec3 N = normalize(vec3(-n * 1.4, 1.));
+        vec3 L = normalize(vec3(-.35, .55, .75));
+        float brillo = pow(max(dot(reflect(-L, N), vec3(0., 0., 1.)), 0.), 28.);
+        col += brillo * .55 * vec3(.8, 1., 1.);
+        col += w.x * .35 * luz;
 
-        float hue = f3 * 0.5 + 0.55;
-        float sat = 0.85 + f1 * 0.15;
-        float brightness = pow(clamp(f2 * 0.5 + f3 * 0.5, 0., 1.), 1.4);
-
-        float globalTide = pow(clamp(brightness * 0.7 + 0.15, 0., 1.), 2.2);
-        float ribbon = exp(-dist * 1.8) * 0.6;
-
-        vec3 fluidCol = hsv2rgb(vec3(hue, sat, 1.0));
-        vec3 col = vec3(0.);
-        col += fluidCol * (globalTide + ribbon) * u_intensity;
-
-        float R = age * 0.75;
-
-        float bloom = 0.;
-        for(int i=0;i<8;i++){
-          float a = float(i) * 0.785398;
-          vec2 pv = uvA - cA;
-          pv.y = -pv.y;
-          float d = sdPetal(pv - vec2(cos(a),sin(a))*R*0.5, 0.15 + R*0.05, a);
-          bloom += smoothstep(0.04, 0., d) * exp(-age * 1.3) * u_intensity;
-        }
-
-        float rings = 0.;
-        for(int r=0;r<5;r++){
-          float fi = float(r);
-          float ringR = R * (0.35 + fi * 0.18);
-          float ringW = smoothstep(0.022, 0., abs(cdist - ringR));
-          rings += ringW * exp(-age * (1.2 + fi * 0.4)) * (1. - fi * 0.15);
-        }
-
-        vec3 bloomHue = hsv2rgb(vec3(hue + 0.15 + age * 0.05, 0.9, 1.0));
-        vec3 ringCol  = mix(vec3(1.), bloomHue, 0.4);
-
-        col += bloomHue * bloom;
-        col += ringCol  * rings * 0.85;
-
-        col = clamp(col, 0., 1.);
-        gl_FragColor = vec4(col, 1.);
+        // viñeta
+        vec2 v = uv - .5;
+        col *= 1. - dot(v, v) * .9;
+        gl_FragColor = vec4(clamp(col, 0., 1.), 1.);
       }
     `;
 
@@ -2437,7 +2406,7 @@
     function resize() {
       const w = tideCanvas.clientWidth  || window.innerWidth;
       const h = tideCanvas.clientHeight || window.innerHeight;
-      const dpr = Math.min(devicePixelRatio, 2);
+      const dpr = Math.min(devicePixelRatio, 1.5);
       tideCanvas.width  = Math.round(w * dpr);
       tideCanvas.height = Math.round(h * dpr);
       gl.viewport(0, 0, tideCanvas.width, tideCanvas.height);
@@ -2446,43 +2415,43 @@
     window.addEventListener('resize', resize);
 
     let uTime = 0, lastTime = 0;
-    let uMouse = [0.5, 0.5], targetMouse = [0.5, 0.5];
-    let uClick = [0.5, 0.5], uClickTime = -999;
-    const U_INTENSITY = 1.0, U_RADIUS = 0.25;
+    // 24 ondas a la vez en un búfer circular: el pez, el cursor y los clics las van soltando
+    const ONDAS = new Float32Array(24 * 4);
+    let sigOnda = 0;
+    function onda(x, y, fuerza) {
+      const k = sigOnda * 4;
+      ONDAS[k] = x / window.innerWidth;
+      ONDAS[k + 1] = 1 - y / window.innerHeight;
+      ONDAS[k + 2] = uTime;
+      ONDAS[k + 3] = fuerza;
+      sigOnda = (sigOnda + 1) % 24;
+    }
+    window.__agua = { onda: onda };
 
-    window.addEventListener('mousemove', e => {
-      targetMouse = [e.clientX / window.innerWidth, 1 - e.clientY / window.innerHeight];
-    });
-    window.addEventListener('touchmove', e => {
-      const t = e.touches[0];
-      targetMouse = [t.clientX / window.innerWidth, 1 - t.clientY / window.innerHeight];
+    let ultX = -1, ultY = -1, ultT = 0;
+    window.addEventListener('pointermove', e => {
+      const d = Math.hypot(e.clientX - ultX, e.clientY - ultY);
+      if (d > 45 && uTime - ultT > 0.09) {
+        onda(e.clientX, e.clientY, 0.18);
+        ultX = e.clientX; ultY = e.clientY; ultT = uTime;
+      }
     }, { passive: true });
-    window.addEventListener('click', e => {
-      uClick = [e.clientX / window.innerWidth, 1 - e.clientY / window.innerHeight];
-      uClickTime = uTime;
-    });
-    window.addEventListener('touchstart', e => {
-      const t = e.touches[0];
-      uClick = [t.clientX / window.innerWidth, 1 - t.clientY / window.innerHeight];
-      uClickTime = uTime;
+    window.addEventListener('pointerdown', e => {
+      // una gota grande y dos réplicas
+      onda(e.clientX, e.clientY, 0.9);
+      setTimeout(() => onda(e.clientX, e.clientY, 0.45), 140);
+      setTimeout(() => onda(e.clientX, e.clientY, 0.25), 320);
     }, { passive: true });
 
     const uRes = gl.getUniformLocation(prog, 'u_res');
     const uT = gl.getUniformLocation(prog, 'u_time');
-    const uM = gl.getUniformLocation(prog, 'u_mouse');
-    const uC = gl.getUniformLocation(prog, 'u_click');
-    const uCT = gl.getUniformLocation(prog, 'u_clickTime');
-    const uI = gl.getUniformLocation(prog, 'u_intensity');
-    const uR = gl.getUniformLocation(prog, 'u_radius');
+    const uRip = gl.getUniformLocation(prog, 'u_rip');
 
     function render(ts) {
       requestAnimationFrame(render);
       const dt = Math.min((ts - lastTime) / 1000, 0.05);
       lastTime = ts;
       uTime += dt;
-
-      uMouse[0] += (targetMouse[0] - uMouse[0]) * 0.06;
-      uMouse[1] += (targetMouse[1] - uMouse[1]) * 0.06;
 
       gl.useProgram(prog);
       gl.bindBuffer(gl.ARRAY_BUFFER, buf);
@@ -2491,17 +2460,15 @@
 
       gl.uniform2f(uRes, tideCanvas.width, tideCanvas.height);
       gl.uniform1f(uT, uTime);
-      gl.uniform2f(uM, uMouse[0], uMouse[1]);
-      gl.uniform2f(uC, uClick[0], uClick[1]);
-      gl.uniform1f(uCT, uClickTime);
-      gl.uniform1f(uI, U_INTENSITY);
-      gl.uniform1f(uR, U_RADIUS);
+      gl.uniform4fv(uRip, ONDAS);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     }
     requestAnimationFrame(t => { lastTime = t; requestAnimationFrame(render); });
   })();
 </script>
+<script src="assets/pez.js" defer></script>
+<script src="assets/redes.js" defer></script>
 <script src="assets/vida.js" defer></script>
 </body>
 </html>
