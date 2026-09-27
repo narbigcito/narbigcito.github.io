@@ -252,7 +252,7 @@
 
   /* ---- superficies: el suelo, las tarjetas, y la otra criatura ---- */
 
-  var SEL_SUP = ".bcard, .app-card, .status-box, .conv-thumb, .wall-wrap, .evento, .sec-title, .eventos-list, .arena-grid, .substack-post, .mesa-vida";
+  var SEL_SUP = ".bcard, .app-card, .status-box, .conv-thumb, .wall-wrap, .evento, .sec-title, .eventos-list, .arena-block, .substack-post, .mesa-vida";
   var cacheSup = [], cacheT = 0;
   function superficies(now) {
     if (now - cacheT < 250) return cacheSup;
@@ -394,8 +394,12 @@
   }
 
   function saltarA(b, tx, pieY, sup) {
-    var T = 0.55;
     var dx = tx - b.x, dy = (pieY - b.h) - b.y;
+    // Si el destino está más alto, apunta 40 px por encima y alarga el salto:
+    // así llega ya de bajada y el aterrizaje sobre la tarjeta no falla por
+    // redondeos de la integración cuadro a cuadro.
+    if (dy < -10) dy -= 40;
+    var T = Math.max(0.55, Math.sqrt(2 * Math.max(0, -dy) / G) * 1.25);
     b.vx = dx / T;
     b.vy = (dy - 0.5 * G * T * T) / T;
     b.dir = dx >= 0 ? 1 : -1;
@@ -492,7 +496,7 @@
   }
 
   function parpadear(b, dt) {
-    if (dormidas) { b.parpado.setAttribute("height", b.lidMax); return; }
+    if (dormidas || b.siesta) { b.parpado.setAttribute("height", b.lidMax); return; }
     b.sigParp -= dt;
     if (b.sigParp <= 0) { b.parp = 1; b.sigParp = Math.random() < 0.2 ? 0.2 : rnd(1.8, 5.5); }
     if (b.parp > 0) { b.parp -= dt / 0.16; b.parpado.setAttribute("height", (Math.max(0, Math.sin(Math.max(0, b.parp) * Math.PI)) * b.lidMax).toFixed(2)); }
@@ -555,7 +559,7 @@
   // La rana va a saltos (máximo 200 px por salto) hasta x sobre la superficie sup.
   function ranaVaA(x, pieY, sup) {
     if (R.modo === "aire") return false;
-    if (sup && R.sup && R.sup.el === sup.el) return true;
+    if (sup && R.sup && (sup.el ? R.sup.el === sup.el : R.sup.bicho === sup.bicho)) return true;
     var dx = x - R.x;
     if (!sup && Math.abs(dx) < 8 && !R.sup) return true;
     if (Math.abs(dx) > 200) saltarA(R, R.x + Math.sign(dx) * 200, R.sup ? borde(R.sup).top : window.innerHeight, null);
@@ -820,20 +824,251 @@
     }
   }
 
+
+  /* ---- utilidades compartidas por las escenas nuevas ---- */
+
+  // Recorre una plática línea por línea; devuelve true cuando se acabó.
+  function correrCharla(e, dt, pausa) {
+    e.sigLinea -= dt;
+    if (e.sigLinea > 0) return false;
+    if (e.linea >= e.charla.length) return true;
+    var l = e.charla[e.linea++];
+    decir(l[0], l[1], 2100);
+    l[0].animo = 1;
+    e.sigLinea = pausa || 2.4;
+    return false;
+  }
+  function esDeNoche() { var h = new Date().getHours(); return h >= 22 || h < 5; }
+
+  /* ---- la fogata (solo de noche, según el reloj de quien visita) ---- */
+
+  var FOGATA_SVG =
+    '<svg viewBox="0 0 70 70" width="100%" height="100%" style="overflow:visible">' +
+    '<g class="llamas" style="transform-origin:35px 58px">' +
+    '<path d="M35 6 C48 24 56 34 52 48 C49 58 21 58 18 48 C14 34 24 26 35 6 Z" fill="#FF6B6B" ' + ESC_INK + '/>' +
+    '<path d="M35 22 C43 32 47 40 44 49 C42 55 28 55 26 49 C23 40 29 33 35 22 Z" fill="#FFD23F" stroke="' + INK + '" stroke-width="2"/>' +
+    '<path d="M35 36 C39 42 40 46 38 51 C36 54 34 54 32 51 C30 46 32 42 35 36 Z" fill="#FFFDF5"/>' +
+    '</g>' +
+    '<rect x="8" y="54" width="54" height="10" rx="3" fill="#8A4A14" ' + ESC_INK + ' transform="rotate(-12 35 59)"/>' +
+    '<rect x="8" y="54" width="54" height="10" rx="3" fill="#A0591C" ' + ESC_INK + ' transform="rotate(12 35 59)"/>' +
+    '</svg>';
+
+  var FOGATA_CHARLAS = [
+    [[R, "¿ya viste qué hora es?"], [J, "hora de fogata"], [R, "cuéntame una de miedo"], [J, "había una vez un muro que nadie rompía…"], [R, "¡aaah!"], [J, "y luego llegó alguien con un martillo"]],
+    [[J, "a esta hora la página está más tranquila"], [R, "casi no hay cursores"], [J, "¿será que ya todos duermen?"], [R, "menos el que nos está viendo"], [J, "ve a dormir, eh"]],
+    [[R, "¿tú crees que las estrellas son píxeles?"], [J, "todo es píxeles"], [R, "entonces somos primas de las estrellas"], [J, "qué bonito lo dijiste"]]
+  ];
+
+  function iniciarFogata() {
+    var H = window.innerHeight, d = ancho < 640 ? 48 : 62;
+    var x = clamp((J.x + R.x + R.w) / 2 - d / 2, J.w + 30, ancho - d - R.w - 40);
+    var glow = objFijo("", 260, 260);
+    glow.style.background = "radial-gradient(circle, rgba(255,160,60,.35) 0%, rgba(255,107,107,.12) 40%, transparent 70%)";
+    glow.style.zIndex = 67;
+    var el = objFijo(FOGATA_SVG, d, d);
+    var e = { tipo: "fogata", fase: "prende", t: 0, x: x, d: d, el: el, glow: glow, chispas: [], sigChispa: 0,
+              llamas: el.querySelector(".llamas"), charla: pick(FOGATA_CHARLAS), linea: 0, sigLinea: 0.8, vida: 0 };
+    poner(el, x, H - d); poner(glow, x + d / 2 - 130, H - d / 2 - 150);
+    decir(J, "¿prendemos una fogata?", 1400);
+    return e;
+  }
+  function pasoFogata(e, dt, t) {
+    var H = window.innerHeight;
+    e.t += dt;
+    // la lumbre nace, vive y se apaga
+    if (e.fase === "prende") e.vida = Math.min(1, e.vida + dt / 1.2);
+    if (e.fase === "apaga") e.vida = Math.max(0, e.vida - dt / 1.5);
+    var f = 0.85 + Math.sin(t * 17) * 0.06 + Math.sin(t * 7.3) * 0.08;
+    e.llamas.style.transform = "scale(" + (e.vida * (0.95 + Math.sin(t * 11) * 0.05)).toFixed(3) + "," + (e.vida * f).toFixed(3) + ")";
+    e.glow.style.opacity = (e.vida * (0.8 + Math.sin(t * 9) * 0.2)).toFixed(2);
+    // chispas
+    e.sigChispa -= dt;
+    if (e.vida > 0.3 && e.sigChispa <= 0) {
+      var c = document.createElement("div");
+      c.className = "obj-vida";
+      c.style.cssText = "position:fixed;left:0;top:0;width:4px;height:4px;background:#FFD23F;z-index:69;pointer-events:none";
+      document.body.appendChild(c);
+      e.chispas.push({ el: c, x: e.x + e.d / 2 + rnd(-8, 8), y: H - e.d * 0.8, v: rnd(40, 90), t: 0, s: rnd(0, 6) });
+      e.sigChispa = rnd(0.12, 0.35);
+    }
+    for (var i = e.chispas.length - 1; i >= 0; i--) {
+      var s = e.chispas[i]; s.t += dt;
+      s.y -= s.v * dt; s.x += Math.sin(s.t * 5 + s.s) * 0.6;
+      poner(s.el, s.x, s.y);
+      s.el.style.opacity = Math.max(0, 1 - s.t / 1.4);
+      if (s.t > 1.4) { s.el.remove(); e.chispas.splice(i, 1); }
+    }
+    var jOk = jirafaVaA(e.x - J.w * 0.95, dt);
+    var rOk = ranaVaA(e.x + e.d + 10, H, null);
+    if (jOk) J.dir = 1;
+    if (rOk && R.modo !== "aire") R.dir = -1;
+    if (e.fase === "prende" && e.t > 1.5 && jOk && rOk) { e.fase = "platica"; e.t = 0; }
+    if (e.fase === "prende" && e.t > 15) { e.fase = "platica"; e.t = 0; }
+    if (e.fase === "platica" && correrCharla(e, dt, 2.6)) {
+      e.fase = "apaga"; e.t = 0;
+      decir(R, "ya me dio sueño", 1400);
+      setTimeout(function () { decir(J, "buenas noches, fueguito", 1400); }, 700);
+    }
+    if (e.fase === "apaga" && e.t > 2.2) terminarEscena();
+  }
+
+  /* ---- leer una tarjeta juntas ---- */
+
+  function extracto(el) {
+    var txt = (el.innerText || "").replace(/\s+/g, " ").trim();
+    if (!txt) return null;
+    return txt.length > 34 ? txt.slice(0, 33).trim() + "…" : txt;
+  }
+  function iniciarLeer() {
+    var H = window.innerHeight, cand = [];
+    document.querySelectorAll(".arena-block, .substack-post, .bcard, .evento").forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top > 160 && r.top < H - 90 && r.width > 90 && r.left > 0 && r.right < ancho && extracto(el)) cand.push(el);
+    });
+    if (!cand.length) return null;
+    var el = pick(cand);
+    var cita = extracto(el);
+    var e = { tipo: "leer", fase: "van", t: 0, tarjeta: el,
+      charla: pick([
+        [[R, "¡a ver, a ver!"], [R, "aquí dice: «" + cita + "»"], [J, "profundo"], [R, "o no entendí"], [J, "yo tampoco"]],
+        [[J, "¿qué dice ahí arriba?"], [R, "«" + cita + "»"], [J, "¿y eso qué significa?"], [R, "que hay que leer más"], [J, "ay, no"]],
+        [[R, "esta me gusta"], [J, "¿por?"], [R, "«" + cita + "»"], [J, "ok, sí está buena"]]
+      ]), linea: 0, sigLinea: 0.4 };
+    decir(R, pick(["¡mira esto!", "ven, lee conmigo"]), 1300);
+    return e;
+  }
+  function pasoLeer(e, dt) {
+    var H = window.innerHeight;
+    e.t += dt;
+    var r = e.tarjeta.getBoundingClientRect();
+    // si scrollearon y la tarjeta se fue, se acaba la lectura
+    if (r.top < 60 || r.top > H - 40) { decir(J, "¿a dónde se fue?", 1200); terminarEscena(); return; }
+    var sup = { el: e.tarjeta };
+    var enTarjeta = R.sup && R.sup.el && (R.sup.el === e.tarjeta || (R.sup.el.contains(e.tarjeta) && Math.abs(borde(R.sup).top - r.top) < 6));
+    if (!enTarjeta && R.modo !== "aire") {
+      var tx = clamp(r.left + r.width * 0.5 - R.w / 2, r.left, r.right - R.w);
+      ranaVaA(tx, r.top, sup);
+    }
+    // la jirafa se acerca por abajo y estira el cuello para mirar
+    jirafaVaA(clamp(r.left + r.width * 0.5 - J.w * 0.85, 0, ancho - J.w - 150), dt);
+    if (e.fase === "van" && (enTarjeta || e.t > 8)) { e.fase = "platica"; e.t = 0; }
+    if (e.fase === "platica") {
+      if (Math.random() < 0.015) sacudir(e.tarjeta, 1.5, rnd(-1, 1));
+      if (correrCharla(e, dt, 2.3)) { e.fase = "fin"; e.t = 0; }
+    }
+    if (e.fase === "fin" && e.t > 1.2) terminarEscena();
+  }
+
+  /* ---- carrera de una orilla a otra ---- */
+
+  function iniciarCarrera() {
+    var e = { tipo: "carrera", fase: "salida", t: 0, cuenta: 0, meta: ancho - 20,
+              velJ: rnd(250, 340), ganador: null };
+    decir(R, pick(["¿echamos una carrera?", "¡a que te gano!"]), 1400);
+    setTimeout(function () { decir(J, "va", 1000); }, 700);
+    return e;
+  }
+  function pasoCarrera(e, dt) {
+    var H = window.innerHeight;
+    e.t += dt;
+    if (e.fase === "salida") {
+      var jOk = jirafaVaA(14, dt);
+      var rOk = ranaVaA(14 + J.w + 12, H, null);
+      if ((jOk && rOk && R.modo !== "aire") || e.t > 14) { J.dir = 1; R.dir = 1; e.fase = "cuenta"; e.t = 0; }
+      return;
+    }
+    if (e.fase === "cuenta") {
+      var pasos = ["3", "2", "1", "¡ya!"];
+      var n = Math.floor(e.t / 0.8);
+      if (n > e.cuenta - 1 && e.cuenta < pasos.length) { decir(J, pasos[e.cuenta], 700); decir(R, pasos[e.cuenta], 700); e.cuenta++; }
+      if (e.t > 3.2) { e.fase = "corre"; e.t = 0; }
+      return;
+    }
+    if (e.fase === "corre") {
+      // la jirafa trota, la rana brinca lo más largo que puede
+      J.dir = 1; J._camina = true;
+      J.x += e.velJ * dt;
+      if (R.modo !== "aire") saltarA(R, Math.min(R.x + rnd(150, 190), ancho - R.w), H, null);
+      var llegoJ = J.x + J.w >= e.meta, llegoR = R.x + R.w >= e.meta - 2;
+      if (llegoJ || llegoR) {
+        J.x = Math.min(J.x, ancho - J.w - 2); J._camina = false;
+        e.ganador = llegoJ ? J : R;
+        var perdio = e.ganador === J ? R : J;
+        decir(e.ganador, pick(["¡gané!", "¡primera!", "¡ja!"]), 1500);
+        setTimeout(function () { decir(perdio, pick(["revancha", "hiciste trampa", "te dejé ganar"]), 1500); }, 800);
+        e.fase = "fin"; e.t = 0;
+      }
+      return;
+    }
+    if (e.fase === "fin") {
+      J.x = Math.min(J.x, ancho - J.w - 2);
+      if (e.t > 2.4) terminarEscena();
+    }
+  }
+
+  /* ---- siesta juntas ---- */
+
+  function iniciarSiesta() {
+    var e = { tipo: "siesta", fase: "junta", t: 0, sigZ: 0.5 };
+    decir(J, pick(["ando cansada", "¿una siestita?"]), 1400);
+    setTimeout(function () { decir(R, "me apunto", 1000); }, 700);
+    return e;
+  }
+  function pasoSiesta(e, dt) {
+    var H = window.innerHeight;
+    e.t += dt;
+    if (e.fase === "junta") {
+      J._camina = false;
+      var enLomo = R.sup && R.sup.bicho === J;
+      if (!enLomo && R.modo !== "aire") {
+        var lomo = borde({ bicho: J });
+        if (Math.abs((R.x + R.w / 2) - (lomo.left + lomo.right) / 2) > 200) ranaVaA((lomo.left + lomo.right) / 2 - R.w / 2, H, null);
+        else saltarA(R, (lomo.left + lomo.right) / 2 - R.w / 2, lomo.top, { bicho: J });
+      }
+      if (enLomo || e.t > 10) { e.fase = "duerme"; e.t = 0; J.siesta = true; R.siesta = true; }
+      return;
+    }
+    if (e.fase === "duerme") {
+      e.sigZ -= dt;
+      if (e.sigZ <= 0) { echarZ(pick(bichos)); e.sigZ = 1.3; }
+      // el cursor muy cerca las despierta
+      var cerca = Math.hypot(M.x - (J.x + J.w / 2), M.y - (J.y + J.h / 2)) < 70 && performance.now() - M.t < 300;
+      if (e.t > 14 || cerca) {
+        J.siesta = false; R.siesta = false;
+        e.fase = "despierta"; e.t = 0;
+        if (cerca) decir(J, "¡¿qué?! ¿quién?", 1300);
+        decir(R, "¡croac!", 1000);
+        if (R.sup && R.sup.bicho === J) { R.modo = "aire"; R.sup = null; R.vy = -800; R.vx = rnd(-160, 160); }
+        J.vsq -= 0.12;
+      }
+      return;
+    }
+    if (e.fase === "despierta" && e.t > 1.8) terminarEscena();
+  }
+
   /* ---- control ---- */
 
   function iniciarEscena(tipo) {
     if (escena || dormidas || agarrado) return false;
-    tipo = tipo || (Math.random() < 0.55 ? "mesa" : "pelota");
+    if (!tipo) {
+      // de noche la fogata es la favorita; de día nunca aparece
+      var bolsa = ["mesa", "mesa", "pelota", "pelota", "leer", "carrera", "siesta"];
+      if (esDeNoche()) bolsa.push("fogata", "fogata", "fogata");
+      tipo = pick(bolsa);
+    }
     if (mosca) { mosca.el.remove(); mosca = null; }
     J.accion = null; J._camina = false;
-    escena = tipo === "mesa" ? iniciarMesa() : iniciarPelota();
+    var hacer = { mesa: iniciarMesa, pelota: iniciarPelota, fogata: iniciarFogata, leer: iniciarLeer, carrera: iniciarCarrera, siesta: iniciarSiesta };
+    escena = (hacer[tipo] || iniciarMesa)();
+    if (!escena) escena = iniciarPelota();   // no hubo tarjeta a la vista para leer
     return true;
   }
   function terminarEscena(razon) {
     if (!escena) return;
     var e = escena;
-    ["el", "tarro", "vaso"].forEach(function (k) { if (e[k]) e[k].remove(); });
+    ["el", "tarro", "vaso", "glow"].forEach(function (k) { if (e[k]) e[k].remove(); });
+    if (e.chispas) e.chispas.forEach(function (c) { c.el.remove(); });
+    J.siesta = false; R.siesta = false;
     if (R.sup && R.sup.el === e.el) { R.modo = "aire"; R.sup = null; }
     escena = null;
     J._camina = false; J.accion = null; J.duracion = 0;
@@ -857,12 +1092,19 @@
       return;
     }
     if (dormidas) { terminarEscena(); return; }
-    if (agarrado && escena.tipo === "mesa") { terminarEscena("agarre"); return; }
-    if (escena.tipo === "mesa") pasoMesa(escena, dt);
-    else pasoPelota(escena, dt, now);
+    if (agarrado && escena.tipo !== "pelota") { terminarEscena("agarre"); return; }
+    var tt = now / 1000;
+    switch (escena.tipo) {
+      case "mesa": pasoMesa(escena, dt); break;
+      case "pelota": pasoPelota(escena, dt, now); break;
+      case "fogata": pasoFogata(escena, dt, tt); break;
+      case "leer": pasoLeer(escena, dt); break;
+      case "carrera": pasoCarrera(escena, dt); break;
+      case "siesta": pasoSiesta(escena, dt); break;
+    }
   }
 
-  // para probar desde la consola: __vida.escena("mesa") o __vida.escena("pelota")
+  // para probar desde la consola: __vida.escena("mesa" | "pelota" | "fogata" | "leer" | "carrera" | "siesta")
   window.__vida = { escena: iniciarEscena, terminar: terminarEscena, estado: function () { return escena && (escena.tipo + ":" + (escena.fase || "")); },
     debug: function () {
       var r = function (n) { return Math.round(n); };
@@ -984,6 +1226,8 @@
     var cuelloRot = Math.sin(t * 0.9) * 3 + (camina ? Math.sin(J.fase * 2) * 2 : 0);
     if (J.accion === "mordisquear" && !dormidas) cuelloRot = 38 + Math.sin(t * 14) * 4;
     if (escena && escena.tipo === "mesa" && escena.fase !== "cae" && escena.fase !== "van") cuelloRot = 6 + Math.sin(t * 1.4) * 2;
+    if (escena && escena.tipo === "leer" && escena.fase === "platica") cuelloRot = -12 + Math.sin(t * 1.1) * 2;
+    if (J.siesta) cuelloRot = 50 + Math.sin(t * 1.2) * 2;
     if (dormidas) cuelloRot = 55;
     if (!dormidas && cursorVivo && J.accion !== "mordisquear") {
       var jr = J.el.getBoundingClientRect();
@@ -991,7 +1235,7 @@
       cuelloRot += clamp(ddx * 0.03, -10, 12);
     }
     J.cuello.setAttribute("transform", "rotate(" + cuelloRot.toFixed(2) + " 74 84)");
-    J.cabeza.setAttribute("transform", "rotate(" + (Math.sin(t * 1.3) * 4 - (dormidas ? 20 : 0)).toFixed(2) + " 85 22)");
+    J.cabeza.setAttribute("transform", "rotate(" + (Math.sin(t * 1.3) * 4 - (dormidas || J.siesta ? 20 : 0)).toFixed(2) + " 85 22)");
     J.cola.setAttribute("d", "M24 80 Q" + (10 + Math.sin(t * 3) * 5).toFixed(1) + " 86 " + (12 + Math.sin(t * 3 + 1) * 4).toFixed(1) + " 100");
     J.boca.setAttribute("d", J.animo > 0.2 ? "M91 28 Q97 34 103 27" : "M92 29 Q97 32 102 28");
     J.animo *= 0.97; R.animo *= 0.97;
