@@ -615,6 +615,45 @@
     .conv-thumb.active { border-color: var(--c5) !important; box-shadow: 5px 5px 0 var(--c5); }
     .btn:active, .link-item:active, .nav-pill:active { box-shadow: 0 0 0 #000; translate: 3px 3px !important; }
     .btn-main { box-shadow: 4px 4px 0 #000; }
+
+    /* ── substack ── */
+    .substack-wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: 18px; align-items: start; }
+    .substack-post { display: block; text-decoration: none; color: inherit; background: #121212; border: 2px solid #2b2b2b; box-shadow: 5px 5px 0 #000; cursor: none; }
+    .substack-post:hover { border-color: var(--c3); box-shadow: 7px 7px 0 #000; }
+    .substack-hero .substack-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 2px solid #000; filter: saturate(.85) contrast(1.05); }
+    .substack-hero .substack-body { padding: 20px 22px 22px; }
+    .substack-kicker { font-family: 'Syne Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #141414; background: var(--c3); display: inline-block; padding: 3px 7px; margin-bottom: 12px; }
+    .substack-hero h3 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(24px, 3.2vw, 36px); line-height: 1; letter-spacing: -.02em; margin-bottom: 10px; }
+    .substack-sub { font-size: 14px; line-height: 1.6; color: #b8b4a8; }
+    .substack-meta { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 14px; }
+    .substack-list { display: flex; flex-direction: column; gap: 10px; }
+    .substack-list .substack-post { display: grid; grid-template-columns: 64px 1fr; gap: 14px; padding: 14px 16px; align-items: baseline; }
+    .substack-date { font-family: 'Syne Mono', monospace; font-size: 11px; color: var(--c3); line-height: 1.3; }
+    .substack-list h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 17px; line-height: 1.15; margin-bottom: 4px; }
+    .substack-list .substack-sub { font-size: 12.5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    @media (max-width: 760px) { .substack-wrap { grid-template-columns: 1fr; } }
+
+    /* ── muro nuevo: ladrillos de verdad ── */
+    .wall { border: 3px solid #000 !important; box-shadow: 8px 8px 0 #000 !important; background: #0b0b0b; min-height: 340px; }
+    .wall::before { content: 'GIBRÁN'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(64px, 15vw, 190px); letter-spacing: -.03em; color: transparent; -webkit-text-stroke: 2px var(--c1); z-index: 0; pointer-events: none; }
+    .wall-bg { background: none !important; display: grid; grid-template-columns: repeat(var(--cols, 14), 1fr); gap: 5px; padding: 5px; z-index: 1; }
+    .ladrillo { border: 2px solid #000; background: var(--lc, #B34A25); box-shadow: inset 0 3px 0 rgba(255,255,255,.14), inset 0 -5px 0 rgba(0,0,0,.3); }
+    .wall-cracks { display: none; }
+    .wall-text { background: #FFFDF5; color: #141414 !important; font-family: 'Syne', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; font-size: clamp(17px, 2.8vw, 27px) !important; line-height: 1.08 !important; padding: 22px 28px 18px !important; border: 3px solid #000; box-shadow: 6px 6px 0 #000; transform: rotate(-2deg); text-shadow: none !important; max-width: 82%; transition: transform .25s cubic-bezier(.34,1.56,.64,1); }
+    .wall-text span { display: inline-block; margin-top: 10px; font-family: 'Syne Mono', monospace; font-weight: 400; text-transform: none; letter-spacing: .02em; opacity: .65 !important; }
+    .wall-text::before, .wall-text::after { content: ''; position: absolute; top: -13px; width: 74px; height: 22px; background: rgba(255,210,63,.9); border: 2px solid #000; }
+    .wall-text::before { left: -20px; transform: rotate(-18deg); }
+    .wall-text::after { right: -20px; transform: rotate(16deg); }
+    .wall-text.rasgado { transform: rotate(-7deg) translate(-6px, 10px); }
+    .wall-hits { background: #141414; color: var(--c3) !important; border: 2px solid #000; padding: 5px 9px; font-size: 12px !important; box-shadow: 3px 3px 0 #000; }
+    .wall-hits:empty { display: none; }
+    .wall-particle { background: #B34A25 !important; border: 1.5px solid #000 !important; }
+    .wall-reopen, .btn-ghost, .arena-block { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    .btn-ghost { background: #0e0e0e !important; border-color: #3a3a3a; color: #d8d4ca; box-shadow: 4px 4px 0 #000; position: relative; z-index: 3; }
+    .hero-btns { position: relative; z-index: 3; }
+    .wall-reopen { background: #0e0e0e; border: 2px solid #3a3a3a; box-shadow: 4px 4px 0 #000; }
+    .arena-block { background: #121212 !important; border: 2px solid #2b2b2b !important; box-shadow: 4px 4px 0 #000; }
+    .arena-block:hover { border-color: var(--c2) !important; }
   </style>
   <script defer src="https://analytics.narbigcito.com/script.js" data-website-id="0ba1b1cf-6142-437f-a65b-a92e386e6a94"></script>
 </head>
@@ -766,6 +805,17 @@
     <div class="arena-grid" id="arenaGrid"></div>
     <div style="margin-top:16px">
       <a class="link-item" href="https://www.are.na/el-narbigcito" target="_blank" rel="noreferrer" data-i18n="arena_more">ver todo en are.na →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="substack" style="display:none">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--c3)"><span data-i18n="substack_label">// LO QUE ESCRIBO</span><span style="flex:1;height:1px;background:linear-gradient(to right,rgba(255,210,63,.3),transparent);display:block;margin-left:10px"></span></div>
+    <h2 class="sec-title glitch" data-i18n-html="substack_title">Textos<br><span style="color:var(--c3)">recientes</span></h2>
+    <div class="substack-wrap" id="substackWrap"></div>
+    <div style="margin-top:18px">
+      <a class="link-item" href="https://narbigcito.substack.com" target="_blank" rel="noreferrer" data-i18n="substack_more">leer todo en substack →</a>
     </div>
   </div>
 </section>
@@ -1097,6 +1147,11 @@
       arena_more: 'ver todo en are.na →',
       arena_badge: 'siempre creciendo',
       arena_card_desc: 'donde guardo lo que me inspira — links, imágenes, textos, fragmentos. mi cerebro externalizado.',
+      substack_label: '// LO QUE ESCRIBO',
+      substack_title: 'Textos<br><span style="color:var(--c3)">recientes</span>',
+      substack_more: 'leer todo en substack →',
+      substack_new: 'lo más nuevo',
+      substack_min: 'min de lectura',
       eventos_label: '// PRÓXIMAMENTE',
       eventos_title: 'Eventos<br><span style="color:var(--c5)">próximos</span>',
       evento_badge_pasado: 'pasado',
@@ -1198,6 +1253,11 @@
       arena_more: 'see everything on are.na →',
       arena_badge: 'always growing',
       arena_card_desc: 'where i keep what inspires me — links, images, texts, fragments. my externalized brain.',
+      substack_label: '// WHAT I WRITE',
+      substack_title: 'Recent<br><span style="color:var(--c3)">writing</span>',
+      substack_more: 'read everything on substack →',
+      substack_new: 'latest',
+      substack_min: 'min read',
       eventos_label: '// UPCOMING',
       eventos_title: 'Upcoming<br><span style="color:var(--c5)">events</span>',
       evento_badge_pasado: 'past',
@@ -1244,6 +1304,7 @@
     const mb = document.getElementById('convMoreBtn');
     if (mb) mb.innerHTML = `<div class="conv-tag">${T('conv_archive_tag')}</div><div class="conv-title">${T('conv_archive_title')}</div><div class="conv-preview">${T('conv_archive_preview')}</div>`;
     if (window.__renderEventos) window.__renderEventos();
+    if (window.__renderSubstack) window.__renderSubstack();
   }
 
   (function initLang() {
@@ -1354,6 +1415,65 @@
   ];
   let hits = 0;
 
+  /* Muro de ladrillos reales: cada golpe tumba los ladrillos más cercanos
+     a donde pegaste, y detrás se asoma el nombre. */
+  const wallBg = wall.querySelector('.wall-bg');
+  const TONOS = ['#B9502A', '#A8431F', '#C65D33', '#9E3D1C', '#B34A25', '#C96A3E'];
+  let ultimoGolpe = null;
+  function construirMuro() {
+    if (!wallBg) return;
+    wallBg.innerHTML = '';
+    const w = wall.clientWidth || 800, h = wall.clientHeight || 340;
+    const n = Math.max(4, Math.round(w / 112)), filas = Math.max(5, Math.round(h / 46));
+    wallBg.style.setProperty('--cols', n * 2);
+    wallBg.style.gridTemplateRows = 'repeat(' + filas + ', 1fr)';
+    for (let f = 0; f < filas; f++) {
+      const piezas = f % 2 ? [1].concat(Array(n - 1).fill(2), [1]) : Array(n).fill(2);
+      piezas.forEach(sp => {
+        const b = document.createElement('span');
+        b.className = 'ladrillo';
+        b.style.gridColumn = 'span ' + sp;
+        b.style.setProperty('--lc', Math.random() < 0.035 ? 'var(--c1)' : TONOS[Math.floor(Math.random() * TONOS.length)]);
+        wallBg.appendChild(b);
+      });
+    }
+  }
+  wall.addEventListener('pointerdown', e => {
+    const r = wall.getBoundingClientRect();
+    ultimoGolpe = { x: e.clientX - r.left, y: e.clientY - r.top };
+  });
+  function tumbarLadrillos() {
+    if (!wallBg) return;
+    const todos = wallBg.children.length;
+    const enPie = Array.from(wallBg.querySelectorAll('.ladrillo:not(.caido)'));
+    if (!enPie.length) return;
+    const meta = hits >= MAX_HITS ? todos : Math.round(todos * 0.5 * hits / MAX_HITS);
+    const cuantos = Math.max(1, meta - (todos - enPie.length));
+    const wr = wall.getBoundingClientRect();
+    const g = ultimoGolpe || { x: wr.width * (0.2 + Math.random() * 0.6), y: wr.height * 0.5 };
+    ultimoGolpe = null;
+    const dist = el => {
+      const r = el.getBoundingClientRect();
+      return Math.hypot(r.left - wr.left + r.width / 2 - g.x, r.top - wr.top + r.height / 2 - g.y) + Math.random() * 30;
+    };
+    enPie.map(el => [dist(el), el]).sort((a, b) => a[0] - b[0]).slice(0, cuantos).forEach(([, b], i) => {
+      b.classList.add('caido');
+      const dx = (Math.random() - 0.5) * 180, rot = (Math.random() - 0.5) * 160;
+      b.animate([
+        { transform: 'translate(0,0) rotate(0deg)', opacity: 1 },
+        { transform: 'translate(' + (dx * 0.3) + 'px,-16px) rotate(' + (rot * 0.2) + 'deg)', opacity: 1, offset: 0.18 },
+        { transform: 'translate(' + dx + 'px,' + (wr.height + 140) + 'px) rotate(' + rot + 'deg)', opacity: 0 }
+      ], { duration: 850 + Math.random() * 350, delay: Math.min(i, 30) * 22, easing: 'cubic-bezier(.45,0,.85,.4)', fill: 'forwards' });
+    });
+    wallText.classList.toggle('rasgado', hits >= 7);
+  }
+  construirMuro();
+  let muroResize = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(muroResize);
+    muroResize = setTimeout(() => { if (hits === 0) construirMuro(); }, 200);
+  });
+
   if (!isTouchDevice) {
     wall.addEventListener('mouseenter', () => { cursor.classList.add('hammer'); });
     wall.addEventListener('mouseleave', () => { cursor.classList.remove('hammer'); });
@@ -1383,6 +1503,7 @@
     setTimeout(() => wall.classList.remove('shaking'), 140);
 
     updateCracks();
+    tumbarLadrillos();
 
     
     const pCount = 4 + Math.floor(hits * 0.8);
@@ -1403,7 +1524,7 @@
 
     
     if (hits === MAX_HITS) {
-      wallText.textContent = '💥';
+      wallText.textContent = 'crack';
       for (let i = 0; i < 50; i++) {
         const p = document.createElement('div');
         p.className = 'wall-particle';
@@ -1441,6 +1562,8 @@
     wallText.innerHTML = T('wall_text');
     wall.style.display = 'flex';
     wallReopen.style.display = 'none';
+    wallText.classList.remove('rasgado');
+    construirMuro();
     
     wall.querySelectorAll('.wall-particle').forEach(p => p.remove());
   });
@@ -1984,7 +2107,71 @@
         try { sessionStorage.setItem(CACHE_KEY, JSON.stringify(blocks)); } catch (e) { /* quota */ }
         render(blocks);
       })
-      .catch(() => { /* hide silently — section stays display:none */ });
+      .catch(() => {
+        // la API falló o limitó: usar la copia que el cron de la Pi deja en el repo
+        fetch('assets/feeds/arena.json')
+          .then(r => r.ok ? r.json() : [])
+          .then(render)
+          .catch(() => { /* sin copia: la sección se queda oculta */ });
+      });
+  })();
+
+  (function initSubstack() {
+    const wrap = document.getElementById('substackWrap');
+    const section = document.getElementById('substack');
+    if (!wrap || !section) return;
+    let posts = [];
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = (s === null || s === undefined) ? '' : String(s);
+      return d.innerHTML;
+    }
+    function fecha(iso, corta) {
+      const d = new Date(iso);
+      if (isNaN(d)) return '';
+      const loc = currentLang === 'en' ? 'en-US' : 'es-MX';
+      return d.toLocaleDateString(loc, corta ? { day: 'numeric', month: 'short' } : { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+    function minutos(p) { return Math.max(1, Math.round((p.words || 0) / 220)); }
+
+    function render() {
+      if (!posts.length) return;
+      const [primero, ...resto] = posts;
+      let html = '<a class="substack-post substack-hero" href="' + esc(primero.url) + '" target="_blank" rel="noreferrer">';
+      if (primero.image) html += '<img class="substack-img" loading="lazy" alt="" src="' + esc(primero.image) + '">';
+      html += '<div class="substack-body"><span class="substack-kicker">' + esc(T('substack_new')) + '</span>' +
+        '<h3>' + esc(primero.title) + '</h3>' +
+        (primero.subtitle ? '<p class="substack-sub">' + esc(primero.subtitle) + '</p>' : '') +
+        '<div class="substack-meta">' + esc(fecha(primero.date)) + ' · ' + minutos(primero) + ' ' + esc(T('substack_min')) + '</div></div></a>';
+      html += '<div class="substack-list">';
+      resto.slice(0, 4).forEach(p => {
+        html += '<a class="substack-post" href="' + esc(p.url) + '" target="_blank" rel="noreferrer">' +
+          '<div class="substack-date">' + esc(fecha(p.date, true)) + '<br>' + new Date(p.date).getFullYear() + '</div>' +
+          '<div><h4>' + esc(p.title) + '</h4>' + (p.subtitle ? '<p class="substack-sub">' + esc(p.subtitle) + '</p>' : '') + '</div></a>';
+      });
+      html += '</div>';
+      wrap.innerHTML = html;
+      section.style.display = '';
+      if (!isTouchDevice) {
+        wrap.querySelectorAll('.substack-post').forEach(el => {
+          el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+          el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+        });
+      }
+    }
+    window.__renderSubstack = render;
+
+    // Substack no deja leer su feed desde otro dominio (CORS), así que un cron
+    // en la Pi lo copia a assets/feeds/substack.json varias veces al día.
+    fetch('assets/feeds/substack.json', { cache: 'no-cache' })
+      .then(r => r.ok ? r.json() : [])
+      .then(j => {
+        posts = (Array.isArray(j) ? j : []).filter(p => p && p.title && p.url);
+        window.__substackPosts = posts;
+        render();
+      })
+      .catch(() => {});
   })();
 
   (function initLetras() {

@@ -25,10 +25,12 @@
 
   var css = [
     ".vivo{transition-property:color,background-color,border-color,box-shadow,opacity,transform,filter!important}",
-    ".bicho{position:fixed;left:0;top:0;z-index:70;touch-action:none;user-select:none;-webkit-user-select:none;will-change:transform}",
+    ".bicho svg *{pointer-events:visiblePainted}",
+    ".bicho{pointer-events:none;position:fixed;left:0;top:0;z-index:70;touch-action:none;user-select:none;-webkit-user-select:none;will-change:transform}",
     ".bicho .cuerpo{transform-origin:50% 100%}",
     ".bicho svg{display:block;overflow:visible;filter:url(#vida-hervor)}",
-    ".bicho.dormido{pointer-events:none;opacity:.6}",
+    ".bicho.dormido{opacity:.6}",
+    ".bicho.dormido svg *{pointer-events:none}",
     ".bicho .bur{position:absolute;bottom:100%;left:50%;transform:translate(-50%,4px);white-space:nowrap;",
     "background:#FFFDF5;color:" + INK + ";border:2px solid " + INK + ";box-shadow:3px 3px 0 " + INK + ";",
     "font:700 12px 'Space Grotesk',sans-serif;padding:4px 9px;opacity:0;transition:opacity .15s,transform .15s;pointer-events:none}",
@@ -42,8 +44,8 @@
     "#vida-zzz:hover{opacity:1}",
     "#vida-zzz:active{box-shadow:0 0 0 " + INK + ";translate:3px 3px}",
     "@media (hover:none){#vida-zzz{cursor:auto}}",
-    "@media (max-width:700px){#vida-zzz{top:auto;bottom:10px;left:50%;right:auto;transform:translateX(-50%);font-size:10px;padding:4px 8px}}",
-    "@media print{.bicho,.mosca,#vida-zzz,.zeta{display:none}}"
+    "@media (max-width:700px){#vida-zzz{top:auto;bottom:10px;right:10px;font-size:10px;padding:4px 8px}}",
+    "@media print{.bicho,.mosca,#vida-zzz,.zeta,.obj-vida{display:none}}"
   ].join("");
   var st = document.createElement("style");
   st.textContent = css;
@@ -84,12 +86,14 @@
       io.observe(el);
     });
   }
+  // margen amplio: si un golpe saca una tarjeta de la pantalla, el resorte
+  // tiene que seguir corriendo para regresarla a su lugar
   var io = new IntersectionObserver(function (ents) {
     ents.forEach(function (e) { if (e.target._vivo) e.target._vivo.visible = e.isIntersecting; });
-  });
+  }, { rootMargin: "200px 0px" });
 
   var SEL_MAG = ".btn, .nav-pill, .link-item, .lang-btn, .conv-close-btn";
-  var SEL_CARD = ".bcard, .app-card, .status-box, .conv-thumb, .evento, .milk-btn";
+  var SEL_CARD = ".bcard, .app-card, .status-box, .conv-thumb, .evento, .milk-btn, .arena-block, .substack-post";
   function escanear() { registrar(SEL_MAG, "mag"); registrar(SEL_CARD, "card"); }
   escanear();
   // are.na, eventos y conversaciones se pintan después: volver a mirar.
@@ -248,7 +252,7 @@
 
   /* ---- superficies: el suelo, las tarjetas, y la otra criatura ---- */
 
-  var SEL_SUP = ".bcard, .app-card, .status-box, .conv-thumb, .hero-btns, .wall-wrap, .evento, .sec-title, .eventos-list, .arena-grid";
+  var SEL_SUP = ".bcard, .app-card, .status-box, .conv-thumb, .wall-wrap, .evento, .sec-title, .eventos-list, .arena-grid, .substack-post, .mesa-vida";
   var cacheSup = [], cacheT = 0;
   function superficies(now) {
     if (now - cacheT < 250) return cacheSup;
@@ -256,7 +260,8 @@
     var H = window.innerHeight, out = [];
     document.querySelectorAll(SEL_SUP).forEach(function (el) {
       var r = el.getBoundingClientRect();
-      if (r.width < 70 || r.top < 70 || r.top > H - 40 || r.bottom < 0) return;
+      var esMesa = el.classList.contains("mesa-vida");
+      if (r.width < 70 || r.top < 70 || (!esMesa && r.top > H - 40) || r.bottom < 0) return;
       out.push({ el: el, top: r.top, left: r.left, right: r.right });
     });
     cacheSup = out;
@@ -414,6 +419,7 @@
     b.sup = sup; b.piso = !sup;
     b.vsq -= 0.09;                        // se aplasta al caer
     if (sup && sup.el) sacudir(sup.el, b === J ? 7 : 4, (Math.random() - 0.5) * 1.2);
+    if (sup && sup.el && escena && sup.el === escena.el) escena.vsq -= 0.12;
     if (sup && sup.bicho) { sup.bicho.vsq -= 0.05; decir(sup.bicho, "oye…", 900); }
     b.decidir = rnd(0.8, 2.4);
   }
@@ -506,6 +512,366 @@
     svg.style.transformOrigin = "50% 100%";
   }
 
+
+  /* =================================================================
+     3. escenas de amigos
+     De vez en cuando la jirafa y la rana dejan lo que hacen y pasan un
+     rato juntas: una mesa cae del cielo y se toman algo, o aparece una
+     pelota y se la pasan. Mientras dura la escena el resto sigue igual:
+     la mesa y la pelota son objetos con física que golpean tarjetas, y
+     si agarras a una de las dos la escena se rompe.
+     ================================================================= */
+
+  var escena = null, sigEscena = rnd(22, 38);
+  var ESC_INK = 'stroke="' + INK + '" stroke-width="3"';
+
+  function objFijo(html, w, h) {
+    var el = document.createElement("div");
+    el.className = "obj-vida";
+    el.style.cssText = "position:fixed;left:0;top:0;width:" + w + "px;height:" + h + "px;z-index:68;pointer-events:none;will-change:transform";
+    el.innerHTML = html;
+    document.body.appendChild(el);
+    return el;
+  }
+  function poner(el, x, y, r) {
+    el.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)" + (r ? " rotate(" + r.toFixed(1) + "deg)" : "");
+  }
+  function boca(b) {
+    // punto de la boca en pantalla, respetando hacia dónde mira
+    var fx = b === J ? 97 / 110 : 0.5, fy = b === J ? 30 / 140 : 0.66;
+    return { x: b.x + (b.dir > 0 ? fx : 1 - fx) * b.w, y: b.y + fy * b.h };
+  }
+  function ease(k) { return k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; }
+
+  // La jirafa camina hasta x; devuelve true cuando llegó.
+  function jirafaVaA(x, dt) {
+    var dx = x - J.x;
+    if (Math.abs(dx) < 3) { J._camina = false; return true; }
+    J.dir = dx > 0 ? 1 : -1;
+    J.x += J.dir * Math.min(Math.abs(dx), J.vel * 2.2 * dt);
+    J._camina = true;
+    return false;
+  }
+  // La rana va a saltos (máximo 200 px por salto) hasta x sobre la superficie sup.
+  function ranaVaA(x, pieY, sup) {
+    if (R.modo === "aire") return false;
+    if (sup && R.sup && R.sup.el === sup.el) return true;
+    var dx = x - R.x;
+    if (!sup && Math.abs(dx) < 8 && !R.sup) return true;
+    if (Math.abs(dx) > 200) saltarA(R, R.x + Math.sign(dx) * 200, R.sup ? borde(R.sup).top : window.innerHeight, null);
+    else saltarA(R, x, pieY, sup);
+    return false;
+  }
+
+  var PLATICAS = [
+    [[J, "¿cómo va tu semana?"], [R, "de tarjeta en tarjeta"], [J, "igual que siempre, pues"], [R, "croac"]],
+    [[J, "¿qué es eso morado?"], [R, "jarabe de uva, creo"], [J, "mmm, ok"], [R, "no le digas a nadie"]],
+    [[R, "¿alguna vez te han roto un muro?"], [J, "once veces"], [R, "yo lo vi"], [J, "no me lo recuerdes"]],
+    [[J, "a veces pienso que somos puro código"], [R, "¿y qué más da?"], [J, "tienes razón"], [R, "salud por eso"]],
+    [[R, "la mosca de hace rato estaba buenísima"], [J, "no quiero saber"], [R, "crujiente"], [J, "¡que no!"]],
+    [[J, "¿tú crees que alguien nos ve?"], [R, "el del cursor, siempre"], [J, "hola, del cursor"], [R, "croac"]]
+  ];
+  function platicaDelSubstack() {
+    var f = window.__substackPosts;
+    if (!f || !f.length) return null;
+    var p = pick(f.slice(0, 4));
+    return [[R, "¿leíste lo nuevo del substack?"], [J, "¿«" + p.title + "»?"], [R, "ese mero"], [J, "me dejó pensando"]];
+  }
+
+  var MESA_SVG =
+    '<svg viewBox="0 0 130 56" width="100%" height="100%" style="overflow:visible;filter:url(#vida-hervor)">' +
+    '<rect x="14" y="14" width="9" height="42" fill="#8A4A14" ' + ESC_INK + '/>' +
+    '<rect x="107" y="14" width="9" height="42" fill="#8A4A14" ' + ESC_INK + '/>' +
+    '<rect x="4" y="4" width="122" height="14" fill="#E07A2E" ' + ESC_INK + '/>' +
+    '<line x1="12" y1="10" x2="60" y2="10" stroke="#FFB067" stroke-width="2" stroke-linecap="round"/>' +
+    '</svg>';
+  var TARRO_SVG =
+    '<svg viewBox="0 0 26 34" width="100%" height="100%" style="overflow:visible">' +
+    '<path d="M20 12 q8 0 8 8 q0 7 -8 7" fill="none" ' + ESC_INK + '/>' +
+    '<rect x="3" y="8" width="18" height="24" fill="#FFD23F" ' + ESC_INK + '/>' +
+    '<path d="M1 9 q3-8 8-5 q3-5 8-1 q6-2 6 6 z" fill="#FFFDF5" stroke="' + INK + '" stroke-width="2.5"/>' +
+    '<circle cx="9" cy="20" r="1.6" fill="#FFF3B0"/><circle cx="14" cy="26" r="1.2" fill="#FFF3B0"/>' +
+    '</svg>';
+  var VASO_SVG =
+    '<svg viewBox="0 0 24 34" width="100%" height="100%" style="overflow:visible">' +
+    '<line x1="15" y1="4" x2="19" y2="-8" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>' +
+    '<path d="M2 6 L22 6 L19 33 L5 33 Z" fill="#FFFDF5" ' + ESC_INK + ' stroke-linejoin="round"/>' +
+    '<path d="M3 11 L21 11" stroke="' + INK + '" stroke-width="1.5"/>' +
+    '<ellipse cx="12" cy="7" rx="9" ry="2.5" fill="#9B4DFF" stroke="' + INK + '" stroke-width="2"/>' +
+    '</svg>';
+  var PELOTA_SVG =
+    '<svg viewBox="0 0 30 30" width="100%" height="100%" style="overflow:visible">' +
+    '<circle cx="15" cy="15" r="13" fill="#FFFDF5" ' + ESC_INK + '/>' +
+    '<path d="M2 15 Q15 7 28 15" fill="none" stroke="#FF6B6B" stroke-width="4"/>' +
+    '<path d="M15 2 Q9 15 15 28" fill="none" stroke="#B8A9FA" stroke-width="4"/>' +
+    '</svg>';
+
+  /* ---- la mesa ---- */
+
+  function iniciarMesa() {
+    var H = window.innerHeight;
+    var w = ancho < 640 ? 104 : 130, h = Math.round(w * 56 / 130);
+    var el = objFijo(MESA_SVG, w, h);
+    el.classList.add("mesa-vida");
+    var cx = (J.x + R.x + R.w) / 2;
+    var x = clamp(cx - w / 2, J.w + 20, ancho - w - R.w - 30);
+    var e = { tipo: "mesa", fase: "cae", t: 0, w: w, h: h, x: x, y: -h - 20, vy: 0, rebotes: 0, el: el, sq: 1, vsq: 0 };
+    el.style.transformOrigin = "50% 100%";
+    e.tarro = objFijo(TARRO_SVG, 20, 26); e.tarro.style.opacity = 0;
+    e.vaso = objFijo(VASO_SVG, 18, 26); e.vaso.style.opacity = 0;
+    e.sorboJ = 0; e.sorboR = 0; e.sigSorbo = 1.2;
+    e.charla = (Math.random() < 0.35 && platicaDelSubstack()) || pick(PLATICAS);
+    e.linea = 0; e.sigLinea = 0.6;
+    poner(el, x, e.y);
+    decir(J, pick(["¿y esa mesa?", "¡mira!", "¿otra vez?"]), 1300);
+    setTimeout(function () { decir(R, pick(["¡una mesa!", "¡hora feliz!", "croac croac"]), 1300); }, 500);
+    return e;
+  }
+
+  function pasoMesa(e, dt) {
+    var H = window.innerHeight;
+    e.t += dt;
+    var pisoY = H - e.h;
+
+    if (e.fase === "cae") {
+      e.vy += G * dt; e.y += e.vy * dt;
+      if (e.y >= pisoY) {
+        e.y = pisoY;
+        if (e.rebotes < 2 && Math.abs(e.vy) > 200) { e.vy = -e.vy * 0.35; e.rebotes++; e.vsq -= 0.15; }
+        else { e.vy = 0; e.fase = "van"; e.t = 0; }
+        // la caída sacude lo que haya cerca
+        vivos.forEach(function (v) { if (v.visible && v.tipo === "card" && Math.random() < 0.5) sacudir(v.el, 2, rnd(-1, 1)); });
+      }
+      poner(e.el, e.x, e.y);
+      return;
+    }
+    e.vsq = (e.vsq + (1 - e.sq) * 0.25) * 0.72; e.sq += e.vsq;
+    e.el.style.transform = "translate(" + e.x.toFixed(1) + "px," + e.y.toFixed(1) + "px) scale(" + (2 - e.sq).toFixed(3) + "," + e.sq.toFixed(3) + ")";
+    var top = e.y + e.h * 0.07;
+    var supMesa = { el: e.el };
+
+    if (e.fase === "van") {
+      var jOk = jirafaVaA(e.x - J.w * 0.62, dt);
+      var rOk = ranaVaA(e.x + e.w - R.w - 4, top, supMesa);
+      if ((jOk && rOk) || e.t > 14) {
+        J._camina = false; J.dir = 1; R.dir = -1;
+        e.fase = "sirven"; e.t = 0;
+      }
+      return;
+    }
+
+    // posiciones base de las bebidas sobre la mesa
+    var baseT = { x: e.x + 8, y: top - 26 };
+    var baseV = { x: e.x + e.w - R.w - 20, y: top - 26 };
+    if (e.fase === "sirven") {
+      var k = clamp(e.t / 0.5, 0, 1);
+      e.tarro.style.opacity = e.vaso.style.opacity = k;
+      poner(e.tarro, baseT.x, baseT.y - (1 - k) * 60);
+      poner(e.vaso, baseV.x, baseV.y - (1 - k) * 60);
+      if (e.t > 0.9) { e.fase = "salud"; e.t = 0; }
+      return;
+    }
+    if (e.fase === "salud") {
+      var m = { x: e.x + e.w / 2 - 10, y: top - 58 };
+      var s = ease(clamp(e.t < 0.6 ? e.t / 0.6 : (1.3 - e.t) / 0.5, 0, 1));
+      poner(e.tarro, baseT.x + (m.x - 8 - baseT.x) * s, baseT.y + (m.y - baseT.y) * s, s * 20);
+      poner(e.vaso, baseV.x + (m.x + 8 - baseV.x) * s, baseV.y + (m.y - baseV.y) * s, -s * 20);
+      if (e.t > 0.55 && !e.chocaron) {
+        e.chocaron = true;
+        decir(J, "¡salud!", 1000); decir(R, "¡salud!", 1000);
+        J.animo = 1; R.animo = 1; R.vsq -= 0.08; J.vsq -= 0.05;
+        e.vsq -= 0.06;
+      }
+      if (e.t > 1.4) { e.fase = "platica"; e.t = 0; }
+      return;
+    }
+    if (e.fase === "platica" || e.fase === "adios") {
+      // sorbos
+      e.sigSorbo -= dt;
+      if (e.sigSorbo <= 0 && e.fase === "platica") {
+        if (Math.random() < 0.5) e.sorboJ = 1; else e.sorboR = 1;
+        e.sigSorbo = rnd(1.6, 3.2);
+      }
+      function sorbo(obj, base, b, key, rotSign) {
+        var v = e[key];
+        if (v > 0) e[key] = Math.max(0, v - dt / 1.1);
+        var s = ease(Math.sin(Math.max(0, e[key]) * Math.PI));
+        var mo = boca(b);
+        var tx = mo.x - (b === J ? 4 : 9), ty = mo.y - 16;
+        poner(obj, base.x + (tx - base.x) * s, base.y + (ty - base.y) * s, rotSign * s * 35);
+      }
+      sorbo(e.tarro, baseT, J, "sorboJ", -1);
+      sorbo(e.vaso, baseV, R, "sorboR", 1);
+
+      if (e.fase === "platica") {
+        e.sigLinea -= dt;
+        if (e.sigLinea <= 0) {
+          if (e.linea < e.charla.length) {
+            var l = e.charla[e.linea++];
+            decir(l[0], l[1], 2100);
+            l[0].animo = 1;
+            e.sigLinea = 2.4;
+          } else {
+            e.fase = "adios"; e.t = 0;
+            decir(J, pick(["bueno, a lo mío", "hay que seguir", "me voy a pasear"]), 1500);
+            setTimeout(function () { decir(R, pick(["croac, gracias", "otro día", "yo invito la próxima"]), 1500); }, 600);
+          }
+        }
+      } else if (e.t > 1.6) {
+        e.fase = "fin"; e.t = 0;
+      }
+      return;
+    }
+    if (e.fase === "fin") {
+      var o = 1 - clamp(e.t / 0.5, 0, 1);
+      e.tarro.style.opacity = e.vaso.style.opacity = o;
+      if (e.t > 0.5) {
+        if (R.sup && R.sup.el === e.el) { R.modo = "aire"; R.sup = null; R.vy = -700; R.vx = 120; }
+        e.y += 900 * dt;             // la mesa se hunde en el piso
+        e.el.style.opacity = clamp(1 - (e.t - 0.5) / 0.6, 0, 1);
+      }
+      if (e.t > 1.2) terminarEscena();
+    }
+  }
+
+  /* ---- la pelota ---- */
+
+  function iniciarPelota() {
+    var d = ancho < 640 ? 24 : 30;
+    var el = objFijo(PELOTA_SVG, d, d);
+    el.style.pointerEvents = "auto";
+    el.style.cursor = "pointer";
+    el.style.touchAction = "none";
+    var e = { tipo: "pelota", t: 0, d: d, x: clamp((J.x + R.x) / 2, 40, ancho - 60), y: -40, vx: rnd(-80, 80), vy: 0,
+              rot: 0, toques: 0, cdJ: 0, cdR: 0, el: el, fin: false };
+    // tú también puedes patearla
+    el.addEventListener("pointerdown", function (ev) {
+      ev.preventDefault();
+      e.vy = -1100; e.vx = (e.x < ancho / 2 ? 1 : -1) * rnd(250, 450);
+      decir(pick([J, R]), pick(["¡buena!", "¡eso!", "¡juega con nosotras!"]), 1100);
+    });
+    decir(R, pick(["¡pelota!", "¿jugamos?", "¡mía!"]), 1200);
+    return e;
+  }
+
+  function pasoPelota(e, dt, now) {
+    var H = window.innerHeight, r = e.d / 2;
+    e.t += dt;
+    e.cdJ -= dt; e.cdR -= dt;
+    var prevY = e.y + e.d;
+    e.vy += G * 0.55 * dt;
+    e.x += e.vx * dt; e.y += e.vy * dt;
+    e.rot += e.vx * dt / r * 57.3;
+    if (e.x < 0) { e.x = 0; e.vx = Math.abs(e.vx) * 0.8; }
+    if (e.x > ancho - e.d) {
+      if (e.fin) { terminarEscena(); return; }
+      e.x = ancho - e.d; e.vx = -Math.abs(e.vx) * 0.8;
+    }
+    // rebota en las tarjetas y las sacude
+    if (e.vy > 0) {
+      var sups = superficies(now);
+      for (var i = 0; i < sups.length; i++) {
+        var bb = borde(sups[i]), cx = e.x + r;
+        if (cx > bb.left && cx < bb.right && prevY <= bb.top + 2 && e.y + e.d >= bb.top) {
+          e.y = bb.top - e.d; e.vy = -Math.abs(e.vy) * 0.62; e.vx *= 0.9;
+          sacudir(sups[i].el, 3, e.vx * 0.004);
+          break;
+        }
+      }
+    }
+    if (e.y + e.d >= H) {
+      e.y = H - e.d;
+      e.vy = Math.abs(e.vy) > 120 ? -Math.abs(e.vy) * 0.7 : 0;
+      e.vx *= Math.pow(0.35, dt);
+    }
+    poner(e.el, e.x, e.y, e.rot);
+    if (e.fin) { e.vx = Math.max(e.vx, 260); return; }
+
+    var bx = e.x + r, by = e.y + r;
+    // la jirafa la sigue por el piso
+    if (J.modo !== "aire" && !J.sup) jirafaVaA(clamp(bx - J.w * (bx > J.x + J.w / 2 ? 0.2 : 0.8), 0, ancho - J.w), dt);
+    else J._camina = false;
+    // la rana brinca hacia ella
+    if (R.modo !== "aire" && Math.abs(bx - (R.x + R.w / 2)) > 30 && Math.random() < 0.05)
+      saltarA(R, clamp(bx - R.w / 2 + rnd(-30, 30), 0, ancho - R.w), R.sup ? borde(R.sup).top : H, R.sup);
+
+    function toque(b, key, frases) {
+      if (e[key] > 0) return;
+      var pad = 6;
+      if (bx > b.x - pad && bx < b.x + b.w + pad && by > b.y - pad && by < b.y + b.h + pad) {
+        var otra = b === J ? R : J;
+        var hacia = (otra.x + otra.w / 2) > bx ? 1 : -1;
+        var dist = Math.abs(otra.x - b.x);
+        e.vx = hacia * clamp(dist * 0.9, 220, 520);
+        e.vy = -rnd(850, 1100);
+        e[key] = 0.5;
+        e.toques++;
+        b.vsq -= 0.07; b.animo = 1;
+        if (Math.random() < 0.55) decir(b, pick(frases), 900);
+      }
+    }
+    toque(J, "cdJ", ["¡tuya!", "¡de cabeza!", "¡ahí va!"]);
+    toque(R, "cdR", ["¡pásala!", "¡gol!", "¡croac!"]);
+
+    if (e.t > 32 || e.toques >= 12) {
+      e.fin = true;
+      decir(R, pick(["¡otra!", "¡se fue!"]), 1300);
+      setTimeout(function () { decir(J, pick(["mañana seguimos", "ya me cansé"]), 1300); }, 700);
+    }
+  }
+
+  /* ---- control ---- */
+
+  function iniciarEscena(tipo) {
+    if (escena || dormidas || agarrado) return false;
+    tipo = tipo || (Math.random() < 0.55 ? "mesa" : "pelota");
+    if (mosca) { mosca.el.remove(); mosca = null; }
+    J.accion = null; J._camina = false;
+    escena = tipo === "mesa" ? iniciarMesa() : iniciarPelota();
+    return true;
+  }
+  function terminarEscena(razon) {
+    if (!escena) return;
+    var e = escena;
+    ["el", "tarro", "vaso"].forEach(function (k) { if (e[k]) e[k].remove(); });
+    if (R.sup && R.sup.el === e.el) { R.modo = "aire"; R.sup = null; }
+    escena = null;
+    J._camina = false; J.accion = null; J.duracion = 0;
+    R.decidir = rnd(0.5, 1.5);
+    cacheT = 0;
+    sigEscena = rnd(45, 90);
+    if (razon === "agarre") {
+      var otra = agarrado === J ? R : J;
+      decir(otra, pick(["¡oye, estábamos platicando!", "¿a dónde te la llevas?", "¡regrésala!"]), 1500);
+    }
+  }
+  function pasoEscenas(dt, now) {
+    if (!escena) {
+      if (dormidas || agarrado) return;
+      sigEscena -= dt;
+      var enPiso = J.piso && J.modo === "suelo" && R.modo !== "aire" && R.modo !== "agarrado";
+      if (sigEscena <= 0) {
+        if (enPiso) iniciarEscena();
+        else sigEscena = 3;
+      }
+      return;
+    }
+    if (dormidas) { terminarEscena(); return; }
+    if (agarrado && escena.tipo === "mesa") { terminarEscena("agarre"); return; }
+    if (escena.tipo === "mesa") pasoMesa(escena, dt);
+    else pasoPelota(escena, dt, now);
+  }
+
+  // para probar desde la consola: __vida.escena("mesa") o __vida.escena("pelota")
+  window.__vida = { escena: iniciarEscena, terminar: terminarEscena, estado: function () { return escena && (escena.tipo + ":" + (escena.fase || "")); },
+    debug: function () {
+      var r = function (n) { return Math.round(n); };
+      var o = { J: [r(J.x), r(J.y), J.modo, J.dir], R: [r(R.x), r(R.y), R.modo, R.sup ? (R.sup.el ? R.sup.el.className : "bicho") : null] };
+      if (escena && escena.el) { var b = escena.el.getBoundingClientRect(); o.obj = [r(b.left), r(b.top), r(b.width), r(b.height)]; }
+      if (escena && escena.toques !== undefined) o.toques = escena.toques;
+      return JSON.stringify(o);
+    } };
+
   /* ---- loop ---- */
 
   var prev = performance.now(), sigHervor = 0;
@@ -521,10 +887,11 @@
     pasoVivos(dt * 1000, t);
     var sups = superficies(now);
     var cursorVivo = now - M.t < 3500;
+    pasoEscenas(dt, now);
 
     /* ----- rana ----- */
     pasoFisica(R, dt, now);
-    if (!dormidas && R.modo !== "agarrado" && R.modo !== "aire") {
+    if (!escena && !dormidas && R.modo !== "agarrado" && R.modo !== "aire") {
       R.decidir -= dt;
       // la mosca manda: si hay mosca, la caza
       var presa = null;
@@ -583,7 +950,7 @@
     /* ----- jirafa ----- */
     pasoFisica(J, dt, now);
     var camina = false;
-    if (!dormidas && J.modo !== "agarrado" && J.modo !== "aire") {
+    if (!escena && !dormidas && J.modo !== "agarrado" && J.modo !== "aire") {
       J.decidir -= dt;
       if (!J.accion || J.duracion <= 0) { decidirJirafa(J); }
       J.duracion -= dt;
@@ -602,6 +969,7 @@
       }
       if (J.accion === "mordisquear" && J.sup && J.sup.el && Math.random() < 0.08) sacudir(J.sup.el, 1.5, rnd(-1.5, 1.5));
     }
+    if (escena && J._camina) camina = true;
     if (dormidas && J.modo !== "aire" && Math.abs(J.x - J.metaX) > 4) { J.dir = J.metaX > J.x ? 1 : -1; J.x += (J.metaX - J.x) * 0.03; camina = true; }
 
     // patas: pasos alternados
@@ -615,6 +983,7 @@
     // cuello: se balancea, se estira hacia el cursor, baja para mordisquear, cuelga dormido
     var cuelloRot = Math.sin(t * 0.9) * 3 + (camina ? Math.sin(J.fase * 2) * 2 : 0);
     if (J.accion === "mordisquear" && !dormidas) cuelloRot = 38 + Math.sin(t * 14) * 4;
+    if (escena && escena.tipo === "mesa" && escena.fase !== "cae" && escena.fase !== "van") cuelloRot = 6 + Math.sin(t * 1.4) * 2;
     if (dormidas) cuelloRot = 55;
     if (!dormidas && cursorVivo && J.accion !== "mordisquear") {
       var jr = J.el.getBoundingClientRect();
@@ -632,7 +1001,7 @@
 
     /* ----- mosca ----- */
     if (!dormidas) {
-      if (!mosca) { sigMosca -= dt; if (sigMosca <= 0) soltarMosca(); }
+      if (!mosca) { if (!escena) { sigMosca -= dt; if (sigMosca <= 0) soltarMosca(); } }
       else {
         mosca.t += dt;
         var ax = Math.sin(mosca.t * 1.7) * 220 + Math.sin(mosca.t * 5.3) * 90;
