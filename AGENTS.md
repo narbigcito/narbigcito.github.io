@@ -13,6 +13,8 @@ Web personal de Gibrán Moreno. Sitio estático en GitHub Pages, sin build ni de
   - `letras.js`, `marea.js` (fondo WebGL con el shader en `#tideCanvas`)
   - con `defer`: `sonido.js`, `pez.js`, `redes.js`, `vida.js` (jirafa, rana, bote)
 - `assets/feeds/*.json` — los actualiza la Raspberry Pi (`scripts/actualizar_feeds.py`).
+- `assets/feeds/escenas.json` — pláticas de la jirafa y la rana escritas con IA desde los ensayos de Substack. Las genera la laptop una vez al día (`scripts/escenas_diarias.sh` → `generar_escenas.py` → ia-proxy en 127.0.0.1:8787, timer de systemd `escenas-web`). `vida.js` las carga; si faltan, las criaturas siguen con sus escenas de siempre.
+- Consola: `narbig.ayuda()` / `eventos()` / `hacer(nombre, …)` / `ia()` / `estado()`, definida al final de `vida.js`. Documentada en el comentario ASCII del inicio de `index.html` junto con los easter eggs; si agregas un evento o un huevo, actualiza ese comentario.
 - `assets/og.jpg` — imagen de vista previa de 1200×630. Si cambia el hero, hay que regenerarla.
 
 Los scripts son clásicos (sin `type="module"`) y comparten el ámbito global a propósito: `muro.js` usa `T()` de `i18n.js`, etc. Si algún día se pasan a módulos, hay que exportar esas funciones.
