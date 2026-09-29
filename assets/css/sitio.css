@@ -97,7 +97,7 @@ nav {
 
 
 #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; z-index: 2; overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 760px); gap: 48px; align-items: center; }
 @media (max-width: 700px) { .hero-grid { grid-template-columns: 1fr; } }
 
 .wordart { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(52px, 9vw, 100px); line-height: 0.88; letter-spacing: -0.03em; text-transform: uppercase; }

@@ -5,11 +5,12 @@
 set -euo pipefail
 REPO="$HOME/Documentos/Proyects/narbigcito.github.io"
 WT="$HOME/.local/share/escenas-web"
-[ -d "$WT/.git" ] || [ -f "$WT/.git" ] || git -C "$REPO" worktree add -f "$WT" master
+# HEAD separado (--detach): así el worktree no "ocupa" master y el repo principal
+# puede seguir cambiando de rama y haciendo merges sin chocar.
+[ -e "$WT/.git" ] || git -C "$REPO" worktree add -q --detach "$WT" origin/master
 cd "$WT"
 git fetch -q origin master
-git checkout -q master 2>/dev/null || true
-git reset -q --hard origin/master
+git checkout -q --detach origin/master
 python3 scripts/generar_escenas.py .
 git add assets/feeds/escenas.json
 if git diff --cached --quiet; then echo "sin cambios"; exit 0; fi
