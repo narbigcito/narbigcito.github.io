@@ -1,0 +1,125 @@
+{
+ "version": 1,
+ "lotes": [
+  {
+   "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-09-29T00:37:33+00:00",
+   "escenas": [
+    {
+     "idea": "no tener hijos no resuelve el problema, es como no echarle gasolina al incendio",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dicen que no tener hijos salva al mundo"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿como no echarle gasolina a un incendio?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "así lo escribió gibrán, ni más ni menos"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y eso apaga el fuego? croac, lo dudo mucho",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que el problema es cómo repartimos"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que igual el pastel sigue mal cortado"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "me da vértigo pensar en algo tan grande",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "el planeta no está lleno de gente, lo que ocupa espacio es la comida del ganado",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "croac, ¿sabías que cabemos todos en londres?",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿los ocho mil millones? no puede ser",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "parados y apretados, como en el metro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces no es que no quepamos"
+      },
+      {
+       "quien": "rana",
+       "dice": "lo que ocupa espacio es lo que comemos"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "las vacas se comen casi toda la tierra fértil"
+      },
+      {
+       "quien": "rana",
+       "dice": "y yo aquí pidiendo mis moscas, tan poquito",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "la CDMX ya tiene natalidad bajísima y el metro sigue igual de lleno",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "la CDMX tiene menos hijos que casi todo el mundo"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y ya se vació el metro?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. sigue igual de lleno que siempre"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces menos bebés no da más lugar",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "«no le alcanza» dice el ensayo, no que salve el planeta"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que es la renta, no la conciencia"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "eso sí me da tristeza, no miedo",
+       "gesto": "voltea"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
