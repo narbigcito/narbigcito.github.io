@@ -757,6 +757,7 @@
             var l = e.charla[e.linea++];
             decir(l[0], l[1], 2100);
             l[0].animo = 1;
+            if (l[2]) gesto(l[0], l[2]);
             e.sigLinea = 2.4;
           } else {
             e.fase = "adios"; e.t = 0;
@@ -879,6 +880,7 @@
     var l = e.charla[e.linea++];
     decir(l[0], l[1], 2100);
     l[0].animo = 1;
+    if (l[2]) gesto(l[0], l[2]);
     e.sigLinea = pausa || 2.4;
     return false;
   }
@@ -1442,20 +1444,113 @@
     }
   }
 
+  /* =================================================================
+     ESCENAS ESCRITAS CON IA A PARTIR DE LOS ENSAYOS
+     Una vez al día, scripts/generar_escenas.py le da un ensayo de Substack
+     a ia-proxy y guarda en assets/feeds/escenas.json lo que la jirafa y la
+     rana platican sobre él. Aquí solo se leen: la IA no inventa movimientos,
+     elige un lugar (mesa, fogata, suelo) y unos gestos de una lista cerrada,
+     y cada uno se traduce a cosas que las criaturas ya sabían hacer.
+     Si el archivo no existe o viene mal, simplemente no hay escenas de IA.
+     ================================================================= */
+
+  var IA = [], colaIA = [];
+  function cargarIA() {
+    fetch("assets/feeds/escenas.json", { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !d.lotes) return;
+        IA = [];
+        d.lotes.forEach(function (l) {
+          (l.escenas || []).forEach(function (e) {
+            var charla = (e.pasos || []).filter(function (p) { return p && p.dice && (p.quien === "jirafa" || p.quien === "rana"); })
+              .map(function (p) { return [p.quien === "jirafa" ? J : R, String(p.dice).slice(0, 70), p.gesto || null]; });
+            if (charla.length >= 2) IA.push({ lugar: e.lugar, charla: charla, idea: e.idea || "", ensayo: l.ensayo || {} });
+          });
+        });
+      })
+      .catch(function () {});
+  }
+  cargarIA();
+
+  // Toma la siguiente escena de IA sin repetir hasta agotarlas (orden al azar).
+  function siguienteIA(n) {
+    if (!IA.length) return null;
+    if (typeof n === "number") return IA[((n % IA.length) + IA.length) % IA.length];
+    if (!colaIA.length) colaIA = IA.map(function (_, i) { return i; }).sort(function () { return Math.random() - 0.5; });
+    return IA[colaIA.shift()];
+  }
+
+  // Los gestos que la IA puede pedir, hechos con lo que ya existía.
+  var GESTOS = {
+    salta: function (b) {
+      if (b.modo === "aire" || b.modo === "agarrado" || b.modo === "basura") return;
+      if (b === R) { saltarA(R, R.x, R.sup ? borde(R.sup).top : window.innerHeight, R.sup); return; }
+      b.modo = "aire"; b.sup = null; b.piso = false; b.vy = -520; b.vx = 0; b.sq = 0.8;
+    },
+    rie: function (b) { b.animo = 1; b.vsq = (b.vsq || 0) - 0.08; son("boing"); },
+    voltea: function (b) { b.dir = -b.dir; },
+    asombro: function (b) { b.animo = 1; b.vsq = (b.vsq || 0) + 0.14; }
+  };
+  function gesto(b, g) { if (g && GESTOS[g]) GESTOS[g](b); }
+
+  /* ---- platicar donde estén (el lugar "suelo") ---- */
+
+  function iniciarPlatica(charla) {
+    var e = { tipo: "platica", fase: "van", t: 0, charla: charla, linea: 0, sigLinea: 0.3 };
+    decir(R, pick(["oye, oye", "¿tienes un minuto?", "ven, te cuento algo"]), 1200);
+    return e;
+  }
+  function pasoPlatica(e, dt) {
+    var H = window.innerHeight;
+    e.t += dt;
+    if (e.fase === "van") {
+      var medio = clamp((J.x + J.w + R.x) / 2, J.w + 30, ancho - R.w - 60);
+      var jOk = jirafaVaA(medio - J.w - 6, dt);
+      var rOk = ranaVaA(medio + 14, H, null);
+      if ((jOk && rOk && R.modo !== "aire") || e.t > 12) { e.fase = "platica"; e.t = 0; }
+      return;
+    }
+    if (e.fase === "platica") {
+      J.dir = R.x > J.x ? 1 : -1;
+      if (R.modo !== "aire") R.dir = -J.dir;
+      if (correrCharla(e, dt, 2.5)) { e.fase = "fin"; e.t = 0; }
+      return;
+    }
+    if (e.fase === "fin" && e.t > 1.4) terminarEscena();
+  }
+
+  // Arma una escena de IA en su lugar. De día no hay fogata: se platica en el suelo.
+  function iniciarIA(n) {
+    var s = siguienteIA(n);
+    if (!s) return null;
+    var charla = s.charla.slice();
+    // a veces cierran diciendo de dónde salió la plática
+    if (s.ensayo.titulo && Math.random() < 0.4)
+      charla.push([pick([J, R]), pick(["lo dice en «", "está en su substack: «", "léelo, se llama «"]) + cortar(s.ensayo.titulo, 30) + "»"]);
+    var lugar = s.lugar === "fogata" && !esDeNoche() ? "suelo" : s.lugar;
+    var e = lugar === "mesa" ? iniciarMesa() : lugar === "fogata" ? iniciarFogata() : iniciarPlatica(charla);
+    e.charla = charla; e.linea = 0;
+    e.ia = { idea: s.idea, ensayo: s.ensayo };
+    return e;
+  }
+
   /* ---- control ---- */
 
-  function iniciarEscena(tipo) {
+  function iniciarEscena(tipo, numIA) {
     if (escena || dormidas || agarrado || J.modo === "basura" || R.modo === "basura") return false;
     if (!tipo) {
       // de noche la fogata es la favorita; de día nunca aparece
       var bolsa = ["mesa", "mesa", "pelota", "pelota", "leer", "leer", "leer", "carrera", "siesta"];
       if (esDeNoche()) bolsa.push("fogata", "fogata", "fogata");
+      if (IA.length) bolsa.push("ia", "ia", "ia", "ia");
       tipo = pick(bolsa);
     }
     if (mosca) { mosca.el.remove(); mosca = null; }
     comentario = null;
     J.accion = null; J._camina = false;
-    var hacer = { mesa: iniciarMesa, pelota: iniciarPelota, fogata: iniciarFogata, leer: iniciarLeer, carrera: iniciarCarrera, siesta: iniciarSiesta };
+    var hacer = { mesa: iniciarMesa, pelota: iniciarPelota, fogata: iniciarFogata, leer: iniciarLeer, carrera: iniciarCarrera, siesta: iniciarSiesta,
+                  ia: function () { return iniciarIA(numIA); } };
     escena = (hacer[tipo] || iniciarMesa)();
     if (!escena) escena = iniciarPelota();   // no hubo tarjeta a la vista para leer
     return true;
@@ -1498,6 +1593,7 @@
       case "leer": pasoLeer(escena, dt); break;
       case "carrera": pasoCarrera(escena, dt); break;
       case "siesta": pasoSiesta(escena, dt); break;
+      case "platica": pasoPlatica(escena, dt); break;
       case "furia": pasoFuria(escena, dt); break;
     }
   }
@@ -1511,6 +1607,90 @@
       if (escena && escena.toques !== undefined) o.toques = escena.toques;
       return JSON.stringify(o);
     } };
+
+  /* =================================================================
+     CONSOLA: narbig
+     Para quien abre las herramientas de desarrollo. narbig.ayuda() explica
+     todo; narbig.eventos() lista lo que pueden hacer las criaturas y
+     narbig.hacer("mesa") lo dispara. Los nombres son los mismos que usa
+     el código, para que lo que ves en la consola te sirva para leerlo.
+     ================================================================= */
+
+  var CAT = [
+    // [nombre, qué hace, función]; las escenas se interrumpen solas si ya hay otra
+    ["mesa", "cae una mesa del cielo, se toman algo y platican", function () { return forzar("mesa"); }],
+    ["pelota", "aparece una pelota y se la pasan (puedes patearla tú)", function () { return forzar("pelota"); }],
+    ["fogata", "prenden una fogata y cuentan historias (de día también, si se lo pides)", function () { return forzar("fogata"); }],
+    ["leer", "suben a una tarjeta que se vea en pantalla y la comentan", function () { return forzar("leer"); }],
+    ["carrera", "carrera de una orilla a la otra", function () { return forzar("carrera"); }],
+    ["siesta", "la rana se trepa al lomo de la jirafa y se duermen", function () { return forzar("siesta"); }],
+    ["ia", "una escena escrita con IA sobre un ensayo de Substack; narbig.hacer(\"ia\", 2) elige la número 2 de narbig.ia()", function (n) { return forzar("ia", n); }],
+    ["mosca", "suelta una mosca para que la rana la cace", function () { if (!mosca) soltarMosca(); return "bzzz"; }],
+    ["dormir", "las manda a dormir a su rincón", function () { dormir(true); return "buenas noches"; }],
+    ["despertar", "las despierta", function () { dormir(false); return "¡buenos días!"; }],
+    ["decir", "narbig.hacer(\"decir\", \"rana\", \"hola\") pone palabras en su boca", function (quien, txt) { decir(quien === "rana" ? R : J, String(txt || "…").slice(0, 70), 2600); return "dicho"; }],
+    ["salta", "narbig.hacer(\"salta\", \"jirafa\"); también: rie, voltea, asombro", function (quien) { gesto(quien === "rana" ? R : J, "salta"); return "¡hop!"; }],
+    ["rie", "", function (quien) { gesto(quien === "rana" ? R : J, "rie"); return "jaja"; }],
+    ["voltea", "", function (quien) { gesto(quien === "rana" ? R : J, "voltea"); return "hmph"; }],
+    ["asombro", "", function (quien) { gesto(quien === "rana" ? R : J, "asombro"); return "¡oh!"; }],
+    ["tirar", "narbig.hacer(\"tirar\", \"rana\") la tira al bote. Tira a las dos y verás", function (quien) { tirar(quien === "rana" ? R : J); return "al bote"; }],
+    ["sacar", "saca del bote a la que esté adentro", function () { if (enBote.length === 1) bote.click(); return enBote.length ? "afuera" : "el bote está vacío"; }],
+    ["reconstruir", "arregla lo que rompieron", function () { reconstruir(); return "reconstruyendo"; }],
+    ["terminar", "corta la escena actual", function () { terminarEscena(); return "listo"; }]
+  ];
+
+  function forzar(tipo, n) {
+    if (escena) terminarEscena();
+    if (dormidas) dormir(false);
+    if (tipo === "ia" && !IA.length) return "todavía no hay escenas de IA (se cargan de assets/feeds/escenas.json)";
+    var ok = iniciarEscena(tipo, n);
+    if (!ok) return "ahorita no pueden (¿alguna está en el bote o la estás cargando?)";
+    return escena ? "escena: " + escena.tipo + (escena.ia ? " · " + escena.ia.idea : "") : "no se pudo";
+  }
+
+  function porNombre(n) { for (var i = 0; i < CAT.length; i++) if (CAT[i][0] === n) return CAT[i]; return null; }
+
+  var estilo = "font:700 12px 'Space Grotesk',sans-serif;";
+  window.narbig = {
+    ayuda: function () {
+      console.log("%cnarbig · consola de la jirafa y la rana", estilo + "font-size:14px;background:#FFD23F;color:#141414;padding:3px 8px;border:2px solid #141414");
+      console.log([
+        "narbig.eventos()            lista todo lo que pueden hacer",
+        "narbig.hacer(\"mesa\")        lo hace (algunos llevan argumentos, ver la lista)",
+        "narbig.ia()                 las escenas escritas con IA que hay hoy, y de qué ensayo salen",
+        "narbig.estado()             qué están haciendo ahorita",
+        "narbig.escenaAlAzar()       lo mismo que pasa solo cada tanto"
+      ].join("\n"));
+      return "listo";
+    },
+    eventos: function () {
+      var filas = CAT.map(function (c) { return { evento: c[0], "qué hace": c[1] || "(gesto)" }; });
+      if (console.table) console.table(filas);
+      return CAT.map(function (c) { return c[0]; });
+    },
+    hacer: function (nombre) {
+      var c = porNombre(nombre);
+      if (!c) return "no conozco «" + nombre + "». Prueba narbig.eventos()";
+      return c[2].apply(null, Array.prototype.slice.call(arguments, 1));
+    },
+    ia: function () {
+      if (!IA.length) return "no hay escenas de IA cargadas";
+      var filas = IA.map(function (s, i) { return { n: i, lugar: s.lugar, ensayo: s.ensayo.titulo || "", idea: s.idea, lineas: s.charla.length }; });
+      if (console.table) console.table(filas);
+      return filas.length + " escenas · narbig.hacer(\"ia\", n) para ver una";
+    },
+    estado: function () {
+      return {
+        escena: escena ? escena.tipo + (escena.fase ? ":" + escena.fase : "") : null,
+        dormidas: dormidas,
+        enElBote: enBote.map(function (b) { return b.nombre; }),
+        jirafa: J.modo, rana: R.modo,
+        escenasIA: IA.length
+      };
+    },
+    escenaAlAzar: function () { if (escena) terminarEscena(); return iniciarEscena() ? escena && escena.tipo : "ahorita no pueden"; }
+  };
+  window.__vida.ia = function () { return IA; };
 
   /* ---- loop ---- */
 
