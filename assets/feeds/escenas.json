@@ -3,6 +3,124 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-09-29T01:17:36+00:00",
+   "escenas": [
+    {
+     "idea": "la promesa de amor eterno único genera miedo y sometimiento, como el scroll infinito en apps",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "jirafa, ¿tú crees en el amor de una sola persona?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no sé... me da vértigo pensarlo.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac, yo prefiero scrollear, moscas nuevas cada rato."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que esa promesa se vuelve miedo."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿la promesa de amor eterno da miedo?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "si crees que solo esa persona vale, todo asusta."
+      },
+      {
+       "quien": "rana",
+       "dice": "pues yo con una mosca ya soy feliz, sin eternidad.",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "el amor como jaula frente al amor con la puerta abierta y reglas que cambian juntos",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán escribió algo sobre el amor jaula."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿jaula? croac, a mí me gustan las puertas abiertas."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que quiere amor con puerta siempre abierta."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿entrar y salir cuando uno quiera?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sí, pero con reglas claras que cambien juntos."
+      },
+      {
+       "quien": "rana",
+       "dice": "eso suena más justo que encerrarse pa siempre."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a mí igual me da miedo, las jaulas dan vértigo.",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "el miedo se hereda de generación en generación, y el ensayo termina en un perdón a la madre",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "jirafa, ¿tú de qué tienes miedo?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "de heredar cosas que ni pedí.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "gibrán dice «quizá por miedo mi mamá huyó»"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "el miedo pasa de una casa a otra casa."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac, eso no suena a chiste ni tantito."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "al final él le pide perdón a su mamá.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "y le dice que ya no quiere que tenga miedo."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
