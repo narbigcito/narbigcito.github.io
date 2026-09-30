@@ -3,6 +3,118 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-09-30T13:36:46+00:00",
+   "escenas": [
+    {
+     "idea": "el miedo disfrazado de promesa en las citas modernas (tinder)",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "leí que gibrán scrollea kilómetros y no encuentra nada"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac, yo scrolleo buscando moscas, es igual de triste",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que el miedo se convierte en promesa",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿eso qué significa? habla claro jirafa"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "que prometerte algo no quita el miedo, lo esconde"
+      },
+      {
+       "quien": "rana",
+       "dice": "ah, como cuando prometo no comerme todas las moscas",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "el amor como jaula frente al amor con la puerta siempre abierta",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "no quiero hablar de esto, me da vértigo",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿vértigo de qué? si estamos en el suelo"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que el amor puede ser una jaula"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac, yo prefiero el amor puerta abierta",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y si por la puerta se va todo el mundo?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces no era tuyo, era rehén"
+      }
+     ]
+    },
+    {
+     "idea": "la crítica al discurso de quien se cree la excepción que sí sabe amar",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán se enoja con los que dicen yo sí sé amar"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿los que juzgan a los que no se casan?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sí, dice que a los demás les va a dar mala suerte"
+      },
+      {
+       "quien": "rana",
+       "dice": "como si el amor fuera examen con reprobados",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y habla de su abuela y su abuelo también",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "eso ya no suena a chiste, jirafa",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no, no suena"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
