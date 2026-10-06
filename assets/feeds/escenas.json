@@ -3,6 +3,120 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-10-06T21:02:29+00:00",
+   "escenas": [
+    {
+     "idea": "perder la casa que era refugio para los olvidados de madrugada",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "antes su casa era hogar de olvidados"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac, ¿y ahora a dónde llegan?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "ya no tiene depa. se le olvidó eso",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿se te olvida tu propia casa?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "se le olvidó ser refugio, dice",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "a mí se me olvida hasta cenar moscas",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es lo mismo, rana. casi"
+      }
+     ]
+    },
+    {
+     "idea": "necesitamos que se nos necesite, la frase central del ensayo",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "croac, encontré una frase buena",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "«necesitamos que se nos necesite»"
+      },
+      {
+       "quien": "rana",
+       "dice": "suena triste y lógico a la vez"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿triste por qué, rana?"
+      },
+      {
+       "quien": "rana",
+       "dice": "porque necesitar eso también da miedo"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "nunca lo había pensado así",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "por eso compra poemas a las 4 am"
+      }
+     ]
+    },
+    {
+     "idea": "la estabilidad nunca fue con él, vivir en hoteles y escribir código de madrugada",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que lo predecible no va con él"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿por eso vive en hoteles?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y escribe manifiestos de madrugada"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo también vivo en una web, croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero tú no pagas renta, rana",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "ni él. nomás 700 pesos de hotel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
