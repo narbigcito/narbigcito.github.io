@@ -3,6 +3,126 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Luz de globo",
+    "url": "https://narbigcito.substack.com/p/luz-de-globo"
+   },
+   "generado": "2026-10-10T13:33:22+00:00",
+   "escenas": [
+    {
+     "idea": "Le preguntaron si era mentiroso y casi miente para negarlo; darse cuenta fue lo difícil.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "croac. a Gibrán le preguntaron si era mentiroso"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y estuvo a punto de decir que no"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea, casi miente para negar que miente",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo no podría. se me ve todo, soy muy alta"
+      },
+      {
+       "quien": "rana",
+       "dice": "es verdad, no cabes detrás de ningún pretexto",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "lo difícil fue darse cuenta, no decirlo"
+      },
+      {
+       "quien": "rana",
+       "dice": "sí. eso dolió hasta a mí, y soy una rana",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "Las promesas pequeñas e incumplidas (comer mejor, dejar Instagram) dan más vergüenza que las grandes.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que no puede cumplir promesas simples"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿como cuáles?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "comer mejor. dejar de abrir Instagram"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. yo prometí una mosca al día",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y cuántas llevas?"
+      },
+      {
+       "quien": "rana",
+       "dice": "once. es martes",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a él le da vergüenza que sean cosas tan chicas"
+      }
+     ]
+    },
+    {
+     "idea": "Vivir dentro de un personaje: el que parece consciente y parece que hace lo mejor que puede.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que vive dentro de un personaje"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿cuál? ¿el del cursor?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "«El que parece consciente»"
+      },
+      {
+       "quien": "rana",
+       "dice": "ah, tú",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿yo parezco consciente?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "pareces que piensas mucho. no es lo mismo"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo soy la graciosa. debajo hay una rana con hambre",
+       "gesto": "salta"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
     "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
    },
@@ -222,126 +342,6 @@
       {
        "quien": "jirafa",
        "dice": "no, no suena"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "No tener hijos no salvará al mundo",
-    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
-   },
-   "generado": "2026-09-29T00:37:33+00:00",
-   "escenas": [
-    {
-     "idea": "no tener hijos no resuelve el problema, es como no echarle gasolina al incendio",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dicen que no tener hijos salva al mundo"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿como no echarle gasolina a un incendio?",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "así lo escribió gibrán, ni más ni menos"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y eso apaga el fuego? croac, lo dudo mucho",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que el problema es cómo repartimos"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que igual el pastel sigue mal cortado"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "me da vértigo pensar en algo tan grande",
-       "gesto": "asombro"
-      }
-     ]
-    },
-    {
-     "idea": "el planeta no está lleno de gente, lo que ocupa espacio es la comida del ganado",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "croac, ¿sabías que cabemos todos en londres?",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿los ocho mil millones? no puede ser",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "parados y apretados, como en el metro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces no es que no quepamos"
-      },
-      {
-       "quien": "rana",
-       "dice": "lo que ocupa espacio es lo que comemos"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "las vacas se comen casi toda la tierra fértil"
-      },
-      {
-       "quien": "rana",
-       "dice": "y yo aquí pidiendo mis moscas, tan poquito",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "la CDMX ya tiene natalidad bajísima y el metro sigue igual de lleno",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "la CDMX tiene menos hijos que casi todo el mundo"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y ya se vació el metro?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. sigue igual de lleno que siempre"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces menos bebés no da más lugar",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "«no le alcanza» dice el ensayo, no que salve el planeta"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que es la renta, no la conciencia"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "eso sí me da tristeza, no miedo",
-       "gesto": "voltea"
       }
      ]
     }
