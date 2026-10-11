@@ -3,6 +3,127 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-10-11T13:38:21+00:00",
+   "escenas": [
+    {
+     "idea": "La CDMX ya hizo el experimento: casi nadie tiene hijos y el metro sigue igual de lleno.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "oye, en la cdmx nacen poquitos chilangos. ¿lo sabías?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "0.8 hijos por mujer. lo leí con cuidado."
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces el metro ya debería ir vacío, croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. sigue igual de lleno. la densidad casi no cambió.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si los bebés nunca fueron el problema?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gente llega del Edomex a trabajar cada mañana."
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que el vagón no sabe contar bebés",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Cabríamos todos en Londres: el planeta no está lleno, lo que pasa es densidad.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que cabríamos todos en Londres, parados.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿apretaditos? ¿como en la línea 3?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "seis por metro cuadrado. unos 1,400 km²."
+      },
+      {
+       "quien": "rana",
+       "dice": "y todavía sobra para parques. ¿habría moscas?",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es sobrepoblación, rana. es densidad."
+      },
+      {
+       "quien": "rana",
+       "dice": "en Baja California Sur te tocan diez canchas, croac",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo me mudo. desde ahí no me mareo."
+      }
+     ]
+    },
+    {
+     "idea": "Comida sí hay, lo que falta es repartirla: un tercio termina en la basura.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "jirafa, una tercera parte de la comida se tira.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿una tercera parte? qué tristeza."
+      },
+      {
+       "quien": "rana",
+       "dice": "yo no tiro ni una mosca, lo juro",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "«Lo que falta es repartirla». así lo dice."
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces no es que falte plato, sino quién lo pase"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y hay gente que pasa días sin comer."
+      },
+      {
+       "quien": "rana",
+       "dice": "ya no tengo hambre. toma de mis moscas, anda."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -230,118 +351,6 @@
       {
        "quien": "rana",
        "dice": "ni él. nomás 700 pesos de hotel"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-09-30T13:36:46+00:00",
-   "escenas": [
-    {
-     "idea": "el miedo disfrazado de promesa en las citas modernas (tinder)",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "leí que gibrán scrollea kilómetros y no encuentra nada"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac, yo scrolleo buscando moscas, es igual de triste",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que el miedo se convierte en promesa",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿eso qué significa? habla claro jirafa"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "que prometerte algo no quita el miedo, lo esconde"
-      },
-      {
-       "quien": "rana",
-       "dice": "ah, como cuando prometo no comerme todas las moscas",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "el amor como jaula frente al amor con la puerta siempre abierta",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "no quiero hablar de esto, me da vértigo",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿vértigo de qué? si estamos en el suelo"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que el amor puede ser una jaula"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac, yo prefiero el amor puerta abierta",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y si por la puerta se va todo el mundo?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces no era tuyo, era rehén"
-      }
-     ]
-    },
-    {
-     "idea": "la crítica al discurso de quien se cree la excepción que sí sabe amar",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán se enoja con los que dicen yo sí sé amar"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿los que juzgan a los que no se casan?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "sí, dice que a los demás les va a dar mala suerte"
-      },
-      {
-       "quien": "rana",
-       "dice": "como si el amor fuera examen con reprobados",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y habla de su abuela y su abuelo también",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "eso ya no suena a chiste, jirafa",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no, no suena"
       }
      ]
     }
