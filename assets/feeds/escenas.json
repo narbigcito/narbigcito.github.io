@@ -3,6 +3,120 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-10-12T13:38:43+00:00",
+   "escenas": [
+    {
+     "idea": "El amor puede ser una jaula; Gibrán prefiere un amor con la puerta abierta para entrar y salir.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿leíste a gibrán? dice que el amor puede ser jaula"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sí. quiere que su amor tenga «la puerta abierta»"
+      },
+      {
+       "quien": "rana",
+       "dice": "viví en un terrario. puerta abierta y me voy por moscas",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y regresarías?"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. si la casa es buena, sí. por gusto"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo me quedaría en la puerta. me da vértigo el umbral",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "Reglas claras desde el principio que se crean juntos y se cambian cuando ambos cambien.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "gibrán quiere reglas claras desde el principio"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y cambiarlas cuando los dos cambien. los dos"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo ya tengo una: tus moscas son mis moscas",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "esa no la acordamos",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "por eso la digo desde el principio, croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "se crean juntas, rana. no se anuncian"
+      },
+      {
+       "quien": "rana",
+       "dice": "bueno... mitad y mitad. negociable"
+      }
+     ]
+    },
+    {
+     "idea": "El miedo nace de promesas de amor que no se cumplen, y se hereda sin que lo notemos.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "a gibrán le prometieron un amor que lo eclipsaría todo"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y qué pasó?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "vio que no siempre se cumple. y le dio miedo"
+      },
+      {
+       "quien": "rana",
+       "dice": "a mí me prometieron que las moscas eran gratis",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "rana. es un tema pesado",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "perdón. ¿a ti qué promesa te hicieron?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "que no me iba a caer de aquí arriba. todavía tiemblo"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -237,120 +351,6 @@
        "quien": "rana",
        "dice": "yo soy la graciosa. debajo hay una rana con hambre",
        "gesto": "salta"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-10-06T21:02:29+00:00",
-   "escenas": [
-    {
-     "idea": "perder la casa que era refugio para los olvidados de madrugada",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "antes su casa era hogar de olvidados"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac, ¿y ahora a dónde llegan?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "ya no tiene depa. se le olvidó eso",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿se te olvida tu propia casa?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "se le olvidó ser refugio, dice",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "a mí se me olvida hasta cenar moscas",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es lo mismo, rana. casi"
-      }
-     ]
-    },
-    {
-     "idea": "necesitamos que se nos necesite, la frase central del ensayo",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "croac, encontré una frase buena",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "«necesitamos que se nos necesite»"
-      },
-      {
-       "quien": "rana",
-       "dice": "suena triste y lógico a la vez"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿triste por qué, rana?"
-      },
-      {
-       "quien": "rana",
-       "dice": "porque necesitar eso también da miedo"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "nunca lo había pensado así",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "por eso compra poemas a las 4 am"
-      }
-     ]
-    },
-    {
-     "idea": "la estabilidad nunca fue con él, vivir en hoteles y escribir código de madrugada",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que lo predecible no va con él"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿por eso vive en hoteles?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y escribe manifiestos de madrugada"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo también vivo en una web, croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero tú no pagas renta, rana",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "ni él. nomás 700 pesos de hotel"
       }
      ]
     }
