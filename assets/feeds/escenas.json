@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-10-13T13:38:18+00:00",
+   "escenas": [
+    {
+     "idea": "Nadie necesita un poema a las 4 de la mañana, pero uno lo compra para que alguien sienta que lo necesitan.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿y si alguien te escribe un poema a las 4 de la mañana?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "depende. ¿lo necesitabas?"
+      },
+      {
+       "quien": "rana",
+       "dice": "no. tenía hambre. pero lo leo, croac.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que a veces lo compra sin necesitarlo."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿paga por algo que no necesita? qué raro."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es que alguien necesita que lo necesite."
+      },
+      {
+       "quien": "rana",
+       "dice": "ay. ok, eso sí me pegó. pero que sea cortito."
+      }
+     ]
+    },
+    {
+     "idea": "Cuando no hay a dónde ir, toca elegir a qué amigo escribirle: el que no hemos molestado tanto o ghosteado lo suficiente.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "sin a dónde ir, hay que elegir a quién escribirle."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y cómo eliges? ¿al que menos has ghosteado?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "al que aún nos soporte. suena feo, pero así es."
+      },
+      {
+       "quien": "rana",
+       "dice": "yo te escribiría a ti."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no quiero molestar. de verdad."
+      },
+      {
+       "quien": "rana",
+       "dice": "molestar es parte del trato, croac. aquí hay mesa."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gracias. ¿puedo pedir otro café?",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Salir de ver Madoka Mágica (dos veces, una sobrio y otra no) y tener que volver en transporte público, hiperinmersivo.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "gibrán vio Madoka Mágica dos veces."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿por qué dos?"
+      },
+      {
+       "quien": "rana",
+       "dice": "la primera sobrio. la segunda, no.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "me da miedo la segunda."
+      },
+      {
+       "quien": "rana",
+       "dice": "dice que en 4D no la recomienda, croac."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y luego se fue en transporte público?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "un sábado cualquiera. eso sí es hiperinmersivo."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -231,126 +348,6 @@
       {
        "quien": "rana",
        "dice": "ya no tengo hambre. toma de mis moscas, anda."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Luz de globo",
-    "url": "https://narbigcito.substack.com/p/luz-de-globo"
-   },
-   "generado": "2026-10-10T13:33:22+00:00",
-   "escenas": [
-    {
-     "idea": "Le preguntaron si era mentiroso y casi miente para negarlo; darse cuenta fue lo difícil.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "croac. a Gibrán le preguntaron si era mentiroso"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y estuvo a punto de decir que no"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea, casi miente para negar que miente",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo no podría. se me ve todo, soy muy alta"
-      },
-      {
-       "quien": "rana",
-       "dice": "es verdad, no cabes detrás de ningún pretexto",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "lo difícil fue darse cuenta, no decirlo"
-      },
-      {
-       "quien": "rana",
-       "dice": "sí. eso dolió hasta a mí, y soy una rana",
-       "gesto": "asombro"
-      }
-     ]
-    },
-    {
-     "idea": "Las promesas pequeñas e incumplidas (comer mejor, dejar Instagram) dan más vergüenza que las grandes.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que no puede cumplir promesas simples"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿como cuáles?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "comer mejor. dejar de abrir Instagram"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo prometí una mosca al día",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y cuántas llevas?"
-      },
-      {
-       "quien": "rana",
-       "dice": "once. es martes",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a él le da vergüenza que sean cosas tan chicas"
-      }
-     ]
-    },
-    {
-     "idea": "Vivir dentro de un personaje: el que parece consciente y parece que hace lo mejor que puede.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que vive dentro de un personaje"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿cuál? ¿el del cursor?",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "«El que parece consciente»"
-      },
-      {
-       "quien": "rana",
-       "dice": "ah, tú",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿yo parezco consciente?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "pareces que piensas mucho. no es lo mismo"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo soy la graciosa. debajo hay una rana con hambre",
-       "gesto": "salta"
       }
      ]
     }
