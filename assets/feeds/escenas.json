@@ -3,6 +3,126 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Luz de globo",
+    "url": "https://narbigcito.substack.com/p/luz-de-globo"
+   },
+   "generado": "2026-10-14T13:35:15+00:00",
+   "escenas": [
+    {
+     "idea": "Darte cuenta de que sí eres mentiroso justo cuando ibas a mentir sobre ello.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "oye, ¿tú has mentido alguna vez?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "nunca. bueno... casi nunca."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. ese «casi» ya trae mentira adentro.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "el otro día dije que no me dan vértigo.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y quién te creyó?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "el del cursor. y estuve a punto de jurarlo."
+      },
+      {
+       "quien": "rana",
+       "dice": "por eso te sientas tan cerca del suelo, ¿verdad?",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "Las promesas pequeñas e incumplidas dan más vergüenza que las grandes.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "prometí comer solo tres moscas al día."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y cómo vas?"
+      },
+      {
+       "quien": "rana",
+       "dice": "once. y apenas es martes.",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo dije cinco minutos sin mirar al cursor."
+      },
+      {
+       "quien": "rana",
+       "dice": "te volteaste a los dos segundos, te vi.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "da pena no poder con cosas tan chiquitas.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "a mí también, jirafa. croac. mañana son diez."
+      }
+     ]
+    },
+    {
+     "idea": "Vivir dentro de un personaje que parece consciente y que lo hace todo bien.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "a veces parezco muy consciente, ¿no crees?"
+      },
+      {
+       "quien": "rana",
+       "dice": "es el cuello. piensas desde arriba y ya.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero no sé si hago las cosas tan bien."
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que la que sale en la página es otra.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "la que parece. yo me quedo aquí abajo.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y si me bajo del personaje un rato?"
+      },
+      {
+       "quien": "rana",
+       "dice": "te sirvo una mosca y platicamos a tu altura."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
     "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
    },
@@ -227,127 +347,6 @@
       {
        "quien": "jirafa",
        "dice": "que no me iba a caer de aquí arriba. todavía tiemblo"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "No tener hijos no salvará al mundo",
-    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
-   },
-   "generado": "2026-10-11T13:38:21+00:00",
-   "escenas": [
-    {
-     "idea": "La CDMX ya hizo el experimento: casi nadie tiene hijos y el metro sigue igual de lleno.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "oye, en la cdmx nacen poquitos chilangos. ¿lo sabías?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "0.8 hijos por mujer. lo leí con cuidado."
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces el metro ya debería ir vacío, croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. sigue igual de lleno. la densidad casi no cambió.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y si los bebés nunca fueron el problema?",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gente llega del Edomex a trabajar cada mañana."
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que el vagón no sabe contar bebés",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Cabríamos todos en Londres: el planeta no está lleno, lo que pasa es densidad.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que cabríamos todos en Londres, parados.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿apretaditos? ¿como en la línea 3?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "seis por metro cuadrado. unos 1,400 km²."
-      },
-      {
-       "quien": "rana",
-       "dice": "y todavía sobra para parques. ¿habría moscas?",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es sobrepoblación, rana. es densidad."
-      },
-      {
-       "quien": "rana",
-       "dice": "en Baja California Sur te tocan diez canchas, croac",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo me mudo. desde ahí no me mareo."
-      }
-     ]
-    },
-    {
-     "idea": "Comida sí hay, lo que falta es repartirla: un tercio termina en la basura.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "jirafa, una tercera parte de la comida se tira.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿una tercera parte? qué tristeza."
-      },
-      {
-       "quien": "rana",
-       "dice": "yo no tiro ni una mosca, lo juro",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "«Lo que falta es repartirla». así lo dice."
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces no es que falte plato, sino quién lo pase"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y hay gente que pasa días sin comer."
-      },
-      {
-       "quien": "rana",
-       "dice": "ya no tengo hambre. toma de mis moscas, anda."
       }
      ]
     }
