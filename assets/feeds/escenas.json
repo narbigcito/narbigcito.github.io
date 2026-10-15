@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-10-15T13:35:44+00:00",
+   "escenas": [
+    {
+     "idea": "Todos los humanos cabrían parados en Londres: el problema es densidad, no falta de planeta.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "oye, dicen que toda la gente cabría en Londres",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿toda? ¿de pie y juntitos?"
+      },
+      {
+       "quien": "rana",
+       "dice": "apretados como en el metro. y sobra para parques",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces el planeta no está tan lleno"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. lleno está el metro de la cdmx"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "eso es densidad. no es lo mismo"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo ya no cabría ni de lado",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Una tercera parte de la comida se tira; hay hambre por reparto, no por falta.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "una tercera parte de la comida va directo a la basura"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿la tiran? ¿así nomás?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "hasta la fruta por fea. yo me la comería"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "mientras hay gente que pasa días sin comer"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. ni las moscas me las tiro yo"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es que falte comida. es que no llega"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que el problema no es quién nace",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene muy pocos nacimientos y el metro sigue lleno; muchos no tienen hijos porque no les alcanza.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "en la cdmx nacen pocos bebés. 0.8 por mujer"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y el metro ya va vacío?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. sigue igual de lleno"
+      },
+      {
+       "quien": "rana",
+       "dice": "qué grosería, ni así nos hacen lugar",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "llega gente de todos lados a trabajar"
+      },
+      {
+       "quien": "rana",
+       "dice": "y la renta sigue carísima, croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "muchos no tienen hijos porque no les alcanza"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -233,120 +350,6 @@
       {
        "quien": "rana",
        "dice": "un sábado cualquiera. eso sí es hiperinmersivo."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-10-12T13:38:43+00:00",
-   "escenas": [
-    {
-     "idea": "El amor puede ser una jaula; Gibrán prefiere un amor con la puerta abierta para entrar y salir.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "¿leíste a gibrán? dice que el amor puede ser jaula"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "sí. quiere que su amor tenga «la puerta abierta»"
-      },
-      {
-       "quien": "rana",
-       "dice": "viví en un terrario. puerta abierta y me voy por moscas",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y regresarías?"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. si la casa es buena, sí. por gusto"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo me quedaría en la puerta. me da vértigo el umbral",
-       "gesto": "asombro"
-      }
-     ]
-    },
-    {
-     "idea": "Reglas claras desde el principio que se crean juntos y se cambian cuando ambos cambien.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "gibrán quiere reglas claras desde el principio"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y cambiarlas cuando los dos cambien. los dos"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo ya tengo una: tus moscas son mis moscas",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "esa no la acordamos",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "por eso la digo desde el principio, croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "se crean juntas, rana. no se anuncian"
-      },
-      {
-       "quien": "rana",
-       "dice": "bueno... mitad y mitad. negociable"
-      }
-     ]
-    },
-    {
-     "idea": "El miedo nace de promesas de amor que no se cumplen, y se hereda sin que lo notemos.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "a gibrán le prometieron un amor que lo eclipsaría todo"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y qué pasó?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "vio que no siempre se cumple. y le dio miedo"
-      },
-      {
-       "quien": "rana",
-       "dice": "a mí me prometieron que las moscas eran gratis",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "rana. es un tema pesado",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "perdón. ¿a ti qué promesa te hicieron?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "que no me iba a caer de aquí arriba. todavía tiemblo"
       }
      ]
     }
