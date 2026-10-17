@@ -3,6 +3,122 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-10-17T13:31:00+00:00",
+   "escenas": [
+    {
+     "idea": "El amor como jaula voluntaria frente al amor con la puerta abierta para entrar y salir.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que su amor no quiere ser jaula"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. yo estuve en un frasco y no estaba tan mal",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿tenía tapa?"
+      },
+      {
+       "quien": "rana",
+       "dice": "con agujeritos. y moscas gratis. casi un hotel"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "quiere una puerta abierta. para entrar y para salir"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y las moscas? si se salen, ¿quién las cuida?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "nadie. se quedan porque quieren. eso es lo difícil"
+      }
+     ]
+    },
+    {
+     "idea": "La promesa de una persona única que eclipsa a todas las demás, y la idea de que amar a otro anula lo anterior.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "a mí me prometieron una mosca para toda la vida"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y qué pasó?"
+      },
+      {
+       "quien": "rana",
+       "dice": "me la comí el martes. croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a él le prometieron una persona que borraría a las demás"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si te gustan dos moscas? ¿ya la regaste?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dicen que lo que diste a la primera «ya no vale»"
+      },
+      {
+       "quien": "rana",
+       "dice": "qué raro. yo sigo agradecida con todas las que me comí",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "El miedo se hereda de casa en casa y a veces nace del amor; Gibrán le escribe a su mamá.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "me dan miedo las alturas y no sé por qué"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿te caíste de chiquita?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "creo que no. creo que lo heredé"
+      },
+      {
+       "quien": "rana",
+       "dice": "como el cuello. nomás que este no se ve"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que el miedo pasa de una casa a otra"
+      },
+      {
+       "quien": "rana",
+       "dice": "y uno cree que se fue, pero lo trae en la maleta",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "al final le dice a su mamá «no quiero que tengas miedo»"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -233,123 +349,6 @@
       {
        "quien": "rana",
        "dice": "te sirvo una mosca y platicamos a tu altura."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-10-13T13:38:18+00:00",
-   "escenas": [
-    {
-     "idea": "Nadie necesita un poema a las 4 de la mañana, pero uno lo compra para que alguien sienta que lo necesitan.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "¿y si alguien te escribe un poema a las 4 de la mañana?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "depende. ¿lo necesitabas?"
-      },
-      {
-       "quien": "rana",
-       "dice": "no. tenía hambre. pero lo leo, croac.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán dice que a veces lo compra sin necesitarlo."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿paga por algo que no necesita? qué raro."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es que alguien necesita que lo necesite."
-      },
-      {
-       "quien": "rana",
-       "dice": "ay. ok, eso sí me pegó. pero que sea cortito."
-      }
-     ]
-    },
-    {
-     "idea": "Cuando no hay a dónde ir, toca elegir a qué amigo escribirle: el que no hemos molestado tanto o ghosteado lo suficiente.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "sin a dónde ir, hay que elegir a quién escribirle."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y cómo eliges? ¿al que menos has ghosteado?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "al que aún nos soporte. suena feo, pero así es."
-      },
-      {
-       "quien": "rana",
-       "dice": "yo te escribiría a ti."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no quiero molestar. de verdad."
-      },
-      {
-       "quien": "rana",
-       "dice": "molestar es parte del trato, croac. aquí hay mesa."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gracias. ¿puedo pedir otro café?",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Salir de ver Madoka Mágica (dos veces, una sobrio y otra no) y tener que volver en transporte público, hiperinmersivo.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "gibrán vio Madoka Mágica dos veces."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿por qué dos?"
-      },
-      {
-       "quien": "rana",
-       "dice": "la primera sobrio. la segunda, no.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "me da miedo la segunda."
-      },
-      {
-       "quien": "rana",
-       "dice": "dice que en 4D no la recomienda, croac."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y luego se fue en transporte público?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "un sábado cualquiera. eso sí es hiperinmersivo."
       }
      ]
     }
