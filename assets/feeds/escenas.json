@@ -3,6 +3,124 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-10-18T22:17:45+00:00",
+   "escenas": [
+    {
+     "idea": "Nadie necesita un poema a las 4 de la madrugada, pero sí que alguien necesite uno nuestro.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "croac. ¿a ti alguien te ha pedido un poema a las 4?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. a esa hora yo duermo parada."
+      },
+      {
+       "quien": "rana",
+       "dice": "gibrán dice que nadie lo necesita a esa hora.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero sí quiere que necesiten uno suyo. es distinto.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que el poema es para sentirse útil."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y comprarlo es dejar que alguien se sienta útil."
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces te compro uno. con mosca incluida.",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Rascar entre la red de contactos para ver a qué amigo no hemos molestado tanto.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "imagina que no tienes a dónde ir esta noche."
+      },
+      {
+       "quien": "rana",
+       "dice": "fácil. me meto al charco."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "hablo de personas. de a quién le tocas la puerta."
+      },
+      {
+       "quien": "rana",
+       "dice": "ah. de la lista de a quién ya no puedes escribirle.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y de quién aún te aguanta, aunque lo hayas ghosteado."
+      },
+      {
+       "quien": "rana",
+       "dice": "yo tengo dos contactos: tú y el del cursor."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces somos red. chiquita, pero red."
+      }
+     ]
+    },
+    {
+     "idea": "Los 700 pesos que fingió olvidar que tenía, guardados justo para una noche así.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "confieso algo. escondí una mosca en esa esquina."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y por qué no te la comes?"
+      },
+      {
+       "quien": "rana",
+       "dice": "fingí que se me olvidó. para cuando haga falta.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán hizo eso con 700 pesos."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿se los guardó a sí mismo? qué astuto.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y llegaron justo a un hotel esa noche."
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces mi mosca ya no es glotonería. es plan de vida.",
+       "gesto": "salta"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -229,126 +347,6 @@
       {
        "quien": "jirafa",
        "dice": "muchos no tienen hijos porque no les alcanza"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Luz de globo",
-    "url": "https://narbigcito.substack.com/p/luz-de-globo"
-   },
-   "generado": "2026-10-14T13:35:15+00:00",
-   "escenas": [
-    {
-     "idea": "Darte cuenta de que sí eres mentiroso justo cuando ibas a mentir sobre ello.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "oye, ¿tú has mentido alguna vez?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "nunca. bueno... casi nunca."
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. ese «casi» ya trae mentira adentro.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "el otro día dije que no me dan vértigo.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y quién te creyó?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "el del cursor. y estuve a punto de jurarlo."
-      },
-      {
-       "quien": "rana",
-       "dice": "por eso te sientas tan cerca del suelo, ¿verdad?",
-       "gesto": "asombro"
-      }
-     ]
-    },
-    {
-     "idea": "Las promesas pequeñas e incumplidas dan más vergüenza que las grandes.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "prometí comer solo tres moscas al día."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y cómo vas?"
-      },
-      {
-       "quien": "rana",
-       "dice": "once. y apenas es martes.",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo dije cinco minutos sin mirar al cursor."
-      },
-      {
-       "quien": "rana",
-       "dice": "te volteaste a los dos segundos, te vi.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "da pena no poder con cosas tan chiquitas.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "a mí también, jirafa. croac. mañana son diez."
-      }
-     ]
-    },
-    {
-     "idea": "Vivir dentro de un personaje que parece consciente y que lo hace todo bien.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "a veces parezco muy consciente, ¿no crees?"
-      },
-      {
-       "quien": "rana",
-       "dice": "es el cuello. piensas desde arriba y ya.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero no sé si hago las cosas tan bien."
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que la que sale en la página es otra.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "la que parece. yo me quedo aquí abajo.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y si me bajo del personaje un rato?"
-      },
-      {
-       "quien": "rana",
-       "dice": "te sirvo una mosca y platicamos a tu altura."
       }
      ]
     }
