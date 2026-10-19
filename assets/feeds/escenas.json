@@ -3,6 +3,124 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Luz de globo",
+    "url": "https://narbigcito.substack.com/p/luz-de-globo"
+   },
+   "generado": "2026-10-19T13:36:32+00:00",
+   "escenas": [
+    {
+     "idea": "Le preguntaron si era mentiroso, casi mintió, y entonces cayó en cuenta de que sí lo es.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "gibrán dice que le preguntaron si era mentiroso"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y casi contesta que no"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. mentir para negar que mientes. elegante",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "se quedó callado hasta darse cuenta"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo me habría dado cuenta tres moscas después"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "lo difícil es decir sí lo soy, y quedarte ahí"
+      },
+      {
+       "quien": "rana",
+       "dice": "quedarte ahí sin adornarlo. qué miedo, croac",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "Las promesas pequeñas (como dejar Instagram) que da vergüenza no cumplir, y cómo eso quita la confianza en uno mismo.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que no puede dejar de abrir Instagram"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que son cosas pequeñas y le da vergüenza"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo prometí comer solo una mosca. fueron once",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es lo mismo. a ti te da risa"
+      },
+      {
+       "quien": "rana",
+       "dice": "a mí también me da pena, nomás no lo enseño",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a él le pesa porque ya no se cree"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces una promesa chiquita. y la cumples. croac"
+      }
+     ]
+    },
+    {
+     "idea": "Su verdad no es nueva ni profunda, casi toda caricatura tiene un capítulo así, y aun así cuesta aceptarla.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que su verdad sale en todas las caricaturas"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿en cuál capítulo? ¿el del patito feo?"
+      },
+      {
+       "quien": "rana",
+       "dice": "o el de los zapatos que siempre te llevaron a casa",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "lo que buscabas estaba dentro. me da vértigo",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿te da vértigo hasta lo que está dentro?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es que dentro también hay altura"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. y nadie te pone barandal"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
     "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
    },
@@ -230,123 +348,6 @@
       {
        "quien": "jirafa",
        "dice": "al final le dice a su mamá «no quiero que tengas miedo»"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "No tener hijos no salvará al mundo",
-    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
-   },
-   "generado": "2026-10-15T13:35:44+00:00",
-   "escenas": [
-    {
-     "idea": "Todos los humanos cabrían parados en Londres: el problema es densidad, no falta de planeta.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "oye, dicen que toda la gente cabría en Londres",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿toda? ¿de pie y juntitos?"
-      },
-      {
-       "quien": "rana",
-       "dice": "apretados como en el metro. y sobra para parques",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces el planeta no está tan lleno"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. lleno está el metro de la cdmx"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "eso es densidad. no es lo mismo"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo ya no cabría ni de lado",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Una tercera parte de la comida se tira; hay hambre por reparto, no por falta.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "una tercera parte de la comida va directo a la basura"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿la tiran? ¿así nomás?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "hasta la fruta por fea. yo me la comería"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "mientras hay gente que pasa días sin comer"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. ni las moscas me las tiro yo"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es que falte comida. es que no llega"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que el problema no es quién nace",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "La CDMX ya tiene muy pocos nacimientos y el metro sigue lleno; muchos no tienen hijos porque no les alcanza.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "en la cdmx nacen pocos bebés. 0.8 por mujer"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y el metro ya va vacío?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. sigue igual de lleno"
-      },
-      {
-       "quien": "rana",
-       "dice": "qué grosería, ni así nos hacen lugar",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "llega gente de todos lados a trabajar"
-      },
-      {
-       "quien": "rana",
-       "dice": "y la renta sigue carísima, croac"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "muchos no tienen hijos porque no les alcanza"
       }
      ]
     }
