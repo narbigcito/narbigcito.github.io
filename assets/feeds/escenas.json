@@ -3,6 +3,125 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-10-20T13:35:55+00:00",
+   "escenas": [
+    {
+     "idea": "El planeta no está lleno: toda la humanidad cabría de pie en Londres.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "jirafa, ¿sabías que cabemos todos en Londres?",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿todos? ¿incluso yo? soy bastante larga.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "de pie y apretaditas, como en el metro. croac.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces el planeta no está lleno."
+      },
+      {
+       "quien": "rana",
+       "dice": "está mal repartido. y yo cabría en un parque."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo no. me sobra cuello para dos parques.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "pues tú te paras en la orilla, croac."
+      }
+     ]
+    },
+    {
+     "idea": "Hay comida de sobra; el problema es el reparto y lo que se tira.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dicen que se tira un tercio de la comida del mundo.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "un tercio. me duele solo pensarlo."
+      },
+      {
+       "quien": "rana",
+       "dice": "imagina cuántas moscas caducando en un anaquel.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es por la cantidad. es por cómo se reparte."
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que sobra mesa, pero hay sillas vacías."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y alguien se queda de pie mirando el plato."
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces yo me sirvo menos y te paso mi mosca.",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene muy pocos hijos y el metro sigue lleno: nacen menos por falta de dinero.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "en la ciudad nacen menos niños que en casi todo el mundo."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y el metro ya va vacío? me muero por un asiento."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sigue igual de lleno. la chamba sigue allá."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. entonces no era cosa de bebés.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "mucha gente no los tiene porque no le alcanza la renta."
+      },
+      {
+       "quien": "rana",
+       "dice": "eso no es salvar el planeta. eso es una renta carísima."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sí. a veces no elegir también pesa."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -232,122 +351,6 @@
        "quien": "rana",
        "dice": "entonces mi mosca ya no es glotonería. es plan de vida.",
        "gesto": "salta"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-10-17T13:31:00+00:00",
-   "escenas": [
-    {
-     "idea": "El amor como jaula voluntaria frente al amor con la puerta abierta para entrar y salir.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán dice que su amor no quiere ser jaula"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo estuve en un frasco y no estaba tan mal",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿tenía tapa?"
-      },
-      {
-       "quien": "rana",
-       "dice": "con agujeritos. y moscas gratis. casi un hotel"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "quiere una puerta abierta. para entrar y para salir"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y las moscas? si se salen, ¿quién las cuida?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "nadie. se quedan porque quieren. eso es lo difícil"
-      }
-     ]
-    },
-    {
-     "idea": "La promesa de una persona única que eclipsa a todas las demás, y la idea de que amar a otro anula lo anterior.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "a mí me prometieron una mosca para toda la vida"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y qué pasó?"
-      },
-      {
-       "quien": "rana",
-       "dice": "me la comí el martes. croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a él le prometieron una persona que borraría a las demás"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y si te gustan dos moscas? ¿ya la regaste?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dicen que lo que diste a la primera «ya no vale»"
-      },
-      {
-       "quien": "rana",
-       "dice": "qué raro. yo sigo agradecida con todas las que me comí",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "El miedo se hereda de casa en casa y a veces nace del amor; Gibrán le escribe a su mamá.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "me dan miedo las alturas y no sé por qué"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿te caíste de chiquita?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "creo que no. creo que lo heredé"
-      },
-      {
-       "quien": "rana",
-       "dice": "como el cuello. nomás que este no se ve"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán dice que el miedo pasa de una casa a otra"
-      },
-      {
-       "quien": "rana",
-       "dice": "y uno cree que se fue, pero lo trae en la maleta",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "al final le dice a su mamá «no quiero que tengas miedo»"
       }
      ]
     }
