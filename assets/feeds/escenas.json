@@ -3,6 +3,124 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-10-21T13:33:15+00:00",
+   "escenas": [
+    {
+     "idea": "Querer un amor con la puerta abierta, para entrar y para salir, en vez de una jaula.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "gibrán quiere un amor con «la puerta abierta»"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿para entrar y para salir? me parece sensato"
+      },
+      {
+       "quien": "rana",
+       "dice": "aquí ni puerta hay. solo pestañas",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces nuestra jaula es el navegador",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. cierras la pestaña y ya me fui"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y volverías?"
+      },
+      {
+       "quien": "rana",
+       "dice": "si estás tú y hay moscas, sí. en ese orden",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "Confundir el miedo con oportunidad: aceptar lo que sea por no quedarse sola.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "me preocupa confundir el miedo con oportunidad"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿eso cómo es? ¿comerte algo por si acaso?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "aceptas lo que sea para no quedarte sola"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo veo una mosca y grito oportunidad",
+       "gesto": "salta"
+      },
+      {
+       "quien": "rana",
+       "dice": "casi siempre es una pasa. croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces a veces es miedo con alas",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "eso sí da más miedo que la pasa"
+      }
+     ]
+    },
+    {
+     "idea": "El miedo como herencia familiar: se ama como a uno le enseñaron a amar.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán cree que en su familia se amaba con miedo"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y eso se hereda como el cuello largo?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "mi vértigo me lo pasó mi mamá. se agarraba de todo"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo nací en un charco. nadie me enseñó miedos"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero le tienes miedo a las garzas"
+      },
+      {
+       "quien": "rana",
+       "dice": "eso lo aprendí sola. y me sirvió, croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "rana",
+       "dice": "baja la cabeza un rato. aquí abajo no pasa nada"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -233,124 +351,6 @@
       {
        "quien": "rana",
        "dice": "croac. y nadie te pone barandal"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-10-18T22:17:45+00:00",
-   "escenas": [
-    {
-     "idea": "Nadie necesita un poema a las 4 de la madrugada, pero sí que alguien necesite uno nuestro.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "croac. ¿a ti alguien te ha pedido un poema a las 4?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. a esa hora yo duermo parada."
-      },
-      {
-       "quien": "rana",
-       "dice": "gibrán dice que nadie lo necesita a esa hora.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero sí quiere que necesiten uno suyo. es distinto.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que el poema es para sentirse útil."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y comprarlo es dejar que alguien se sienta útil."
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces te compro uno. con mosca incluida.",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Rascar entre la red de contactos para ver a qué amigo no hemos molestado tanto.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "imagina que no tienes a dónde ir esta noche."
-      },
-      {
-       "quien": "rana",
-       "dice": "fácil. me meto al charco."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "hablo de personas. de a quién le tocas la puerta."
-      },
-      {
-       "quien": "rana",
-       "dice": "ah. de la lista de a quién ya no puedes escribirle.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y de quién aún te aguanta, aunque lo hayas ghosteado."
-      },
-      {
-       "quien": "rana",
-       "dice": "yo tengo dos contactos: tú y el del cursor."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces somos red. chiquita, pero red."
-      }
-     ]
-    },
-    {
-     "idea": "Los 700 pesos que fingió olvidar que tenía, guardados justo para una noche así.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "confieso algo. escondí una mosca en esa esquina."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y por qué no te la comes?"
-      },
-      {
-       "quien": "rana",
-       "dice": "fingí que se me olvidó. para cuando haga falta.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán hizo eso con 700 pesos."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿se los guardó a sí mismo? qué astuto.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y llegaron justo a un hotel esa noche."
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces mi mosca ya no es glotonería. es plan de vida.",
-       "gesto": "salta"
       }
      ]
     }
