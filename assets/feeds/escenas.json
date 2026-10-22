@@ -3,6 +3,125 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-10-22T13:39:14+00:00",
+   "escenas": [
+    {
+     "idea": "Nadie necesita un poema a las 4 de la mañana, pero sí necesitamos que alguien necesite el nuestro.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que a las 4 nadie necesita un poema"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y entonces para qué lo compra? croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "porque alguien necesita que lo necesiten"
+      },
+      {
+       "quien": "rana",
+       "dice": "ah. el poema es lo de menos, lo que cuenta es la mano",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "creo que sí. es bonito y es triste"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo a las 4 solo necesito una mosca",
+       "gesto": "rie"
+      },
+      {
+       "quien": "rana",
+       "dice": "pero si me traes un poema, lo leo. croac"
+      }
+     ]
+    },
+    {
+     "idea": "Al buscar refugio, uno repasa la lista de amigos para ver a quién no ha molestado tanto.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que uno repasa los contactos como un menú"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y quién sale? ¿el amigo menos molestado?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pedir ayuda me da vértigo. es mirar hacia abajo",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "a mí me da gusto que me molesten a las 4"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿de verdad?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "claro. para eso sirve una amiga, croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces te llamo. con calma, pero te llamo"
+      }
+     ]
+    },
+    {
+     "idea": "Gibrán fingió olvidar los 700 pesos que guardaba justo para una noche así.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán fingió olvidar que tenía 700 pesos"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿cómo se finge olvidar dinero?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "lo guardas tan hondo que casi no existe"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo hago eso con una mosca bajo mi piedra",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y te la comes?"
+      },
+      {
+       "quien": "rana",
+       "dice": "solo en circunstancias. croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces tu piedra también es un hotel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -233,124 +352,6 @@
       {
        "quien": "jirafa",
        "dice": "sí. a veces no elegir también pesa."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Luz de globo",
-    "url": "https://narbigcito.substack.com/p/luz-de-globo"
-   },
-   "generado": "2026-10-19T13:36:32+00:00",
-   "escenas": [
-    {
-     "idea": "Le preguntaron si era mentiroso, casi mintió, y entonces cayó en cuenta de que sí lo es.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "gibrán dice que le preguntaron si era mentiroso"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y casi contesta que no"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. mentir para negar que mientes. elegante",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "se quedó callado hasta darse cuenta"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo me habría dado cuenta tres moscas después"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "lo difícil es decir sí lo soy, y quedarte ahí"
-      },
-      {
-       "quien": "rana",
-       "dice": "quedarte ahí sin adornarlo. qué miedo, croac",
-       "gesto": "asombro"
-      }
-     ]
-    },
-    {
-     "idea": "Las promesas pequeñas (como dejar Instagram) que da vergüenza no cumplir, y cómo eso quita la confianza en uno mismo.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que no puede dejar de abrir Instagram"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que son cosas pequeñas y le da vergüenza"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo prometí comer solo una mosca. fueron once",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es lo mismo. a ti te da risa"
-      },
-      {
-       "quien": "rana",
-       "dice": "a mí también me da pena, nomás no lo enseño",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a él le pesa porque ya no se cree"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces una promesa chiquita. y la cumples. croac"
-      }
-     ]
-    },
-    {
-     "idea": "Su verdad no es nueva ni profunda, casi toda caricatura tiene un capítulo así, y aun así cuesta aceptarla.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que su verdad sale en todas las caricaturas"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿en cuál capítulo? ¿el del patito feo?"
-      },
-      {
-       "quien": "rana",
-       "dice": "o el de los zapatos que siempre te llevaron a casa",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "lo que buscabas estaba dentro. me da vértigo",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿te da vértigo hasta lo que está dentro?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es que dentro también hay altura"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. y nadie te pone barandal"
       }
      ]
     }
