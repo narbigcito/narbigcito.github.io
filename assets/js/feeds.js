@@ -5,6 +5,7 @@
 
   const EVENTOS = [
     { fecha: '2026-08-08', nombre: 'Festival del Fracaso — concierto, bazar, talleres y tomatazos', tipo: 'festival', lugar: 'Tochcalli · Durango 1-B, Flores Magón, Cuernavaca, Morelos', link: 'https://www.instagram.com/p/DajDOdFywiL/' },
+    { fecha: '2026-10-24', nombre: 'Tecnología contra el genocidio — mi charla en TAF: Tecnología + Arte + Filosofía (18:45 h)', tipo: 'charla', lugar: 'Caleido Hub · Xola 1010, Narvarte Poniente, Ciudad de México' },
   ];
 
   const MES = {
