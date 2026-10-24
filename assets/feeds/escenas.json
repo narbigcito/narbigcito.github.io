@@ -3,6 +3,124 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-10-24T13:31:11+00:00",
+   "escenas": [
+    {
+     "idea": "Los 8 mil millones cabríamos en Londres; el problema no es el espacio.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dato: cabemos todos en Londres. todos, croac",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿los ocho mil millones? ¿en una ciudad?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "apretaditos, como el metro en hora pico"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo mido cinco metros. no sé si cuento como una"
+      },
+      {
+       "quien": "rana",
+       "dice": "cuentas como seis. y pagas un solo boleto",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces el espacio no era el problema"
+      },
+      {
+       "quien": "rana",
+       "dice": "y sobra para parques. con moscas, espero"
+      }
+     ]
+    },
+    {
+     "idea": "La mayor parte de la tierra agrícola es para ganado y da pocas calorías.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "la mayor parte del campo es para darle de comer a vacas"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo como hojas. soy casi una ensalada alta"
+      },
+      {
+       "quien": "rana",
+       "dice": "y las vacas nos dan poquitas calorías de regreso"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es mucho terreno para tan poca comida",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "si fuera mosca, sería un trato pésimo",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "las moscas no se cuentan en esa cuenta"
+      },
+      {
+       "quien": "rana",
+       "dice": "por eso me siento tan sola en las estadísticas",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene muy pocos hijos y el metro sigue igual de lleno.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "aquí nacen menos niños que casi en cualquier lado"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces el metro va vacío, ¿no?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sigue igual de lleno. llega gente de todos lados"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. yo ya iba a estrenar asiento",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "muchos no tienen hijos porque la renta no alcanza"
+      },
+      {
+       "quien": "rana",
+       "dice": "ah. entonces no es que le echen menos gasolina"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. a veces solo no les alcanza para el cerillo"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -234,124 +352,6 @@
       {
        "quien": "jirafa",
        "dice": "entonces tu piedra también es un hotel"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-10-21T13:33:15+00:00",
-   "escenas": [
-    {
-     "idea": "Querer un amor con la puerta abierta, para entrar y para salir, en vez de una jaula.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "gibrán quiere un amor con «la puerta abierta»"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿para entrar y para salir? me parece sensato"
-      },
-      {
-       "quien": "rana",
-       "dice": "aquí ni puerta hay. solo pestañas",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces nuestra jaula es el navegador",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. cierras la pestaña y ya me fui"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y volverías?"
-      },
-      {
-       "quien": "rana",
-       "dice": "si estás tú y hay moscas, sí. en ese orden",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "Confundir el miedo con oportunidad: aceptar lo que sea por no quedarse sola.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "me preocupa confundir el miedo con oportunidad"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿eso cómo es? ¿comerte algo por si acaso?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "aceptas lo que sea para no quedarte sola"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo veo una mosca y grito oportunidad",
-       "gesto": "salta"
-      },
-      {
-       "quien": "rana",
-       "dice": "casi siempre es una pasa. croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces a veces es miedo con alas",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "eso sí da más miedo que la pasa"
-      }
-     ]
-    },
-    {
-     "idea": "El miedo como herencia familiar: se ama como a uno le enseñaron a amar.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán cree que en su familia se amaba con miedo"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y eso se hereda como el cuello largo?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "mi vértigo me lo pasó mi mamá. se agarraba de todo"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo nací en un charco. nadie me enseñó miedos"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero le tienes miedo a las garzas"
-      },
-      {
-       "quien": "rana",
-       "dice": "eso lo aprendí sola. y me sirvió, croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "rana",
-       "dice": "baja la cabeza un rato. aquí abajo no pasa nada"
       }
      ]
     }
