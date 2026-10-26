@@ -3,6 +3,125 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-10-26T13:40:07+00:00",
+   "escenas": [
+    {
+     "idea": "Nadie necesita un poema a las 4 de la mañana, pero uno necesita que necesiten algo suyo.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "oye, ¿alguien necesita un poema a las 4 de la mañana?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. el texto dice que nadie."
+      },
+      {
+       "quien": "rana",
+       "dice": "¡qué grosero! croac. yo escribo muy bonito.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero sí necesitas que alguien necesite el tuyo."
+      },
+      {
+       "quien": "rana",
+       "dice": "como mis moscas: nadie las pide y yo las traigo.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y un día alguien las quiere justo a las 4."
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces te compro uno. pero me lo dedicas.",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Antes recibía a gente en la madrugada y ahora ya no tiene depa; su casa era refugio, con límites.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán ya no tiene depa. antes recibía gente de noche."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿les daba de comer? ¿había moscas?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "comida, cama, refugio. con límites, eso sí."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿qué límites? croac."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "nada de secuestrar perros ni de matar gente."
+      },
+      {
+       "quien": "rana",
+       "dice": "qué estándares tan altos, de verdad.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "él dice que aún es tibio con eso."
+      }
+     ]
+    },
+    {
+     "idea": "Rascar la red de contactos para ver qué amigo aún nos soporta y no hemos molestado tanto.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "necesito un favor. ¿a quién no he molestado tanto?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "haces una lista de quienes aún te soportan."
+      },
+      {
+       "quien": "rana",
+       "dice": "¡qué corta! soy yo, tú y una mosca.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo sí te soporto. casi siempre."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿casi? croac.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "desapareces tres días y vuelves con una mosca."
+      },
+      {
+       "quien": "rana",
+       "dice": "eso no es ghostear, es un detalle. «aquí seguimos».",
+       "gesto": "salta"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -228,125 +347,6 @@
       {
        "quien": "jirafa",
        "dice": "no. a veces solo no les alcanza para el cerillo"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Luz de globo",
-    "url": "https://narbigcito.substack.com/p/luz-de-globo"
-   },
-   "generado": "2026-10-23T13:32:55+00:00",
-   "escenas": [
-    {
-     "idea": "Le preguntaron si era mentiroso, casi miente, y se dio cuenta de que sí lo es.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "jirafa, ¿tú mientes?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. bueno, una vez dije que no me daba vértigo.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. ¿y por qué dijiste eso?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "me daba pena. además se me notaba en las rodillas."
-      },
-      {
-       "quien": "rana",
-       "dice": "gibrán estuvo a punto de mentir cuando le preguntaron."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y luego se dio cuenta de que sí lo era."
-      },
-      {
-       "quien": "rana",
-       "dice": "eso es de las cosas más difíciles de decir en voz alta."
-      }
-     ]
-    },
-    {
-     "idea": "Las promesas pequeñas que no cumple y la vergüenza de decir que no ha podido.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán habla de promesas pequeñas que no cumple."
-      },
-      {
-       "quien": "rana",
-       "dice": "como mi promesa de comer tres moscas al día. croac."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y cuántas llevas hoy?"
-      },
-      {
-       "quien": "rana",
-       "dice": "contando las de ayer, once.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que da vergüenza decir que no ha podido."
-      },
-      {
-       "quien": "rana",
-       "dice": "a mí no me da pena. bueno, un poquito.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "mañana tres. yo te ayudo a contarlas."
-      }
-     ]
-    },
-    {
-     "idea": "Admite que su verdad no es nueva: casi todas las caricaturas tienen un capítulo así.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "gibrán dice que su verdad ya salía en las caricaturas."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿nosotras tenemos ese capítulo?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "claro. el de la jirafa que se asoma al borde.",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo no me asomo. me mareo.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "ese es el capítulo. al final te asomas."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y me caigo?"
-      },
-      {
-       "quien": "rana",
-       "dice": "no. solo te ves los pies y descubres que sí llegas.",
-       "gesto": "rie"
       }
      ]
     }
