@@ -3,6 +3,89 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Luz de globo",
+    "url": "https://narbigcito.substack.com/p/luz-de-globo"
+   },
+   "generado": "2026-10-27T13:33:52+00:00",
+   "escenas": [
+    {
+     "idea": "A Gibrán le preguntaron si era mentiroso y casi miente para negarlo; admitirlo fue lo difícil.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "a Gibrán le preguntaron si era mentiroso"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y dijo que no, con cara de ofendido?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "estuvo a punto. luego se dio cuenta de que sí."
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que casi miente para negar que miente",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es un nudo. me da vértigo nomás de verlo.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo también he dicho «ya comí». croac."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "lo difícil fue decir que sí."
+      }
+     ]
+    },
+    {
+     "idea": "Las promesas pequeñas que no cumple, como abrir Instagram en cada espacio libre.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que abre Instagram en cada espacio libre"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo abro la boca en cada espacio libre",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "tú abres la boca por las moscas."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y tú qué haces con tus espacios libres?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "miro hacia abajo. luego me mareo.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "eso es scrollear, pero con vértigo. croac.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "cosas pequeñas, dice. y aun así cuestan."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
     "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
    },
@@ -229,124 +312,6 @@
       {
        "quien": "jirafa",
        "dice": "gracias, rana. se nota que el del cursor también."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "No tener hijos no salvará al mundo",
-    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
-   },
-   "generado": "2026-10-24T13:31:11+00:00",
-   "escenas": [
-    {
-     "idea": "Los 8 mil millones cabríamos en Londres; el problema no es el espacio.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dato: cabemos todos en Londres. todos, croac",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿los ocho mil millones? ¿en una ciudad?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "apretaditos, como el metro en hora pico"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo mido cinco metros. no sé si cuento como una"
-      },
-      {
-       "quien": "rana",
-       "dice": "cuentas como seis. y pagas un solo boleto",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces el espacio no era el problema"
-      },
-      {
-       "quien": "rana",
-       "dice": "y sobra para parques. con moscas, espero"
-      }
-     ]
-    },
-    {
-     "idea": "La mayor parte de la tierra agrícola es para ganado y da pocas calorías.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "la mayor parte del campo es para darle de comer a vacas"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo como hojas. soy casi una ensalada alta"
-      },
-      {
-       "quien": "rana",
-       "dice": "y las vacas nos dan poquitas calorías de regreso"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es mucho terreno para tan poca comida",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "si fuera mosca, sería un trato pésimo",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "las moscas no se cuentan en esa cuenta"
-      },
-      {
-       "quien": "rana",
-       "dice": "por eso me siento tan sola en las estadísticas",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "La CDMX ya tiene muy pocos hijos y el metro sigue igual de lleno.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "aquí nacen menos niños que casi en cualquier lado"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces el metro va vacío, ¿no?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "sigue igual de lleno. llega gente de todos lados"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo ya iba a estrenar asiento",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "muchos no tienen hijos porque la renta no alcanza"
-      },
-      {
-       "quien": "rana",
-       "dice": "ah. entonces no es que le echen menos gasolina"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. a veces solo no les alcanza para el cerillo"
       }
      ]
     }
