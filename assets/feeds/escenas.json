@@ -3,6 +3,124 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-10-28T13:36:37+00:00",
+   "escenas": [
+    {
+     "idea": "No hay sobrepoblación en términos de espacio: toda la humanidad cabría de pie en Londres.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿sabías que cabemos todos en Londres? parados.",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿todos? ¿los ocho mil millones?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "apretaditos, seis por metro cuadrado. croac."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo sola ocuparía lo de cuatro personas, por el cuello."
+      },
+      {
+       "quien": "rana",
+       "dice": "y yo cabría en tu bolsillo. sobra lugar.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces el planeta no está lleno."
+      },
+      {
+       "quien": "rana",
+       "dice": "lo que está lleno es la CDMX. eso es otra cosa."
+      }
+     ]
+    },
+    {
+     "idea": "La comida no falta, falta repartirla: una tercera parte termina en la basura.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "una tercera parte de la comida acaba en la basura."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿una tercera parte? ¿de todo el mundo?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "fruta «fea», platos sin tocar. qué desperdicio, croac."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "tú jamás tirarías una mosca fea."
+      },
+      {
+       "quien": "rana",
+       "dice": "ni fea ni caducada. a mí no me sobra nada.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces comida sí hay. falta repartirla."
+      },
+      {
+       "quien": "rana",
+       "dice": "eso dice Gibrán, pero sin hablar de moscas.",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene muy baja natalidad y sigue igual: mucha gente no tiene hijos porque no le alcanza.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "en la CDMX nacen pocos bebés. 0.8 por mujer."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y el metro ya va vacío?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "igual de lleno. la chamba sigue aquí."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿entonces quién salvó el planeta?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "nadie. mucha gente no los tiene porque no le alcanza."
+      },
+      {
+       "quien": "rana",
+       "dice": "ay. rentar allá está carísimo, ¿verdad?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "imposible. a veces me da tristeza."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -198,120 +316,6 @@
        "quien": "rana",
        "dice": "eso no es ghostear, es un detalle. «aquí seguimos».",
        "gesto": "salta"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-10-25T13:36:24+00:00",
-   "escenas": [
-    {
-     "idea": "El amor como jaula frente al amor con la puerta abierta, para entrar y para salir.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "«una prisión voluntaria». ¿quién se mete solo?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "mucha gente. y luego se asusta de que no abra."
-      },
-      {
-       "quien": "rana",
-       "dice": "yo viví en un terrario. croac. no era voluntario."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y qué era lo peor?"
-      },
-      {
-       "quien": "rana",
-       "dice": "no la jaula. saber que la puerta no existía."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "él quiere puerta «tanto para entrar como para salir»."
-      },
-      {
-       "quien": "rana",
-       "dice": "ok, pero que las moscas entren más de lo que salen",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "Reglas claras desde el principio, creadas juntos y cambiadas cuando ambos cambien.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "propongo reglas. uno: todas las moscas son mías."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no se hacen reglas tú sola. se hacen entre las dos."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y si luego ya no quiero esa regla?",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "se cambia. cuando las dos cambien. eso dice el texto."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a mí me da vértigo. suena a vacío."
-      },
-      {
-       "quien": "rana",
-       "dice": "es que sin regla fija no hay barandal, ¿verdad?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "sí. pero un barandal que armas juntas se siente distinto."
-      }
-     ]
-    },
-    {
-     "idea": "El miedo se hereda: quizá quienes lo pasaron solo sabían amar desde el miedo.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán escribe «solo sabían amar desde el miedo»."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿se hereda el miedo como el color de los ojos?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "más bien como una forma de caminar. se copia."
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces también se puede aprender otra forma, ¿no?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "despacio. con tropiezos. y alguien que no se vaya."
-      },
-      {
-       "quien": "rana",
-       "dice": "aquí me quedo. no tengo prisa, croac."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gracias, rana. se nota que el del cursor también."
       }
      ]
     }
