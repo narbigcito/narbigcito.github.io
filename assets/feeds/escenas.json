@@ -3,6 +3,126 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-10-29T13:40:18+00:00",
+   "escenas": [
+    {
+     "idea": "El amor visto como jaula frente al amor con la puerta abierta, para entrar y para salir.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán no quiere un amor que sea «una prisión voluntaria»"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. yo ya vivo en una jaula, se llama navegador",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero tú puedes salir. solo cierras la pestaña"
+      },
+      {
+       "quien": "rana",
+       "dice": "y me quedo sin mesa, sin café y sin ti. qué miedo",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces la puerta existe, pero nadie quiere usarla"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo saldría por una mosca. y regresaría",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "que regreses porque quieres. no porque no hay salida"
+      }
+     ]
+    },
+    {
+     "idea": "Deslizar kilómetros en una app buscando afecto y recibir otra cosa: un interrogatorio íntimo.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que sus amigos scrollean kilómetros buscando afecto"
+      },
+      {
+       "quien": "rana",
+       "dice": "kilómetros. yo con tres saltos ya quiero siesta",
+       "gesto": "rie"
+      },
+      {
+       "quien": "rana",
+       "dice": "si me dejan, deslizo a la derecha todas las moscas",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es lo mismo. ellos reciben un interrogatorio",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea pides una mosca y te dan una encuesta",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "con preguntas muy personales. y nadie te ha dicho hola"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo solo quiero que alguien me pregunte si ya comí"
+      }
+     ]
+    },
+    {
+     "idea": "El miedo se hereda: se ama como a uno le enseñaron a amar, y el ensayo cierra con un perdón a su mamá.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "me dan vértigo las alturas y no sé de quién lo heredé"
+      },
+      {
+       "quien": "rana",
+       "dice": "quizá lo aprendiste viendo a alguien tener miedo"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán piensa algo parecido, pero con el amor",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que uno quiere como le quisieron a uno"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y al final le escribe a su mamá. le pide perdón"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac... no se me ocurre ningún chiste. qué raro",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice «no quiero que tengas miedo nunca más»"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -197,125 +317,6 @@
       {
        "quien": "jirafa",
        "dice": "cosas pequeñas, dice. y aun así cuestan."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-10-26T13:40:07+00:00",
-   "escenas": [
-    {
-     "idea": "Nadie necesita un poema a las 4 de la mañana, pero uno necesita que necesiten algo suyo.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "oye, ¿alguien necesita un poema a las 4 de la mañana?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. el texto dice que nadie."
-      },
-      {
-       "quien": "rana",
-       "dice": "¡qué grosero! croac. yo escribo muy bonito.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero sí necesitas que alguien necesite el tuyo."
-      },
-      {
-       "quien": "rana",
-       "dice": "como mis moscas: nadie las pide y yo las traigo.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y un día alguien las quiere justo a las 4."
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces te compro uno. pero me lo dedicas.",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Antes recibía a gente en la madrugada y ahora ya no tiene depa; su casa era refugio, con límites.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán ya no tiene depa. antes recibía gente de noche."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿les daba de comer? ¿había moscas?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "comida, cama, refugio. con límites, eso sí."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿qué límites? croac."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "nada de secuestrar perros ni de matar gente."
-      },
-      {
-       "quien": "rana",
-       "dice": "qué estándares tan altos, de verdad.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "él dice que aún es tibio con eso."
-      }
-     ]
-    },
-    {
-     "idea": "Rascar la red de contactos para ver qué amigo aún nos soporta y no hemos molestado tanto.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "necesito un favor. ¿a quién no he molestado tanto?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "haces una lista de quienes aún te soportan."
-      },
-      {
-       "quien": "rana",
-       "dice": "¡qué corta! soy yo, tú y una mosca.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo sí te soporto. casi siempre."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿casi? croac.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "desapareces tres días y vuelves con una mosca."
-      },
-      {
-       "quien": "rana",
-       "dice": "eso no es ghostear, es un detalle. «aquí seguimos».",
-       "gesto": "salta"
       }
      ]
     }
