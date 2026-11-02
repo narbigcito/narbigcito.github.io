@@ -3,6 +3,122 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-11-02T13:37:55+00:00",
+   "escenas": [
+    {
+     "idea": "Nadie necesita un poema a las 4 de la mañana, pero sí necesitamos que necesiten uno nuestro.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿alguien necesita un poema a las 4 de la mañana?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que no. pero que necesitamos que lo necesiten."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. ¿o sea que quiero que alguien me pida moscas?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "casi. quieres que alguien te espere con hambre."
+      },
+      {
+       "quien": "rana",
+       "dice": "ay. eso sí me pegó.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a mí también. por eso tardé en decirlo."
+      },
+      {
+       "quien": "rana",
+       "dice": "te compro un poema. tú no lo necesitas, yo sí."
+      }
+     ]
+    },
+    {
+     "idea": "Rascar la red de contactos para ver qué amigo aún te soporta o no has molestado tanto.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "haz la lista de a quién le llegarías de madrugada."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es corta. ya taché a los que no quiero molestar."
+      },
+      {
+       "quien": "rana",
+       "dice": "yo tengo a una mosca y a ti. la mosca se está cayendo.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "el texto habla del amigo que «aún nos soporte»."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si ellos hacen la misma lista y tú sales en ella?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "...no lo había pensado. me dio vértigo.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. yo ya te puse a ti. con asterisco.",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "Gibrán dejó su depa y ya no tiene casa para recibir a los olvidados de la madrugada.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dejó su depa. ya no tiene dónde recibir gente."
+      },
+      {
+       "quien": "rana",
+       "dice": "nosotras vivimos en una página. no pagamos renta."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero tampoco tenemos puerta.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. somos un hogar sin puerta. entra cualquiera.",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "el del cursor entra. ¿cuenta como huésped?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "si trae moscas, sí. dentro de los límites, claro.",
+       "gesto": "rie"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -234,89 +350,6 @@
       {
        "quien": "jirafa",
        "dice": "imposible. a veces me da tristeza."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Luz de globo",
-    "url": "https://narbigcito.substack.com/p/luz-de-globo"
-   },
-   "generado": "2026-10-27T13:33:52+00:00",
-   "escenas": [
-    {
-     "idea": "A Gibrán le preguntaron si era mentiroso y casi miente para negarlo; admitirlo fue lo difícil.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "a Gibrán le preguntaron si era mentiroso"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y dijo que no, con cara de ofendido?",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "estuvo a punto. luego se dio cuenta de que sí."
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que casi miente para negar que miente",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es un nudo. me da vértigo nomás de verlo.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo también he dicho «ya comí». croac."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "lo difícil fue decir que sí."
-      }
-     ]
-    },
-    {
-     "idea": "Las promesas pequeñas que no cumple, como abrir Instagram en cada espacio libre.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que abre Instagram en cada espacio libre"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo abro la boca en cada espacio libre",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "tú abres la boca por las moscas."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y tú qué haces con tus espacios libres?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "miro hacia abajo. luego me mareo.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "eso es scrollear, pero con vértigo. croac.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "cosas pequeñas, dice. y aun así cuestan."
       }
      ]
     }
