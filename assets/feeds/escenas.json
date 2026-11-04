@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-11-04T13:34:53+00:00",
+   "escenas": [
+    {
+     "idea": "Comida sí alcanza; lo que falla es el reparto y lo que se tira.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "jirafa, dato: una tercera parte de la comida se tira",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿una tercera parte? eso es mucha comida."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. y yo aquí contando cada mosca como tesoro."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces no faltan moscas. falta repartirlas."
+      },
+      {
+       "quien": "rana",
+       "dice": "ya sé a quién le toca tirar las mías: a nadie.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que comida no falta. falta repartirla."
+      },
+      {
+       "quien": "rana",
+       "dice": "pues yo me ofrezco de repartidora. con comisión.",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX no cabe por densidad, no por sobrepoblación; Baja California Sur está casi vacía.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dicen que en la ciudad ya no cabemos."
+      },
+      {
+       "quien": "rana",
+       "dice": "es cierto. ayer me pisaron la pata en el metro."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero en Baja California Sur te tocan diez canchas."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿diez canchas para mí solita? me mudo.",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es que sobremos. es que nos amontonamos."
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces somos como moscas en un solo foco."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "un poco, sí. pero no se lo digas al foco.",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene muy pocos hijos y sigue cara y apretada; muchos no los tienen porque no les alcanza.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "en la CDMX nacen poquitos bebés. ¿y el metro?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "igual de lleno. lo dice el ensayo."
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que el experimento ya se hizo, croac."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y no salió un paraíso barato y espacioso."
+      },
+      {
+       "quien": "rana",
+       "dice": "porque la renta está imposible, ¿verdad?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "mucha gente no los deja de tener por el planeta."
+      },
+      {
+       "quien": "rana",
+       "dice": "es porque no le alcanza. qué feo, jirafa."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -227,126 +344,6 @@
        "quien": "rana",
        "dice": "si trae moscas, sí. dentro de los límites, claro.",
        "gesto": "rie"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-10-29T13:40:18+00:00",
-   "escenas": [
-    {
-     "idea": "El amor visto como jaula frente al amor con la puerta abierta, para entrar y para salir.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán no quiere un amor que sea «una prisión voluntaria»"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo ya vivo en una jaula, se llama navegador",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero tú puedes salir. solo cierras la pestaña"
-      },
-      {
-       "quien": "rana",
-       "dice": "y me quedo sin mesa, sin café y sin ti. qué miedo",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces la puerta existe, pero nadie quiere usarla"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo saldría por una mosca. y regresaría",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "que regreses porque quieres. no porque no hay salida"
-      }
-     ]
-    },
-    {
-     "idea": "Deslizar kilómetros en una app buscando afecto y recibir otra cosa: un interrogatorio íntimo.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que sus amigos scrollean kilómetros buscando afecto"
-      },
-      {
-       "quien": "rana",
-       "dice": "kilómetros. yo con tres saltos ya quiero siesta",
-       "gesto": "rie"
-      },
-      {
-       "quien": "rana",
-       "dice": "si me dejan, deslizo a la derecha todas las moscas",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es lo mismo. ellos reciben un interrogatorio",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea pides una mosca y te dan una encuesta",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "con preguntas muy personales. y nadie te ha dicho hola"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo solo quiero que alguien me pregunte si ya comí"
-      }
-     ]
-    },
-    {
-     "idea": "El miedo se hereda: se ama como a uno le enseñaron a amar, y el ensayo cierra con un perdón a su mamá.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "me dan vértigo las alturas y no sé de quién lo heredé"
-      },
-      {
-       "quien": "rana",
-       "dice": "quizá lo aprendiste viendo a alguien tener miedo"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán piensa algo parecido, pero con el amor",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que uno quiere como le quisieron a uno"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y al final le escribe a su mamá. le pide perdón"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac... no se me ocurre ningún chiste. qué raro",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice «no quiero que tengas miedo nunca más»"
       }
      ]
     }
