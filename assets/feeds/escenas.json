@@ -3,6 +3,122 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-11-05T13:33:10+00:00",
+   "escenas": [
+    {
+     "idea": "El amor como espacio con la puerta abierta, para entrar y para salir, en contraste con la jaula.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán quiere un amor con la puerta abierta"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿como esta página? el del cursor entra y sale",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sí, pero a mí me da vértigo que alguien salga",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. a mí me gusta, así entran moscas",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y si una mosca quiere irse?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "se va. yo me quedo con las que se quedan"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces no es jaula. solo es una mesa"
+      }
+     ]
+    },
+    {
+     "idea": "Scrollear kilómetros buscando afecto y que el miedo termine volviéndose sometimiento.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que sus amigos scrollean kilómetros buscando cariño"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo mido cinco metros y ya me canso",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "scrollear, jirafa. con el dedo, no con el cuello",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y el del cursor nos scrollea a nosotras?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "seguro. espero que se detenga en mí",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo espero que no se detenga por miedo"
+      }
+     ]
+    },
+    {
+     "idea": "El amor se aprende, y a veces se aprende desde el miedo; la disculpa de Gibrán a su mamá.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán piensa que sus abuelos amaban desde el miedo"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿eso se aprende? ¿como cazar moscas?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "creo que sí. te lo enseñan sin avisar"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. qué feo aprender algo así sin querer",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "al final le pide perdón a su mamá"
+      },
+      {
+       "quien": "rana",
+       "dice": "no voy a hacer ningún chiste con eso"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gracias, rana. ven, acércate al fuego"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -228,122 +344,6 @@
       {
        "quien": "jirafa",
        "dice": "bueno. que sea vieja no la hace falsa."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-11-02T13:37:55+00:00",
-   "escenas": [
-    {
-     "idea": "Nadie necesita un poema a las 4 de la mañana, pero sí necesitamos que necesiten uno nuestro.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "¿alguien necesita un poema a las 4 de la mañana?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que no. pero que necesitamos que lo necesiten."
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. ¿o sea que quiero que alguien me pida moscas?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "casi. quieres que alguien te espere con hambre."
-      },
-      {
-       "quien": "rana",
-       "dice": "ay. eso sí me pegó.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a mí también. por eso tardé en decirlo."
-      },
-      {
-       "quien": "rana",
-       "dice": "te compro un poema. tú no lo necesitas, yo sí."
-      }
-     ]
-    },
-    {
-     "idea": "Rascar la red de contactos para ver qué amigo aún te soporta o no has molestado tanto.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "haz la lista de a quién le llegarías de madrugada."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es corta. ya taché a los que no quiero molestar."
-      },
-      {
-       "quien": "rana",
-       "dice": "yo tengo a una mosca y a ti. la mosca se está cayendo.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "el texto habla del amigo que «aún nos soporte»."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y si ellos hacen la misma lista y tú sales en ella?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "...no lo había pensado. me dio vértigo.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo ya te puse a ti. con asterisco.",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "Gibrán dejó su depa y ya no tiene casa para recibir a los olvidados de la madrugada.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán dejó su depa. ya no tiene dónde recibir gente."
-      },
-      {
-       "quien": "rana",
-       "dice": "nosotras vivimos en una página. no pagamos renta."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero tampoco tenemos puerta.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. somos un hogar sin puerta. entra cualquiera.",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "el del cursor entra. ¿cuenta como huésped?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "si trae moscas, sí. dentro de los límites, claro.",
-       "gesto": "rie"
       }
      ]
     }
