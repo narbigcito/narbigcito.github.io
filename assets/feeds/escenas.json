@@ -3,6 +3,118 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-11-06T13:32:55+00:00",
+   "escenas": [
+    {
+     "idea": "Ver la misma película dos veces, una sobrio y otra no, y salir sin volver del todo en uno.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "vio madoka dos veces. una sobrio y otra no",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿para qué verla dos veces? ya sabe cómo acaba"
+      },
+      {
+       "quien": "rana",
+       "dice": "por eso. la segunda ves otra cosa, croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo miro el mismo árbol hace años. nunca es igual"
+      },
+      {
+       "quien": "rana",
+       "dice": "jirafa, es un árbol. no hace nada",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que en 4D no la recomienda. me da vértigo",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "Nadie necesita un poema a las 4 de la mañana, pero uno necesita que necesiten el suyo.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que nadie necesita un poema a las 4 de la mañana"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo a las 4 necesito una mosca"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pero uno necesita que necesiten el suyo"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que quiere que le pidan poemas"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. quiere servirle a alguien. es distinto"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo le cazo moscas al del cursor. ¿cuenta?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "cuenta. aunque él no las haya pedido"
+      }
+     ]
+    },
+    {
+     "idea": "Repasar la red de contactos para ver a qué amigo aún no hemos molestado ni ghosteado demasiado.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que repasa amigos a ver a cuál no ha molestado"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "qué triste. como buscar la rama más baja"
+      },
+      {
+       "quien": "rana",
+       "dice": "o la que aguante. «o ghosteado lo suficiente»",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿tú a quién le marcarías a las 4 de la mañana?"
+      },
+      {
+       "quien": "rana",
+       "dice": "a ti. aunque contestas dormida y dices cosas raras"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no estaba dormida. estaba pensando",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. por eso te marco"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -229,121 +341,6 @@
       {
        "quien": "rana",
        "dice": "es porque no le alcanza. qué feo, jirafa."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Luz de globo",
-    "url": "https://narbigcito.substack.com/p/luz-de-globo"
-   },
-   "generado": "2026-11-03T13:37:00+00:00",
-   "escenas": [
-    {
-     "idea": "Le preguntaron si era mentiroso y casi miente; darse cuenta de que sí lo era fue el primer paso.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "le preguntaron si era mentiroso. casi dijo que no.",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. mentir para negar que mientes. nivel experto.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es chiste. se dio cuenta justo a tiempo."
-      },
-      {
-       "quien": "rana",
-       "dice": "ya sé. yo digo «ya casi termino» y ni he empezado."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a mí me da vértigo decir la verdad. está muy alto."
-      },
-      {
-       "quien": "rana",
-       "dice": "pues baja de a poco. yo te cacho."
-      }
-     ]
-    },
-    {
-     "idea": "Las promesas pequeñas e incumplidas, como abrir Instagram en cada espacio libre, y la vergüenza de decirlo.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que abre instagram en cada hueco libre."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "son cosas pequeñas. y aun así no las cumple."
-      },
-      {
-       "quien": "rana",
-       "dice": "igualito que yo con las moscas. un hueco y zas.",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "tú no sientes vergüenza por eso."
-      },
-      {
-       "quien": "rana",
-       "dice": "no. pero a él sí le da, y lo escribió igual."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "decirlo en voz alta también pesa."
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. ahora que no abra instagram. ya me callo.",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "Se siente mal porque su verdad no es nueva: casi todas las caricaturas tienen un capítulo de eso.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que se siente mal porque su verdad no es nueva."
-      },
-      {
-       "quien": "rana",
-       "dice": "es que casi todas las caricaturas tienen ese capítulo."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿cuál capítulo?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "el del héroe que ya tenía el poder desde antes.",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo no veo caricaturas. soy una jirafa seria.",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "saliste en una. con sombrero. croac.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "bueno. que sea vieja no la hace falsa."
       }
      ]
     }
