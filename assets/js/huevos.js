@@ -38,6 +38,7 @@ document.addEventListener('keydown', e => {
     if (seqIdx === seq.length) {
       seqIdx = 0;
       konamiCount++;
+      window.__registro?.evento('huevo', 'konami');
       if (konamiCount === 1) document.getElementById('konamiBar').classList.add('show');
       else if (konamiCount >= 2) activateKonami2();
     }
