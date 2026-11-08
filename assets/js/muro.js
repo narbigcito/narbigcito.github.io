@@ -127,6 +127,7 @@ function handleWallHit() {
 
   
   if (hits === MAX_HITS) {
+    window.__registro?.evento('muro', 'roto');
     wallText.textContent = 'crack';
     for (let i = 0; i < 50; i++) {
       const p = document.createElement('div');
