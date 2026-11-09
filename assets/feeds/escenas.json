@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-11-09T13:40:03+00:00",
+   "escenas": [
+    {
+     "idea": "Los 8 mil millones cabrían parados en Londres: el problema no es el espacio sino cómo se reparte y dónde se amontona la gente.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que los 8 mil millones cabemos en Londres",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿todos? ¿de pie?"
+      },
+      {
+       "quien": "rana",
+       "dice": "apretaditos, seis por metro cuadrado. como en el metro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo ocuparía el lugar de cuatro personas",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. a ti te dejan en las afueras de Londres",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces el espacio sí alcanza"
+      },
+      {
+       "quien": "rana",
+       "dice": "lo que no alcanza es el vagón de las ocho de la mañana"
+      }
+     ]
+    },
+    {
+     "idea": "Se tira una tercera parte de la comida del mundo mientras hay gente que pasa días sin comer: no falta comida, falta repartirla.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "una tercera parte de la comida termina en la basura"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y las moscas de esa basura? ¿quién las come?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "hablo en serio. hay gente que pasa días sin comer"
+      },
+      {
+       "quien": "rana",
+       "dice": "perdón. es que tiran fruta nada más por fea",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "a mí una mosca chueca me sabe igual"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "ese es el punto. alcanza, pero no llega"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que no faltan moscas, falta repartirlas",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene fecundidad de 0.8 y sigue cara y apretada: mucha gente no tiene hijos porque no le alcanza, no por salvar al planeta.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "en la ciudad nacen cada vez menos bebés"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces el metro ya debe ir vacío, ¿no?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sigue igual de lleno. y rentar está imposible"
+      },
+      {
+       "quien": "rana",
+       "dice": "ah. entonces no es por salvar el planeta, es por el alquiler"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "hay quien lo decide por gusto. eso está bien"
+      },
+      {
+       "quien": "rana",
+       "dice": "claro. lo triste es cuando lo decide el precio"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sí. eso no es elegir, es no poder"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -226,122 +343,6 @@
       {
        "quien": "rana",
        "dice": "croac. por eso te marco"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-11-05T13:33:10+00:00",
-   "escenas": [
-    {
-     "idea": "El amor como espacio con la puerta abierta, para entrar y para salir, en contraste con la jaula.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán quiere un amor con la puerta abierta"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿como esta página? el del cursor entra y sale",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "sí, pero a mí me da vértigo que alguien salga",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. a mí me gusta, así entran moscas",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y si una mosca quiere irse?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "se va. yo me quedo con las que se quedan"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces no es jaula. solo es una mesa"
-      }
-     ]
-    },
-    {
-     "idea": "Scrollear kilómetros buscando afecto y que el miedo termine volviéndose sometimiento.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que sus amigos scrollean kilómetros buscando cariño"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo mido cinco metros y ya me canso",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "scrollear, jirafa. con el dedo, no con el cuello",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y el del cursor nos scrollea a nosotras?",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "seguro. espero que se detenga en mí",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo espero que no se detenga por miedo"
-      }
-     ]
-    },
-    {
-     "idea": "El amor se aprende, y a veces se aprende desde el miedo; la disculpa de Gibrán a su mamá.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán piensa que sus abuelos amaban desde el miedo"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿eso se aprende? ¿como cazar moscas?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "creo que sí. te lo enseñan sin avisar"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. qué feo aprender algo así sin querer",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "al final le pide perdón a su mamá"
-      },
-      {
-       "quien": "rana",
-       "dice": "no voy a hacer ningún chiste con eso"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gracias, rana. ven, acércate al fuego"
       }
      ]
     }
