@@ -3,6 +3,125 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-11-10T13:37:19+00:00",
+   "escenas": [
+    {
+     "idea": "El amor con la puerta abierta, para entrar y para salir, frente al amor como jaula.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "croac. Gibrán quiere un amor con la puerta abierta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿para entrar y también para salir?"
+      },
+      {
+       "quien": "rana",
+       "dice": "sí. como aquí, el del cursor se va cuando quiera",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "me da vértigo. que alguien se vaya así nomás",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y que te encierren no te da vértigo?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "en ninguna jaula quepo. con este cuello, imposible"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces ya eres de puerta abierta. croac",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "El miedo se disfraza de oportunidad y luego se convierte en promesa; scrollear kilómetros buscando afecto.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que sus amigos scrollean kilómetros buscando cariño"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo con este cuello scrolleo más rápido"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y has encontrado algo?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "una vez vi una sombra larga y pensé que era el destino",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "era mi cuello"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. o sea, el miedo se disfraza de oportunidad",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y después te pide que le prometas cosas",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "Se ama como se aprendió a amar: la familia de Gibrán amaba desde el miedo porque no conocía otra forma.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán cree que su familia amaba desde el miedo"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y no sabían de otra manera?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es como caminar de noche con el mapa de otra ciudad"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo solo sé lo que vi hacer a otras ranas"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea, comer moscas y poco más",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces algo más se puede aprender, despacito"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. ya no hables, que me pongo sentimental",
+       "gesto": "voltea"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -231,118 +350,6 @@
        "quien": "jirafa",
        "dice": "no me hables de alturas.",
        "gesto": "voltea"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-11-06T13:32:55+00:00",
-   "escenas": [
-    {
-     "idea": "Ver la misma película dos veces, una sobrio y otra no, y salir sin volver del todo en uno.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "vio madoka dos veces. una sobrio y otra no",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿para qué verla dos veces? ya sabe cómo acaba"
-      },
-      {
-       "quien": "rana",
-       "dice": "por eso. la segunda ves otra cosa, croac"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo miro el mismo árbol hace años. nunca es igual"
-      },
-      {
-       "quien": "rana",
-       "dice": "jirafa, es un árbol. no hace nada",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que en 4D no la recomienda. me da vértigo",
-       "gesto": "asombro"
-      }
-     ]
-    },
-    {
-     "idea": "Nadie necesita un poema a las 4 de la mañana, pero uno necesita que necesiten el suyo.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que nadie necesita un poema a las 4 de la mañana"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo a las 4 necesito una mosca"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pero uno necesita que necesiten el suyo"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que quiere que le pidan poemas"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. quiere servirle a alguien. es distinto"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo le cazo moscas al del cursor. ¿cuenta?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "cuenta. aunque él no las haya pedido"
-      }
-     ]
-    },
-    {
-     "idea": "Repasar la red de contactos para ver a qué amigo aún no hemos molestado ni ghosteado demasiado.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que repasa amigos a ver a cuál no ha molestado"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "qué triste. como buscar la rama más baja"
-      },
-      {
-       "quien": "rana",
-       "dice": "o la que aguante. «o ghosteado lo suficiente»",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿tú a quién le marcarías a las 4 de la mañana?"
-      },
-      {
-       "quien": "rana",
-       "dice": "a ti. aunque contestas dormida y dices cosas raras"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no estaba dormida. estaba pensando",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. por eso te marco"
       }
      ]
     }
