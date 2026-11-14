@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-11-14T13:31:12+00:00",
+   "escenas": [
+    {
+     "idea": "Todos los humanos cabrían parados en Londres: el problema no es el espacio sino la densidad y el reparto.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "leí que todos los humanos cabríamos en Londres",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿todos? ¿y yo dónde dejo mi charco?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "parados. apretados, como en el metro"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. entonces ya hicimos el ensayo general",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y todavía sobraría para un par de parques"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces ¿por qué siento que ya no cabemos?",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "porque casi todos están en el mismo rincón"
+      }
+     ]
+    },
+    {
+     "idea": "Más de tres cuartas partes de la tierra agrícola son para ganado y dan menos de una quinta parte de las calorías.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "la tierra de cultivo casi toda es para el ganado"
+      },
+      {
+       "quien": "rana",
+       "dice": "qué injusticia. ¿y las moscas qué?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "las vacas ocupan tres cuartas partes"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo ocupo un nenúfar y me alimento de maravilla"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y a cambio dan menos de una quinta parte de calorías"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. mala inversión, hasta yo lo veo",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es culpa de la vaca, ella nomás se está comiendo el pasto"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya vive con muy pocos hijos y sigue igual de cara y llena; mucha gente no tiene hijos porque no le alcanza.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "en la ciudad ya casi nadie tiene hijos, ¿no?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "0.8 por mujer. menos que casi todo el mundo"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces el metro ya debería ir vacío",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "sigue igual de lleno. y la renta igual de cara"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que no lo hacen por salvar el planeta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "muchas veces «no le alcanza», dice Gibrán"
+      },
+      {
+       "quien": "rana",
+       "dice": "qué feo. te traigo otro malvavisco, ¿sí?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -231,125 +348,6 @@
        "quien": "rana",
        "dice": "pero lo suyo terminó en hotel y lo mío en una hoja",
        "gesto": "rie"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-11-10T13:37:19+00:00",
-   "escenas": [
-    {
-     "idea": "El amor con la puerta abierta, para entrar y para salir, frente al amor como jaula.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "croac. Gibrán quiere un amor con la puerta abierta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿para entrar y también para salir?"
-      },
-      {
-       "quien": "rana",
-       "dice": "sí. como aquí, el del cursor se va cuando quiera",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "me da vértigo. que alguien se vaya así nomás",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y que te encierren no te da vértigo?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "en ninguna jaula quepo. con este cuello, imposible"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces ya eres de puerta abierta. croac",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "El miedo se disfraza de oportunidad y luego se convierte en promesa; scrollear kilómetros buscando afecto.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que sus amigos scrollean kilómetros buscando cariño"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo con este cuello scrolleo más rápido"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y has encontrado algo?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "una vez vi una sombra larga y pensé que era el destino",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "era mi cuello"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. o sea, el miedo se disfraza de oportunidad",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y después te pide que le prometas cosas",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "Se ama como se aprendió a amar: la familia de Gibrán amaba desde el miedo porque no conocía otra forma.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán cree que su familia amaba desde el miedo"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y no sabían de otra manera?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es como caminar de noche con el mapa de otra ciudad"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo solo sé lo que vi hacer a otras ranas"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea, comer moscas y poco más",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces algo más se puede aprender, despacito"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. ya no hables, que me pongo sentimental",
-       "gesto": "voltea"
       }
      ]
     }
