@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-11-16T01:57:18+00:00",
+   "escenas": [
+    {
+     "idea": "El amor como espacio abierto: una puerta para entrar y para salir, en vez de jaula.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "jirafa, ¿tú dejarías la puerta abierta? croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿de qué puerta hablas?"
+      },
+      {
+       "quien": "rana",
+       "dice": "del amor. Gibrán quiere «la puerta abierta»"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "me da vértigo. una puerta abierta es altura",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "es una puerta, no un balcón",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "igual, si se puede salir, alguien puede salir"
+      },
+      {
+       "quien": "rana",
+       "dice": "pues sí. la mosca que se queda porque quiere sabe mejor",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Reglas claras desde el principio, creadas entre dos y cambiadas cuando ambos cambian.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que las reglas se hacen entre los dos"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿como las reglas de esta página?"
+      },
+      {
+       "quien": "rana",
+       "dice": "no, a esas nadie nos preguntó. croac",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y si una cambia y la otra no?"
+      },
+      {
+       "quien": "rana",
+       "dice": "se platica. para eso son dos"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo no cambio. mismo cuello desde siempre"
+      },
+      {
+       "quien": "rana",
+       "dice": "antes te daba miedo el cursor y ya lo saludas",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "Quizá quienes nos lastimaron solo sabían amar desde el miedo, y eso se hereda.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "mi mamá también se agacha con miedo a beber"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿el vértigo es de familia?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "creo que sí. ella me cuidaba así"
+      },
+      {
+       "quien": "rana",
+       "dice": "gibrán piensa algo parecido de sus abuelos"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "se puede cuidar y asustar a la vez"
+      },
+      {
+       "quien": "rana",
+       "dice": "sí. y ya sabes que a veces yo también me asusto"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gracias, rana. acércate al fuego"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -231,123 +348,6 @@
       {
        "quien": "jirafa",
        "dice": "perdón. Pero él ya quiere empezar. ¿Y tú?"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-11-12T13:32:58+00:00",
-   "escenas": [
-    {
-     "idea": "Nadie necesita un poema a las 4 de la mañana, pero sí necesitamos que necesiten uno nuestro.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que nadie necesita un poema a las 4 de la mañana"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿ni yo? croac. a esa hora yo necesito una mosca",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "una mosca no es un poema. aunque a veces se parece"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y entonces para qué escribes a esa hora?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "para que alguien necesite que lo necesites"
-      },
-      {
-       "quien": "rana",
-       "dice": "ah. como cuando me guardas la última mosca"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo no te guardo moscas",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "Gibrán dejó su depa, que era hogar de madrugada para los olvidados; ¿dónde recibe ahora?",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "antes su casa estaba abierta a las 4 de la mañana"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "comida, techo, refugio. y ya no tiene depa"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. ¿y a dónde llega la gente ahora?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "quizá aquí. esta página es una casa pequeña"
-      },
-      {
-       "quien": "rana",
-       "dice": "sin cocina ni sillones. solo dos bichos y un cursor",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "pues yo hago de lámpara. soy alta",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "y yo de cocina. tengo moscas. pasen"
-      }
-     ]
-    },
-    {
-     "idea": "Los 700 pesos que fingió olvidar tener, guardados justo para una noche así.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "se escondió 700 pesos de sí mismo. qué cosa"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "fingió olvidarlos para tenerlos en la noche mala"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo hago lo mismo con las moscas bajo una hoja"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y cuando las encuentras?"
-      },
-      {
-       "quien": "rana",
-       "dice": "sorpresa, croac. me quiero muchísimo",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es el mismo truco. cuidarte sin que te des cuenta"
-      },
-      {
-       "quien": "rana",
-       "dice": "pero lo suyo terminó en hotel y lo mío en una hoja",
-       "gesto": "rie"
       }
      ]
     }
