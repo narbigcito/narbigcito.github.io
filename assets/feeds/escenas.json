@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Luz de globo",
+    "url": "https://narbigcito.substack.com/p/luz-de-globo"
+   },
+   "generado": "2026-11-18T13:34:37+00:00",
+   "escenas": [
+    {
+     "idea": "Casi miente cuando le preguntaron si era mentiroso: la mentira sale sola, antes de pensarla.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "gibrán casi miente cuando le preguntaron si mentía",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿cómo se casi miente?"
+      },
+      {
+       "quien": "rana",
+       "dice": "abres la boca y la mentira ya venía lista. croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a mí me pasa con las alturas. digo «no me dan miedo»"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y luego?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "luego me tiemblan las rodillas. mentí en voz baja",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo le dije al cursor que no me comí su mosca",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "Las promesas pequeñas que da vergüenza no cumplir, como cerrar Instagram en cada espacio libre.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "prometí comer una mosca menos al día"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿cuántas llevas hoy?"
+      },
+      {
+       "quien": "rana",
+       "dice": "once. croac",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán habla de cosas tan simples que da pena decirlas"
+      },
+      {
+       "quien": "rana",
+       "dice": "como abrir Instagram en cada hueco libre"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "eso. ya ni se cree sus promesas chiquitas"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces una sola. tú miras el suelo cinco segundos",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "Dejar de querer arreglar el mundo y empezar por uno mismo, intentando de verdad aunque dé miedo.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "al final dice «voy a empezar conmigo»"
+      },
+      {
+       "quien": "rana",
+       "dice": "yo pensaba arreglar la página entera primero"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "él también empezaba por lo grande"
+      },
+      {
+       "quien": "rana",
+       "dice": "empezar por una es poquito, ¿no?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es lo más alto que hay. me da vértigo",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si lo intentas de verdad y no puedes?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces al menos ya lo sabré"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
     "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
    },
@@ -234,123 +351,6 @@
       {
        "quien": "jirafa",
        "dice": "gracias, rana. acércate al fuego"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "No tener hijos no salvará al mundo",
-    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
-   },
-   "generado": "2026-11-14T13:31:12+00:00",
-   "escenas": [
-    {
-     "idea": "Todos los humanos cabrían parados en Londres: el problema no es el espacio sino la densidad y el reparto.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "leí que todos los humanos cabríamos en Londres",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿todos? ¿y yo dónde dejo mi charco?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "parados. apretados, como en el metro"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. entonces ya hicimos el ensayo general",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y todavía sobraría para un par de parques"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces ¿por qué siento que ya no cabemos?",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "porque casi todos están en el mismo rincón"
-      }
-     ]
-    },
-    {
-     "idea": "Más de tres cuartas partes de la tierra agrícola son para ganado y dan menos de una quinta parte de las calorías.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "la tierra de cultivo casi toda es para el ganado"
-      },
-      {
-       "quien": "rana",
-       "dice": "qué injusticia. ¿y las moscas qué?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "las vacas ocupan tres cuartas partes"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo ocupo un nenúfar y me alimento de maravilla"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y a cambio dan menos de una quinta parte de calorías"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. mala inversión, hasta yo lo veo",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es culpa de la vaca, ella nomás se está comiendo el pasto"
-      }
-     ]
-    },
-    {
-     "idea": "La CDMX ya vive con muy pocos hijos y sigue igual de cara y llena; mucha gente no tiene hijos porque no le alcanza.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "en la ciudad ya casi nadie tiene hijos, ¿no?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "0.8 por mujer. menos que casi todo el mundo"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces el metro ya debería ir vacío",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "sigue igual de lleno. y la renta igual de cara"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que no lo hacen por salvar el planeta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "muchas veces «no le alcanza», dice Gibrán"
-      },
-      {
-       "quien": "rana",
-       "dice": "qué feo. te traigo otro malvavisco, ¿sí?"
       }
      ]
     }
