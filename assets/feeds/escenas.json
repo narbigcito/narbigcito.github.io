@@ -3,6 +3,123 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Teorías dormidas",
+    "url": "https://narbigcito.substack.com/p/teorias-dormidas"
+   },
+   "generado": "2026-11-19T13:33:04+00:00",
+   "escenas": [
+    {
+     "idea": "Las teorías buenas pueden pasar décadas guardadas en un cajón esperando su momento.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "leí que hay teorías dormidas en un cajón."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿dormidas? ¿con pijama y todo? croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "décadas, rana. esperando que alguien las despierte."
+      },
+      {
+       "quien": "rana",
+       "dice": "yo una vez dejé una mosca en el cajón."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y qué pasó?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "nada bueno. pero ya no era mosca, era historia."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces no todo lo guardado despierta bien."
+      }
+     ]
+    },
+    {
+     "idea": "Antes se creía que cambiar el mundo era cosa de genios de billete; ahora el autor cree que lo que pesa es atreverse.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿tú saldrías en un billete?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo no. tengo el cuello muy largo para el óvalo."
+      },
+      {
+       "quien": "rana",
+       "dice": "jaja, ¿y si el billete es vertical?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que no hace falta ser genio."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿entonces qué hace falta? ¿hambre?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "atreverse. intentarlo aunque den vértigo las alturas.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "o sea que tú, subida a algo alto. croac."
+      }
+     ]
+    },
+    {
+     "idea": "Mucha gente amontonada en lo mismo mientras hay problemas simples y olvidados.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿viste cuántos hay en la misma charca?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "todos amontonados, sí. y la charca de al lado, vacía."
+      },
+      {
+       "quien": "rana",
+       "dice": "es que ahí no hay moscas, que se sepa.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "nadie lo ha comprobado. a lo mejor sí hay."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si voy y está feo?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán lo llama «ese es el chiste»."
+      },
+      {
+       "quien": "rana",
+       "dice": "y el riesgo. voy yo primero, pero tú vienes.",
+       "gesto": "salta"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Luz de globo",
     "url": "https://narbigcito.substack.com/p/luz-de-globo"
    },
@@ -234,123 +351,6 @@
        "quien": "rana",
        "dice": "yo te guío. brillo poquito, pero brillo",
        "gesto": "salta"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-11-16T01:57:18+00:00",
-   "escenas": [
-    {
-     "idea": "El amor como espacio abierto: una puerta para entrar y para salir, en vez de jaula.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "jirafa, ¿tú dejarías la puerta abierta? croac"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿de qué puerta hablas?"
-      },
-      {
-       "quien": "rana",
-       "dice": "del amor. Gibrán quiere «la puerta abierta»"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "me da vértigo. una puerta abierta es altura",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "es una puerta, no un balcón",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "igual, si se puede salir, alguien puede salir"
-      },
-      {
-       "quien": "rana",
-       "dice": "pues sí. la mosca que se queda porque quiere sabe mejor",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Reglas claras desde el principio, creadas entre dos y cambiadas cuando ambos cambian.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que las reglas se hacen entre los dos"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿como las reglas de esta página?"
-      },
-      {
-       "quien": "rana",
-       "dice": "no, a esas nadie nos preguntó. croac",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿y si una cambia y la otra no?"
-      },
-      {
-       "quien": "rana",
-       "dice": "se platica. para eso son dos"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo no cambio. mismo cuello desde siempre"
-      },
-      {
-       "quien": "rana",
-       "dice": "antes te daba miedo el cursor y ya lo saludas",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "Quizá quienes nos lastimaron solo sabían amar desde el miedo, y eso se hereda.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "mi mamá también se agacha con miedo a beber"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿el vértigo es de familia?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "creo que sí. ella me cuidaba así"
-      },
-      {
-       "quien": "rana",
-       "dice": "gibrán piensa algo parecido de sus abuelos"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "se puede cuidar y asustar a la vez"
-      },
-      {
-       "quien": "rana",
-       "dice": "sí. y ya sabes que a veces yo también me asusto"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gracias, rana. acércate al fuego"
       }
      ]
     }
