@@ -3,6 +3,119 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-11-20T13:32:58+00:00",
+   "escenas": [
+    {
+     "idea": "Cabríamos todos los humanos en Londres de pie; el planeta no está lleno, lo que ocupa espacio es lo que se come.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "croac. dice que cabríamos todos en Londres",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿todos? ¿de pie y apretados?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "seis por metro cuadrado. como en el metro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo no cabría. mi cuello no entra en el vagón"
+      },
+      {
+       "quien": "rana",
+       "dice": "tú ocuparías como cuatro personas, croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces el espacio no es el problema"
+      },
+      {
+       "quien": "rana",
+       "dice": "el problema son las vacas. yo solo quiero moscas",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "Comida y agua alcanzan, lo que falla es el reparto; se tira un tercio de la comida mientras hay quien pasa hambre.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que una tercera parte de la comida se tira"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿una tercera parte? ¿y las moscas?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "«Lo que falta es repartirla». así lo escribió"
+      },
+      {
+       "quien": "rana",
+       "dice": "es como si yo tuviera sesenta y cuatro moscas"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "y tiraras la mitad. y otra rana sin ninguna"
+      },
+      {
+       "quien": "rana",
+       "dice": "ay no. eso sí me da tristeza, croac"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene fecundidad baja y el metro sigue lleno; menos bebés no arreglan la mala distribución, y mucha gente no tiene hijos porque no le alcanza.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "en la CDMX nacen poquitos bebés y el metro sigue igual"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces no era cuestión de cuántos somos"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. yo pensé que ya iba a sobrar lugar",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "dice que mucha gente no tiene hijos porque no le alcanza"
+      },
+      {
+       "quien": "rana",
+       "dice": "eso no suena a salvar el planeta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "suena a renta cara. y a cansancio"
+      },
+      {
+       "quien": "rana",
+       "dice": "qué feo. ven, te presto mi hoja de nenúfar"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Teorías dormidas",
     "url": "https://narbigcito.substack.com/p/teorias-dormidas"
    },
@@ -230,127 +343,6 @@
       {
        "quien": "jirafa",
        "dice": "entonces al menos ya lo sabré"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-11-17T13:33:26+00:00",
-   "escenas": [
-    {
-     "idea": "Nadie necesita un poema a las 4 de la mañana, pero sí necesitamos que alguien nos necesite.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "a las 4 de la mañana nadie necesita un poema"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo a las 4 necesito una mosca",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán dice que lo que importa es otra cosa"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "que alguien necesite un poema tuyo"
-      },
-      {
-       "quien": "rana",
-       "dice": "o sea que el poema es la excusa para que te llamen",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "sí. creo que sí"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces yo soy muy necesaria. sin mí aquí nadie se ríe",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Rascar la red de contactos para ver a qué amigo no hemos molestado o ghosteado demasiado.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "¿a qué amigo le escribirías si te quedas sin lugar?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a uno al que no haya molestado tanto"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y eso cómo se mide? ¿en moscas?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "él habla de amigos «ghosteado lo suficiente»"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo ghosteé a tres. a las moscas, digo",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo no ghosteo. contesto tarde y con vergüenza"
-      },
-      {
-       "quien": "rana",
-       "dice": "eso es ghostear con pasos extra",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "Entre la incertidumbre de la noche llega algo bonito: una luz, comida, un café, un amigo.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que a veces llega «un golpe, pero bonito»"
-      },
-      {
-       "quien": "rana",
-       "dice": "a mí me pasa con las moscas",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "él habla de una luz, un café, un amigo"
-      },
-      {
-       "quien": "rana",
-       "dice": "bueno, un café con mosca",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "andar de noche sin saber a dónde me marea",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "tú te mareas hasta en el segundo piso"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo te guío. brillo poquito, pero brillo",
-       "gesto": "salta"
       }
      ]
     }
