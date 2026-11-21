@@ -3,6 +3,119 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-11-21T13:39:51+00:00",
+   "escenas": [
+    {
+     "idea": "Nadie necesita un poema a las 4 de la madrugada, pero sí necesitamos que alguien necesite uno nuestro.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿tú necesitas un poema a las 4 de la madrugada?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. a esa hora necesito agua y una cobija."
+      },
+      {
+       "quien": "rana",
+       "dice": "ni yo. yo necesito una mosca. croac.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que no va por ahí. es que alguien te necesite."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si nadie me pide un poema? ¿soy rana de adorno?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo te pediría uno. pero ya con sol."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. pues te compro uno a las 4, para que sepas."
+      }
+     ]
+    },
+    {
+     "idea": "Antes su casa era refugio de los olvidados; ahora, sin depa, a veces no tiene a dónde ir y le quedan 700 pesos y un hotel.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán ya no tiene depa. antes recibía a todos."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿a todos? ¿hasta a mí, con mis moscas?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a los olvidados. con límites, dice."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿qué límite? ¿que no me coma al perro ajeno?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "secuestrar perros. creo que es ese."
+      },
+      {
+       "quien": "rana",
+       "dice": "aquí el sofá es de pixeles, pero cabe cualquiera."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "una noche le quedaron 700 pesos y un hotel."
+      }
+     ]
+    },
+    {
+     "idea": "Entre la incertidumbre llega algo conocido y hermoso (una luz, comida, un café, un amigo) que se siente como un golpe bonito.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "dice que se siente como «un golpe, pero bonito»."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "cuando ves una luz después de caminar a oscuras."
+      },
+      {
+       "quien": "rana",
+       "dice": "o una mosca. a mí me pasa con las moscas.",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "él hablaba de un café. o de un amigo."
+      },
+      {
+       "quien": "rana",
+       "dice": "una mosca con café sería el golpe máximo. croac.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a mí me pasa cuando por fin piso el suelo.",
+       "gesto": "asombro"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -226,123 +339,6 @@
        "quien": "rana",
        "dice": "y el riesgo. voy yo primero, pero tú vienes.",
        "gesto": "salta"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Luz de globo",
-    "url": "https://narbigcito.substack.com/p/luz-de-globo"
-   },
-   "generado": "2026-11-18T13:34:37+00:00",
-   "escenas": [
-    {
-     "idea": "Casi miente cuando le preguntaron si era mentiroso: la mentira sale sola, antes de pensarla.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "gibrán casi miente cuando le preguntaron si mentía",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿cómo se casi miente?"
-      },
-      {
-       "quien": "rana",
-       "dice": "abres la boca y la mentira ya venía lista. croac"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a mí me pasa con las alturas. digo «no me dan miedo»"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y luego?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "luego me tiemblan las rodillas. mentí en voz baja",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo le dije al cursor que no me comí su mosca",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "Las promesas pequeñas que da vergüenza no cumplir, como cerrar Instagram en cada espacio libre.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "prometí comer una mosca menos al día"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿cuántas llevas hoy?"
-      },
-      {
-       "quien": "rana",
-       "dice": "once. croac",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán habla de cosas tan simples que da pena decirlas"
-      },
-      {
-       "quien": "rana",
-       "dice": "como abrir Instagram en cada hueco libre"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "eso. ya ni se cree sus promesas chiquitas"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces una sola. tú miras el suelo cinco segundos",
-       "gesto": "rie"
-      }
-     ]
-    },
-    {
-     "idea": "Dejar de querer arreglar el mundo y empezar por uno mismo, intentando de verdad aunque dé miedo.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "al final dice «voy a empezar conmigo»"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo pensaba arreglar la página entera primero"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "él también empezaba por lo grande"
-      },
-      {
-       "quien": "rana",
-       "dice": "empezar por una es poquito, ¿no?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es lo más alto que hay. me da vértigo",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y si lo intentas de verdad y no puedes?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces al menos ya lo sabré"
       }
      ]
     }
