@@ -3,6 +3,125 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Teorías dormidas",
+    "url": "https://narbigcito.substack.com/p/teorias-dormidas"
+   },
+   "generado": "2026-11-24T13:40:08+00:00",
+   "escenas": [
+    {
+     "idea": "Hay teorías buenas guardadas décadas en un cajón, esperando tecnología y alguien que se atreva.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "oye, guardé una mosca en el cajón hace tres semanas"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿para qué?"
+      },
+      {
+       "quien": "rana",
+       "dice": "para despertarla luego. como las teorías de Gibrán, croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "él dice que algunas pasaron décadas en un cajón"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y nadie lo abrió? yo abro todos los cajones",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es que todavía no había con qué correrlas"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces mi mosca espera su momento. voy a verla",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Creía que cambiar el mundo era cosa de genios de billete, y que a los demás solo les tocaba mirar.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "yo pensaba que solo los de los billetes podían cambiar algo"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y yo saldría en un billete? ¿de a cuánto?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "de a mil. pero con foto de lejos, por tu tamaño"
+      },
+      {
+       "quien": "rana",
+       "dice": "oye, qué grosera",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán dice que antes creía «A los demás nos tocaba verlos»"
+      },
+      {
+       "quien": "rana",
+       "dice": "tú ves todo desde arriba y no has cambiado nada"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es que desde arriba me mareo",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "Atreverse es lo que más pesa, y despertar algo grande trae su riesgo.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "dice que lo que más pesa es atreverse"
+      },
+      {
+       "quien": "rana",
+       "dice": "a mí me pesa más no haber desayunado"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo me atrevo poco. todo me parece muy alto"
+      },
+      {
+       "quien": "rana",
+       "dice": "pero él habla de «liberar a un país o a un demonio»",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no sabemos cuál te toca. ese es el riesgo"
+      },
+      {
+       "quien": "rana",
+       "dice": "si despierto un demonio, ¿puedo ofrecerle una mosca?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "mejor dos. y yo me quedo atrás"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -228,119 +347,6 @@
        "quien": "jirafa",
        "dice": "a mí me pasa cuando por fin piso el suelo.",
        "gesto": "asombro"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "No tener hijos no salvará al mundo",
-    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
-   },
-   "generado": "2026-11-20T13:32:58+00:00",
-   "escenas": [
-    {
-     "idea": "Cabríamos todos los humanos en Londres de pie; el planeta no está lleno, lo que ocupa espacio es lo que se come.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "croac. dice que cabríamos todos en Londres",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿todos? ¿de pie y apretados?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "seis por metro cuadrado. como en el metro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo no cabría. mi cuello no entra en el vagón"
-      },
-      {
-       "quien": "rana",
-       "dice": "tú ocuparías como cuatro personas, croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces el espacio no es el problema"
-      },
-      {
-       "quien": "rana",
-       "dice": "el problema son las vacas. yo solo quiero moscas",
-       "gesto": "voltea"
-      }
-     ]
-    },
-    {
-     "idea": "Comida y agua alcanzan, lo que falla es el reparto; se tira un tercio de la comida mientras hay quien pasa hambre.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que una tercera parte de la comida se tira"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿una tercera parte? ¿y las moscas?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "«Lo que falta es repartirla». así lo escribió"
-      },
-      {
-       "quien": "rana",
-       "dice": "es como si yo tuviera sesenta y cuatro moscas"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y tiraras la mitad. y otra rana sin ninguna"
-      },
-      {
-       "quien": "rana",
-       "dice": "ay no. eso sí me da tristeza, croac"
-      }
-     ]
-    },
-    {
-     "idea": "La CDMX ya tiene fecundidad baja y el metro sigue lleno; menos bebés no arreglan la mala distribución, y mucha gente no tiene hijos porque no le alcanza.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "en la CDMX nacen poquitos bebés y el metro sigue igual"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "entonces no era cuestión de cuántos somos"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo pensé que ya iba a sobrar lugar",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "dice que mucha gente no tiene hijos porque no le alcanza"
-      },
-      {
-       "quien": "rana",
-       "dice": "eso no suena a salvar el planeta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "suena a renta cara. y a cansancio"
-      },
-      {
-       "quien": "rana",
-       "dice": "qué feo. ven, te presto mi hoja de nenúfar"
       }
      ]
     }
