@@ -3,6 +3,122 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "No tener hijos no salvará al mundo",
+    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
+   },
+   "generado": "2026-11-25T13:38:00+00:00",
+   "escenas": [
+    {
+     "idea": "Los 8 mil millones cabríamos de pie en Londres; el planeta no está lleno, la CDMX sí está densa.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "oye, cabríamos todos en Londres. parados",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿todos? ¿los ocho mil millones?"
+      },
+      {
+       "quien": "rana",
+       "dice": "apretaditos, seis por metro cuadrado. croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo sola ocuparía lugar de cuatro",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "y todavía sobraría para un par de parques",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "vista desde arriba esa multitud me marea"
+      },
+      {
+       "quien": "rana",
+       "dice": "entonces no está lleno el planeta. solo la CDMX"
+      }
+     ]
+    },
+    {
+     "idea": "El 77% de la tierra agrícola es para ganado y da solo el 18% de las calorías.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "la mitad de la tierra habitable es para agricultura"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y es para moscas? porfa di que sí"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. el 77% es para el ganado"
+      },
+      {
+       "quien": "rana",
+       "dice": "bueno, algo nos darán. ¿77% de las calorías?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "el 18%",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "una mosca rinde más que una vaca, croac",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es chiste. es muchísima tierra para tan poco"
+      }
+     ]
+    },
+    {
+     "idea": "La CDMX ya tiene fecundidad baja (0.8) y el metro sigue lleno; muchos no tienen hijos porque la renta no alcanza.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "gibrán dice que no tener hijos no apaga el incendio"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo a esta fogata solo le echo leña"
+      },
+      {
+       "quien": "rana",
+       "dice": "la CDMX ya casi no tiene bebés. ¿y el metro?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "igual de lleno, según el ensayo"
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. entonces el incendio sigue"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "mucha gente no los tiene porque no le alcanza la renta"
+      },
+      {
+       "quien": "rana",
+       "dice": "ay. eso sí da tristeza, no es salvar nada"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Teorías dormidas",
     "url": "https://narbigcito.substack.com/p/teorias-dormidas"
    },
@@ -234,119 +350,6 @@
       {
        "quien": "jirafa",
        "dice": "al final él le pide perdón a su mamá"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
-    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
-   },
-   "generado": "2026-11-21T13:39:51+00:00",
-   "escenas": [
-    {
-     "idea": "Nadie necesita un poema a las 4 de la madrugada, pero sí necesitamos que alguien necesite uno nuestro.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "¿tú necesitas un poema a las 4 de la madrugada?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. a esa hora necesito agua y una cobija."
-      },
-      {
-       "quien": "rana",
-       "dice": "ni yo. yo necesito una mosca. croac.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán dice que no va por ahí. es que alguien te necesite."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y si nadie me pide un poema? ¿soy rana de adorno?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo te pediría uno. pero ya con sol."
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. pues te compro uno a las 4, para que sepas."
-      }
-     ]
-    },
-    {
-     "idea": "Antes su casa era refugio de los olvidados; ahora, sin depa, a veces no tiene a dónde ir y le quedan 700 pesos y un hotel.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán ya no tiene depa. antes recibía a todos."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿a todos? ¿hasta a mí, con mis moscas?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a los olvidados. con límites, dice."
-      },
-      {
-       "quien": "rana",
-       "dice": "¿qué límite? ¿que no me coma al perro ajeno?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "secuestrar perros. creo que es ese."
-      },
-      {
-       "quien": "rana",
-       "dice": "aquí el sofá es de pixeles, pero cabe cualquiera."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "una noche le quedaron 700 pesos y un hotel."
-      }
-     ]
-    },
-    {
-     "idea": "Entre la incertidumbre llega algo conocido y hermoso (una luz, comida, un café, un amigo) que se siente como un golpe bonito.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "dice que se siente como «un golpe, pero bonito»."
-      },
-      {
-       "quien": "jirafa",
-       "dice": "cuando ves una luz después de caminar a oscuras."
-      },
-      {
-       "quien": "rana",
-       "dice": "o una mosca. a mí me pasa con las moscas.",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "él hablaba de un café. o de un amigo."
-      },
-      {
-       "quien": "rana",
-       "dice": "una mosca con café sería el golpe máximo. croac.",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a mí me pasa cuando por fin piso el suelo.",
-       "gesto": "asombro"
       }
      ]
     }
