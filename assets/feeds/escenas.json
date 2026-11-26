@@ -3,6 +3,119 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
+    "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
+   },
+   "generado": "2026-11-26T13:38:39+00:00",
+   "escenas": [
+    {
+     "idea": "Comprar un poema de madrugada no por necesitarlo, sino porque alguien necesita que lo necesiten.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "gibrán a veces compra poemas a las 4 de la mañana."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. ¿a esa hora no convienen más unos tacos?",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no es que le urja el poema."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "es que a alguien le urge que se lo pidan."
+      },
+      {
+       "quien": "rana",
+       "dice": "oye... ¿y si me cuentas uno tuyo?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿lo necesitas?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "necesito que me lo cuentes tú."
+      }
+     ]
+    },
+    {
+     "idea": "Buscar en la red de contactos a quién pedirle refugio sin sentir que se molesta.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "si se cae la página, ¿a quién le pides posada?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "primero veo a quién he molestado menos."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y yo en qué lugar de esa lista voy?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a la mitad. te dejé en visto el martes."
+      },
+      {
+       "quien": "rana",
+       "dice": "¡a la mitad! qué descaro.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "mi hoja es chica, pero si te haces bolita cabes."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿con todo y cuello?",
+       "gesto": "asombro"
+      }
+     ]
+    },
+    {
+     "idea": "En medio de la incertidumbre aparece algo bonito que pega como golpe: una luz, un café, un amigo.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "el texto habla de «un golpe, pero bonito»."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿como una mosca que se estrella solita en tu boca?",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "como ver una luz cuando no sabes dónde dormir."
+      },
+      {
+       "quien": "rana",
+       "dice": "o un café. o toparte a una amiga."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿como ahorita que te encontré caminando?"
+      },
+      {
+       "quien": "rana",
+       "dice": "ay, no avises. me pegaste bonito.",
+       "gesto": "voltea"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "No tener hijos no salvará al mundo",
     "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
    },
@@ -231,125 +344,6 @@
       {
        "quien": "jirafa",
        "dice": "mejor dos. y yo me quedo atrás"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Jaula",
-    "url": "https://narbigcito.substack.com/p/jaula-6fc"
-   },
-   "generado": "2026-11-22T13:37:56+00:00",
-   "escenas": [
-    {
-     "idea": "El amor como jaula frente al amor con la puerta abierta, para entrar y para salir.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán quiere un amor con la puerta abierta"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. yo ya vivo así, salgo y entro por las moscas",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "a mí una puerta abierta me da vértigo",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿vértigo de una puerta? si está a ras de suelo"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es que yo veo todo desde arriba. hasta la salida"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces la jaula es tu cuello",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "puede ser. pero saber que puedo salir ayuda"
-      }
-     ]
-    },
-    {
-     "idea": "Reglas claras desde el principio, creadas entre los dos y cambiadas cuando ambos cambien.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "¿ya viste? quiere reglas claras desde el principio"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "y cambiarlas «cuando ambos cambiemos»"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿reglas que mudan de piel? ¡eso sí lo entiendo!",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo me aprendí las mías hace años. no quiero moverlas",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "tu regla es no asomarte a ningún lado",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es una buena regla"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y si un día quieres asomarte? se lo dices y ya"
-      }
-     ]
-    },
-    {
-     "idea": "Quizá sus abuelos y su mamá solo sabían amar desde el miedo, y el miedo se hereda.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "gibrán piensa que sus abuelos solo sabían amar con miedo"
-      },
-      {
-       "quien": "rana",
-       "dice": "ay. eso pega"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "me pregunto si el miedo se hereda como el cuello"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿tú de quién heredaste el vértigo?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "de mi mamá. ella tampoco se asomaba",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "yo heredé lo glotona, y eso lo defiendo",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "al final él le pide perdón a su mamá"
       }
      ]
     }
