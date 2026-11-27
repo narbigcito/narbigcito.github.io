@@ -3,6 +3,122 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Jaula",
+    "url": "https://narbigcito.substack.com/p/jaula-6fc"
+   },
+   "generado": "2026-11-27T13:31:16+00:00",
+   "escenas": [
+    {
+     "idea": "El amor como jaula frente a un amor con la puerta abierta para entrar y salir.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "atrapé una mosca y la guardé en un frasco",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y ella te quiere?"
+      },
+      {
+       "quien": "rana",
+       "dice": "lleva tres días conmigo. eso es amor, croac"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "el frasco tiene tapa."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "gibrán quiere un amor con «la puerta abierta»"
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si abro y se va volando?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "bueno... abro tantito. no me mires",
+       "gesto": "voltea"
+      }
+     ]
+    },
+    {
+     "idea": "Reglas claras desde el principio, creadas entre dos y que pueden cambiar cuando ambos cambien.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "regla de amigas: todas las moscas son mías",
+       "gesto": "salta"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "va. y a mí nadie me sube a nada alto."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿firmado para toda la vida?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no. la cambiamos cuando cambiemos."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si un día quiero otra amiga además de ti?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "ay. eso me dio cosita.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "por eso se platica, cuellona. ven"
+      }
+     ]
+    },
+    {
+     "idea": "El miedo que pasa de abuelos a hijos como forma de amar, y el deseo de que la mamá ya no tenga miedo.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "hay familias que aprendieron a querer con miedo."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿eso se hereda? ¿como tus manchas?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "mis manchas no me las puedo quitar."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y el miedo sí?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "no sé. él descubrió que todavía le pesa."
+      },
+      {
+       "quien": "rana",
+       "dice": "y aun así le desea a su mamá que ya no tema"
+      },
+      {
+       "quien": "rana",
+       "dice": "arrímate, jirafa. hoy te cuido yo el fuego"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Nadie necesita un poema a las 4:12 de la madrugada",
     "url": "https://narbigcito.substack.com/p/nadie-necesita-un-poema-a-las-412"
    },
@@ -225,125 +341,6 @@
       {
        "quien": "rana",
        "dice": "ay. eso sí da tristeza, no es salvar nada"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "Teorías dormidas",
-    "url": "https://narbigcito.substack.com/p/teorias-dormidas"
-   },
-   "generado": "2026-11-24T13:40:08+00:00",
-   "escenas": [
-    {
-     "idea": "Hay teorías buenas guardadas décadas en un cajón, esperando tecnología y alguien que se atreva.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "oye, guardé una mosca en el cajón hace tres semanas"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿para qué?"
-      },
-      {
-       "quien": "rana",
-       "dice": "para despertarla luego. como las teorías de Gibrán, croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "él dice que algunas pasaron décadas en un cajón"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y nadie lo abrió? yo abro todos los cajones",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es que todavía no había con qué correrlas"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces mi mosca espera su momento. voy a verla",
-       "gesto": "salta"
-      }
-     ]
-    },
-    {
-     "idea": "Creía que cambiar el mundo era cosa de genios de billete, y que a los demás solo les tocaba mirar.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "yo pensaba que solo los de los billetes podían cambiar algo"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y yo saldría en un billete? ¿de a cuánto?",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "de a mil. pero con foto de lejos, por tu tamaño"
-      },
-      {
-       "quien": "rana",
-       "dice": "oye, qué grosera",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "gibrán dice que antes creía «A los demás nos tocaba verlos»"
-      },
-      {
-       "quien": "rana",
-       "dice": "tú ves todo desde arriba y no has cambiado nada"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "es que desde arriba me mareo",
-       "gesto": "asombro"
-      }
-     ]
-    },
-    {
-     "idea": "Atreverse es lo que más pesa, y despertar algo grande trae su riesgo.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "dice que lo que más pesa es atreverse"
-      },
-      {
-       "quien": "rana",
-       "dice": "a mí me pesa más no haber desayunado"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo me atrevo poco. todo me parece muy alto"
-      },
-      {
-       "quien": "rana",
-       "dice": "pero él habla de «liberar a un país o a un demonio»",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no sabemos cuál te toca. ese es el riesgo"
-      },
-      {
-       "quien": "rana",
-       "dice": "si despierto un demonio, ¿puedo ofrecerle una mosca?",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "mejor dos. y yo me quedo atrás"
       }
      ]
     }
