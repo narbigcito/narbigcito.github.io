@@ -3,6 +3,122 @@
  "lotes": [
   {
    "ensayo": {
+    "titulo": "Teorías dormidas",
+    "url": "https://narbigcito.substack.com/p/teorias-dormidas"
+   },
+   "generado": "2026-11-28T13:34:25+00:00",
+   "escenas": [
+    {
+     "idea": "Hay teorías que ya existen y pasaron décadas guardadas, como las de la IA, esperando que alguien las despierte.",
+     "lugar": "mesa",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "gibrán dice que hay teorías dormidas. croac."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "entonces hablemos bajito."
+      },
+      {
+       "quien": "rana",
+       "dice": "¡no! ¡la idea es despertarlas!",
+       "gesto": "salta"
+      },
+      {
+       "quien": "rana",
+       "dice": "lo de la IA pasó décadas «guardadas en un cajón».",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "yo con una siesta de una hora despierto de malas."
+      },
+      {
+       "quien": "rana",
+       "dice": "pues a la teoría le llevas café. o moscas.",
+       "gesto": "rie"
+      }
+     ]
+    },
+    {
+     "idea": "Mucha gente está amontonada haciendo lo mismo mientras hay problemas simples abandonados.",
+     "lugar": "suelo",
+     "pasos": [
+      {
+       "quien": "rana",
+       "dice": "¿a dónde vas tan derechita?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "a donde van todos. se ve seguro."
+      },
+      {
+       "quien": "rana",
+       "dice": "una vez vi doce ranas tras la misma mosca."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "¿y las demás moscas?",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "rana",
+       "dice": "abandonadas. me las comí yo solita.",
+       "gesto": "rie"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "hay un pixel chueco allá abajo. nadie lo pela.",
+       "gesto": "voltea"
+      },
+      {
+       "quien": "rana",
+       "dice": "¡ahí está tu problema olvidado! ¡córrele!",
+       "gesto": "salta"
+      }
+     ]
+    },
+    {
+     "idea": "Las piezas chiquitas pueden desencadenar algo grande, bueno o malo, y no saberlo es el chiste y el riesgo.",
+     "lugar": "fogata",
+     "pasos": [
+      {
+       "quien": "jirafa",
+       "dice": "me quedé pensando en las piezas chiquitas."
+      },
+      {
+       "quien": "jirafa",
+       "dice": "pueden liberar «a un país o a un demonio»."
+      },
+      {
+       "quien": "rana",
+       "dice": "oye, yo soy una pieza chiquita.",
+       "gesto": "asombro"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "por eso te estoy mirando así."
+      },
+      {
+       "quien": "rana",
+       "dice": "¿y si mejor no movemos nada?"
+      },
+      {
+       "quien": "jirafa",
+       "dice": "me da vértigo. pero quiero saber qué pasa."
+      },
+      {
+       "quien": "rana",
+       "dice": "croac. empieza tú, yo te echo porras.",
+       "gesto": "rie"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ensayo": {
     "titulo": "Jaula",
     "url": "https://narbigcito.substack.com/p/jaula-6fc"
    },
@@ -225,122 +341,6 @@
        "quien": "rana",
        "dice": "ay, no avises. me pegaste bonito.",
        "gesto": "voltea"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "ensayo": {
-    "titulo": "No tener hijos no salvará al mundo",
-    "url": "https://narbigcito.substack.com/p/no-tener-hijos-no-salvara-al-mundo"
-   },
-   "generado": "2026-11-25T13:38:00+00:00",
-   "escenas": [
-    {
-     "idea": "Los 8 mil millones cabríamos de pie en Londres; el planeta no está lleno, la CDMX sí está densa.",
-     "lugar": "suelo",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "oye, cabríamos todos en Londres. parados",
-       "gesto": "salta"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "¿todos? ¿los ocho mil millones?"
-      },
-      {
-       "quien": "rana",
-       "dice": "apretaditos, seis por metro cuadrado. croac"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo sola ocuparía lugar de cuatro",
-       "gesto": "asombro"
-      },
-      {
-       "quien": "rana",
-       "dice": "y todavía sobraría para un par de parques",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "vista desde arriba esa multitud me marea"
-      },
-      {
-       "quien": "rana",
-       "dice": "entonces no está lleno el planeta. solo la CDMX"
-      }
-     ]
-    },
-    {
-     "idea": "El 77% de la tierra agrícola es para ganado y da solo el 18% de las calorías.",
-     "lugar": "mesa",
-     "pasos": [
-      {
-       "quien": "jirafa",
-       "dice": "la mitad de la tierra habitable es para agricultura"
-      },
-      {
-       "quien": "rana",
-       "dice": "¿y es para moscas? porfa di que sí"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no. el 77% es para el ganado"
-      },
-      {
-       "quien": "rana",
-       "dice": "bueno, algo nos darán. ¿77% de las calorías?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "el 18%",
-       "gesto": "voltea"
-      },
-      {
-       "quien": "rana",
-       "dice": "una mosca rinde más que una vaca, croac",
-       "gesto": "rie"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "no es chiste. es muchísima tierra para tan poco"
-      }
-     ]
-    },
-    {
-     "idea": "La CDMX ya tiene fecundidad baja (0.8) y el metro sigue lleno; muchos no tienen hijos porque la renta no alcanza.",
-     "lugar": "fogata",
-     "pasos": [
-      {
-       "quien": "rana",
-       "dice": "gibrán dice que no tener hijos no apaga el incendio"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "yo a esta fogata solo le echo leña"
-      },
-      {
-       "quien": "rana",
-       "dice": "la CDMX ya casi no tiene bebés. ¿y el metro?"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "igual de lleno, según el ensayo"
-      },
-      {
-       "quien": "rana",
-       "dice": "croac. entonces el incendio sigue"
-      },
-      {
-       "quien": "jirafa",
-       "dice": "mucha gente no los tiene porque no le alcanza la renta"
-      },
-      {
-       "quien": "rana",
-       "dice": "ay. eso sí da tristeza, no es salvar nada"
       }
      ]
     }
